@@ -1,0 +1,100 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{booktabs}
+
+% Configuración del tema
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+% Comandos personalizados
+\newcommand{\alert}[1]{\textcolor{red}{#1}}
+\newcommand{\highlight}[1]{\textcolor{blue}{#1}}
+
+% Variables del documento (serán reemplazadas por Jinja2)
+\title{<< tema >>}
+\subtitle{<< subtitulo >>}
+\author{Probabilidad y Estadística}
+\date{\today}
+
+\begin{document}
+
+% Página de título
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Diapositivas generadas dinámicamente
+<<% for slide in diapositivas %>>
+\begin{frame}{<< slide.titulo >>}
+<<% for item in slide.contenido %>>
+<<% if item is string %>>
+\begin{itemize}
+\item << item >>
+\end{itemize}
+<<% elif item.tipo == "ejemplo" %>>
+\begin{block}{Ejemplo}
+<< item.texto >>
+\end{block}
+<<% elif item.tipo == "formula" %>>
+\begin{center}
+\Large
+$<< item.texto >>$
+\end{center}
+<<% elif item.tipo == "calculo" %>>
+\begin{align*}
+<< item.texto >>
+\end{align*}
+<<% elif item.tipo == "nota" %>>
+\begin{alertblock}{Nota}
+<< item.texto >>
+\end{alertblock}
+<<% elif item.tipo == "problema" %>>
+\begin{exampleblock}{Problema}
+<< item.texto >>
+\end{exampleblock}
+<<% elif item.tipo == "tabla" %>>
+\begin{center}
+\begin{tabular}{<<% for h in item.encabezados %>>|c<<% endfor %>>|)}
+\toprule
+<<% for h in item.encabezados %>><< h >><<% if not loop.last %>> & <<% endif %>><<% endfor %>> \\
+\midrule
+<<% for fila in item.filas %>>
+<<% for celda in fila %>><< celda >><<% if not loop.last %>> & <<% endif %>><<% endfor %>> \\
+<<% endfor %>>
+\bottomrule
+\end{tabular}
+\end{center}
+<<% elif item.tipo == "componentes" %>>
+\begin{itemize}
+<<% for comp in item.lista %>>
+\item << comp >>
+<<% endfor %>>
+\end{itemize}
+<<% elif item.tipo == "solucion" %>>
+\begin{block}{Solución}
+\begin{itemize}
+<<% for paso in item.pasos %>>
+\item << paso >>
+<<% endfor %>>
+\end{itemize}
+\end{block}
+<<% endif %>>
+<<% endfor %>>
+\end{frame}
+
+<<% endfor %>>
+
+% Diapositiva final
+\begin{frame}
+\begin{center}
+\Huge ¿Preguntas?
+\end{center}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,46 @@
+tema: "Medidas de Posición"
+subtitulo: "Cuartiles, Percentiles y Diagrama de Cajón"
+
+diapositivas:
+  - titulo: "Cuartiles"
+    contenido:
+      - "Dividen datos ordenados en 4 partes iguales"
+      - "Q1: 25% de datos por debajo"
+      - "Q2: mediana (50%)"
+      - "Q3: 75% de datos por debajo"
+      - tipo: "ejemplo"
+        texto: "Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18"
+      - tipo: "calculo"
+        texto: "Q1=5, Q2=10, Q3=15"
+
+  - titulo: "Percentiles"
+    contenido:
+      - "Dividen datos en 100 partes iguales"
+      - tipo: "formula"
+        texto: "P_k: k\\% de datos por debajo"
+      - "P50 = Q2 = mediana"
+      - "P25 = Q1, P75 = Q3"
+      - tipo: "ejemplo"
+        texto: "P90: 90% de datos están por debajo"
+
+  - titulo: "Diagrama de Cajón (Box Plot)"
+    contenido:
+      - "Representación visual de distribución"
+      - "Muestra: mínimo, Q1, Q2, Q3, máximo"
+      - "Identifica valores atípicos"
+      - tipo: "componentes"
+        lista:
+          - "Caja: rango intercuartílico (Q1-Q3)"
+          - "Línea central: mediana"
+          - "Bigotes: extensión de datos"
+      - tipo: "nota"
+        texto: "Útil para comparar múltiples distribuciones"
+
+  - titulo: "Aplicación Práctica"
+    contenido:
+      - tipo: "problema"
+        texto: "Salarios mensuales (S/.): 1200, 1500, 1800, 2000, 2200, 2500, 3000, 3500, 5000"
+      - "Calcular Q1, Q2, Q3"
+      - "Construir diagrama de cajón"
+      - "Identificar valores atípicos"
+      - "Interpretar distribución salarial"

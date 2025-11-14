@@ -1,0 +1,48 @@
+tema: "Reglas de las Probabilidades"
+subtitulo: "Cálculo y aplicación de probabilidades"
+
+diapositivas:
+  - titulo: "Probabilidad de un Evento"
+    contenido:
+      - tipo: "formula"
+        texto: "P(A) = \\frac{\\text{casos favorables}}{\\text{casos totales}}"
+      - "Valor entre 0 y 1 (o 0% y 100%)"
+      - "P(A) = 0: evento imposible"
+      - "P(A) = 1: evento seguro"
+      - tipo: "ejemplo"
+        texto: "Lanzar dado: P(par) = 3/6 = 0.5"
+
+  - titulo: "Regla Aditiva"
+    contenido:
+      - "Probabilidad de que ocurra A o B"
+      - tipo: "formula"
+        texto: "P(A \\cup B) = P(A) + P(B) - P(A \\cap B)"
+      - "Eventos mutuamente excluyentes:"
+      - tipo: "formula"
+        texto: "P(A \\cup B) = P(A) + P(B)"
+      - tipo: "ejemplo"
+        texto: "Carta: P(As o Rey) = 4/52 + 4/52 = 8/52"
+
+  - titulo: "Regla Multiplicativa"
+    contenido:
+      - "Probabilidad de que ocurra A y B"
+      - tipo: "formula"
+        texto: "P(A \\cap B) = P(A) \\cdot P(B|A)"
+      - "Eventos independientes:"
+      - tipo: "formula"
+        texto: "P(A \\cap B) = P(A) \\cdot P(B)"
+      - tipo: "ejemplo"
+        texto: "Dos dados: P(ambos 6) = (1/6) × (1/6) = 1/36"
+
+  - titulo: "Problemas Aplicados"
+    contenido:
+      - tipo: "problema"
+        texto: "Una urna tiene 5 bolas rojas y 3 azules"
+      - "a) P(roja en un sorteo)"
+      - "b) P(roja o azul)"
+      - "c) P(2 rojas consecutivas sin reposición)"
+      - tipo: "solucion"
+        pasos:
+          - "a) P(R) = 5/8"
+          - "b) P(R∪A) = 5/8 + 3/8 = 1"
+          - "c) P(R∩R) = (5/8) × (4/7) = 20/56"

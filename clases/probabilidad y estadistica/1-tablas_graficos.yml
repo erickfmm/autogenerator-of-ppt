@@ -1,0 +1,45 @@
+tema: "Representación de datos a través de tablas y gráficos"
+subtitulo: "Organización y visualización de información"
+
+diapositivas:
+  - titulo: "Tablas de Frecuencia"
+    contenido:
+      - "Frecuencia absoluta: conteo de datos"
+      - "Frecuencia relativa: proporción del total"
+      - tipo: "ejemplo"
+        texto: "Notas de estudiantes: 15, 18, 15, 20, 18, 15"
+      - tipo: "tabla"
+        encabezados: ["Nota", "Frec. Abs.", "Frec. Rel."]
+        filas:
+          - ["15", "3", "0.50"]
+          - ["18", "2", "0.33"]
+          - ["20", "1", "0.17"]
+
+  - titulo: "Tipos de Gráficos"
+    contenido:
+      - "Gráfico de barras: comparar categorías"
+      - "Histograma: distribución de datos continuos"
+      - "Gráfico circular: proporciones del todo"
+      - "Gráfico de líneas: tendencias en el tiempo"
+      - tipo: "nota"
+        texto: "Elegir según tipo de datos y objetivo"
+
+  - titulo: "Promedio (Media Aritmética)"
+    contenido:
+      - tipo: "formula"
+        texto: "\\bar{x} = \\frac{\\sum x_i}{n}"
+      - "Suma de valores dividida entre cantidad de datos"
+      - tipo: "ejemplo"
+        texto: "Datos: 5, 8, 10, 12, 15"
+      - tipo: "calculo"
+        texto: "\\bar{x} = \\frac{5+8+10+12+15}{5} = \\frac{50}{5} = 10"
+
+  - titulo: "Ejercicio Aplicado"
+    contenido:
+      - tipo: "problema"
+        texto: "Temperaturas semanales (°C): 22, 24, 21, 23, 25, 20, 22"
+      - "Construir tabla de frecuencias"
+      - "Calcular promedio"
+      - "Crear gráfico apropiado"
+      - tipo: "nota"
+        texto: "Interpretar resultados en contexto"
