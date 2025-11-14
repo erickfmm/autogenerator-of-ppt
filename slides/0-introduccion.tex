@@ -1,311 +1,493 @@
 \documentclass[aspectratio=169]{beamer}
-\usetheme{Madrid}
-\usecolortheme{default}
+
+% Tema moderno y lúdico
+\usetheme{Boadilla}
+\usecolortheme{dolphin}
+
+% Paquetes esenciales
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgf-pie}
 \usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{newunicodechar}
+
+% Configurar emojis como texto simple
+\newunicodechar{🎲}{\textsf{[dado]}}
+\newunicodechar{🎯}{\textsf{[objetivo]}}
+\newunicodechar{📋}{\textsf{[lista]}}
+\newunicodechar{⭐}{\textsf{[estrella]}}
+\newunicodechar{🔮}{\textsf{[bola]}}
+\newunicodechar{📏}{\textsf{[regla]}}
+\newunicodechar{🃏}{\textsf{[carta]}}
+\newunicodechar{🔄}{\textsf{[ciclo]}}
+\newunicodechar{🔢}{\textsf{[numeros]}}
+\newunicodechar{➕}{\textsf{[+]}}
+\newunicodechar{✖}{\textsf{[x]}}
+\newunicodechar{🔗}{\textsf{[cadena]}}
+\newunicodechar{🪙}{\textsf{[moneda]}}
+\newunicodechar{🔑}{\textsf{[llave]}}
+\newunicodechar{🔍}{\textsf{[lupa]}}
+\newunicodechar{📊}{\textsf{[grafico]}}
+\newunicodechar{🎴}{\textsf{[cartas]}}
+\newunicodechar{💪}{\textsf{[fuerza]}}
+\newunicodechar{🌟}{\textsf{[estrella]}}
+\newunicodechar{💡}{\textsf{[idea]}}
+\newunicodechar{✨}{\textsf{[brillos]}}
+\newunicodechar{✅}{\textsf{[check]}}
+\newunicodechar{🎓}{\textsf{[gorro]}}
+\newunicodechar{🤔}{\textsf{[pensar]}}
+\newunicodechar{🚀}{\textsf{[cohete]}}
+\newunicodechar{♥}{\ensuremath{\heartsuit}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{✖}{\textsf{x}}
+\newunicodechar{✓}{\textsf{[ok]}}
+\newunicodechar{⚫}{\textsf{[punto]}}
+\newunicodechar{👥}{\textsf{[grupo]}}
+\newunicodechar{️}{}
+
+% Colores personalizados vibrantes y lúdicos
+\definecolor{colorPrimario}{RGB}{41, 128, 185}      % Azul vibrante
+\definecolor{colorSecundario}{RGB}{231, 76, 60}     % Rojo coral
+\definecolor{colorAccento}{RGB}{46, 204, 113}       % Verde esmeralda
+\definecolor{colorAdvertencia}{RGB}{241, 196, 15}   % Amarillo dorado
+\definecolor{colorMorado}{RGB}{155, 89, 182}        % Morado amigable
+\definecolor{colorNaranja}{RGB}{230, 126, 34}       % Naranja cálido
+\definecolor{colorFondo}{RGB}{236, 240, 241}        % Gris claro de fondo
 
 % Configuración del tema
+\setbeamercolor{structure}{fg=colorPrimario}
+\setbeamercolor{palette primary}{bg=colorPrimario,fg=white}
+\setbeamercolor{palette secondary}{bg=colorSecundario,fg=white}
+\setbeamercolor{palette tertiary}{bg=colorAccento,fg=white}
+\setbeamercolor{block title}{bg=colorPrimario!90,fg=white}
+\setbeamercolor{block body}{bg=colorPrimario!10,fg=black}
+\setbeamercolor{block title example}{bg=colorAccento!90,fg=white}
+\setbeamercolor{block body example}{bg=colorAccento!10,fg=black}
+\setbeamercolor{block title alerted}{bg=colorSecundario!90,fg=white}
+\setbeamercolor{block body alerted}{bg=colorSecundario!10,fg=black}
+
+% Plantillas personalizadas
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
 
-% Comandos personalizados
-\newcommand{\alert}[1]{\textcolor{red}{#1}}
-\newcommand{\highlight}[1]{\textcolor{blue}{#1}}
+% Comandos personalizados para énfasis
+\renewcommand{\alert}[1]{\textcolor{colorSecundario}{\textbf{#1}}}
+\newcommand{\highlight}[1]{\textcolor{colorPrimario}{\textbf{#1}}}
+\newcommand{\importante}[1]{\textcolor{colorAdvertencia}{\textbf{#1}}}
+\newcommand{\exito}[1]{\textcolor{colorAccento}{\textbf{#1}}}
 
 % Variables del documento (serán reemplazadas por Jinja2)
 \title{Introducción a la Probabilidad y Estadística}
 \subtitle{¡Descubriendo el mundo de los números y las posibilidades!}
 \author{Probabilidad y Estadística}
+\institute{Aprendiendo con diversión 🎓}
 \date{\today}
 
 \begin{document}
 
-% Página de título
-\begin{frame}
+% Página de título con diseño atractivo
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  % Fondo decorativo
+  \fill[colorPrimario!20] (current page.south west) rectangle (current page.north east);
+  \fill[colorAccento!30] (current page.south west) -- (current page.south east) -- 
+        ([yshift=-3cm]current page.north east) -- ([yshift=-3cm]current page.north west) -- cycle;
+\end{tikzpicture}
 \titlepage
 \end{frame}
 
 % Diapositivas generadas dinámicamente
-\begin{frame}{¿Qué vamos a aprender?}
-\begin{alertblock}{Nota}
+\begin{frame}[fragile]{¿Qué vamos a aprender?}
+\begin{alertblock}{💡 Nota importante}
 ¡Bienvenidos a una aventura numérica! 🎲📊
 \end{alertblock}
+
 \begin{itemize}
-\item Dos mundos fascinantes:
+  \item Dos mundos fascinantes:
 \end{itemize}
+
 \begin{itemize}
-\item 📊 Estadística: entender lo que ya pasó
+  \item 📊 Estadística: entender lo que ya pasó
 \end{itemize}
+
 \begin{itemize}
-\item 🎲 Probabilidad: predecir lo que puede pasar
+  \item 🎲 Probabilidad: predecir lo que puede pasar
 \end{itemize}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Como un detective que analiza pistas (estadística) y adivina quién es el culpable (probabilidad)
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{¿Qué es la Estadística?}
+\begin{frame}[fragile]{¿Qué es la Estadística?}
 \begin{itemize}
-\item Es el arte de recolectar, organizar y analizar datos
+  \item Es el arte de recolectar, organizar y analizar datos
 \end{itemize}
+
 \begin{itemize}
-\item Nos ayuda a entender el pasado y el presente
+  \item Nos ayuda a entender el pasado y el presente
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como ser un detective de números! 🔍
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Contar cuántos estudiantes prefieren pizza vs hamburguesa
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{La Estadística en tu Vida Diaria}
+\begin{frame}[fragile]{La Estadística en tu Vida Diaria}
 \begin{itemize}
-\item 📱 Redes sociales: conteo de likes y seguidores
+  \item 📱 Redes sociales: conteo de likes y seguidores
 \end{itemize}
+
 \begin{itemize}
-\item ⚽ Deportes: estadísticas de goles y victorias
+  \item ⚽ Deportes: estadísticas de goles y victorias
 \end{itemize}
+
 \begin{itemize}
-\item 🎮 Videojuegos: puntuaciones y rankings
+  \item 🎮 Videojuegos: puntuaciones y rankings
 \end{itemize}
+
 \begin{itemize}
-\item 📺 Netflix: series más vistas
+  \item 📺 Netflix: series más vistas
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Estás rodeado de estadísticas sin darte cuenta!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Ejemplo Divertido de Estadística}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Ejemplo Divertido de Estadística}
+\begin{exampleblock}{🎯 Problema}
 Preguntamos a 10 amigos su sabor de helado favorito
 \end{exampleblock}
+
 \begin{center}
-\begin{tabular}{|c|c|)}
+\begin{tabular}{cc}
 \toprule
-Sabor & Votos \\
+\rowcolor{colorPrimario!20}
+\textbf{Sabor} & \textbf{Votos} \\
 \midrule
+\rowcolor{colorFondo}
 Chocolate & 4 \\
 Vainilla & 3 \\
+\rowcolor{colorFondo}
 Fresa & 2 \\
 Limón & 1 \\
 \bottomrule
 \end{tabular}
 \end{center}
-\begin{align*}
-Conclusión: ¡El chocolate es el campeón! 🍫
-\end{align*}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Conclusión: ¡El chocolate es el campeón! 🍫
+    \end{align*}
+  }%
+}
+\end{center}
+
 \end{frame}
 
-\begin{frame}{¿Qué es la Probabilidad?}
+\begin{frame}[fragile]{¿Qué es la Probabilidad?}
 \begin{itemize}
-\item Es calcular qué tan posible es que algo ocurra
+  \item Es calcular qué tan posible es que algo ocurra
 \end{itemize}
+
 \begin{itemize}
-\item Trabaja con eventos FUTUROS o inciertos
+  \item Trabaja con eventos FUTUROS o inciertos
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como predecir el futuro con matemáticas! 🔮
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 ¿Qué probabilidad hay de que llueva mañana?
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{La Probabilidad en tu Vida}
+\begin{frame}[fragile]{La Probabilidad en tu Vida}
 \begin{itemize}
-\item 🎲 Juegos de mesa: lanzar dados
+  \item 🎲 Juegos de mesa: lanzar dados
 \end{itemize}
+
 \begin{itemize}
-\item 🃏 Cartas: ¿me saldrá un as?
+  \item 🃏 Cartas: ¿me saldrá un as?
 \end{itemize}
+
 \begin{itemize}
-\item ⚽ Deportes: ¿ganará mi equipo?
+  \item ⚽ Deportes: ¿ganará mi equipo?
 \end{itemize}
+
 \begin{itemize}
-\item 🌦️ Clima: pronóstico del tiempo
+  \item 🌦️ Clima: pronóstico del tiempo
 \end{itemize}
+
 \begin{itemize}
-\item 🎰 Sorteos y rifas
+  \item 🎰 Sorteos y rifas
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡La probabilidad está en cada decisión!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Ejemplo Divertido de Probabilidad}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Ejemplo Divertido de Probabilidad}
+\begin{exampleblock}{🎯 Problema}
 Tienes una bolsa con 10 caramelos: 6 rojos y 4 azules
 \end{exampleblock}
+
 \begin{itemize}
-\item Sin mirar, sacas uno. ¿Qué color es más probable?
+  \item Sin mirar, sacas uno. ¿Qué color es más probable?
 \end{itemize}
-\begin{align*}
-Rojo: 6 de cada 10 (60%)
-\end{align*}
-\begin{align*}
-Azul: 4 de cada 10 (40%)
-\end{align*}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Rojo: 6 de cada 10 (60%)
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Azul: 4 de cada 10 (40%)
+    \end{align*}
+  }%
+}
+\end{center}
+
 \begin{itemize}
-\item ¡Es más probable sacar uno rojo! 🔴
+  \item ¡Es más probable sacar uno rojo! 🔴
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Diferencias Clave}
+\begin{frame}[fragile]{Diferencias Clave}
 \begin{center}
-\begin{tabular}{|c|c|)}
+\begin{tabular}{cc}
 \toprule
-Estadística & Probabilidad \\
+\rowcolor{colorPrimario!20}
+\textbf{Estadística} & \textbf{Probabilidad} \\
 \midrule
+\rowcolor{colorFondo}
 Analiza datos del PASADO & Predice el FUTURO \\
 ¿Qué pasó? & ¿Qué puede pasar? \\
+\rowcolor{colorFondo}
 Certeza & Incertidumbre \\
 Temperaturas del mes & Pronóstico del tiempo \\
 \bottomrule
 \end{tabular}
 \end{center}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Son dos caras de la misma moneda! 🪙
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{¿Por qué son Importantes?}
+\begin{frame}[fragile]{¿Por qué son Importantes?}
 \begin{itemize}
-\item 🏥 Medicina: estudios de efectividad de tratamientos
+  \item 🏥 Medicina: estudios de efectividad de tratamientos
 \end{itemize}
+
 \begin{itemize}
-\item 💼 Negocios: decidir qué productos vender
+  \item 💼 Negocios: decidir qué productos vender
 \end{itemize}
+
 \begin{itemize}
-\item 🎓 Educación: mejorar métodos de enseñanza
+  \item 🎓 Educación: mejorar métodos de enseñanza
 \end{itemize}
+
 \begin{itemize}
-\item 🌍 Ciencia: descubrir patrones en la naturaleza
+  \item 🌍 Ciencia: descubrir patrones en la naturaleza
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Ayudan a tomar mejores decisiones!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Vocabulario Básico}
+\begin{frame}[fragile]{Vocabulario Básico}
 \begin{itemize}
-\item 📊 Datos: información que recolectamos
+  \item 📊 Datos: información que recolectamos
 \end{itemize}
+
 \begin{itemize}
-\item 👥 Población: todos los elementos que estudiamos
+  \item 👥 Población: todos los elementos que estudiamos
 \end{itemize}
+
 \begin{itemize}
-\item 🎯 Muestra: parte de la población
+  \item 🎯 Muestra: parte de la población
 \end{itemize}
+
 \begin{itemize}
-\item 🎲 Evento: algo que puede ocurrir
+  \item 🎲 Evento: algo que puede ocurrir
 \end{itemize}
+
 \begin{itemize}
-\item 🎯 Experimento: acción que produce resultados
+  \item 🎯 Experimento: acción que produce resultados
 \end{itemize}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Experimento: lanzar una moneda. Evento: sale cara
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{Un Experimento Divertido}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Un Experimento Divertido}
+\begin{exampleblock}{🎯 Problema}
 Lanza una moneda 10 veces y anota los resultados
 \end{exampleblock}
+
 \begin{itemize}
-\item Estadística: cuenta cuántas caras y cuántas sellos
+  \item Estadística: cuenta cuántas caras y cuántas sellos
 \end{itemize}
+
 \begin{itemize}
-\item Probabilidad: ¿cuál es la chance teórica?
+  \item Probabilidad: ¿cuál es la chance teórica?
 \end{itemize}
-\begin{align*}
-Teóricamente: 50% cara, 50% sello
-\end{align*}
-\begin{alertblock}{Nota}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Teóricamente: 50% cara, 50% sello
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{alertblock}{💡 Nota importante}
 ¿Coincide tu experimento con la teoría?
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Escalera de la Probabilidad}
+\begin{frame}[fragile]{Escalera de la Probabilidad}
 \begin{itemize}
-\item Imposible (0%): que salga un 7 en un dado normal 🎲
+  \item Imposible (0%): que salga un 7 en un dado normal 🎲
 \end{itemize}
+
 \begin{itemize}
-\item Poco probable (25%): sacar una carta de corazones ♥️
+  \item Poco probable (25%): sacar una carta de corazones ♥️
 \end{itemize}
+
 \begin{itemize}
-\item Igual de probable (50%): que salga cara 🪙
+  \item Igual de probable (50%): que salga cara 🪙
 \end{itemize}
+
 \begin{itemize}
-\item Muy probable (75%): NO sacar un 6 en un dado
+  \item Muy probable (75%): NO sacar un 6 en un dado
 \end{itemize}
+
 \begin{itemize}
-\item Seguro (100%): que el sol salga mañana ☀️
+  \item Seguro (100%): que el sol salga mañana ☀️
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Todo evento tiene su lugar en la escalera!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Actividad Práctica}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Actividad Práctica}
+\begin{exampleblock}{🎯 Problema}
 Piensa en estas situaciones y clasifícalas:
 \end{exampleblock}
+
 \begin{itemize}
-\item 1. ¿Es estadística o probabilidad?
+  \item 1. ¿Es estadística o probabilidad?
 \end{itemize}
+
 \begin{itemize}
-\item 2. Calificaciones del año pasado
+  \item 2. Calificaciones del año pasado
 \end{itemize}
+
 \begin{itemize}
-\item 3. Probabilidad de ganar un juego
+  \item 3. Probabilidad de ganar un juego
 \end{itemize}
+
 \begin{itemize}
-\item 4. Número de goles en el mundial anterior
+  \item 4. Número de goles en el mundial anterior
 \end{itemize}
+
 \begin{itemize}
-\item 5. Chance de que nieve en tu ciudad
+  \item 5. Chance de que nieve en tu ciudad
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{¿Listo para la Aventura?}
+\begin{frame}[fragile]{¿Listo para la Aventura?}
 \begin{itemize}
-\item ✅ Ya sabes qué es la estadística
+  \item ✅ Ya sabes qué es la estadística
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Ya sabes qué es la probabilidad
+  \item ✅ Ya sabes qué es la probabilidad
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Viste ejemplos de la vida real
+  \item ✅ Viste ejemplos de la vida real
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Ahora estás listo para profundizar en cada tema!
 \end{alertblock}
+
 \begin{itemize}
-\item En las próximas clases aprenderemos:
+  \item En las próximas clases aprenderemos:
 \end{itemize}
+
 \begin{itemize}
-\item 📊 Tablas y gráficos
+  \item 📊 Tablas y gráficos
 \end{itemize}
+
 \begin{itemize}
-\item 📏 Medidas estadísticas
+  \item 📏 Medidas estadísticas
 \end{itemize}
+
 \begin{itemize}
-\item 🎲 Cálculos de probabilidad
+  \item 🎲 Cálculos de probabilidad
 \end{itemize}
+
 \end{frame}
 
 
-% Diapositiva final
-\begin{frame}
-\begin{center}
-\Huge ¿Preguntas?
-\end{center}
+% Diapositiva final atractiva
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[colorAccento!20] (current page.south west) rectangle (current page.north east);
+  \node[font=\Huge\bfseries,text=colorPrimario] at (current page.center) {¿Preguntas? 🤔};
+  \node[font=\large,text=colorSecundario,below=1.5cm] at (current page.center) {¡Sigue aprendiendo! 🚀};
+\end{tikzpicture}
 \end{frame}
 
 \end{document}

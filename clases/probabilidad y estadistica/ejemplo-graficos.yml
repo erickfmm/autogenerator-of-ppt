@@ -1,0 +1,43 @@
+tema: "Ejemplos de Gráficos"
+subtitulo: "¡Visualiza los datos de forma divertida! 📊"
+
+diapositivas:
+  - titulo: "Gráfico de Barras - Frutas Favoritas"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Manzana", "Plátano", "Naranja", "Uva", "Fresa"]
+        valores: [15, 23, 18, 12, 20]
+        etiqueta_x: "Frutas"
+        etiqueta_y: "Número de votos"
+        titulo_serie: "Preferencias"
+        ancho_barra: "25pt"
+
+  - titulo: "Gráfico de Líneas - Temperatura Semanal"
+    contenido:
+      - tipo: "grafico_lineas"
+        datos_x: [1, 2, 3, 4, 5, 6, 7]
+        datos_y: [22, 24, 23, 25, 27, 26, 24]
+        etiqueta_x: "Día de la semana"
+        etiqueta_y: "Temperatura (°C)"
+        titulo_serie: "Temperatura"
+        posicion_leyenda: "north east"
+
+  - titulo: "Gráfico Circular - Distribución de Tiempo"
+    contenido:
+      - tipo: "nota"
+        texto: "Así distribuyo mi tiempo en un día 🕐"
+      - tipo: "grafico_circular"
+        etiquetas: ["Dormir", "Estudiar", "Jugar", "Comer", "Otros"]
+        valores: [33, 25, 20, 12, 10]
+
+  - titulo: "Comparación con Tabla"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Deporte", "Participantes"]
+        filas:
+          - ["Fútbol", "45"]
+          - ["Básquet", "32"]
+          - ["Vóley", "28"]
+          - ["Natación", "15"]
+      - tipo: "nota"
+        texto: "¡Los datos se ven mejor en gráficos! 📈"

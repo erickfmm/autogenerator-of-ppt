@@ -41,6 +41,15 @@ diapositivas:
       - "Rojos: 5, Azules: 3, Blancos: 7"
       - "Las frecuencias absolutas son: 5, 3 y 7"
 
+  - titulo: "Frecuencia Absoluta - Visualización"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Rojos", "Azules", "Blancos"]
+        valores: [5, 3, 7]
+        etiqueta_x: "Color de auto"
+        etiqueta_y: "Cantidad"
+        titulo_serie: "Frecuencia"
+
   - titulo: "Frecuencia Relativa"
     contenido:
       - "Es la proporción del total"
@@ -76,6 +85,15 @@ diapositivas:
       - tipo: "nota"
         texto: "Nota: todas las frec. relativas suman 1.00 (o 100%)"
 
+  - titulo: "Gráfico del Ejemplo - Notas"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Nota 15", "Nota 18", "Nota 20"]
+        valores: [3, 2, 1]
+        etiqueta_x: "Calificaciones"
+        etiqueta_y: "Frecuencia Absoluta"
+        titulo_serie: "Estudiantes"
+
   - titulo: "Gráfico de Barras 📊"
     contenido:
       - "Barras verticales u horizontales"
@@ -86,6 +104,16 @@ diapositivas:
       - tipo: "ejemplo"
         texto: "Deportes favoritos: Fútbol (10), Básquet (7), Vóley (5)"
       - "¡Las barras muestran claramente cuál es más popular! ⚽"
+
+  - titulo: "Ejemplo - Deportes Favoritos"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Fútbol", "Básquet", "Vóley"]
+        valores: [10, 7, 5]
+        etiqueta_x: "Deporte"
+        etiqueta_y: "Votos"
+        titulo_serie: "Preferencias"
+        ancho_barra: "30pt"
 
   - titulo: "Histograma 📈"
     contenido:
@@ -107,15 +135,31 @@ diapositivas:
       - tipo: "ejemplo"
         texto: "Presupuesto familiar: 50% comida, 30% vivienda, 20% otros"
 
+  - titulo: "Ejemplo - Presupuesto Familiar"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Comida", "Vivienda", "Otros"]
+        valores: [50, 30, 20]
+
   - titulo: "Gráfico de Líneas 📉"
     contenido:
       - "Puntos conectados con líneas"
       - "Perfecto para mostrar cambios en el tiempo"
       - tipo: "ejemplo"
-        texto: "Temperatura de la semana, ventas mensuales"
+        texto: "Temperatura de la semana durante 7 días"
       - tipo: "nota"
         texto: "¡Puedes ver tendencias: ¿sube? ¿baja? ¿se mantiene?"
       - "Las líneas te cuentan la historia del cambio 📖"
+
+  - titulo: "Ejemplo - Temperatura Semanal"
+    contenido:
+      - tipo: "grafico_lineas"
+        datos_x: [1, 2, 3, 4, 5, 6, 7]
+        datos_y: [22, 24, 21, 23, 25, 20, 22]
+        etiqueta_x: "Día"
+        etiqueta_y: "Temperatura (°C)"
+        titulo_serie: "Temperatura"
+        posicion_leyenda: "north east"
 
   - titulo: "¿Cuál gráfico usar?"
     contenido:
@@ -164,6 +208,18 @@ diapositivas:
       - tipo: "problema"
         texto: "Manzanas vendidas por día: 12, 15, 10, 18, 20"
       - "¿Cuántas manzanas se venden en promedio por día?"
+
+  - titulo: "Visualización - Ventas de Manzanas"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5"]
+        valores: [12, 15, 10, 18, 20]
+        etiqueta_x: "Día de la semana"
+        etiqueta_y: "Manzanas vendidas"
+        titulo_serie: "Ventas"
+
+  - titulo: "Solución - Promedio de Manzanas"
+    contenido:
       - tipo: "calculo"
         texto: "Suma: 12 + 15 + 10 + 18 + 20 = 75"
       - tipo: "calculo"
@@ -193,6 +249,15 @@ diapositivas:
           - ["25°C", "1"]
       - tipo: "nota"
         texto: "22°C es la más frecuente (aparece 2 veces)"
+
+  - titulo: "Gráfico - Distribución de Temperaturas"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["20°C", "21°C", "22°C", "23°C", "24°C", "25°C"]
+        valores: [1, 1, 2, 1, 1, 1]
+        etiqueta_x: "Temperatura"
+        etiqueta_y: "Frecuencia (días)"
+        titulo_serie: "Distribución"
 
   - titulo: "Solución - Promedio"
     contenido:

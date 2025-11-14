@@ -12,3 +12,7 @@ __pycache__/
 *.synctex.gz
 *.nav
 *.snm
+*.vrb
+*.fls
+
+slides/

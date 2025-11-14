@@ -22,6 +22,15 @@ diapositivas:
       - tipo: "nota"
         texto: "¡Toda probabilidad está en esta escala! 📏"
 
+  - titulo: "Visualización - Escala de Probabilidad"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Imposible", "Poco-probable", "Igual", "Muy-probable", "Seguro"]
+        valores: [0, 25, 50, 75, 100]
+        etiqueta_x: "Nivel de probabilidad"
+        etiqueta_y: "Porcentaje (%)"
+        titulo_serie: "Escala"
+
   - titulo: "Vocabulario Importante"
     contenido:
       - "🎯 Experimento: acción que hacemos"
@@ -51,6 +60,12 @@ diapositivas:
       - tipo: "nota"
         texto: "¡Hay 50% de probabilidad! ¡La mitad de las veces!"
 
+  - titulo: "Visualización - Pares vs Impares"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Pares (2,4,6)", "Impares (1,3,5)"]
+        valores: [50, 50]
+
   - titulo: "Ejemplo con Cartas 🃏"
     contenido:
       - tipo: "problema"
@@ -71,6 +86,12 @@ diapositivas:
         texto: "¡Si algo tiene 30% de pasar, tiene 70% de NO pasar!"
       - tipo: "ejemplo"
         texto: "Si P(lluvia) = 0.3, entonces P(no lluvia) = 1 - 0.3 = 0.7"
+
+  - titulo: "Visualización - Complemento"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Lluvia", "No lluvia"]
+        valores: [30, 70]
 
   - titulo: "Ejemplo del Complemento"
     contenido:
@@ -210,13 +231,19 @@ diapositivas:
       - tipo: "nota"
         texto: "¡Seguro sacarás roja o azul porque no hay otras! 100%"
 
+  - titulo: "Visualización - Distribución de Bolas"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Rojas", "Azules"]
+        valores: [63, 37]
+
   - titulo: "Solución Parte c"
     contenido:
-      - "Primera roja: P(R₁) = 5/8"
-      - "Segunda roja SIN reposición: P(R₂|R₁) = 4/7"
+      - "Primera roja: P(R1) = 5/8"
+      - "Segunda roja SIN reposición: P(R2|R1) = 4/7"
       - "(quedan 4 rojas de 7 bolas totales)"
       - tipo: "calculo"
-        texto: "c) \\, P(R₁ \\cap R₂) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}"
+        texto: "c) \\, P(R_1 \\cap R_2) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}"
       - tipo: "nota"
         texto: "¡Aproximadamente 35.7% de probabilidad! 📊"
 
@@ -253,13 +280,19 @@ diapositivas:
       - tipo: "nota"
         texto: "¡66% de estudiantes aprueban! Pero estudiar aumenta mucho tus chances 📚"
 
+  - titulo: "Visualización - Resultados del Examen"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Aprueban", "Reprueban"]
+        valores: [66, 34]
+
   - titulo: "Tips para Resolver Problemas"
     contenido:
-      - "1️⃣ Identifica el experimento y espacio muestral"
-      - "2️⃣ ¿Son eventos independientes o dependientes?"
-      - "3️⃣ ¿Hay reposición o no?"
-      - "4️⃣ ¿Es 'O' (suma) o 'Y' (multiplicación)?"
-      - "5️⃣ Verifica que tu respuesta esté entre 0 y 1"
+      - "1. Identifica el experimento y espacio muestral"
+      - "2. ¿Son eventos independientes o dependientes?"
+      - "3. ¿Hay reposición o no?"
+      - "4. ¿Es 'O' (suma) o 'Y' (multiplicación)?"
+      - "5. Verifica que tu respuesta esté entre 0 y 1"
       - tipo: "nota"
         texto: "¡La práctica hace al maestro! 🌟"
 
@@ -274,6 +307,12 @@ diapositivas:
       - tipo: "nota"
         texto: "¡Intenta resolverlo antes de ver la solución!"
 
+  - titulo: "Visualización - Distribución de Bolas"
+    contenido:
+      - tipo: "grafico_circular"
+        etiquetas: ["Verdes", "Amarillas", "Negras"]
+        valores: [44, 33, 22]
+
   - titulo: "Solución del Ejercicio Final"
     contenido:
       - "Total: 4 + 3 + 2 = 9 bolas"
@@ -284,15 +323,15 @@ diapositivas:
       - tipo: "calculo"
         texto: "c) \\, P(V \\cup Am) = \\frac{4}{9} + \\frac{3}{9} = \\frac{7}{9}"
       - tipo: "calculo"
-        texto: "d) \\, P(V₁ \\cap V₂) = \\frac{4}{9} \\times \\frac{3}{8} = \\frac{12}{72} = \\frac{1}{6}"
+        texto: "d) \\, P(V_1 \\cap V_2) = \\frac{4}{9} \\times \\frac{3}{8} = \\frac{12}{72} = \\frac{1}{6}"
 
   - titulo: "¡Resumen de la Clase!"
     contenido:
-      - "✅ Probabilidad básica: casos favorables / totales"
-      - "✅ Complemento: P(no A) = 1 - P(A)"
-      - "✅ Regla aditiva (O): sumar probabilidades"
-      - "✅ Regla multiplicativa (Y): multiplicar probabilidades"
-      - "✅ Independencia vs dependencia"
-      - "✅ Con/sin reposición"
+      - "- Probabilidad básica: casos favorables / totales"
+      - "- Complemento: P(no A) = 1 - P(A)"
+      - "- Regla aditiva (O): sumar probabilidades"
+      - "- Regla multiplicativa (Y): multiplicar probabilidades"
+      - "- Independencia vs dependencia"
+      - "- Con/sin reposición"
       - tipo: "nota"
         texto: "¡Ahora puedes calcular probabilidades como un experto! 🎲🎯"

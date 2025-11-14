@@ -1,430 +1,891 @@
 \documentclass[aspectratio=169]{beamer}
-\usetheme{Madrid}
-\usecolortheme{default}
+
+% Tema moderno y lúdico
+\usetheme{Boadilla}
+\usecolortheme{dolphin}
+
+% Paquetes esenciales
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgf-pie}
 \usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{newunicodechar}
+
+% Configurar emojis como texto simple
+\newunicodechar{🎲}{\textsf{[dado]}}
+\newunicodechar{🎯}{\textsf{[objetivo]}}
+\newunicodechar{📋}{\textsf{[lista]}}
+\newunicodechar{⭐}{\textsf{[estrella]}}
+\newunicodechar{🔮}{\textsf{[bola]}}
+\newunicodechar{📏}{\textsf{[regla]}}
+\newunicodechar{🃏}{\textsf{[carta]}}
+\newunicodechar{🔄}{\textsf{[ciclo]}}
+\newunicodechar{🔢}{\textsf{[numeros]}}
+\newunicodechar{➕}{\textsf{[+]}}
+\newunicodechar{✖}{\textsf{[x]}}
+\newunicodechar{🔗}{\textsf{[cadena]}}
+\newunicodechar{🪙}{\textsf{[moneda]}}
+\newunicodechar{🔑}{\textsf{[llave]}}
+\newunicodechar{🔍}{\textsf{[lupa]}}
+\newunicodechar{📊}{\textsf{[grafico]}}
+\newunicodechar{🎴}{\textsf{[cartas]}}
+\newunicodechar{💪}{\textsf{[fuerza]}}
+\newunicodechar{🌟}{\textsf{[estrella]}}
+\newunicodechar{💡}{\textsf{[idea]}}
+\newunicodechar{✨}{\textsf{[brillos]}}
+\newunicodechar{✅}{\textsf{[check]}}
+\newunicodechar{🎓}{\textsf{[gorro]}}
+\newunicodechar{🤔}{\textsf{[pensar]}}
+\newunicodechar{🚀}{\textsf{[cohete]}}
+\newunicodechar{♥}{\ensuremath{\heartsuit}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{✖}{\textsf{x}}
+\newunicodechar{✓}{\textsf{[ok]}}
+\newunicodechar{⚫}{\textsf{[punto]}}
+\newunicodechar{👥}{\textsf{[grupo]}}
+\newunicodechar{️}{}
+
+% Colores personalizados vibrantes y lúdicos
+\definecolor{colorPrimario}{RGB}{41, 128, 185}      % Azul vibrante
+\definecolor{colorSecundario}{RGB}{231, 76, 60}     % Rojo coral
+\definecolor{colorAccento}{RGB}{46, 204, 113}       % Verde esmeralda
+\definecolor{colorAdvertencia}{RGB}{241, 196, 15}   % Amarillo dorado
+\definecolor{colorMorado}{RGB}{155, 89, 182}        % Morado amigable
+\definecolor{colorNaranja}{RGB}{230, 126, 34}       % Naranja cálido
+\definecolor{colorFondo}{RGB}{236, 240, 241}        % Gris claro de fondo
 
 % Configuración del tema
+\setbeamercolor{structure}{fg=colorPrimario}
+\setbeamercolor{palette primary}{bg=colorPrimario,fg=white}
+\setbeamercolor{palette secondary}{bg=colorSecundario,fg=white}
+\setbeamercolor{palette tertiary}{bg=colorAccento,fg=white}
+\setbeamercolor{block title}{bg=colorPrimario!90,fg=white}
+\setbeamercolor{block body}{bg=colorPrimario!10,fg=black}
+\setbeamercolor{block title example}{bg=colorAccento!90,fg=white}
+\setbeamercolor{block body example}{bg=colorAccento!10,fg=black}
+\setbeamercolor{block title alerted}{bg=colorSecundario!90,fg=white}
+\setbeamercolor{block body alerted}{bg=colorSecundario!10,fg=black}
+
+% Plantillas personalizadas
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
 
-% Comandos personalizados
-\newcommand{\alert}[1]{\textcolor{red}{#1}}
-\newcommand{\highlight}[1]{\textcolor{blue}{#1}}
+% Comandos personalizados para énfasis
+\renewcommand{\alert}[1]{\textcolor{colorSecundario}{\textbf{#1}}}
+\newcommand{\highlight}[1]{\textcolor{colorPrimario}{\textbf{#1}}}
+\newcommand{\importante}[1]{\textcolor{colorAdvertencia}{\textbf{#1}}}
+\newcommand{\exito}[1]{\textcolor{colorAccento}{\textbf{#1}}}
 
 % Variables del documento (serán reemplazadas por Jinja2)
 \title{Representación de datos a través de tablas y gráficos}
 \subtitle{¡Organicemos los datos de forma divertida! 📊}
 \author{Probabilidad y Estadística}
+\institute{Aprendiendo con diversión 🎓}
 \date{\today}
 
 \begin{document}
 
-% Página de título
-\begin{frame}
+% Página de título con diseño atractivo
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  % Fondo decorativo
+  \fill[colorPrimario!20] (current page.south west) rectangle (current page.north east);
+  \fill[colorAccento!30] (current page.south west) -- (current page.south east) -- 
+        ([yshift=-3cm]current page.north east) -- ([yshift=-3cm]current page.north west) -- cycle;
+\end{tikzpicture}
 \titlepage
 \end{frame}
 
 % Diapositivas generadas dinámicamente
-\begin{frame}{¿Por qué organizar datos?}
-\begin{alertblock}{Nota}
+\begin{frame}[fragile]{¿Por qué organizar datos?}
+\begin{alertblock}{💡 Nota importante}
 ¡Imagina tu cuarto desordenado vs ordenado! 🏠
 \end{alertblock}
+
 \begin{itemize}
-\item Datos desordenados = confusión 😵
+  \item Datos desordenados = confusión 😵
 \end{itemize}
+
 \begin{itemize}
-\item Datos organizados = claridad y respuestas ✨
+  \item Datos organizados = claridad y respuestas ✨
 \end{itemize}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 ¿Qué helado prefieren tus amigos? Con una tabla lo sabrás al instante
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{¿Qué son los datos?}
+\begin{frame}[fragile]{¿Qué son los datos?}
 \begin{itemize}
-\item Son información que recolectamos
+  \item Son información que recolectamos
 \end{itemize}
+
 \begin{itemize}
-\item Pueden ser números: edades, pesos, calificaciones
+  \item Pueden ser números: edades, pesos, calificaciones
 \end{itemize}
+
 \begin{itemize}
-\item O categorías: colores, sabores, deportes
+  \item O categorías: colores, sabores, deportes
 \end{itemize}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Datos de tu clase: alturas de todos los estudiantes
-\end{block}
-\begin{alertblock}{Nota}
+\end{exampleblock}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Los datos cuentan historias, solo hay que saber leerlos! 📖
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Tablas de Frecuencia - ¿Qué son?}
+\begin{frame}[fragile]{Tablas de Frecuencia - ¿Qué son?}
 \begin{itemize}
-\item Es como hacer un conteo organizado 📝
+  \item Es como hacer un conteo organizado 📝
 \end{itemize}
+
 \begin{itemize}
-\item Agrupamos datos iguales y contamos
+  \item Agrupamos datos iguales y contamos
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como ordenar tu colección de cartas por tipo!
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Si tienes muchas manzanas rojas y pocas verdes, la tabla lo muestra claramente
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{Frecuencia Absoluta}
+\begin{frame}[fragile]{Frecuencia Absoluta}
 \begin{itemize}
-\item Es simplemente: ¿cuántas veces aparece?
+  \item Es simplemente: ¿cuántas veces aparece?
 \end{itemize}
+
 \begin{itemize}
-\item Es el conteo directo, el número total
+  \item Es el conteo directo, el número total
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como contar con los dedos! ✋
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Colores de autos en el estacionamiento:
-\end{block}
+\end{exampleblock}
+
 \begin{itemize}
-\item Rojos: 5, Azules: 3, Blancos: 7
+  \item Rojos: 5, Azules: 3, Blancos: 7
 \end{itemize}
+
 \begin{itemize}
-\item Las frecuencias absolutas son: 5, 3 y 7
+  \item Las frecuencias absolutas son: 5, 3 y 7
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Frecuencia Relativa}
-\begin{itemize}
-\item Es la proporción del total
-\end{itemize}
-\begin{itemize}
-\item Responde: ¿qué parte del todo representa?
-\end{itemize}
+\begin{frame}[fragile]{Frecuencia Absoluta - Visualización}
 \begin{center}
-\Large
-$\text{Frec. Relativa} = \frac{\text{Frec. Absoluta}}{\text{Total}}$
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    width=0.8\textwidth,
+    height=0.45\textheight,
+    bar width=15pt,
+    ylabel={Cantidad},
+    xlabel={Color de auto},
+    symbolic x coords={Rojos,Azules,Blancos},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east},
+    ymin=0,
+    enlarge x limits=0.15,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    grid=major,
+    ymajorgrids=true,
+    grid style={dashed,gray!30}
+  ]
+  \addplot[fill=colorPrimario!70] coordinates {
+    (Rojos,5)
+    (Azules,3)
+    (Blancos,7)
+  };
+  \legend{Frecuencia}
+  \end{axis}
+\end{tikzpicture}
 \end{center}
-\begin{alertblock}{Nota}
+\end{frame}
+
+\begin{frame}[fragile]{Frecuencia Relativa}
+\begin{itemize}
+  \item Es la proporción del total
+\end{itemize}
+
+\begin{itemize}
+  \item Responde: ¿qué parte del todo representa?
+\end{itemize}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.8\textwidth}{%
+    \begin{center}
+    \Large\color{colorPrimario}
+    $\text{Frec. Relativa} = \frac{\text{Frec. Absoluta}}{\text{Total}}$
+    \end{center}
+  }%
+}
+\end{center}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como saber qué porción de pizza te toca! 🍕
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Si hay 10 autos y 5 son rojos: 5/10 = 0.5 = 50%
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{Ejemplo Paso a Paso}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Ejemplo Paso a Paso}
+\begin{exampleblock}{🎯 Problema}
 Notas de 6 estudiantes: 15, 18, 15, 20, 18, 15
 \end{exampleblock}
+
 \begin{itemize}
-\item Paso 1: Identificar valores diferentes: 15, 18, 20
+  \item Paso 1: Identificar valores diferentes: 15, 18, 20
 \end{itemize}
+
 \begin{itemize}
-\item Paso 2: Contar cada uno (Frec. Absoluta)
+  \item Paso 2: Contar cada uno (Frec. Absoluta)
 \end{itemize}
+
 \begin{itemize}
-\item Paso 3: Calcular proporción (Frec. Relativa)
+  \item Paso 3: Calcular proporción (Frec. Relativa)
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Vamos a construir la tabla juntos!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Tabla Completa del Ejemplo}
+\begin{frame}[fragile]{Tabla Completa del Ejemplo}
 \begin{center}
-\begin{tabular}{|c|c|c|)}
+\begin{tabular}{ccc}
 \toprule
-Nota & Frec. Abs. & Frec. Rel. \\
+\rowcolor{colorPrimario!20}
+\textbf{Nota} & \textbf{Frec. Abs.} & \textbf{Frec. Rel.} \\
 \midrule
+\rowcolor{colorFondo}
 15 & 3 & 3/6 = 0.50 \\
 18 & 2 & 2/6 = 0.33 \\
+\rowcolor{colorFondo}
 20 & 1 & 1/6 = 0.17 \\
 \bottomrule
 \end{tabular}
 \end{center}
+
 \begin{itemize}
-\item Total de estudiantes: 6
+  \item Total de estudiantes: 6
 \end{itemize}
-\begin{align*}
-¡La nota 15 es la más frecuente! Aparece en la mitad de casos
-\end{align*}
-\begin{alertblock}{Nota}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    ¡La nota 15 es la más frecuente! Aparece en la mitad de casos
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{alertblock}{💡 Nota importante}
 Nota: todas las frec. relativas suman 1.00 (o 100%)
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Gráfico de Barras 📊}
+\begin{frame}[fragile]{Gráfico del Ejemplo - Notas}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    width=0.8\textwidth,
+    height=0.45\textheight,
+    bar width=15pt,
+    ylabel={Frecuencia Absoluta},
+    xlabel={Calificaciones},
+    symbolic x coords={Nota 15,Nota 18,Nota 20},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east},
+    ymin=0,
+    enlarge x limits=0.15,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    grid=major,
+    ymajorgrids=true,
+    grid style={dashed,gray!30}
+  ]
+  \addplot[fill=colorPrimario!70] coordinates {
+    (Nota 15,3)
+    (Nota 18,2)
+    (Nota 20,1)
+  };
+  \legend{Estudiantes}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico de Barras 📊}
 \begin{itemize}
-\item Barras verticales u horizontales
+  \item Barras verticales u horizontales
 \end{itemize}
+
 \begin{itemize}
-\item Cada barra = una categoría
+  \item Cada barra = una categoría
 \end{itemize}
+
 \begin{itemize}
-\item Altura de barra = frecuencia
+  \item Altura de barra = frecuencia
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Perfecto para comparar categorías de un vistazo!
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Deportes favoritos: Fútbol (10), Básquet (7), Vóley (5)
-\end{block}
+\end{exampleblock}
+
 \begin{itemize}
-\item ¡Las barras muestran claramente cuál es más popular! ⚽
+  \item ¡Las barras muestran claramente cuál es más popular! ⚽
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Histograma 📈}
+\begin{frame}[fragile]{Ejemplo - Deportes Favoritos}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    width=0.8\textwidth,
+    height=0.45\textheight,
+    bar width=30pt,
+    ylabel={Votos},
+    xlabel={Deporte},
+    symbolic x coords={Fútbol,Básquet,Vóley},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east},
+    ymin=0,
+    enlarge x limits=0.15,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    grid=major,
+    ymajorgrids=true,
+    grid style={dashed,gray!30}
+  ]
+  \addplot[fill=colorPrimario!70] coordinates {
+    (Fútbol,10)
+    (Básquet,7)
+    (Vóley,5)
+  };
+  \legend{Preferencias}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Histograma 📈}
 \begin{itemize}
-\item Similar a barras, pero para datos numéricos continuos
+  \item Similar a barras, pero para datos numéricos continuos
 \end{itemize}
+
 \begin{itemize}
-\item Agrupa datos en rangos o intervalos
+  \item Agrupa datos en rangos o intervalos
 \end{itemize}
+
 \begin{itemize}
-\item Las barras están pegadas (sin espacios)
+  \item Las barras están pegadas (sin espacios)
 \end{itemize}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Edades: 10-15, 15-20, 20-25 años
-\end{block}
-\begin{alertblock}{Nota}
+\end{exampleblock}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Muestra cómo se distribuyen los datos!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Gráfico Circular (Pastel) 🥧}
+\begin{frame}[fragile]{Gráfico Circular (Pastel) 🥧}
 \begin{itemize}
-\item Un círculo dividido en porciones
+  \item Un círculo dividido en porciones
 \end{itemize}
+
 \begin{itemize}
-\item Cada porción = una categoría
+  \item Cada porción = una categoría
 \end{itemize}
+
 \begin{itemize}
-\item Tamaño de porción = frecuencia relativa
+  \item Tamaño de porción = frecuencia relativa
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Ideal para ver proporciones del 100%!
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Presupuesto familiar: 50% comida, 30% vivienda, 20% otros
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{Gráfico de Líneas 📉}
+\begin{frame}[fragile]{Ejemplo - Presupuesto Familiar}
+\begin{center}
+\begin{tikzpicture}
+  \pie[
+    radius=3,
+    text=legend,
+    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
+  ]{
+    50/Comida,    30/Vivienda,    20/Otros  }
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Gráfico de Líneas 📉}
 \begin{itemize}
-\item Puntos conectados con líneas
+  \item Puntos conectados con líneas
 \end{itemize}
+
 \begin{itemize}
-\item Perfecto para mostrar cambios en el tiempo
+  \item Perfecto para mostrar cambios en el tiempo
 \end{itemize}
-\begin{block}{Ejemplo}
-Temperatura de la semana, ventas mensuales
-\end{block}
-\begin{alertblock}{Nota}
+
+\begin{exampleblock}{✨ Ejemplo}
+Temperatura de la semana durante 7 días
+\end{exampleblock}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Puedes ver tendencias: ¿sube? ¿baja? ¿se mantiene?
 \end{alertblock}
+
 \begin{itemize}
-\item Las líneas te cuentan la historia del cambio 📖
+  \item Las líneas te cuentan la historia del cambio 📖
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{¿Cuál gráfico usar?}
+\begin{frame}[fragile]{Ejemplo - Temperatura Semanal}
 \begin{center}
-\begin{tabular}{|c|c|)}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.85\textwidth,
+    height=0.6\textheight,
+    ylabel={Temperatura (°C)},
+    xlabel={Día},
+    grid=both,
+    major grid style={line width=.2pt,draw=gray!50},
+    minor grid style={line width=.1pt,draw=gray!20},
+    legend pos=north east,
+    mark size=3pt,
+    line width=2pt
+  ]
+  \addplot[color=colorPrimario, mark=*] coordinates {
+    (1,22)
+    (2,24)
+    (3,21)
+    (4,23)
+    (5,25)
+    (6,20)
+    (7,22)
+  };
+  \legend{Temperatura}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{¿Cuál gráfico usar?}
+\begin{center}
+\begin{tabular}{cc}
 \toprule
-Tipo de datos & Gráfico ideal \\
+\rowcolor{colorPrimario!20}
+\textbf{Tipo de datos} & \textbf{Gráfico ideal} \\
 \midrule
+\rowcolor{colorFondo}
 Categorías & Barras o Circular \\
 Números continuos & Histograma \\
+\rowcolor{colorFondo}
 Cambios en tiempo & Líneas \\
 \bottomrule
 \end{tabular}
 \end{center}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Elige según lo que quieras mostrar! 🎯
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{El Promedio - ¿Qué es?}
+\begin{frame}[fragile]{El Promedio - ¿Qué es?}
 \begin{itemize}
-\item También llamado 'media aritmética'
+  \item También llamado 'media aritmética'
 \end{itemize}
+
 \begin{itemize}
-\item Es el valor central, el punto de balance ⚖️
+  \item Es el valor central, el punto de balance ⚖️
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Imagina repartir todo en partes iguales!
 \end{alertblock}
-\begin{block}{Ejemplo}
+
+\begin{exampleblock}{✨ Ejemplo}
 Si 3 amigos tienen 3, 6 y 9 caramelos, el promedio es repartir equitativamente
-\end{block}
+\end{exampleblock}
+
 \end{frame}
 
-\begin{frame}{¿Cómo calcular el Promedio?}
+\begin{frame}[fragile]{¿Cómo calcular el Promedio?}
 \begin{itemize}
-\item Paso 1: Suma todos los valores
+  \item Paso 1: Suma todos los valores
 \end{itemize}
+
 \begin{itemize}
-\item Paso 2: Divide entre cuántos valores hay
+  \item Paso 2: Divide entre cuántos valores hay
 \end{itemize}
+
 \begin{center}
-\Large
-$\bar{x} = \frac{\text{suma de todos}}{\text{cantidad de datos}}$
+\colorbox{colorFondo}{%
+  \parbox{0.8\textwidth}{%
+    \begin{center}
+    \Large\color{colorPrimario}
+    $\bar{x} = \frac{\text{suma de todos}}{\text{cantidad de datos}}$
+    \end{center}
+  }%
+}
 \end{center}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es como compartir todo y ver cuánto le toca a cada uno! 🍰
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Ejemplo del Promedio}
-\begin{block}{Ejemplo}
+\begin{frame}[fragile]{Ejemplo del Promedio}
+\begin{exampleblock}{✨ Ejemplo}
 Datos: 5, 8, 10, 12, 15
-\end{block}
+\end{exampleblock}
+
 \begin{itemize}
-\item Paso 1: Sumar todos
+  \item Paso 1: Sumar todos
 \end{itemize}
-\begin{align*}
-5 + 8 + 10 + 12 + 15 = 50
-\end{align*}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    5 + 8 + 10 + 12 + 15 = 50
+    \end{align*}
+  }%
+}
+\end{center}
+
 \begin{itemize}
-\item Paso 2: Dividir entre cantidad (5 datos)
+  \item Paso 2: Dividir entre cantidad (5 datos)
 \end{itemize}
-\begin{align*}
-\bar{x} = \frac{50}{5} = 10
-\end{align*}
-\begin{alertblock}{Nota}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    \bar{x} = \frac{50}{5} = 10
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{alertblock}{💡 Nota importante}
 ¡El promedio es 10! Es el valor 'típico' del grupo
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Practicando con Frutas 🍎}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Practicando con Frutas 🍎}
+\begin{exampleblock}{🎯 Problema}
 Manzanas vendidas por día: 12, 15, 10, 18, 20
 \end{exampleblock}
+
 \begin{itemize}
-\item ¿Cuántas manzanas se venden en promedio por día?
+  \item ¿Cuántas manzanas se venden en promedio por día?
 \end{itemize}
-\begin{align*}
-Suma: 12 + 15 + 10 + 18 + 20 = 75
-\end{align*}
-\begin{align*}
-Promedio: 75 ÷ 5 = 15 manzanas/día
-\end{align*}
-\begin{itemize}
-\item ¡En promedio se venden 15 manzanas diarias! 🎯
-\end{itemize}
+
 \end{frame}
 
-\begin{frame}{Ejercicio Divertido 🌡️}
-\begin{exampleblock}{Problema}
+\begin{frame}[fragile]{Visualización - Ventas de Manzanas}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    width=0.8\textwidth,
+    height=0.45\textheight,
+    bar width=15pt,
+    ylabel={Manzanas vendidas},
+    xlabel={Día de la semana},
+    symbolic x coords={Día 1,Día 2,Día 3,Día 4,Día 5},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east},
+    ymin=0,
+    enlarge x limits=0.15,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    grid=major,
+    ymajorgrids=true,
+    grid style={dashed,gray!30}
+  ]
+  \addplot[fill=colorPrimario!70] coordinates {
+    (Día 1,12)
+    (Día 2,15)
+    (Día 3,10)
+    (Día 4,18)
+    (Día 5,20)
+  };
+  \legend{Ventas}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Solución - Promedio de Manzanas}
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Suma: 12 + 15 + 10 + 18 + 20 = 75
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Promedio: 75 ÷ 5 = 15 manzanas/día
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{itemize}
+  \item ¡En promedio se venden 15 manzanas diarias! 🎯
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Ejercicio Divertido 🌡️}
+\begin{exampleblock}{🎯 Problema}
 Temperaturas de la semana (°C): 22, 24, 21, 23, 25, 20, 22
 \end{exampleblock}
+
 \begin{itemize}
-\item Tarea 1: Construir tabla de frecuencias
+  \item Tarea 1: Construir tabla de frecuencias
 \end{itemize}
+
 \begin{itemize}
-\item Tarea 2: Calcular temperatura promedio
+  \item Tarea 2: Calcular temperatura promedio
 \end{itemize}
+
 \begin{itemize}
-\item Tarea 3: ¿Qué gráfico usarías?
+  \item Tarea 3: ¿Qué gráfico usarías?
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Piensa qué historia quieres contar con los datos!
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Solución - Tabla}
+\begin{frame}[fragile]{Solución - Tabla}
 \begin{center}
-\begin{tabular}{|c|c|)}
+\begin{tabular}{cc}
 \toprule
-Temperatura & Días (Frec. Abs.) \\
+\rowcolor{colorPrimario!20}
+\textbf{Temperatura} & \textbf{Días (Frec. Abs.)} \\
 \midrule
+\rowcolor{colorFondo}
 20°C & 1 \\
 21°C & 1 \\
+\rowcolor{colorFondo}
 22°C & 2 \\
 23°C & 1 \\
+\rowcolor{colorFondo}
 24°C & 1 \\
 25°C & 1 \\
 \bottomrule
 \end{tabular}
 \end{center}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 22°C es la más frecuente (aparece 2 veces)
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Solución - Promedio}
-\begin{align*}
-Suma: 22+24+21+23+25+20+22 = 157
-\end{align*}
-\begin{align*}
-Promedio: 157 ÷ 7 = 22.43°C
-\end{align*}
+\begin{frame}[fragile]{Gráfico - Distribución de Temperaturas}
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    ybar,
+    width=0.8\textwidth,
+    height=0.45\textheight,
+    bar width=15pt,
+    ylabel={Frecuencia (días)},
+    xlabel={Temperatura},
+    symbolic x coords={20°C,21°C,22°C,23°C,24°C,25°C},
+    xtick=data,
+    x tick label style={rotate=45, anchor=east},
+    ymin=0,
+    enlarge x limits=0.15,
+    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
+    nodes near coords,
+    every node near coord/.append style={font=\footnotesize},
+    grid=major,
+    ymajorgrids=true,
+    grid style={dashed,gray!30}
+  ]
+  \addplot[fill=colorPrimario!70] coordinates {
+    (20°C,1)
+    (21°C,1)
+    (22°C,2)
+    (23°C,1)
+    (24°C,1)
+    (25°C,1)
+  };
+  \legend{Distribución}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Solución - Promedio}
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Suma: 22+24+21+23+25+20+22 = 157
+    \end{align*}
+  }%
+}
+\end{center}
+
+\begin{center}
+\colorbox{colorFondo}{%
+  \parbox{0.9\textwidth}{%
+    \begin{align*}
+    Promedio: 157 ÷ 7 = 22.43°C
+    \end{align*}
+  }%
+}
+\end{center}
+
 \begin{itemize}
-\item Interpretación:
+  \item Interpretación:
 \end{itemize}
+
 \begin{itemize}
-\item La temperatura típica de la semana fue 22.4°C
+  \item La temperatura típica de la semana fue 22.4°C
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Es una semana cálida y estable! ☀️
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{Solución - Gráfico}
+\begin{frame}[fragile]{Solución - Gráfico}
 \begin{itemize}
-\item Mejor opción: Gráfico de líneas 📈
+  \item Mejor opción: Gráfico de líneas 📈
 \end{itemize}
+
 \begin{itemize}
-\item ¿Por qué?
+  \item ¿Por qué?
 \end{itemize}
+
 \begin{itemize}
-\item ✓ Muestra cambios día a día
+  \item ✓ Muestra cambios día a día
 \end{itemize}
+
 \begin{itemize}
-\item ✓ Podemos ver si subió o bajó
+  \item ✓ Podemos ver si subió o bajó
 \end{itemize}
+
 \begin{itemize}
-\item ✓ Identifica tendencias
+  \item ✓ Identifica tendencias
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 También podríamos usar barras para comparar cada día
 \end{alertblock}
+
 \end{frame}
 
-\begin{frame}{¡Resumen de la clase!}
+\begin{frame}[fragile]{¡Resumen de la clase!}
 \begin{itemize}
-\item ✅ Tablas: organizan datos claramente
+  \item ✅ Tablas: organizan datos claramente
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Frecuencia absoluta: conteo directo
+  \item ✅ Frecuencia absoluta: conteo directo
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Frecuencia relativa: proporción del total
+  \item ✅ Frecuencia relativa: proporción del total
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Gráficos: visualizan datos
+  \item ✅ Gráficos: visualizan datos
 \end{itemize}
+
 \begin{itemize}
-\item ✅ Promedio: valor típico del grupo
+  \item ✅ Promedio: valor típico del grupo
 \end{itemize}
-\begin{alertblock}{Nota}
+
+\begin{alertblock}{💡 Nota importante}
 ¡Ahora puedes organizar y entender cualquier conjunto de datos! 🎉
 \end{alertblock}
+
 \end{frame}
 
 
-% Diapositiva final
-\begin{frame}
-\begin{center}
-\Huge ¿Preguntas?
-\end{center}
+% Diapositiva final atractiva
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[colorAccento!20] (current page.south west) rectangle (current page.north east);
+  \node[font=\Huge\bfseries,text=colorPrimario] at (current page.center) {¿Preguntas? 🤔};
+  \node[font=\large,text=colorSecundario,below=1.5cm] at (current page.center) {¡Sigue aprendiendo! 🚀};
+\end{tikzpicture}
 \end{frame}
 
 \end{document}

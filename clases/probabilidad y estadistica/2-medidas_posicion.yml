@@ -24,6 +24,15 @@ diapositivas:
       - tipo: "calculo"
         texto: "Mediana = 1.70 m (el del medio)"
 
+  - titulo: "Visualización - Mediana"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["1.50m", "1.60m", "1.70m", "1.80m", "1.90m"]
+        valores: [1, 1, 1, 1, 1]
+        etiqueta_x: "Altura"
+        etiqueta_y: "Frecuencia"
+        titulo_serie: "Datos ordenados"
+
   - titulo: "Encontrar la Mediana"
     contenido:
       - "Paso 1: Ordena los datos de menor a mayor"
@@ -79,6 +88,16 @@ diapositivas:
       - "Mitad superior: 12, 14, 16, 18"
       - tipo: "calculo"
         texto: "Q3 = (14+16)÷2 = 15"
+
+  - titulo: "Visualización - Distribución de Datos"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["2", "4", "6", "8", "10", "12", "14", "16", "18"]
+        valores: [1, 1, 1, 1, 1, 1, 1, 1, 1]
+        etiqueta_x: "Valores"
+        etiqueta_y: "Frecuencia"
+        titulo_serie: "Distribución"
+        ancho_barra: "15pt"
 
   - titulo: "Interpretando los Cuartiles"
     contenido:
