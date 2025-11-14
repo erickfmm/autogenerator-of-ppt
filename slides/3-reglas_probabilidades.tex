@@ -161,38 +161,26 @@
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Escala de Probabilidad}
-\begin{center}
-\begin{tikzpicture}
-  \begin{axis}[
-    ybar,
-    width=0.8\textwidth,
-    height=0.45\textheight,
-    bar width=15pt,
-    ylabel={Porcentaje (%)},
-    xlabel={Nivel de probabilidad},
-    symbolic x coords={Imposible,Poco-probable,Igual,Muy-probable,Seguro},
-    xtick=data,
-    x tick label style={rotate=45, anchor=east},
-    ymin=0,
-    enlarge x limits=0.15,
-    legend style={at={(0.5,-0.25)}, anchor=north, legend columns=-1},
-    nodes near coords,
-    every node near coord/.append style={font=\footnotesize},
-    grid=major,
-    ymajorgrids=true,
-    grid style={dashed,gray!30}
-  ]
-  \addplot[fill=colorPrimario!70] coordinates {
-    (Imposible,0)
-    (Poco-probable,25)
-    (Igual,50)
-    (Muy-probable,75)
-    (Seguro,100)
-  };
-  \legend{Escala}
-  \end{axis}
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item Imposible: 0% (nunca pasa)
+\end{itemize}
+
+\begin{itemize}
+  \item Poco probable: 25% (rara vez pasa)
+\end{itemize}
+
+\begin{itemize}
+  \item Igual de probable: 50% (mitad de las veces)
+\end{itemize}
+
+\begin{itemize}
+  \item Muy probable: 75% (casi siempre)
+\end{itemize}
+
+\begin{itemize}
+  \item Seguro: 100% (siempre pasa)
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]{Vocabulario Importante}
@@ -274,16 +262,22 @@ Lanzamos un dado. ¿Probabilidad de sacar un número par?
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Pares vs Impares}
-\begin{center}
-\begin{tikzpicture}
-  \pie[
-    radius=3,
-    text=legend,
-    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
-  ]{
-    50/Pares (2,4,6),    50/Impares (1,3,5)  }
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item En un dado hay igual cantidad de números pares e impares:
+\end{itemize}
+
+\begin{itemize}
+  \item • Pares: 2, 4, 6 (3 números = 50%)
+\end{itemize}
+
+\begin{itemize}
+  \item • Impares: 1, 3, 5 (3 números = 50%)
+\end{itemize}
+
+\begin{alertblock}{💡 Nota importante}
+¡Por eso la probabilidad es 50% para cada uno!
+\end{alertblock}
+
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo con Cartas 🃏}
@@ -346,16 +340,26 @@ Si P(lluvia) = 0.3, entonces P(no lluvia) = 1 - 0.3 = 0.7
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Complemento}
-\begin{center}
-\begin{tikzpicture}
-  \pie[
-    radius=3,
-    text=legend,
-    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
-  ]{
-    30/Lluvia,    70/No lluvia  }
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item Si hay 30% de probabilidad de lluvia:
+\end{itemize}
+
+\begin{itemize}
+  \item • Lluvia: 30%
+\end{itemize}
+
+\begin{itemize}
+  \item • No lluvia: 70%
+\end{itemize}
+
+\begin{itemize}
+  \item Total: 30% + 70% = 100%
+\end{itemize}
+
+\begin{alertblock}{💡 Nota importante}
+¡El complemento siempre suma 100%!
+\end{alertblock}
+
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo del Complemento}
@@ -741,16 +745,22 @@ Urna: 5 bolas rojas, 3 azules. Un sorteo:
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Distribución de Bolas}
-\begin{center}
-\begin{tikzpicture}
-  \pie[
-    radius=3,
-    text=legend,
-    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
-  ]{
-    63/Rojas,    37/Azules  }
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item Distribución en la urna:
+\end{itemize}
+
+\begin{itemize}
+  \item • 5 bolas rojas de 8 total = 5/8 = 62.5%
+\end{itemize}
+
+\begin{itemize}
+  \item • 3 bolas azules de 8 total = 3/8 = 37.5%
+\end{itemize}
+
+\begin{itemize}
+  \item Total: 62.5% + 37.5% = 100%
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]{Solución Parte c}
@@ -880,16 +890,22 @@ En una clase: 60% estudia, 40% no estudia
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Resultados del Examen}
-\begin{center}
-\begin{tikzpicture}
-  \pie[
-    radius=3,
-    text=legend,
-    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
-  ]{
-    66/Aprueban,    34/Reprueban  }
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item Resultados finales:
+\end{itemize}
+
+\begin{itemize}
+  \item • Aprueban: 66% de estudiantes
+\end{itemize}
+
+\begin{itemize}
+  \item • Reprueban: 34% de estudiantes
+\end{itemize}
+
+\begin{alertblock}{💡 Nota importante}
+¡Estudiar aumenta muchísimo tus probabilidades de aprobar!
+\end{alertblock}
+
 \end{frame}
 
 \begin{frame}[fragile]{Tips para Resolver Problemas}
@@ -947,16 +963,26 @@ En una bolsa: 4 bolas verdes, 3 amarillas, 2 negras
 \end{frame}
 
 \begin{frame}[fragile]{Visualización - Distribución de Bolas}
-\begin{center}
-\begin{tikzpicture}
-  \pie[
-    radius=3,
-    text=legend,
-    color={colorPrimario!70, colorAccento!70, colorSecundario!70, colorAdvertencia!70, colorMorado!70, colorNaranja!70}
-  ]{
-    44/Verdes,    33/Amarillas,    22/Negras  }
-\end{tikzpicture}
-\end{center}
+\begin{itemize}
+  \item En la bolsa tenemos:
+\end{itemize}
+
+\begin{itemize}
+  \item • 4 verdes de 9 total = 4/9 = 44.4%
+\end{itemize}
+
+\begin{itemize}
+  \item • 3 amarillas de 9 total = 3/9 = 33.3%
+\end{itemize}
+
+\begin{itemize}
+  \item • 2 negras de 9 total = 2/9 = 22.2%
+\end{itemize}
+
+\begin{itemize}
+  \item Total: 44.4% + 33.3% + 22.2% = 100%
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]{Solución del Ejercicio Final}

@@ -24,12 +24,11 @@ diapositivas:
 
   - titulo: "Visualización - Escala de Probabilidad"
     contenido:
-      - tipo: "grafico_barras"
-        categorias: ["Imposible", "Poco-probable", "Igual", "Muy-probable", "Seguro"]
-        valores: [0, 25, 50, 75, 100]
-        etiqueta_x: "Nivel de probabilidad"
-        etiqueta_y: "Porcentaje (%)"
-        titulo_serie: "Escala"
+      - "Imposible: 0% (nunca pasa)"
+      - "Poco probable: 25% (rara vez pasa)"
+      - "Igual de probable: 50% (mitad de las veces)"
+      - "Muy probable: 75% (casi siempre)"
+      - "Seguro: 100% (siempre pasa)"
 
   - titulo: "Vocabulario Importante"
     contenido:
@@ -62,9 +61,11 @@ diapositivas:
 
   - titulo: "Visualización - Pares vs Impares"
     contenido:
-      - tipo: "grafico_circular"
-        etiquetas: ["Pares (2,4,6)", "Impares (1,3,5)"]
-        valores: [50, 50]
+      - "En un dado hay igual cantidad de números pares e impares:"
+      - "• Pares: 2, 4, 6 (3 números = 50%)"
+      - "• Impares: 1, 3, 5 (3 números = 50%)"
+      - tipo: "nota"
+        texto: "¡Por eso la probabilidad es 50% para cada uno!"
 
   - titulo: "Ejemplo con Cartas 🃏"
     contenido:
@@ -89,9 +90,12 @@ diapositivas:
 
   - titulo: "Visualización - Complemento"
     contenido:
-      - tipo: "grafico_circular"
-        etiquetas: ["Lluvia", "No lluvia"]
-        valores: [30, 70]
+      - "Si hay 30% de probabilidad de lluvia:"
+      - "• Lluvia: 30%"
+      - "• No lluvia: 70%"
+      - "Total: 30% + 70% = 100%"
+      - tipo: "nota"
+        texto: "¡El complemento siempre suma 100%!"
 
   - titulo: "Ejemplo del Complemento"
     contenido:
@@ -233,9 +237,10 @@ diapositivas:
 
   - titulo: "Visualización - Distribución de Bolas"
     contenido:
-      - tipo: "grafico_circular"
-        etiquetas: ["Rojas", "Azules"]
-        valores: [63, 37]
+      - "Distribución en la urna:"
+      - "• 5 bolas rojas de 8 total = 5/8 = 62.5%"
+      - "• 3 bolas azules de 8 total = 3/8 = 37.5%"
+      - "Total: 62.5% + 37.5% = 100%"
 
   - titulo: "Solución Parte c"
     contenido:
@@ -282,9 +287,11 @@ diapositivas:
 
   - titulo: "Visualización - Resultados del Examen"
     contenido:
-      - tipo: "grafico_circular"
-        etiquetas: ["Aprueban", "Reprueban"]
-        valores: [66, 34]
+      - "Resultados finales:"
+      - "• Aprueban: 66% de estudiantes"
+      - "• Reprueban: 34% de estudiantes"
+      - tipo: "nota"
+        texto: "¡Estudiar aumenta muchísimo tus probabilidades de aprobar!"
 
   - titulo: "Tips para Resolver Problemas"
     contenido:
@@ -309,9 +316,11 @@ diapositivas:
 
   - titulo: "Visualización - Distribución de Bolas"
     contenido:
-      - tipo: "grafico_circular"
-        etiquetas: ["Verdes", "Amarillas", "Negras"]
-        valores: [44, 33, 22]
+      - "En la bolsa tenemos:"
+      - "• 4 verdes de 9 total = 4/9 = 44.4%"
+      - "• 3 amarillas de 9 total = 3/9 = 33.3%"
+      - "• 2 negras de 9 total = 2/9 = 22.2%"
+      - "Total: 44.4% + 33.3% + 22.2% = 100%"
 
   - titulo: "Solución del Ejercicio Final"
     contenido:
