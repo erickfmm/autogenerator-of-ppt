@@ -9,15 +9,15 @@ diapositivas:
       - "Nos dicen en qué lugar está un dato comparado con los demás."
       - "Responden preguntas como:"
       - "¿Quién está justo en el medio de la fila?"
-      - "¿Qué altura tiene la persona que es más alta que el 75% del grupo?"
+      - "¿Qué altura tiene la persona que es más alta que el 75 por ciento del grupo?"
       - tipo: "ejemplo"
         texto: "¡Es como saber en qué puesto quedaste en una carrera! "
 
   - titulo: "La Mediana: ¡El Corazón de los Datos!"
     contenido:
       - "Es el dato que está JUSTO en el medio de la lista ordenada."
-      - "La mitad (50%) de los datos son más pequeños que ella."
-      - "La otra mitad (50%) son más grandes."
+      - "La mitad (50 por ciento) de los datos son más pequeños que ella."
+      - "La otra mitad (50 por ciento) son más grandes."
       - tipo: "nota"
         texto: "¡Es el estudiante del centro en una fila ordenada por notas!"
       - tipo: "ejemplo"
@@ -60,20 +60,20 @@ diapositivas:
     contenido:
       - "¡Dividen tus datos ordenados en 4 partes iguales!"
       - tipo: "nota"
-        texto: "¡Como cortar una pizza en 4 trozos!  Cada trozo es un 25%."
-      - "Q1 (Cuartil 1): El 25% de los datos es menor que este valor."
-      - "Q2 (Cuartil 2): ¡Es la Mediana! El 50% de los datos es menor."
-      - "Q3 (Cuartil 3): El 75% de los datos es menor que este valor."
+        texto: "¡Como cortar una pizza en 4 trozos!  Cada trozo es un 25 por ciento."
+      - "Q1 (Cuartil 1): El 25 por ciento de los datos es menor que este valor."
+      - "Q2 (Cuartil 2): ¡Es la Mediana! El 50 por ciento de los datos es menor."
+      - "Q3 (Cuartil 3): El 75 por ciento de los datos es menor que este valor."
 
   - titulo: "Los Cuartiles como Puntos de Control"
     contenido:
-      - "Q1: Supera al 25% de los datos."
-      - "Q2 (Mediana): Supera al 50% de los datos."
-      - "Q3: Supera al 75% de los datos."
+      - "Q1: Supera al 25 por ciento de los datos."
+      - "Q2 (Mediana): Supera al 50 por ciento de los datos."
+      - "Q3: Supera al 75 por ciento de los datos."
       - tipo: "nota"
         texto: "¡Son como las marcas de 1/4, 1/2 y 3/4 en una carrera! "
       - tipo: "ejemplo"
-        texto: "Si el Q3 de salarios es S/3000, significa que el 75% de la gente gana menos que eso."
+        texto: "Si el Q3 de salarios es S/3000, significa que el 75 por ciento de la gente gana menos que eso."
 
   - titulo: "Ejemplo de Cuartiles Paso a Paso"
     contenido:
@@ -104,9 +104,9 @@ diapositivas:
       - tipo: "ejemplo"
         texto: "Q1=5, Q2=10, Q3=15"
       - "Interpretación:"
-      - " El 25% de los datos son 5 o menos."
-      - " El 50% de los datos son 10 o menos."
-      - " El 75% de los datos son 15 o menos."
+      - " El 25 por ciento de los datos son 5 o menos."
+      - " El 50 por ciento de los datos son 10 o menos."
+      - " El 75 por ciento de los datos son 15 o menos."
       - tipo: "nota"
         texto: "¡Los cuartiles nos cuentan cómo se reparten los datos!"
 
@@ -115,9 +115,9 @@ diapositivas:
       - "¡Dividen los datos en 100 partes iguales!"
       - tipo: "nota"
         texto: "¡Como una regla de 100 centímetros!  Cada centímetro es un percentil."
-      - "El Percentil 80 (P₈₀) significa que el 80% de los datos son menores."
+      - "El Percentil 80 (P₈₀) significa que el 80 por ciento de los datos son menores."
       - tipo: "ejemplo"
-        texto: "Si estás en el P₉₀ en una prueba, ¡felicidades! Superaste al 90% de los estudiantes. "
+        texto: "Si estás en el P₉₀ en una prueba, ¡felicidades! Superaste al 90 por ciento de los estudiantes. "
 
   - titulo: "Cuartiles y Percentiles son Familia"
     contenido:
@@ -136,10 +136,10 @@ diapositivas:
         texto: "En un examen, tu nota fue 85 puntos."
       - "Te dicen que el Percentil 90 (P₉₀) fue 80 puntos."
       - "Interpretación:"
-      - " ¡Tu nota de 85 es excelente! Superaste al 90% de la clase."
-      - " Solo el 10% sacó una nota más alta que 80."
+      - " ¡Tu nota de 85 es excelente! Superaste al 90 por ciento de la clase."
+      - " Solo el 10 por ciento sacó una nota más alta que 80."
       - tipo: "nota"
-        texto: "¡Estás en el Top 10% del grupo! "
+        texto: "¡Estás en el Top 10 por ciento del grupo! "
 
   - titulo: "El Diagrama de Cajón (Box Plot)"
     contenido:
@@ -153,7 +153,7 @@ diapositivas:
 
   - titulo: "Las Partes del Diagrama de Cajón"
     contenido:
-      - " La Caja: va desde Q1 hasta Q3. ¡Contiene el 50% central de los datos!"
+      - " La Caja: va desde Q1 hasta Q3. ¡Contiene el 50 por ciento central de los datos!"
       - " El ancho de la caja se llama Rango Intercuartílico (RIC)."
       - " La línea dentro de la caja: ¡es la mediana (Q2)!"
       - " Los Bigotes: son las líneas que van desde la caja hasta el mínimo y el máximo."
@@ -217,10 +217,10 @@ diapositivas:
 
   - titulo: "Interpretación de los Salarios"
     contenido:
-      - " El 50% central de los trabajadores gana entre S/1650 y S/3250."
+      - " El 50 por ciento central de los trabajadores gana entre S/1650 y S/3250."
       - " El salario más representativo (mediana) es S/2200."
-      - " El 25% gana menos de S/1650 (los más nuevos quizás)."
-      - " El 25% gana más de S/3250 (los de más experiencia)."
+      - " El 25 por ciento gana menos de S/1650 (los más nuevos quizás)."
+      - " El 25 por ciento gana más de S/3250 (los de más experiencia)."
       - tipo: "nota"
         texto: "¡El box plot nos contó toda la historia de los salarios!"
 

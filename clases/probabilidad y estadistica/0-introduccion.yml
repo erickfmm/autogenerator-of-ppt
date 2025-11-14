@@ -51,7 +51,7 @@ diapositivas:
       - tipo: "nota"
         texto: "¡Es como predecir el futuro con matemáticas! "
       - tipo: "ejemplo"
-        texto: "¿Qué tan posible es que llueva hoy? ¿50%? ¿80%?"
+        texto: "¿Qué tan posible es que llueva hoy? ¿50 por ciento? ¿80 por ciento?"
 
   - titulo: "La Probabilidad está en JUEGO"
     contenido:
@@ -107,17 +107,17 @@ diapositivas:
       - tipo: "problema"
         texto: "Lanza una moneda 10 veces y anota los resultados en un papel."
       - "Estadística (tu lado detective): Cuenta cuántas 'caras' y cuántos 'sellos' te salieron."
-      - "Probabilidad (tu lado mago): ¿Qué crees que debería salir? Teóricamente, es 50% y 50%."
+      - "Probabilidad (tu lado mago): ¿Qué crees que debería salir? Teóricamente, es 50 por ciento y 50 por ciento."
       - tipo: "nota"
         texto: "¿Tus resultados se parecen a la teoría? ¡A veces sí, a veces no! Eso es el azar."
 
   - titulo: "La Escalera de la Probabilidad"
     contenido:
-      - "Imposible (0%): Que un perro maúlle."
-      - "Poco probable (25%): Ganar una rifa con muchos números."
-      - "Puede ser (50%): Que salga 'sello' al lanzar una moneda."
-      - "Muy probable (75%): Que un helado se derrita en el sol."
-      - "Seguro (100%): Que después del 1 venga el 2."
+      - "Imposible (0 por ciento): Que un perro maúlle."
+      - "Poco probable (25 por ciento): Ganar una rifa con muchos números."
+      - "Puede ser (50 por ciento): Que salga 'sello' al lanzar una moneda."
+      - "Muy probable (75 por ciento): Que un helado se derrita en el sol."
+      - "Seguro (100 por ciento): Que después del 1 venga el 2."
       - tipo: "nota"
         texto: "¡Todo lo que puede pasar tiene un lugar en esta escalera!"
 
