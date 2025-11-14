@@ -1,149 +1,134 @@
 tema: "Introducción a la Probabilidad y Estadística"
-subtitulo: "¡Descubriendo el mundo de los números y las posibilidades!"
+subtitulo: "¡Una aventura con números y adivinanzas!"
 
 diapositivas:
   - titulo: "¿Qué vamos a aprender?"
     contenido:
       - tipo: "nota"
-        texto: "¡Bienvenidos a una aventura numérica! 🎲📊"
-      - "Dos mundos fascinantes:"
-      - "📊 Estadística: entender lo que ya pasó"
-      - "🎲 Probabilidad: predecir lo que puede pasar"
+        texto: "¡Bienvenidos, exploradores de datos! "
+      - "Vamos a descubrir dos superpoderes:"
+      - " Estadística: El poder de entender lo que ya pasó (¡como un detective!)."
+      - " Probabilidad: El poder de adivinar lo que podría pasar (¡como un mago!)."
       - tipo: "ejemplo"
-        texto: "Como un detective que analiza pistas (estadística) y adivina quién es el culpable (probabilidad)"
+        texto: "Estadística es ver qué sabor de helado fue el más vendido ayer. Probabilidad es adivinar cuál será el más vendido mañana."
 
-  - titulo: "¿Qué es la Estadística?"
+  - titulo: "¿Qué es la Estadística? ¡El Poder del Detective!"
     contenido:
-      - "Es el arte de recolectar, organizar y analizar datos"
-      - "Nos ayuda a entender el pasado y el presente"
+      - "Es el arte de coleccionar, organizar y entender la información (los datos)."
+      - "Nos ayuda a descubrir secretos escondidos en los números."
       - tipo: "nota"
-        texto: "¡Es como ser un detective de números! 🔍"
+        texto: "¡Es como encontrar pistas para resolver un misterio! "
       - tipo: "ejemplo"
-        texto: "Contar cuántos estudiantes prefieren pizza vs hamburguesa"
+        texto: "Hacer una encuesta en tu clase para saber cuál es el superhéroe favorito de todos."
 
-  - titulo: "La Estadística en tu Vida Diaria"
+  - titulo: "La Estadística está en TODAS PARTES"
     contenido:
-      - "📱 Redes sociales: conteo de likes y seguidores"
-      - "⚽ Deportes: estadísticas de goles y victorias"
-      - "🎮 Videojuegos: puntuaciones y rankings"
-      - "📺 Netflix: series más vistas"
+      - " En tu celular: viendo cuántos 'likes' tiene una foto."
+      - " En los deportes: viendo quién ha metido más goles."
+      - " En los videojuegos: viendo tu récord de puntos."
+      - " En Netflix: mostrándote las series más populares."
       - tipo: "nota"
-        texto: "¡Estás rodeado de estadísticas sin darte cuenta!"
+        texto: "¡Usas estadísticas todos los días sin darte cuenta!"
 
-  - titulo: "Ejemplo Divertido de Estadística"
+  - titulo: "Ejemplo de Estadística: La Guerra de Helados"
     contenido:
       - tipo: "problema"
-        texto: "Preguntamos a 10 amigos su sabor de helado favorito"
+        texto: "Preguntamos a 10 amigos su sabor de helado favorito."
       - tipo: "tabla"
-        encabezados: ["Sabor", "Votos"]
+        encabezados: ["Sabor", "Nº de Fans"]
         filas:
-          - ["Chocolate", "4"]
-          - ["Vainilla", "3"]
-          - ["Fresa", "2"]
-          - ["Limón", "1"]
+          - ["Chocolate ", "4"]
+          - ["Vainilla ", "3"]
+          - ["Fresa ", "2"]
+          - ["Limón ", "1"]
       - tipo: "calculo"
-        texto: "Conclusión: ¡El chocolate es el campeón! 🍫"
+        texto: "Conclusión del detective: ¡El chocolate es el rey de los sabores!"
 
-  - titulo: "¿Qué es la Probabilidad?"
+  - titulo: "¿Qué es la Probabilidad? ¡El Poder del Mago!"
     contenido:
-      - "Es calcular qué tan posible es que algo ocurra"
-      - "Trabaja con eventos FUTUROS o inciertos"
+      - "Es el arte de medir las posibilidades de que algo ocurra en el futuro."
+      - "Se usa cuando hay duda o no estamos seguros de lo que pasará."
       - tipo: "nota"
-        texto: "¡Es como predecir el futuro con matemáticas! 🔮"
+        texto: "¡Es como predecir el futuro con matemáticas! "
       - tipo: "ejemplo"
-        texto: "¿Qué probabilidad hay de que llueva mañana?"
+        texto: "¿Qué tan posible es que llueva hoy? ¿50%? ¿80%?"
 
-  - titulo: "La Probabilidad en tu Vida"
+  - titulo: "La Probabilidad está en JUEGO"
     contenido:
-      - "🎲 Juegos de mesa: lanzar dados"
-      - "🃏 Cartas: ¿me saldrá un as?"
-      - "⚽ Deportes: ¿ganará mi equipo?"
-      - "🌦️ Clima: pronóstico del tiempo"
-      - "🎰 Sorteos y rifas"
+      - " En los juegos de mesa: al lanzar un dado."
+      - " En las cartas: ¿qué chance tienes de sacar un As?"
+      - " En los deportes: ¿ganará tu equipo el próximo partido?"
+      - " En el clima: cuando ves el pronóstico del tiempo."
+      - " En los sorteos: ¿qué tan posible es que ganes?"
       - tipo: "nota"
-        texto: "¡La probabilidad está en cada decisión!"
+        texto: "¡La probabilidad te ayuda a apostar y tomar decisiones!"
 
-  - titulo: "Ejemplo Divertido de Probabilidad"
+  - titulo: "Ejemplo de Probabilidad: La Bolsa Misteriosa"
     contenido:
       - tipo: "problema"
-        texto: "Tienes una bolsa con 10 caramelos: 6 rojos y 4 azules"
-      - "Sin mirar, sacas uno. ¿Qué color es más probable?"
-      - tipo: "calculo"
-        texto: "Rojo: 6 de cada 10 (60%)"
-      - tipo: "calculo"
-        texto: "Azul: 4 de cada 10 (40%)"
-      - "¡Es más probable sacar uno rojo! 🔴"
+        texto: "Tienes una bolsa con 10 canicas: 7 rojas y 3 azules."
+      - "Si metes la mano sin mirar, ¿qué color es más fácil de sacar?"
+      - "Respuesta: ¡El rojo!"
+      - "Tienes más chances de sacar una canica roja porque hay más."
+      - tipo: "nota"
+        texto: "¡La probabilidad te dice cuál es la apuesta más segura! "
 
-  - titulo: "Diferencias Clave"
+  - titulo: "Diferencias Clave: Detective vs. Mago"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Estadística", "Probabilidad"]
+        encabezados: ["Estadística (Detective )", "Probabilidad (Mago )"]
         filas:
-          - ["Analiza datos del PASADO", "Predice el FUTURO"]
-          - ["¿Qué pasó?", "¿Qué puede pasar?"]
-          - ["Certeza", "Incertidumbre"]
-          - ["Temperaturas del mes", "Pronóstico del tiempo"]
+          - ["Mira al PASADO (lo que ya ocurrió)", "Mira al FUTURO (lo que podría ocurrir)"]
+          - ["Trabaja con datos SEGUROS", "Trabaja con la DUDA y el AZAR"]
+          - ["Ej: Las notas del examen anterior", "Ej: La chance de aprobar el próximo examen"]
       - tipo: "nota"
-        texto: "¡Son dos caras de la misma moneda! 🪙"
+        texto: "¡Son dos caras de la misma moneda mágica! "
 
-  - titulo: "¿Por qué son Importantes?"
+  - titulo: "¿Y esto para qué sirve?"
     contenido:
-      - "🏥 Medicina: estudios de efectividad de tratamientos"
-      - "💼 Negocios: decidir qué productos vender"
-      - "🎓 Educación: mejorar métodos de enseñanza"
-      - "🌍 Ciencia: descubrir patrones en la naturaleza"
+      - " En medicina: para saber si una vacuna funciona."
+      - " En negocios: para decidir qué producto vender más."
+      - " En ciencia: para descubrir patrones en la naturaleza."
+      - "¡En resumen: para tomar decisiones más inteligentes!"
       - tipo: "nota"
-        texto: "¡Ayudan a tomar mejores decisiones!"
+        texto: "¡Te ayuda a no equivocarte tanto! "
 
-  - titulo: "Vocabulario Básico"
+  - titulo: "Palabras para Empezar"
     contenido:
-      - "📊 Datos: información que recolectamos"
-      - "👥 Población: todos los elementos que estudiamos"
-      - "🎯 Muestra: parte de la población"
-      - "🎲 Evento: algo que puede ocurrir"
-      - "🎯 Experimento: acción que produce resultados"
-      - tipo: "ejemplo"
-        texto: "Experimento: lanzar una moneda. Evento: sale cara"
+      - " Población: TODO el grupo que quieres estudiar (ej: todos los estudiantes de un colegio)."
+      - " Muestra: Una pequeña parte de ese grupo (ej: solo los estudiantes de tu salón)."
+      - " Evento: Algo que puede pasar (ej: que salga 'cara' en una moneda)."
+      - " Experimento: La acción que haces para ver qué pasa (ej: lanzar la moneda)."
+      - tipo: "nota"
+        texto: "¡Estudiamos una muestra para entender a toda la población!"
 
-  - titulo: "Un Experimento Divertido"
+  - titulo: "¡Un Experimento para Ti!"
     contenido:
       - tipo: "problema"
-        texto: "Lanza una moneda 10 veces y anota los resultados"
-      - "Estadística: cuenta cuántas caras y cuántas sellos"
-      - "Probabilidad: ¿cuál es la chance teórica?"
-      - tipo: "calculo"
-        texto: "Teóricamente: 50% cara, 50% sello"
+        texto: "Lanza una moneda 10 veces y anota los resultados en un papel."
+      - "Estadística (tu lado detective): Cuenta cuántas 'caras' y cuántos 'sellos' te salieron."
+      - "Probabilidad (tu lado mago): ¿Qué crees que debería salir? Teóricamente, es 50% y 50%."
       - tipo: "nota"
-        texto: "¿Coincide tu experimento con la teoría?"
+        texto: "¿Tus resultados se parecen a la teoría? ¡A veces sí, a veces no! Eso es el azar."
 
-  - titulo: "Escalera de la Probabilidad"
+  - titulo: "La Escalera de la Probabilidad"
     contenido:
-      - "Imposible (0%): que salga un 7 en un dado normal 🎲"
-      - "Poco probable (25%): sacar una carta de corazones ♥️"
-      - "Igual de probable (50%): que salga cara 🪙"
-      - "Muy probable (75%): NO sacar un 6 en un dado"
-      - "Seguro (100%): que el sol salga mañana ☀️"
+      - "Imposible (0%): Que un perro maúlle."
+      - "Poco probable (25%): Ganar una rifa con muchos números."
+      - "Puede ser (50%): Que salga 'sello' al lanzar una moneda."
+      - "Muy probable (75%): Que un helado se derrita en el sol."
+      - "Seguro (100%): Que después del 1 venga el 2."
       - tipo: "nota"
-        texto: "¡Todo evento tiene su lugar en la escalera!"
-
-  - titulo: "Actividad Práctica"
-    contenido:
-      - tipo: "problema"
-        texto: "Piensa en estas situaciones y clasifícalas:"
-      - "1. ¿Es estadística o probabilidad?"
-      - "2. Calificaciones del año pasado"
-      - "3. Probabilidad de ganar un juego"
-      - "4. Número de goles en el mundial anterior"
-      - "5. Chance de que nieve en tu ciudad"
+        texto: "¡Todo lo que puede pasar tiene un lugar en esta escalera!"
 
   - titulo: "¿Listo para la Aventura?"
     contenido:
-      - "✅ Ya sabes qué es la estadística"
-      - "✅ Ya sabes qué es la probabilidad"
-      - "✅ Viste ejemplos de la vida real"
+      - " Ya sabes qué es la Estadística (el detective)."
+      - " Ya sabes qué es la Probabilidad (el mago)."
+      - " Viste que están en todos lados."
       - tipo: "nota"
-        texto: "¡Ahora estás listo para profundizar en cada tema!"
-      - "En las próximas clases aprenderemos:"
-      - "📊 Tablas y gráficos"
-      - "📏 Medidas estadísticas"
-      - "🎲 Cálculos de probabilidad"
+        texto: "¡Ahora estás listo para aprender los trucos de cada uno!"
+      - "En las próximas clases veremos:"
+      - " Cómo hacer tablas y gráficos geniales."
+      - " Cómo encontrar el 'corazón' de los datos."
+      - " Cómo calcular las chances exactas de que algo pase."

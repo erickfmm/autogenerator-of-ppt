@@ -91,7 +91,7 @@
 
 % Variables del documento (serán reemplazadas por Jinja2)
 \title{Medidas de Posición}
-\subtitle{¡Descubriendo dónde están los datos! 📍}
+\subtitle{¡Descubriendo dónde está cada dato en el grupo! }
 \author{Probabilidad y Estadística}
 \institute{Aprendiendo con diversión 🎓}
 \date{\today}
@@ -112,11 +112,11 @@
 % Diapositivas generadas dinámicamente
 \begin{frame}[fragile]{¿Qué son las Medidas de Posición?}
 \begin{alertblock}{💡 Nota importante}
-¡Imagina una fila de personas ordenadas por altura! 👥
+¡Imagina una fila de personas ordenadas por altura! 
 \end{alertblock}
 
 \begin{itemize}
-  \item Nos ayudan a ubicar datos dentro de un grupo
+  \item Nos dicen en qué lugar está un dato comparado con los demás.
 \end{itemize}
 
 \begin{itemize}
@@ -124,41 +124,45 @@
 \end{itemize}
 
 \begin{itemize}
-  \item ¿Dónde está el dato del medio?
+  \item ¿Quién está justo en el medio de la fila?
 \end{itemize}
 
 \begin{itemize}
-  \item ¿Cuál es el valor que supera el 75% de los datos?
+  \item ¿Qué altura tiene la persona que es más alta que el 75% del grupo?
 \end{itemize}
 
 \begin{exampleblock}{✨ Ejemplo}
-Como saber en qué puesto quedaste en una carrera 🏃
+¡Es como saber en qué puesto quedaste en una carrera! 
 \end{exampleblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{La Mediana - El Valor del Centro}
+\begin{frame}[fragile]{La Mediana: ¡El Corazón de los Datos!}
 \begin{itemize}
-  \item Es el dato que está justo en el medio
+  \item Es el dato que está JUSTO en el medio de la lista ordenada.
 \end{itemize}
 
 \begin{itemize}
-  \item 50% de datos están abajo, 50% arriba
+  \item La mitad (50%) de los datos son más pequeños que ella.
+\end{itemize}
+
+\begin{itemize}
+  \item La otra mitad (50%) son más grandes.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Es como el estudiante del medio en una fila ordenada!
+¡Es el estudiante del centro en una fila ordenada por notas!
 \end{alertblock}
 
 \begin{exampleblock}{✨ Ejemplo}
-Alturas: 1.50, 1.60, 1.70, 1.80, 1.90 m
+Alturas: 1.50m, 1.60m, 1.70m, 1.80m, 1.90m
 \end{exampleblock}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Mediana = 1.70 m (el del medio)
+    La Mediana es 1.70m (¡el del medio!)
     \end{align*}
   }%
 }
@@ -166,7 +170,7 @@ Alturas: 1.50, 1.60, 1.70, 1.80, 1.90 m
 
 \end{frame}
 
-\begin{frame}[fragile]{Visualización - Mediana}
+\begin{frame}[fragile]{Visualización - La Mediana en el Centro}
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -174,9 +178,9 @@ Alturas: 1.50, 1.60, 1.70, 1.80, 1.90 m
     width=0.8\textwidth,
     height=0.45\textheight,
     bar width=15pt,
-    ylabel={Frecuencia},
+    ylabel={Personas},
     xlabel={Altura},
-    symbolic x coords={1.50m,1.60m,1.70m,1.80m,1.90m},
+    symbolic x coords={1.50m,1.60m,1.70m (Mediana),1.80m,1.90m},
     xtick=data,
     x tick label style={rotate=45, anchor=east},
     ymin=0,
@@ -191,7 +195,7 @@ Alturas: 1.50, 1.60, 1.70, 1.80, 1.90 m
   \addplot[fill=colorPrimario!70] coordinates {
     (1.50m,1)
     (1.60m,1)
-    (1.70m,1)
+    (1.70m (Mediana),1)
     (1.80m,1)
     (1.90m,1)
   };
@@ -201,28 +205,28 @@ Alturas: 1.50, 1.60, 1.70, 1.80, 1.90 m
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Encontrar la Mediana}
+\begin{frame}[fragile]{Cómo Encontrar la Mediana}
 \begin{itemize}
-  \item Paso 1: Ordena los datos de menor a mayor
+  \item Paso 1: ¡Ordena los datos de menor a mayor!
 \end{itemize}
 
 \begin{itemize}
-  \item Paso 2: Si hay cantidad impar, toma el del centro
+  \item Paso 2: Si la cantidad de datos es IMPAR, la mediana es el del centro.
 \end{itemize}
 
 \begin{itemize}
-  \item Paso 3: Si hay cantidad par, promedia los 2 del centro
+  \item Paso 3: Si la cantidad es PAR, la mediana es el promedio de los DOS del centro.
 \end{itemize}
 
 \begin{exampleblock}{✨ Ejemplo}
-Datos: 3, 7, 2, 9, 5 → Ordenar: 2, 3, 5, 7, 9
+Datos: 3, 7, 2, 9, 5 → Ordenados: 2, 3, 5, 7, 9
 \end{exampleblock}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Mediana = 5 (posición central)
+    La Mediana es 5 (el valor del medio).
     \end{align*}
   }%
 }
@@ -230,127 +234,127 @@ Datos: 3, 7, 2, 9, 5 → Ordenar: 2, 3, 5, 7, 9
 
 \end{frame}
 
-\begin{frame}[fragile]{Mediana con Cantidad Par}
+\begin{frame}[fragile]{Mediana con Cantidad Par de Datos}
 \begin{exampleblock}{✨ Ejemplo}
 Datos: 4, 8, 6, 2, 10, 12
 \end{exampleblock}
 
 \begin{itemize}
-  \item Ordenar: 2, 4, 6, 8, 10, 12
+  \item Paso 1: Ordenar → 2, 4, 6, 8, 10, 12
 \end{itemize}
 
 \begin{itemize}
-  \item Los dos centrales son: 6 y 8
+  \item Paso 2: Los dos del centro son 6 y 8.
+\end{itemize}
+
+\begin{itemize}
+  \item Paso 3: ¡Calculamos su promedio!
 \end{itemize}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Mediana = (6 + 8) ÷ 2 = 7
+    Mediana = (6 + 8) / 2 = 7
     \end{align*}
   }%
 }
 \end{center}
 
 \begin{alertblock}{💡 Nota importante}
-¡La mediana no siempre es un dato original!
+¡A veces la mediana no es uno de los datos originales!
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{¿Qué son los Cuartiles?}
+\begin{frame}[fragile]{¿Qué son los Cuartiles? ¡La Pizza de Datos!}
 \begin{itemize}
-  \item Dividen los datos en 4 partes iguales
+  \item ¡Dividen tus datos ordenados en 4 partes iguales!
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Como cortar una pizza en 4 partes! 🍕
+¡Como cortar una pizza en 4 trozos!  Cada trozo es un 25%.
 \end{alertblock}
 
 \begin{itemize}
-  \item Q1: primer cuartil (25%)
+  \item Q1 (Cuartil 1): El 25% de los datos es menor que este valor.
 \end{itemize}
 
 \begin{itemize}
-  \item Q2: segundo cuartil = mediana (50%)
+  \item Q2 (Cuartil 2): ¡Es la Mediana! El 50% de los datos es menor.
 \end{itemize}
 
 \begin{itemize}
-  \item Q3: tercer cuartil (75%)
+  \item Q3 (Cuartil 3): El 75% de los datos es menor que este valor.
 \end{itemize}
-
-\begin{exampleblock}{✨ Ejemplo}
-Separan grupos de 25%, 50%, 75% y 100%
-\end{exampleblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Cuartiles Explicados}
+\begin{frame}[fragile]{Los Cuartiles como Puntos de Control}
 \begin{itemize}
-  \item Q1: 25% de datos están por debajo
+  \item Q1: Supera al 25% de los datos.
 \end{itemize}
 
 \begin{itemize}
-  \item Q2: 50% de datos están por debajo (mediana)
+  \item Q2 (Mediana): Supera al 50% de los datos.
 \end{itemize}
 
 \begin{itemize}
-  \item Q3: 75% de datos están por debajo
+  \item Q3: Supera al 75% de los datos.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Son como marcas en una regla! 📏
+¡Son como las marcas de 1/4, 1/2 y 3/4 en una carrera! 
 \end{alertblock}
 
 \begin{exampleblock}{✨ Ejemplo}
-Si Q3 de salarios es 3000, significa que 75% gana menos de 3000
+Si el Q3 de salarios es S/3000, significa que el 75% de la gente gana menos que eso.
 \end{exampleblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo de Cuartiles Paso a Paso}
 \begin{exampleblock}{🎯 Problema}
-Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18
+Datos ordenados: 2, 4, 6, 8, 10, 12, 14, 16, 18
 \end{exampleblock}
 
 \begin{itemize}
-  \item Ya están ordenados (9 valores)
+  \item 1. Encontramos la mediana (Q2): el valor central es 10.
 \end{itemize}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Q2 (mediana) = 10 (valor central)
+    Q2 (Mediana) = 10
     \end{align*}
   }%
 }
 \end{center}
 
 \begin{itemize}
-  \item Mitad inferior: 2, 4, 6, 8
+  \item 2. Ahora miramos la mitad de abajo: 2, 4, 6, 8. La mediana de este grupo es Q1.
 \end{itemize}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Q1 = (4+6)÷2 = 5
+    Q1 = (4+6)/2 = 5
     \end{align*}
   }%
 }
 \end{center}
 
 \begin{itemize}
-  \item Mitad superior: 12, 14, 16, 18
+  \item 3. Hacemos lo mismo con la mitad de arriba: 12, 14, 16, 18. La mediana es Q3.
 \end{itemize}
 
 \begin{center}
 \colorbox{colorFondo}{%
   \parbox{0.9\textwidth}{%
     \begin{align*}
-    Q3 = (14+16)÷2 = 15
+    Q3 = (14+16)/2 = 15
     \end{align*}
   }%
 }
@@ -358,7 +362,7 @@ Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18
 
 \end{frame}
 
-\begin{frame}[fragile]{Visualización - Distribución de Datos}
+\begin{frame}[fragile]{Visualización - Los Cuartiles en Acción}
 \begin{center}
 \begin{tikzpicture}
   \begin{axis}[
@@ -368,7 +372,7 @@ Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18
     bar width=15pt,
     ylabel={Frecuencia},
     xlabel={Valores},
-    symbolic x coords={2,4,6,8,10,12,14,16,18},
+    symbolic x coords={2,4 (Q1=5),6,8,10 (Q2),12,14 (Q3=15),16,18},
     xtick=data,
     x tick label style={rotate=45, anchor=east},
     ymin=0,
@@ -382,12 +386,12 @@ Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18
   ]
   \addplot[fill=colorPrimario!70] coordinates {
     (2,1)
-    (4,1)
+    (4 (Q1=5),1)
     (6,1)
     (8,1)
-    (10,1)
+    (10 (Q2),1)
     (12,1)
-    (14,1)
+    (14 (Q3=15),1)
     (16,1)
     (18,1)
   };
@@ -397,7 +401,7 @@ Datos: 2, 4, 6, 8, 10, 12, 14, 16, 18
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Interpretando los Cuartiles}
+\begin{frame}[fragile]{Interpretando los Cuartiles del Ejemplo}
 \begin{exampleblock}{✨ Ejemplo}
 Q1=5, Q2=10, Q3=15
 \end{exampleblock}
@@ -407,79 +411,71 @@ Q1=5, Q2=10, Q3=15
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 25% de datos ≤ 5
+  \item  El 25% de los datos son 5 o menos.
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 50% de datos ≤ 10
+  \item  El 50% de los datos son 10 o menos.
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 75% de datos ≤ 15
+  \item  El 75% de los datos son 15 o menos.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Los cuartiles dividen los datos en grupos iguales!
+¡Los cuartiles nos cuentan cómo se reparten los datos!
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{¿Qué son los Percentiles?}
+\begin{frame}[fragile]{¿Y los Percentiles? ¡Aún más preciso!}
 \begin{itemize}
-  \item Dividen los datos en 100 partes iguales
+  \item ¡Dividen los datos en 100 partes iguales!
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Como dividir una cinta métrica en 100 cm! 📐
+¡Como una regla de 100 centímetros!  Cada centímetro es un percentil.
 \end{alertblock}
 
 \begin{itemize}
-  \item P₁, P₂, P₃, ..., P₉₉
-\end{itemize}
-
-\begin{itemize}
-  \item Pₖ significa: k% de datos están por debajo
+  \item El Percentil 80 (P₈₀) significa que el 80% de los datos son menores.
 \end{itemize}
 
 \begin{exampleblock}{✨ Ejemplo}
-P₉₀ en una prueba: superaste al 90% de estudiantes 🎓
+Si estás en el P₉₀ en una prueba, ¡felicidades! Superaste al 90% de los estudiantes. 
 \end{exampleblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Relación entre Cuartiles y Percentiles}
+\begin{frame}[fragile]{Cuartiles y Percentiles son Familia}
 \begin{center}
 \begin{tabular}{cc}
 \toprule
 \rowcolor{colorPrimario!20}
-\textbf{Cuartil} & \textbf{Percentil Equivalente} \\
+\textbf{Cuartil} & \textbf{Percentil} \\
 \midrule
 \rowcolor{colorFondo}
-Q1 & P₂₅ \\
-Q2 (mediana) & P₅₀ \\
+Q1 (25 porciento) & P25 \\
+Q2 (50 porciento) & P50 \\
 \rowcolor{colorFondo}
-Q3 & P₇₅ \\
+Q3 (75 porciento) & P75 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 \begin{alertblock}{💡 Nota importante}
-¡Los cuartiles son percentiles especiales!
+¡Los cuartiles son los percentiles más famosos!
 \end{alertblock}
-
-\begin{itemize}
-  \item P₁₀ = 10% por debajo, P₉₀ = 90% por debajo
-\end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo de Percentiles}
 \begin{exampleblock}{✨ Ejemplo}
-En un examen obtuviste 85 puntos
+En un examen, tu nota fue 85 puntos.
 \end{exampleblock}
 
 \begin{itemize}
-  \item El P₉₀ es 80 puntos
+  \item Te dicen que el Percentil 90 (P₉₀) fue 80 puntos.
 \end{itemize}
 
 \begin{itemize}
@@ -487,65 +483,65 @@ En un examen obtuviste 85 puntos
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Superaste al 90% de estudiantes
+  \item  ¡Tu nota de 85 es excelente! Superaste al 90% de la clase.
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Solo el 10% sacó más que tú
+  \item  Solo el 10% sacó una nota más alta que 80.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Excelente resultado! Estás en el top 10% 🌟
+¡Estás en el Top 10% del grupo! 
 \end{alertblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{El Diagrama de Cajón (Box Plot)}
 \begin{itemize}
-  \item Herramienta visual para ver distribución
+  \item ¡Un súper resumen visual de tus datos!
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Es como un resumen gráfico de 5 números! 📦
+¡Es como una radiografía de tus datos en 5 números clave! 
 \end{alertblock}
 
 \begin{itemize}
-  \item Muestra de un vistazo:
+  \item Te muestra de un solo vistazo:
 \end{itemize}
 
 \begin{itemize}
-  \item 🔹 El mínimo
+  \item  El valor Mínimo
 \end{itemize}
 
 \begin{itemize}
-  \item 🔹 Q1, Q2 (mediana), Q3
+  \item  Q1, Q2 (la mediana) y Q3
 \end{itemize}
 
 \begin{itemize}
-  \item 🔹 El máximo
+  \item  El valor Máximo
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]{Partes del Diagrama de Cajón}
+\begin{frame}[fragile]{Las Partes del Diagrama de Cajón}
 \begin{itemize}
-  \item 🔵 Caja: va de Q1 a Q3
+  \item  La Caja: va desde Q1 hasta Q3. ¡Contiene el 50% central de los datos!
 \end{itemize}
 
 \begin{itemize}
-  \item 📏 Rango intercuartílico (RIC) = Q3 - Q1
+  \item  El ancho de la caja se llama Rango Intercuartílico (RIC).
 \end{itemize}
 
 \begin{itemize}
-  \item ━ Línea en la caja: la mediana (Q2)
+  \item  La línea dentro de la caja: ¡es la mediana (Q2)!
 \end{itemize}
 
 \begin{itemize}
-  \item 🔺 Bigotes: van desde la caja hasta mín y máx
+  \item  Los Bigotes: son las líneas que van desde la caja hasta el mínimo y el máximo.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡La caja contiene el 50% central de los datos!
+¡Un dibujo vale más que mil números!
 \end{alertblock}
 
 \end{frame}
@@ -555,297 +551,216 @@ En un examen obtuviste 85 puntos
 Datos: 5, 7, 8, 9, 10, 12, 15, 18, 20
 \end{exampleblock}
 
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Mínimo = 5, Máximo = 20
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q1 = 8, Q2 = 10, Q3 = 15
-    \end{align*}
-  }%
-}
-\end{center}
-
 \begin{itemize}
-  \item Bigote izquierdo: de 5 a 8
+  \item Calculamos los 5 números clave:
 \end{itemize}
 
 \begin{itemize}
-  \item Caja: de 8 a 15 (con línea en 10)
+  \item Mínimo=5, Q1=8, Mediana(Q2)=10, Q3=15, Máximo=20
 \end{itemize}
 
 \begin{itemize}
-  \item Bigote derecho: de 15 a 20
+  \item Y dibujamos:
+\end{itemize}
+
+\begin{itemize}
+  \item Bigote izquierdo: de 5 a 8.
+\end{itemize}
+
+\begin{itemize}
+  \item Caja: de 8 a 15 (con una línea en 10).
+\end{itemize}
+
+\begin{itemize}
+  \item Bigote derecho: de 15 a 20.
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]{Valores Atípicos (Outliers)}
+\begin{frame}[fragile]{Valores Atípicos (Outliers): ¡Los Rebeldes!}
 \begin{itemize}
-  \item Datos muy alejados del resto
+  \item Son datos que están MUY lejos del resto del grupo.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Como alguien muy alto en una clase de niños pequeños! 🦒
+¡Como un pingüino en el desierto! No encaja. 
 \end{alertblock}
 
 \begin{itemize}
-  \item Se detectan con la regla:
-\end{itemize}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.8\textwidth}{%
-    \begin{center}
-    \Large\color{colorPrimario}
-    $RIC = Q3 - Q1$
-    \end{center}
-  }%
-}
-\end{center}
-
-\begin{itemize}
-  \item Atípico si es < Q1 - 1.5×RIC
+  \item ¿Cómo los encontramos? Con una regla simple:
 \end{itemize}
 
 \begin{itemize}
-  \item o si es > Q3 + 1.5×RIC
+  \item Un dato es atípico si está 'demasiado lejos' de la caja.
+\end{itemize}
+
+\begin{itemize}
+  \item Demasiado lejos = más de 1.5 veces el ancho de la caja (RIC).
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]{Ejemplo de Valor Atípico}
 \begin{exampleblock}{✨ Ejemplo}
-Datos: 10, 12, 11, 13, 12, 50
+Edades en un grupo: 10, 12, 11, 13, 12, y... ¡50!
 \end{exampleblock}
 
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q1=11, Q3=13, RIC=13-11=2
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Límite superior: 13 + 1.5×2 = 16
-    \end{align*}
-  }%
-}
-\end{center}
+\begin{itemize}
+  \item La mayoría de edades están entre 10 y 13.
+\end{itemize}
 
 \begin{itemize}
-  \item El valor 50 > 16
+  \item El valor 50 está súper alejado del resto.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡50 es un valor atípico! Se marca con un punto especial ⚫
+¡50 es un valor atípico! En el gráfico, se marca con un punto especial  para no distorsionar el dibujo.
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Aplicación Práctica - Salarios}
+\begin{frame}[fragile]{Aplicación Práctica - Salarios de una Empresa}
 \begin{exampleblock}{🎯 Problema}
 Salarios mensuales (S/.): 1200, 1500, 1800, 2000, 2200, 2500, 3000, 3500, 5000
 \end{exampleblock}
 
 \begin{itemize}
-  \item Paso 1: Ya están ordenados ✓
+  \item Misión: Analizar estos salarios con nuestras nuevas herramientas.
 \end{itemize}
 
 \begin{itemize}
-  \item Paso 2: Calcular cuartiles
+  \item Paso 1: Calcular cuartiles.
 \end{itemize}
 
 \begin{itemize}
-  \item Paso 3: Hacer diagrama de cajón
+  \item Paso 2: Dibujar el diagrama de cajón.
 \end{itemize}
 
 \begin{itemize}
-  \item Paso 4: Identificar atípicos
+  \item Paso 3: Buscar salarios 'rebeldes' (atípicos).
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]{Solución - Cuartiles}
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Mínimo = 1200, Máximo = 5000
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q2 (mediana) = 2200 (valor central)
-    \end{align*}
-  }%
-}
-\end{center}
-
+\begin{frame}[fragile]{Solución - Cuartiles de Salarios}
 \begin{itemize}
-  \item Mitad baja: 1200, 1500, 1800, 2000
+  \item Mínimo = 1200, Máximo = 5000
 \end{itemize}
 
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q1 = (1500+1800)÷2 = 1650
-    \end{align*}
-  }%
-}
-\end{center}
-
 \begin{itemize}
-  \item Mitad alta: 2500, 3000, 3500, 5000
+  \item Mediana (Q2) = 2200 (el salario del medio)
 \end{itemize}
 
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q3 = (3000+3500)÷2 = 3250
-    \end{align*}
-  }%
-}
-\end{center}
+\begin{itemize}
+  \item Q1 (mediana de la mitad de abajo) = 1650
+\end{itemize}
+
+\begin{itemize}
+  \item Q3 (mediana de la mitad de arriba) = 3250
+\end{itemize}
 
 \end{frame}
 
-\begin{frame}[fragile]{Solución - Valores Atípicos}
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    RIC = 3250 - 1650 = 1600
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Límite inferior: 1650 - 1.5×1600 = -750
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Límite superior: 3250 + 1.5×1600 = 5650
-    \end{align*}
-  }%
-}
-\end{center}
+\begin{frame}[fragile]{Solución - ¿Hay Salarios Atípicos?}
+\begin{itemize}
+  \item El ancho de la caja (RIC) es 3250 - 1650 = 1600.
+\end{itemize}
 
 \begin{itemize}
-  \item Todos los salarios están entre -750 y 5650
+  \item Calculamos los 'límites de lo normal':
+\end{itemize}
+
+\begin{itemize}
+  \item Límite inferior: 1650 - 1.5 * 1600 = -750 (imposible un salario negativo)
+\end{itemize}
+
+\begin{itemize}
+  \item Límite superior: 3250 + 1.5 * 1600 = 5650
+\end{itemize}
+
+\begin{itemize}
+  \item Todos los salarios están dentro de estos límites.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡No hay valores atípicos! Todos son normales
+¡No hay valores atípicos! El salario de 5000, aunque alto, no se considera 'rebelde'.
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Interpretación de Salarios}
+\begin{frame}[fragile]{Interpretación de los Salarios}
 \begin{itemize}
-  \item 📊 50% de trabajadores gana entre 1650 y 3250
+  \item  El 50% central de los trabajadores gana entre S/1650 y S/3250.
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 El salario típico (mediano) es 2200
+  \item  El salario más representativo (mediana) es S/2200.
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 25% gana menos de 1650
+  \item  El 25% gana menos de S/1650 (los más nuevos quizás).
 \end{itemize}
 
 \begin{itemize}
-  \item 📊 25% gana más de 3250
+  \item  El 25% gana más de S/3250 (los de más experiencia).
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡El box plot muestra que hay variabilidad en los salarios!
+¡El box plot nos contó toda la historia de los salarios!
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{Comparando con Box Plots}
+\begin{frame}[fragile]{Comparando Grupos con Box Plots}
 \begin{itemize}
-  \item Podemos comparar dos o más grupos
+  \item ¡Son geniales para comparar dos o más grupos a la vez!
 \end{itemize}
 
 \begin{exampleblock}{✨ Ejemplo}
-Comparar salarios de dos empresas lado a lado
+Comparar las notas de 2 salones: 5to A vs 5to B.
 \end{exampleblock}
 
 \begin{itemize}
-  \item Se puede ver de un vistazo:
+  \item De un vistazo puedes ver:
 \end{itemize}
 
 \begin{itemize}
-  \item ✓ Cuál tiene salarios más altos
+  \item  ¿Qué salón tiene mejores notas en general?
 \end{itemize}
 
 \begin{itemize}
-  \item ✓ Cuál tiene más variabilidad
+  \item  ¿En qué salón las notas son más parecidas entre sí?
 \end{itemize}
 
 \begin{itemize}
-  \item ✓ Dónde hay valores atípicos
+  \item  ¿Hay algún alumno con una nota súper alta o baja (atípico)?
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Es súper útil para comparaciones! 👥
+¡La comparación es súper visual y rápida! 
 \end{alertblock}
 
 \end{frame}
 
 \begin{frame}[fragile]{Ejercicio de Práctica}
 \begin{exampleblock}{🎯 Problema}
-Edades de un grupo: 15, 16, 15, 17, 16, 18, 15, 20, 16, 25
+Edades de un grupo de amigos: 15, 16, 15, 17, 16, 18, 15, 20, 16, 25
 \end{exampleblock}
 
 \begin{itemize}
-  \item Tarea 1: Ordenar los datos
+  \item Tu Misión:
 \end{itemize}
 
 \begin{itemize}
-  \item Tarea 2: Calcular Q1, Q2, Q3
+  \item 1. Ordena los datos.
 \end{itemize}
 
 \begin{itemize}
-  \item Tarea 3: Calcular RIC
+  \item 2. Calcula Q1, Q2 (mediana) y Q3.
 \end{itemize}
 
 \begin{itemize}
-  \item Tarea 4: Verificar si 25 es atípico
+  \item 3. ¿Es la edad de 25 un valor atípico en este grupo?
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
@@ -859,69 +774,55 @@ Edades de un grupo: 15, 16, 15, 17, 16, 18, 15, 20, 16, 25
   \item Ordenado: 15, 15, 15, 16, 16, 16, 17, 18, 20, 25
 \end{itemize}
 
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Q1 = 15, Q2 = 16, Q3 = 18
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    RIC = 18 - 15 = 3
-    \end{align*}
-  }%
-}
-\end{center}
-
-\begin{center}
-\colorbox{colorFondo}{%
-  \parbox{0.9\textwidth}{%
-    \begin{align*}
-    Límite superior: 18 + 1.5×3 = 22.5
-    \end{align*}
-  }%
-}
-\end{center}
+\begin{itemize}
+  \item Q1 = 15 (la mediana de la primera mitad)
+\end{itemize}
 
 \begin{itemize}
-  \item 25 > 22.5
+  \item Q2 = 16 (el promedio de 16 y 16)
+\end{itemize}
+
+\begin{itemize}
+  \item Q3 = 18 (la mediana de la segunda mitad)
+\end{itemize}
+
+\begin{itemize}
+  \item Límite superior para atípicos: 18 + 1.5 * (18 - 15) = 22.5
+\end{itemize}
+
+\begin{itemize}
+  \item Como 25 es mayor que 22.5...
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Sí! 25 es un valor atípico (persona mayor en el grupo) ⚫
+¡Sí! 25 es un valor atípico. Probablemente es un amigo mayor que el resto del grupo. 
 \end{alertblock}
 
 \end{frame}
 
-\begin{frame}[fragile]{¡Resumen de la Clase!}
+\begin{frame}[fragile]{¡Resumen de la Misión!}
 \begin{itemize}
-  \item ✅ Mediana: valor del centro (50%)
+  \item  Mediana: el dato del corazón del grupo.
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Cuartiles: dividen en 4 partes (Q1, Q2, Q3)
+  \item  Cuartiles: dividen los datos en 4 trozos de pizza.
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Percentiles: dividen en 100 partes
+  \item  Percentiles: dividen los datos en 100 mini-partes.
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Box Plot: visualiza la distribución
+  \item  Box Plot: la radiografía de tus datos.
 \end{itemize}
 
 \begin{itemize}
-  \item ✅ Valores atípicos: datos muy alejados
+  \item  Valores Atípicos: los 'rebeldes' del grupo.
 \end{itemize}
 
 \begin{alertblock}{💡 Nota importante}
-¡Ahora puedes analizar dónde se ubican los datos! 🎯
+¡Ahora puedes analizar cualquier grupo y saber dónde está cada quien! 
 \end{alertblock}
 
 \end{frame}

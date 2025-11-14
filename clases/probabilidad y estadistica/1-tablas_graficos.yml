@@ -1,13 +1,13 @@
 tema: "Representación de datos a través de tablas y gráficos"
-subtitulo: "¡Organicemos los datos de forma divertida! 📊"
+subtitulo: "¡Organicemos los datos de forma divertida! "
 
 diapositivas:
   - titulo: "¿Por qué organizar datos?"
     contenido:
       - tipo: "nota"
-        texto: "¡Imagina tu cuarto desordenado vs ordenado! 🏠"
-      - "Datos desordenados = confusión 😵"
-      - "Datos organizados = claridad y respuestas ✨"
+        texto: "¡Imagina tu cuarto desordenado vs ordenado! "
+      - "Datos desordenados = confusión "
+      - "Datos organizados = claridad y respuestas "
       - tipo: "ejemplo"
         texto: "¿Qué helado prefieren tus amigos? Con una tabla lo sabrás al instante"
 
@@ -19,11 +19,11 @@ diapositivas:
       - tipo: "ejemplo"
         texto: "Datos de tu clase: alturas de todos los estudiantes"
       - tipo: "nota"
-        texto: "¡Los datos cuentan historias, solo hay que saber leerlos! 📖"
+        texto: "¡Los datos cuentan historias, solo hay que saber leerlos! "
 
   - titulo: "Tablas de Frecuencia - ¿Qué son?"
     contenido:
-      - "Es como hacer un conteo organizado 📝"
+      - "Es como hacer un conteo organizado "
       - "Agrupamos datos iguales y contamos"
       - tipo: "nota"
         texto: "¡Es como ordenar tu colección de cartas por tipo!"
@@ -35,7 +35,7 @@ diapositivas:
       - "Es simplemente: ¿cuántas veces aparece?"
       - "Es el conteo directo, el número total"
       - tipo: "nota"
-        texto: "¡Es como contar con los dedos! ✋"
+        texto: "¡Es como contar con los dedos! "
       - tipo: "ejemplo"
         texto: "Colores de autos en el estacionamiento:"
       - "Rojos: 5, Azules: 3, Blancos: 7"
@@ -50,40 +50,46 @@ diapositivas:
         etiqueta_y: "Cantidad"
         titulo_serie: "Frecuencia"
 
-  - titulo: "Frecuencia Relativa"
+  - titulo: "Frecuencia Relativa - ¿Qué parte del todo?"
     contenido:
-      - "Es la proporción del total"
-      - "Responde: ¿qué parte del todo representa?"
+      - "Es la proporción, ¡el pedazo del pastel!"
+      - "Responde: ¿qué parte del total representa cada categoría?"
       - tipo: "formula"
-        texto: "\\text{Frec. Relativa} = \\frac{\\text{Frec. Absoluta}}{\\text{Total}}"
+        texto: "Frec. Relativa = (Las veces que aparece) / (El total de datos)"
       - tipo: "nota"
-        texto: "¡Es como saber qué porción de pizza te toca! 🍕"
+        texto: "¡Es como saber qué porción de pizza te toca! "
       - tipo: "ejemplo"
-        texto: "Si hay 10 autos y 5 son rojos: 5/10 = 0.5 = 50%"
+        texto: "Si hay 10 autos y 5 son rojos: 5 de 10 = la mitad = 50 por ciento"
 
-  - titulo: "Ejemplo Paso a Paso"
+  - titulo: "Ejemplo: ¡Guerra de Notas!"
     contenido:
       - tipo: "problema"
         texto: "Notas de 6 estudiantes: 15, 18, 15, 20, 18, 15"
-      - "Paso 1: Identificar valores diferentes: 15, 18, 20"
-      - "Paso 2: Contar cada uno (Frec. Absoluta)"
-      - "Paso 3: Calcular proporción (Frec. Relativa)"
+      - "Paso 1: ¿Qué notas distintas hay? (15, 18, 20)"
+      - "Paso 2: Contar cuántos sacaron cada nota (Frec. Absoluta)"
+      - "Paso 3: Ver qué parte del grupo sacó esa nota (Frec. Relativa)"
       - tipo: "nota"
         texto: "¡Vamos a construir la tabla juntos!"
 
-  - titulo: "Tabla Completa del Ejemplo"
+  - titulo: "Tabla de Notas del Ejemplo"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Nota", "Frec. Abs.", "Frec. Rel."]
+        encabezados: ["Nota", "Frecuencia Absoluta"]
         filas:
-          - ["15", "3", "3/6 = 0.50"]
-          - ["18", "2", "2/6 = 0.33"]
-          - ["20", "1", "1/6 = 0.17"]
+          - ["15", "3"]
+          - ["18", "2"]
+          - ["20", "1"]
       - "Total de estudiantes: 6"
+      - tipo: "tabla"
+        encabezados: ["Nota", "Frecuencia Relativa"]
+        filas:
+          - ["15", "3 de 6 = 50 por ciento"]
+          - ["18", "2 de 6 = 33 por ciento"]
+          - ["20", "1 de 6 = 17 por ciento"]
       - tipo: "calculo"
-        texto: "¡La nota 15 es la más frecuente! Aparece en la mitad de casos"
+        texto: "¡La nota 15 es la más común! La mitad de la clase la sacó."
       - tipo: "nota"
-        texto: "Nota: todas las frec. relativas suman 1.00 (o 100%)"
+        texto: "¡Si sumas los porcentajes, te da el 100 por ciento de la clase!"
 
   - titulo: "Gráfico del Ejemplo - Notas"
     contenido:
@@ -91,19 +97,19 @@ diapositivas:
         categorias: ["Nota 15", "Nota 18", "Nota 20"]
         valores: [3, 2, 1]
         etiqueta_x: "Calificaciones"
-        etiqueta_y: "Frecuencia Absoluta"
+        etiqueta_y: "Nº de Estudiantes"
         titulo_serie: "Estudiantes"
 
-  - titulo: "Gráfico de Barras 📊"
+  - titulo: "Gráfico de Barras "
     contenido:
-      - "Barras verticales u horizontales"
-      - "Cada barra = una categoría"
-      - "Altura de barra = frecuencia"
+      - "¡Compara cosas usando barras de diferentes alturas!"
+      - "Cada barra es una categoría (ej: sabor de helado)."
+      - "La altura de la barra te dice cuántos hay de esa categoría."
       - tipo: "nota"
-        texto: "¡Perfecto para comparar categorías de un vistazo!"
+        texto: "¡Perfecto para ver quién gana en una encuesta!"
       - tipo: "ejemplo"
         texto: "Deportes favoritos: Fútbol (10), Básquet (7), Vóley (5)"
-      - "¡Las barras muestran claramente cuál es más popular! ⚽"
+      - "¡La barra de Fútbol será la más alta! "
 
   - titulo: "Ejemplo - Deportes Favoritos"
     contenido:
@@ -111,109 +117,109 @@ diapositivas:
         categorias: ["Fútbol", "Básquet", "Vóley"]
         valores: [10, 7, 5]
         etiqueta_x: "Deporte"
-        etiqueta_y: "Votos"
+        etiqueta_y: "Votos de los fans"
         titulo_serie: "Preferencias"
         ancho_barra: "30pt"
 
-  - titulo: "Histograma 📈"
+  - titulo: "Histograma "
     contenido:
-      - "Similar a barras, pero para datos numéricos continuos"
-      - "Agrupa datos en rangos o intervalos"
-      - "Las barras están pegadas (sin espacios)"
+      - "¡Parecido al gráfico de barras, pero para números!"
+      - "Agrupa números en rangos (ej: edades de 0-10, 11-20...)."
+      - "Las barras van pegaditas para mostrar continuidad."
       - tipo: "ejemplo"
-        texto: "Edades: 10-15, 15-20, 20-25 años"
+        texto: "Alturas de personas: 1.50-1.60m, 1.60-1.70m, etc."
       - tipo: "nota"
-        texto: "¡Muestra cómo se distribuyen los datos!"
+        texto: "¡Muestra dónde se amontonan más los datos!"
 
-  - titulo: "Gráfico Circular (Pastel) 🥧"
+  - titulo: "Gráfico Circular (o de Pastel )"
     contenido:
-      - "Un círculo dividido en porciones"
-      - "Cada porción = una categoría"
-      - "Tamaño de porción = frecuencia relativa"
+      - "¡Un círculo que muestra las partes de un todo!"
+      - "Cada 'rebanada' es una categoría."
+      - "El tamaño de la rebanada te dice qué tan grande es esa parte."
       - tipo: "nota"
-        texto: "¡Ideal para ver proporciones del 100%!"
+        texto: "¡Ideal para ver cómo se reparte algo al 100 por ciento!"
       - tipo: "ejemplo"
-        texto: "Presupuesto familiar: 50% comida, 30% vivienda, 20% otros"
+        texto: "En tu celular: 50 por ciento para apps, 30 por ciento para fotos, 20 por ciento para música."
 
-  - titulo: "Ejemplo - Presupuesto Familiar"
+  - titulo: "Ejemplo - Uso de Memoria del Celular"
     contenido:
       - tipo: "grafico_circular"
-        etiquetas: ["Comida", "Vivienda", "Otros"]
+        etiquetas: ["Apps", "Fotos", "Música"]
         valores: [50, 30, 20]
 
-  - titulo: "Gráfico de Líneas 📉"
+  - titulo: "Gráfico de Líneas "
     contenido:
-      - "Puntos conectados con líneas"
-      - "Perfecto para mostrar cambios en el tiempo"
+      - "¡Conecta puntos para mostrar cómo algo cambia con el tiempo!"
+      - "Perfecto para ver tendencias: ¿sube, baja o se mantiene?"
       - tipo: "ejemplo"
-        texto: "Temperatura de la semana durante 7 días"
+        texto: "La temperatura durante la semana: ¿hizo más calor el lunes o el viernes?"
       - tipo: "nota"
-        texto: "¡Puedes ver tendencias: ¿sube? ¿baja? ¿se mantiene?"
-      - "Las líneas te cuentan la historia del cambio 📖"
+        texto: "¡La línea te cuenta una historia de subidas y bajadas! "
 
-  - titulo: "Ejemplo - Temperatura Semanal"
+  - titulo: "Ejemplo - Temperatura de la Semana"
     contenido:
       - tipo: "grafico_lineas"
         datos_x: [1, 2, 3, 4, 5, 6, 7]
         datos_y: [22, 24, 21, 23, 25, 20, 22]
-        etiqueta_x: "Día"
+        etiqueta_x: "Día de la Semana"
         etiqueta_y: "Temperatura (°C)"
         titulo_serie: "Temperatura"
         posicion_leyenda: "north east"
 
-  - titulo: "¿Cuál gráfico usar?"
+  - titulo: "¿Qué Gráfico Uso? ¡Elige tu arma!"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Tipo de datos", "Gráfico ideal"]
+        encabezados: ["Si quieres...", "Usa..."]
         filas:
-          - ["Categorías", "Barras o Circular"]
-          - ["Números continuos", "Histograma"]
-          - ["Cambios en tiempo", "Líneas"]
+          - ["Comparar categorías", "Gráfico de Barras"]
+          - ["Distribuir números", "Histograma"]
+          - ["Partes de un todo", "Gráfico Circular"]
+          - ["Cambios en el tiempo", "Gráfico de Líneas"]
       - tipo: "nota"
-        texto: "¡Elige según lo que quieras mostrar! 🎯"
+        texto: "¡Elige el mejor gráfico para contar tu historia! "
 
-  - titulo: "El Promedio - ¿Qué es?"
+  - titulo: "El Promedio - El 'Valor Justo'"
     contenido:
-      - "También llamado 'media aritmética'"
-      - "Es el valor central, el punto de balance ⚖️"
+      - "También llamado 'media'. ¡Es el punto de equilibrio! "
+      - "Es el número que representa a todo el grupo."
       - tipo: "nota"
-        texto: "¡Imagina repartir todo en partes iguales!"
+        texto: "¡Imagina repartir todos los caramelos en partes iguales!"
       - tipo: "ejemplo"
-        texto: "Si 3 amigos tienen 3, 6 y 9 caramelos, el promedio es repartir equitativamente"
+        texto: "Si 3 amigos tienen 2, 4 y 6 caramelos, el promedio es 4 para cada uno."
 
-  - titulo: "¿Cómo calcular el Promedio?"
+  - titulo: "¿Cómo Calcular el Promedio?"
     contenido:
-      - "Paso 1: Suma todos los valores"
-      - "Paso 2: Divide entre cuántos valores hay"
+      - "Paso 1: ¡Suma todos los datos!"
+      - "Paso 2: ¡Divide por la cantidad de datos que sumaste!"
       - tipo: "formula"
-        texto: "\\bar{x} = \\frac{\\text{suma de todos}}{\\text{cantidad de datos}}"
+        texto: "Promedio = (Suma de todos los datos) / (Cuántos datos hay)"
       - tipo: "nota"
-        texto: "¡Es como compartir todo y ver cuánto le toca a cada uno! 🍰"
+        texto: "¡Es como compartir la cuenta entre amigos! "
 
-  - titulo: "Ejemplo del Promedio"
+  - titulo: "Ejemplo de Promedio"
     contenido:
       - tipo: "ejemplo"
-        texto: "Datos: 5, 8, 10, 12, 15"
-      - "Paso 1: Sumar todos"
+        texto: "Tus notas: 10, 12, 17"
+      - "Paso 1: Sumar todo"
       - tipo: "calculo"
-        texto: "5 + 8 + 10 + 12 + 15 = 50"
-      - "Paso 2: Dividir entre cantidad (5 datos)"
+        texto: "10 + 12 + 17 = 39"
+      - "Paso 2: Dividir entre 3 (porque son 3 notas)"
       - tipo: "calculo"
-        texto: "\\bar{x} = \\frac{50}{5} = 10"
+        texto: "Promedio = 39 / 3 = 13"
       - tipo: "nota"
-        texto: "¡El promedio es 10! Es el valor 'típico' del grupo"
+        texto: "¡Tu promedio es 13! Ese es el 'resumen' de tus notas."
 
-  - titulo: "Practicando con Frutas 🍎"
+  - titulo: "Practicando con Frutas "
     contenido:
       - tipo: "problema"
-        texto: "Manzanas vendidas por día: 12, 15, 10, 18, 20"
-      - "¿Cuántas manzanas se venden en promedio por día?"
+        texto: "Ventas de manzanas por día: Lunes (10), Martes (15), Miércoles (20)"
+      - "¿Cuántas manzanas se venden en promedio cada día?"
 
   - titulo: "Visualización - Ventas de Manzanas"
     contenido:
       - tipo: "grafico_barras"
-        categorias: ["Día 1", "Día 2", "Día 3", "Día 4", "Día 5"]
-        valores: [12, 15, 10, 18, 20]
+        categorias: ["Lunes", "Martes", "Miércoles"]
+        valores: [10, 15, 20]
         etiqueta_x: "Día de la semana"
         etiqueta_y: "Manzanas vendidas"
         titulo_serie: "Ventas"
@@ -221,40 +227,38 @@ diapositivas:
   - titulo: "Solución - Promedio de Manzanas"
     contenido:
       - tipo: "calculo"
-        texto: "Suma: 12 + 15 + 10 + 18 + 20 = 75"
+        texto: "Suma: 10 + 15 + 20 = 45"
       - tipo: "calculo"
-        texto: "Promedio: 75 ÷ 5 = 15 manzanas/día"
-      - "¡En promedio se venden 15 manzanas diarias! 🎯"
+        texto: "Promedio: 45 / 3 días = 15 manzanas/día"
+      - "¡En promedio, se venden 15 manzanas al día! "
 
-  - titulo: "Ejercicio Divertido 🌡️"
+  - titulo: "Ejercicio: ¡El Detective del Clima! "
     contenido:
       - tipo: "problema"
-        texto: "Temperaturas de la semana (°C): 22, 24, 21, 23, 25, 20, 22"
-      - "Tarea 1: Construir tabla de frecuencias"
-      - "Tarea 2: Calcular temperatura promedio"
-      - "Tarea 3: ¿Qué gráfico usarías?"
+        texto: "Temperaturas de 5 días (°C): 20, 25, 22, 28, 20"
+      - "Tarea 1: ¿Cuál es la temperatura más común?"
+      - "Tarea 2: Calcula la temperatura promedio."
+      - "Tarea 3: ¿Qué gráfico usarías para ver la evolución del clima?"
       - tipo: "nota"
         texto: "¡Piensa qué historia quieres contar con los datos!"
 
   - titulo: "Solución - Tabla"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Temperatura", "Días (Frec. Abs.)"]
+        encabezados: ["Temperatura", "Días"]
         filas:
-          - ["20°C", "1"]
-          - ["21°C", "1"]
-          - ["22°C", "2"]
-          - ["23°C", "1"]
-          - ["24°C", "1"]
-          - ["25°C", "1"]
+          - ["20 grados C", "2"]
+          - ["22 grados C", "1"]
+          - ["25 grados C", "1"]
+          - ["28 grados C", "1"]
       - tipo: "nota"
-        texto: "22°C es la más frecuente (aparece 2 veces)"
+        texto: "¡La temperatura más común (la moda) es 20 grados C!"
 
   - titulo: "Gráfico - Distribución de Temperaturas"
     contenido:
       - tipo: "grafico_barras"
-        categorias: ["20°C", "21°C", "22°C", "23°C", "24°C", "25°C"]
-        valores: [1, 1, 2, 1, 1, 1]
+        categorias: ["20°C", "22°C", "25°C", "28°C"]
+        valores: [2, 1, 1, 1]
         etiqueta_x: "Temperatura"
         etiqueta_y: "Frecuencia (días)"
         titulo_serie: "Distribución"
@@ -262,30 +266,27 @@ diapositivas:
   - titulo: "Solución - Promedio"
     contenido:
       - tipo: "calculo"
-        texto: "Suma: 22+24+21+23+25+20+22 = 157"
+        texto: "Suma: 20 + 25 + 22 + 28 + 20 = 115"
       - tipo: "calculo"
-        texto: "Promedio: 157 ÷ 7 = 22.43°C"
+        texto: "Promedio: 115 / 5 días = 23°C"
       - "Interpretación:"
-      - "La temperatura típica de la semana fue 22.4°C"
+      - "La temperatura promedio de la semana fue 23°C."
       - tipo: "nota"
-        texto: "¡Es una semana cálida y estable! ☀️"
+        texto: "¡Una semana bastante agradable! "
 
-  - titulo: "Solución - Gráfico"
+  - titulo: "Solución - Gráfico Ideal"
     contenido:
-      - "Mejor opción: Gráfico de líneas 📈"
+      - "Mejor opción: ¡Gráfico de líneas! "
       - "¿Por qué?"
-      - "✓ Muestra cambios día a día"
-      - "✓ Podemos ver si subió o bajó"
-      - "✓ Identifica tendencias"
+      - " Muestra los cambios día a día."
+      - " Podemos ver si el clima mejoró o empeoró."
+      - " ¡Es perfecto para ver tendencias en el tiempo!"
       - tipo: "nota"
-        texto: "También podríamos usar barras para comparar cada día"
+        texto: "Un gráfico de barras también serviría para comparar los días."
 
-  - titulo: "¡Resumen de la clase!"
+  - titulo: "¡Resumen de la Misión!"
     contenido:
-      - "✅ Tablas: organizan datos claramente"
-      - "✅ Frecuencia absoluta: conteo directo"
-      - "✅ Frecuencia relativa: proporción del total"
-      - "✅ Gráficos: visualizan datos"
-      - "✅ Promedio: valor típico del grupo"
-      - tipo: "nota"
-        texto: "¡Ahora puedes organizar y entender cualquier conjunto de datos! 🎉"
+      - " Misión 1: Organizar datos con Tablas de Frecuencia."
+      - " Misión 2: Visualizar datos con Gráficos (barras, pastel, líneas)."
+      - " Misión 3: Calcular el Promedio para encontrar el 'valor justo'."
+      - " ¡Ahora eres un detective de datos capaz de organizarlos y entenderlos! "
