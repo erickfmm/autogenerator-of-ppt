@@ -1,0 +1,275 @@
+tema: "Fundamentos de Programación Moderna"
+subtitulo: "Variables, control de flujo y lógica 🧮"
+
+diapositivas:
+  # === INTRODUCCIÓN ===
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Hoy empezamos a programar de verdad! 💻"
+      - "Objetivo 1: Entender qué son las variables y tipos de datos"
+      - "Objetivo 2: Escribir expresiones y sentencias"
+      - "Objetivo 3: Controlar el flujo del programa con decisiones"
+      - "Objetivo 4: Usar ciclos para repetir tareas"
+      - tipo: "ejemplo"
+        texto: "Como organizar cajas con diferentes objetos y decidir qué hacer con cada una"
+
+  # === VARIABLES CONCEPTO ===
+  - titulo: "Variables: Las Cajas de Memoria"
+    contenido:
+      - tipo: "nota"
+        texto: "Una variable es como una caja etiquetada donde guardamos datos 📦"
+      - "Cada variable tiene un nombre (etiqueta)"
+      - "Cada variable almacena un valor"
+      - tipo: "ejemplo"
+        texto: |
+          nombre_empresa = "Mi Empresa S.A."
+          saldo = 1500000
+          activo = True
+      - "✅ La computadora reserva memoria para guardar estos valores"
+
+  # === TIPOS DE DATOS ===
+  - titulo: "Tipos de Datos Primitivos"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Tipo", "Uso", "Ejemplo"]
+        filas:
+          - ["Enteros (int) 🔢", "IDs, cantidades", "id_usuario = 12345"]
+          - ["Flotantes (float) 💰", "Dinero, precios", "precio = 19.99"]
+          - ["Textos (string) 📝", "Nombres, emails", "nombre = \"Juan\""]
+          - ["Booleanos (bool) ✓✗", "Estados sí/no", "activo = True"]
+      - tipo: "nota"
+        texto: "Cada tipo de dato se guarda diferente en memoria"
+
+  # === OPERADORES ARITMÉTICOS ===
+  - titulo: "Operadores Aritméticos"
+    contenido:
+      - "Permiten hacer cálculos matemáticos"
+      - tipo: "tabla"
+        encabezados: ["Operador", "Operación", "Ejemplo"]
+        filas:
+          - ["+", "Suma", "10 + 5 = 15"]
+          - ["-", "Resta", "20 - 8 = 12"]
+          - ["*", "Multiplicación", "6 * 7 = 42"]
+          - ["/", "División", "15 / 3 = 5"]
+          - ["%", "Módulo (resto)", "17 % 5 = 2"]
+      - tipo: "ejemplo"
+        texto: "total = precio * cantidad + iva"
+
+  # === OPERADORES LÓGICOS ===
+  - titulo: "Operadores Lógicos"
+    contenido:
+      - "Permiten comparar y combinar condiciones"
+      - tipo: "tabla"
+        encabezados: ["Operador", "Significado", "Ejemplo"]
+        filas:
+          - ["==", "Igual a", "edad == 18"]
+          - ["!=", "Diferente de", "saldo != 0"]
+          - [">", "Mayor que", "precio > 100"]
+          - [">=", "Mayor o igual", "edad >= 18"]
+          - ["<", "Menor que", "stock < 10"]
+          - ["<=", "Menor o igual", "nota <= 7"]
+      - tipo: "ejemplo"
+        texto: "Si saldo >= precio entonces aprobar compra"
+
+  # === EXPRESIONES VS SENTENCIAS ===
+  - titulo: "Expresiones vs. Sentencias"
+    contenido:
+      - tipo: "nota"
+        texto: "¿Cuál es la diferencia? 🤔"
+      - tipo: "tabla"
+        encabezados: ["Expresión", "Sentencia"]
+        filas:
+          - ["Tiene un valor", "Ejecuta una acción"]
+          - ["5 + 3", "x = 5 + 3"]
+          - ["precio * 1.19", "print(mensaje)"]
+          - ["edad >= 18", "if edad >= 18:"]
+      - tipo: "ejemplo"
+        texto: "Expresión: precio * 1.19 (calcula IVA) → Sentencia: total = precio * 1.19 (asigna resultado)"
+
+  # === CÁLCULO DE IMPUESTOS ===
+  - titulo: "Ejemplo Práctico: Cálculo de IVA"
+    contenido:
+      - tipo: "problema"
+        texto: "Calcular el precio total de un producto con IVA (19%)"
+      - tipo: "calculo"
+        texto: "precio_neto = 100000"
+      - tipo: "calculo"
+        texto: "iva = precio_neto * 0.19 = 19000"
+      - tipo: "calculo"
+        texto: "precio_total = precio_neto + iva = 119000"
+      - tipo: "ejemplo"
+        texto: |
+          precio_neto = 100000
+          precio_total = precio_neto * 1.19
+          # Resultado: 119000
+
+  # === IF/ELSE ===
+  - titulo: "Control de Flujo: IF/ELSE"
+    contenido:
+      - tipo: "nota"
+        texto: "¡La computadora puede tomar decisiones! 🤖"
+      - "IF = Si se cumple una condición, ejecuta un bloque de código"
+      - "ELSE = Si no, ejecuta otro bloque"
+      - tipo: "ejemplo"
+        texto: |
+          if saldo >= costo:
+              aprobar_transaccion()
+              restar_saldo(costo)
+          else:
+              rechazar_transaccion()
+              mostrar_error("Saldo insuficiente")
+
+  # === EJEMPLO IF PRÁCTICO ===
+  - titulo: "Ejemplo: Validación de Transacción"
+    contenido:
+      - tipo: "problema"
+        texto: "Aprobar o rechazar una compra según el saldo disponible"
+      - tipo: "ejemplo"
+        texto: |
+          saldo = 50000
+          precio_producto = 30000
+          
+          if saldo >= precio_producto:
+              print("✅ Compra aprobada")
+              saldo = saldo - precio_producto
+              print("Nuevo saldo:", saldo)
+          else:
+              print("❌ Saldo insuficiente")
+      - tipo: "calculo"
+        texto: "Resultado: Compra aprobada. Nuevo saldo: 20000"
+
+  # === OPERADORES AND OR NOT ===
+  - titulo: "Operadores Lógicos: AND, OR, NOT"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Operador", "Uso", "Ejemplo"]
+        filas:
+          - ["AND", "Ambas condiciones verdaderas", "edad >= 18 AND tiene_licencia"]
+          - ["OR", "Al menos una verdadera", "pago_efectivo OR pago_tarjeta"]
+          - ["NOT", "Niega la condición", "NOT usuario_bloqueado"]
+      - tipo: "ejemplo"
+        texto: |
+          if saldo >= precio AND usuario_activo:
+              procesar_compra()
+      - tipo: "nota"
+        texto: "Las validaciones de seguridad usan muchos AND para verificar múltiples condiciones"
+
+  # === SWITCH/MATCH ===
+  - titulo: "Estructuras SWITCH/MATCH"
+    contenido:
+      - "Para elegir entre múltiples opciones"
+      - tipo: "ejemplo"
+        texto: "Menú de opciones en un ERP:"
+      - tipo: "calculo"
+        texto: |
+          opcion = 2
+          
+          match opcion:
+              case 1: crear_factura()
+              case 2: consultar_saldo()
+              case 3: generar_reporte()
+              case _: print("Opción inválida")
+      - tipo: "nota"
+        texto: "Más limpio que múltiples IF/ELIF cuando hay muchas opciones"
+
+  # === CICLO WHILE ===
+  - titulo: "Ciclos: WHILE (Mientras)"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Repetir código mientras se cumpla una condición! 🔄"
+      - "Se usa cuando no sabemos cuántas veces repetir"
+      - tipo: "ejemplo"
+        texto: |
+          intentos = 0
+          conectado = False
+          
+          while not conectado and intentos < 5:
+              conectado = intentar_conexion()
+              intentos = intentos + 1
+          
+          if conectado:
+              print("✅ Conexión exitosa")
+          else:
+              print("❌ Error de conexión")
+
+  # === CICLO FOR ===
+  - titulo: "Ciclos: FOR (Para Cada)"
+    contenido:
+      - "Se usa cuando sabemos cuántas veces repetir"
+      - "Ideal para recorrer listas de datos"
+      - tipo: "ejemplo"
+        texto: "Pagar nómina a todos los empleados:"
+      - tipo: "calculo"
+        texto: |
+          empleados = ["Ana", "Juan", "María", "Pedro"]
+          
+          for empleado in empleados:
+              procesar_pago(empleado)
+              enviar_comprobante(empleado)
+              print("Pago a", empleado, "✅")
+
+  # === EJEMPLO FOR PRÁCTICO ===
+  - titulo: "Ejemplo Práctico: Calcular Total de Ventas"
+    contenido:
+      - tipo: "problema"
+        texto: "Sumar todas las ventas del día"
+      - tipo: "ejemplo"
+        texto: |
+          ventas = [15000, 23000, 8500, 12000, 31000]
+          total = 0
+          
+          for venta in ventas:
+              total = total + venta
+          
+          print("Total del día:", total)
+      - tipo: "calculo"
+        texto: "Resultado: Total del día: 89500"
+
+  # === BUCLES INFINITOS ===
+  - titulo: "Prevención de Bucles Infinitos"
+    contenido:
+      - tipo: "nota"
+        texto: "⚠️ ¡Cuidado con los bucles que nunca terminan!"
+      - tipo: "ejemplo"
+        texto: "Bucle infinito (ERROR):"
+      - tipo: "calculo"
+        texto: |
+          contador = 0
+          while contador < 10:
+              print("Hola")
+              # ¡Olvidamos incrementar contador!
+              # Este bucle NUNCA termina
+      - tipo: "ejemplo"
+        texto: "Bucle correcto:"
+      - tipo: "calculo"
+        texto: |
+          contador = 0
+          while contador < 10:
+              print("Hola")
+              contador = contador + 1  # ✅ Se incrementa
+
+  # === EJERCICIO PRÁCTICO ===
+  - titulo: "¡Tu Turno de Practicar! 💪"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear un programa que valide un descuento especial"
+      - "Condiciones:"
+      - "  • Si la compra es mayor a $100.000 → 10% de descuento"
+      - "  • Si además es cliente VIP → 15% de descuento"
+      - "  • Calcular el precio final"
+      - tipo: "nota"
+        texto: "Usa IF/ELSE y operadores AND para resolverlo"
+
+  # === RESUMEN ===
+  - titulo: "¡Resumen de lo Aprendido! 🎓"
+    contenido:
+      - "✅ Variables guardan datos en memoria (como cajas etiquetadas)"
+      - "✅ Tipos de datos: Enteros, Flotantes, Textos, Booleanos"
+      - "✅ Operadores aritméticos para cálculos (+, -, *, /, %)"
+      - "✅ Operadores lógicos para comparaciones (==, !=, >, <, >=, <=)"
+      - "✅ IF/ELSE permite tomar decisiones en el código"
+      - "✅ WHILE repite mientras se cumpla una condición"
+      - "✅ FOR recorre listas y repite un número fijo de veces"
+      - tipo: "nota"
+        texto: "¡Con estos fundamentos ya puedes crear programas reales! 🚀"

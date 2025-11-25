@@ -1,0 +1,338 @@
+tema: "Estructuras de Datos y Modularidad"
+subtitulo: "Organizando información y reutilizando código 📚"
+
+diapositivas:
+  # === INTRODUCCIÓN ===
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Hoy organizamos datos y creamos funciones reutilizables! 🎯"
+      - "Objetivo 1: Almacenar múltiples valores en listas y arrays"
+      - "Objetivo 2: Usar diccionarios para datos estructurados"
+      - "Objetivo 3: Intercambiar datos con formato JSON"
+      - "Objetivo 4: Crear funciones para no repetir código"
+      - tipo: "ejemplo"
+        texto: "Como organizar un archivador: cada cajón tiene carpetas con documentos específicos"
+
+  # === LISTAS Y ARRAYS ===
+  - titulo: "Listas y Arrays: Múltiples Valores"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Una variable que guarda muchos valores! 📦📦📦"
+      - "En vez de crear 10 variables separadas, usamos 1 lista"
+      - tipo: "ejemplo"
+        texto: |
+          # Forma incorrecta ❌
+          transaccion1 = 15000
+          transaccion2 = 23000
+          transaccion3 = 8500
+          
+          # Forma correcta ✅
+          transacciones = [15000, 23000, 8500, 12000, 31000]
+      - "Las listas se indexan desde 0"
+
+  # === ACCESO A LISTAS ===
+  - titulo: "Acceso a Elementos de una Lista"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Operación", "Código", "Resultado"]
+        filas:
+          - ["Primer elemento", "transacciones[0]", "15000"]
+          - ["Segundo elemento", "transacciones[1]", "23000"]
+          - ["Último elemento", "transacciones[-1]", "31000"]
+          - ["Cantidad de elementos", "len(transacciones)", "5"]
+      - tipo: "ejemplo"
+        texto: "primera_venta = transacciones[0]"
+      - tipo: "nota"
+        texto: "¡El índice 0 es el primero, no el 1! 🔢"
+
+  # === OPERACIONES CON LISTAS ===
+  - titulo: "Operaciones con Listas"
+    contenido:
+      - "Agregar elementos:"
+      - tipo: "calculo"
+        texto: "transacciones.append(18000)  # Agrega al final"
+      - "Eliminar elementos:"
+      - tipo: "calculo"
+        texto: "transacciones.remove(8500)  # Elimina ese valor"
+      - "Recorrer la lista:"
+      - tipo: "calculo"
+        texto: |
+          for transaccion in transacciones:
+              print("Venta:", transaccion)
+
+  # === EJEMPLO PRÁCTICO LISTAS ===
+  - titulo: "Ejemplo: Gestión de Empleados"
+    contenido:
+      - tipo: "problema"
+        texto: "Almacenar y procesar lista de empleados"
+      - tipo: "ejemplo"
+        texto: |
+          empleados = ["Ana", "Juan", "María", "Pedro"]
+          
+          # Agregar nuevo empleado
+          empleados.append("Carlos")
+          
+          # Pagar a todos
+          for empleado in empleados:
+              print("Procesando pago de", empleado)
+          
+          # Cantidad total
+          print("Total empleados:", len(empleados))
+      - tipo: "calculo"
+        texto: "Resultado: Total empleados: 5"
+
+  # === DICCIONARIOS ===
+  - titulo: "Diccionarios: Datos Estructurados"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Como una ficha con múltiples campos! 📋"
+      - "Cada dato tiene una clave (nombre del campo) y un valor"
+      - tipo: "ejemplo"
+        texto: |
+          empresa = {
+              "nombre": "Tech Solutions S.A.",
+              "rut": "76.123.456-7",
+              "saldo": 1500000,
+              "activo": True
+          }
+      - "Se accede por clave, no por índice numérico"
+
+  # === ACCESO A DICCIONARIOS ===
+  - titulo: "Acceso a Datos en Diccionarios"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Operación", "Código", "Resultado"]
+        filas:
+          - ["Obtener valor", "empresa['nombre']", "Tech Solutions S.A."]
+          - ["Modificar valor", "empresa['saldo'] = 2000000", "2000000"]
+          - ["Agregar campo", "empresa['ciudad'] = 'Santiago'", "Santiago"]
+          - ["Verificar clave", "'rut' in empresa", "True"]
+      - tipo: "ejemplo"
+        texto: "nombre_empresa = empresa['nombre']"
+
+  # === EJEMPLO DICCIONARIO ===
+  - titulo: "Ejemplo: Registro de Cliente"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear y gestionar información de un cliente"
+      - tipo: "ejemplo"
+        texto: |
+          cliente = {
+              "id": 12345,
+              "nombre": "Juan Pérez",
+              "email": "juan@email.com",
+              "compras_totales": 0,
+              "vip": False
+          }
+          
+          # Registrar una compra
+          cliente["compras_totales"] += 50000
+          
+          # Promover a VIP si compra más de 100000
+          if cliente["compras_totales"] > 100000:
+              cliente["vip"] = True
+
+  # === LISTA DE DICCIONARIOS ===
+  - titulo: "Listas de Diccionarios: Base de Datos Simple"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Combinar listas y diccionarios para datos complejos! 🗄️"
+      - tipo: "ejemplo"
+        texto: |
+          facturas = [
+              {"numero": 1001, "cliente": "Empresa A", "monto": 150000},
+              {"numero": 1002, "cliente": "Empresa B", "monto": 230000},
+              {"numero": 1003, "cliente": "Empresa C", "monto": 180000}
+          ]
+          
+          # Calcular total facturado
+          total = 0
+          for factura in facturas:
+              total += factura["monto"]
+      - tipo: "calculo"
+        texto: "Total facturado: 560000"
+
+  # === JSON ===
+  - titulo: "JSON: El Formato Universal"
+    contenido:
+      - tipo: "nota"
+        texto: "JavaScript Object Notation - Estándar para intercambiar datos 🌐"
+      - "Es como un diccionario pero en formato de texto"
+      - tipo: "ejemplo"
+        texto: |
+          {
+            "numero_factura": 1001,
+            "cliente": "Empresa A",
+            "items": [
+              {"producto": "Laptop", "precio": 500000},
+              {"producto": "Mouse", "precio": 15000}
+            ],
+            "total": 515000
+          }
+      - "APIs, bases de datos y archivos usan JSON"
+
+  # === TRABAJANDO CON JSON ===
+  - titulo: "Trabajar con JSON en Código"
+    contenido:
+      - "Convertir diccionario a JSON (texto):"
+      - tipo: "calculo"
+        texto: |
+          import json
+          
+          factura_dict = {"numero": 1001, "monto": 150000}
+          factura_json = json.dumps(factura_dict)
+          # Resultado: '{"numero": 1001, "monto": 150000}'
+      - "Convertir JSON (texto) a diccionario:"
+      - tipo: "calculo"
+        texto: |
+          texto = '{"numero": 1002, "monto": 230000}'
+          factura = json.loads(texto)
+          print(factura["monto"])  # 230000
+
+  # === FUNCIONES INTRODUCCIÓN ===
+  - titulo: "Funciones: No Repetir Código"
+    contenido:
+      - tipo: "nota"
+        texto: "Principio DRY: Don't Repeat Yourself 🔁"
+      - "Si escribes el mismo código 2 veces, crea una función"
+      - tipo: "ejemplo"
+        texto: "En vez de calcular IVA manualmente cada vez:"
+      - tipo: "calculo"
+        texto: |
+          # ❌ Repetitivo
+          total1 = precio1 * 1.19
+          total2 = precio2 * 1.19
+          total3 = precio3 * 1.19
+          
+          # ✅ Con función
+          def calcular_con_iva(precio):
+              return precio * 1.19
+          
+          total1 = calcular_con_iva(precio1)
+
+  # === ESTRUCTURA DE FUNCIONES ===
+  - titulo: "Estructura de una Función"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Parte", "Descripción", "Ejemplo"]
+        filas:
+          - ["Nombre", "Identifica la función", "calcular_iva"]
+          - ["Parámetros", "Datos de entrada", "(precio)"]
+          - ["Cuerpo", "Código a ejecutar", "total = precio * 0.19"]
+          - ["Retorno", "Dato de salida", "return total"]
+      - tipo: "ejemplo"
+        texto: |
+          def calcular_iva(precio):
+              iva = precio * 0.19
+              return iva
+
+  # === EJEMPLO FUNCIÓN PRÁCTICA ===
+  - titulo: "Ejemplo: Función Validar RUT"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear función que valide formato de RUT chileno"
+      - tipo: "ejemplo"
+        texto: |
+          def validar_rut(rut):
+              # Eliminar puntos y guión
+              rut_limpio = rut.replace(".", "").replace("-", "")
+              
+              # Verificar longitud
+              if len(rut_limpio) < 8 or len(rut_limpio) > 9:
+                  return False
+              
+              # Validar que sean números (excepto último dígito)
+              if not rut_limpio[:-1].isdigit():
+                  return False
+              
+              return True
+      - tipo: "calculo"
+        texto: "validar_rut('12.345.678-9') → True"
+
+  # === PARÁMETROS Y RETORNO ===
+  - titulo: "Parámetros y Valores de Retorno"
+    contenido:
+      - tipo: "nota"
+        texto: "Input → Proceso → Output 🔄"
+      - tipo: "ejemplo"
+        texto: "Función con múltiples parámetros:"
+      - tipo: "calculo"
+        texto: |
+          def calcular_descuento(precio, porcentaje):
+              descuento = precio * (porcentaje / 100)
+              precio_final = precio - descuento
+              return precio_final
+          
+          # Uso
+          total = calcular_descuento(100000, 10)
+          print(total)  # 90000
+      - "Los parámetros son variables locales dentro de la función"
+
+  # === SCOPE ===
+  - titulo: "Alcance de Variables (Scope)"
+    contenido:
+      - tipo: "nota"
+        texto: "¿Dónde viven las variables? 🏠"
+      - tipo: "tabla"
+        encabezados: ["Tipo", "Alcance", "Uso"]
+        filas:
+          - ["Variable Local", "Dentro de la función", "Solo existe en la función"]
+          - ["Variable Global", "Fuera de funciones", "Accesible en todo el código"]
+      - tipo: "ejemplo"
+        texto: |
+          saldo_global = 100000  # Global
+          
+          def retirar(monto):
+              saldo_local = saldo_global - monto  # Local
+              return saldo_local
+          
+          # saldo_local NO existe aquí (fuera de la función)
+
+  # === EJEMPLO COMPLETO ===
+  - titulo: "Ejemplo Completo: Sistema de Descuentos"
+    contenido:
+      - tipo: "problema"
+        texto: "Sistema que aplica descuentos según tipo de cliente"
+      - tipo: "ejemplo"
+        texto: |
+          def calcular_precio_final(precio, es_vip):
+              if es_vip:
+                  descuento = precio * 0.15
+              else:
+                  descuento = precio * 0.10
+              
+              precio_final = precio - descuento
+              return precio_final
+          
+          # Uso
+          cliente_vip = calcular_precio_final(100000, True)
+          cliente_normal = calcular_precio_final(100000, False)
+      - tipo: "calculo"
+        texto: "VIP: 85000 | Normal: 90000"
+
+  # === EJERCICIO ===
+  - titulo: "¡Tu Turno de Practicar! 💪"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear función que procese lista de ventas"
+      - "La función debe:"
+      - "  1. Recibir una lista de montos de ventas"
+      - "  2. Calcular el total"
+      - "  3. Calcular el promedio"
+      - "  4. Retornar ambos valores"
+      - tipo: "nota"
+        texto: "Pista: Usa len() para contar elementos y sum() para sumar"
+
+  # === RESUMEN ===
+  - titulo: "¡Resumen de lo Aprendido! 🎓"
+    contenido:
+      - "✅ Listas almacenan múltiples valores en una sola variable"
+      - "✅ Diccionarios organizan datos con claves y valores"
+      - "✅ JSON es el formato estándar para intercambiar datos"
+      - "✅ Combinar listas y diccionarios crea estructuras complejas"
+      - "✅ Funciones evitan repetir código (principio DRY)"
+      - "✅ Funciones tienen parámetros (input) y retorno (output)"
+      - "✅ Variables locales existen solo dentro de la función"
+      - tipo: "nota"
+        texto: "¡Ya puedes organizar datos y crear código modular! 🚀"

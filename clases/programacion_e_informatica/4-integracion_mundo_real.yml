@@ -1,0 +1,379 @@
+tema: "Integración y Mundo Real"
+subtitulo: "Conectando sistemas y desplegando aplicaciones 🌐"
+
+diapositivas:
+  # === INTRODUCCIÓN ===
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Hoy conectamos nuestro código con el mundo real! 🚀"
+      - "Objetivo 1: Entender qué son las APIs y cómo funcionan"
+      - "Objetivo 2: Conocer los verbos HTTP (GET, POST, PUT, DELETE)"
+      - "Objetivo 3: Aprender sobre autenticación y seguridad"
+      - "Objetivo 4: Comprender el ciclo de vida del software"
+      - tipo: "ejemplo"
+        texto: "Como conectar piezas de LEGO: cada API es una pieza que encaja con otras"
+
+  # === QUÉ ES UNA API ===
+  - titulo: "¿Qué es una API?"
+    contenido:
+      - tipo: "nota"
+        texto: "Application Programming Interface (Interfaz de Programación) 🔌"
+      - "Es un 'contrato' que define cómo comunicarse con un sistema"
+      - "Permite que diferentes aplicaciones hablen entre sí"
+      - tipo: "ejemplo"
+        texto: "Como un menú de restaurant: lista lo que puedes pedir y cómo pedirlo"
+      - "Tu app pide datos → API procesa → API responde"
+      - tipo: "calculo"
+        texto: "Ejemplo: App del clima pide temperatura → API responde '22°C'"
+
+  # === REST ===
+  - titulo: "REST: El Estándar de las APIs"
+    contenido:
+      - "REST = Representational State Transfer"
+      - "Es un estilo arquitectónico para crear APIs web"
+      - tipo: "nota"
+        texto: "Principios de REST:"
+      - "✅ Cliente-Servidor separados"
+      - "✅ Sin estado (cada petición es independiente)"
+      - "✅ URLs representan recursos"
+      - tipo: "ejemplo"
+        texto: |
+          /api/usuarios → Lista de usuarios
+          /api/usuarios/123 → Usuario con ID 123
+          /api/facturas → Lista de facturas
+
+  # === VERBOS HTTP ===
+  - titulo: "Verbos HTTP: Acciones sobre Recursos"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Verbo", "Acción", "Ejemplo"]
+        filas:
+          - ["GET", "Leer/Consultar", "Consultar saldo"]
+          - ["POST", "Crear", "Crear nueva empresa"]
+          - ["PUT", "Actualizar", "Actualizar datos de usuario"]
+          - ["DELETE", "Eliminar", "Borrar factura"]
+      - tipo: "nota"
+        texto: "Son como verbos en una oración: GET obtiene, POST crea, PUT modifica, DELETE elimina"
+
+  # === EJEMPLO GET ===
+  - titulo: "Ejemplo: Petición GET"
+    contenido:
+      - tipo: "problema"
+        texto: "Consultar el saldo de una billetera digital"
+      - tipo: "ejemplo"
+        texto: |
+          Petición:
+          GET /api/billeteras/12345/saldo
+          
+          Respuesta (JSON):
+          {
+            "billetera_id": 12345,
+            "propietario": "Juan Pérez",
+            "saldo": 150000,
+            "moneda": "CLP"
+          }
+      - tipo: "nota"
+        texto: "GET solo lee datos, nunca los modifica ✅"
+
+  # === EJEMPLO POST ===
+  - titulo: "Ejemplo: Petición POST"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear una nueva empresa en el sistema"
+      - tipo: "ejemplo"
+        texto: |
+          Petición:
+          POST /api/empresas
+          
+          Body (JSON):
+          {
+            "nombre": "Tech Solutions S.A.",
+            "rut": "76.123.456-7",
+            "email": "contacto@techsolutions.cl"
+          }
+          
+          Respuesta:
+          {
+            "id": 789,
+            "nombre": "Tech Solutions S.A.",
+            "mensaje": "Empresa creada exitosamente"
+          }
+
+  # === EJEMPLO PUT Y DELETE ===
+  - titulo: "Ejemplos: PUT y DELETE"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Actualizar email de un usuario (PUT):"
+      - tipo: "calculo"
+        texto: |
+          PUT /api/usuarios/123
+          Body: {"email": "nuevo@email.com"}
+          Respuesta: {"mensaje": "Usuario actualizado"}
+      - tipo: "ejemplo"
+        texto: "Eliminar una factura (DELETE):"
+      - tipo: "calculo"
+        texto: |
+          DELETE /api/facturas/456
+          Respuesta: {"mensaje": "Factura eliminada"}
+      - tipo: "nota"
+        texto: "PUT modifica recursos existentes, DELETE los elimina permanentemente"
+
+  # === AUTENTICACIÓN ===
+  - titulo: "Autenticación y Seguridad"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Proteger la billetera digital es crítico! 🔐"
+      - "No cualquiera puede consultar saldos o hacer transferencias"
+      - tipo: "tabla"
+        encabezados: ["Método", "Descripción", "Seguridad"]
+        filas:
+          - ["Usuario/Contraseña", "Login tradicional", "⭐⭐"]
+          - ["Tokens", "Código temporal", "⭐⭐⭐"]
+          - ["JWT", "Token con información", "⭐⭐⭐⭐"]
+          - ["OAuth", "Login con Google/Facebook", "⭐⭐⭐⭐⭐"]
+
+  # === TOKENS ===
+  - titulo: "Autenticación con Tokens"
+    contenido:
+      - tipo: "nota"
+        texto: "Como una pulsera de evento: la muestras para entrar 🎟️"
+      - "1️⃣ Usuario hace login con usuario/contraseña"
+      - "2️⃣ Servidor valida credenciales"
+      - "3️⃣ Servidor genera un token único"
+      - "4️⃣ Cliente guarda el token"
+      - "5️⃣ Cada petición incluye el token en el header"
+      - tipo: "ejemplo"
+        texto: |
+          Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+      - "El token expira después de cierto tiempo ⏱️"
+
+  # === JWT ===
+  - titulo: "JWT: JSON Web Token"
+    contenido:
+      - "Token que contiene información codificada"
+      - "Estructura: Header.Payload.Signature"
+      - tipo: "ejemplo"
+        texto: |
+          Payload (decodificado):
+          {
+            "usuario_id": 123,
+            "email": "juan@email.com",
+            "rol": "admin",
+            "exp": 1700000000
+          }
+      - tipo: "nota"
+        texto: "La firma garantiza que el token no fue modificado 🛡️"
+      - "Servidor verifica la firma antes de confiar en el token"
+
+  # === INTEGRACIÓN EXTERNA ===
+  - titulo: "Consumo de APIs Externas"
+    contenido:
+      - tipo: "problema"
+        texto: "Integrar con servicios de impuestos del SII (Chile)"
+      - tipo: "ejemplo"
+        texto: |
+          import requests
+          
+          # Consultar datos de empresa por RUT
+          rut = "76.123.456-7"
+          url = f"https://api.sii.cl/empresas/{rut}"
+          headers = {"Authorization": "Bearer tu_token_aqui"}
+          
+          response = requests.get(url, headers=headers)
+          
+          if response.status_code == 200:
+              datos = response.json()
+              print("Razón Social:", datos["razon_social"])
+          else:
+              print("Error:", response.status_code)
+
+  # === INTEGRACIÓN BANCARIA ===
+  - titulo: "Ejemplo: Integración con Banco"
+    contenido:
+      - tipo: "problema"
+        texto: "Procesar pago con tarjeta de crédito"
+      - tipo: "ejemplo"
+        texto: |
+          # API del banco procesador
+          POST /api/pagos
+          
+          Body:
+          {
+            "monto": 50000,
+            "tarjeta": {
+              "numero": "4532-****-****-1234",
+              "cvv": "***",
+              "expiracion": "12/25"
+            },
+            "descripcion": "Compra en tienda online"
+          }
+          
+          Respuesta:
+          {
+            "transaccion_id": "TXN789456",
+            "estado": "aprobado",
+            "fecha": "2024-11-25T14:30:00Z"
+          }
+
+  # === CICLO DE VIDA ===
+  - titulo: "Ciclo de Vida del Software"
+    contenido:
+      - tipo: "nota"
+        texto: "El viaje del código desde la idea hasta producción 🛤️"
+      - "📝 1. Planificación: Definir qué construir"
+      - "💻 2. Desarrollo: Escribir el código"
+      - "🧪 3. Testing: Probar que funcione"
+      - "🚀 4. Despliegue: Publicar en internet"
+      - "🔧 5. Mantenimiento: Corregir bugs y agregar features"
+      - tipo: "ejemplo"
+        texto: "Es un ciclo continuo, no un proceso lineal"
+
+  # === GIT ===
+  - titulo: "Control de Versiones: Git"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Guardar el historial de cambios del código! 📚"
+      - "Git es como 'Ctrl+Z' infinito para tu proyecto"
+      - tipo: "tabla"
+        encabezados: ["Comando", "Acción"]
+        filas:
+          - ["git init", "Iniciar repositorio"]
+          - ["git add .", "Preparar cambios"]
+          - ["git commit -m 'mensaje'", "Guardar cambios"]
+          - ["git push", "Subir a servidor"]
+          - ["git pull", "Descargar cambios"]
+      - tipo: "ejemplo"
+        texto: "Cada commit es una 'foto' del proyecto en ese momento"
+
+  # === BRANCHING ===
+  - titulo: "Branching: Trabajar en Paralelo"
+    contenido:
+      - "Ramas (branches) permiten trabajar en features sin afectar el código principal"
+      - tipo: "ejemplo"
+        texto: |
+          main (producción) ────────────●──────────●───→
+                                        ↑          ↑
+          feature-login ──●──●──●──●──●┘          │
+          feature-pagos ──●──●──●──●──●──────────┘
+      - tipo: "nota"
+        texto: "Desarrollas en tu rama, luego haces merge a main cuando está listo ✅"
+      - "Evita conflictos cuando varios desarrolladores trabajan juntos"
+
+  # === TESTING ===
+  - titulo: "Testing: Asegurar la Calidad"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Probar antes de enviar a producción! 🧪"
+      - "Pruebas Unitarias: Probar funciones individuales"
+      - tipo: "ejemplo"
+        texto: |
+          def test_calcular_iva():
+              precio = 100000
+              resultado = calcular_iva(precio)
+              assert resultado == 19000, "IVA incorrecto"
+      - "Si el cálculo financiero está mal, ¡puede ser desastroso! 💸"
+      - tipo: "calculo"
+        texto: "Test aprobado ✅ → Código confiable"
+
+  # === TIPOS DE TESTING ===
+  - titulo: "Tipos de Testing"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Tipo", "Qué Prueba", "Ejemplo"]
+        filas:
+          - ["Unitarias", "Funciones aisladas", "test_calcular_iva()"]
+          - ["Integración", "Componentes juntos", "API + Base de Datos"]
+          - ["E2E", "Flujo completo", "Login → Compra → Pago"]
+          - ["Carga", "Rendimiento", "10,000 usuarios simultáneos"]
+      - tipo: "nota"
+        texto: "Más tests = Menos bugs en producción 🐛"
+
+  # === DESPLIEGUE ===
+  - titulo: "Despliegue: Publicar el ERP"
+    contenido:
+      - tipo: "nota"
+        texto: "Poner el sistema en internet para que usuarios accedan 🌍"
+      - tipo: "tabla"
+        encabezados: ["Opción", "Descripción", "Ejemplo"]
+        filas:
+          - ["Servidor Propio", "Comprar y mantener", "Data center físico"]
+          - ["VPS", "Servidor virtual", "DigitalOcean, Linode"]
+          - ["Cloud", "Infraestructura escalable", "AWS, Azure, GCP"]
+          - ["PaaS", "Plataforma gestionada", "Heroku, Vercel"]
+      - tipo: "ejemplo"
+        texto: "Cloud es como Uber: pagas solo lo que usas"
+
+  # === CI/CD ===
+  - titulo: "CI/CD: Despliegue Continuo"
+    contenido:
+      - "CI = Continuous Integration (Integración Continua)"
+      - "CD = Continuous Deployment (Despliegue Continuo)"
+      - tipo: "ejemplo"
+        texto: "Flujo automatizado:"
+      - tipo: "calculo"
+        texto: |
+          1. Desarrollador hace push a Git
+          2. CI ejecuta tests automáticamente
+          3. Si tests pasan → Build del proyecto
+          4. CD despliega a servidor
+          5. Aplicación actualizada en minutos ⚡
+      - tipo: "nota"
+        texto: "De código a producción sin intervención manual 🤖"
+
+  # === MONITOREO ===
+  - titulo: "Monitoreo y Logs"
+    contenido:
+      - "Una vez en producción, hay que vigilar el sistema"
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "Herramienta", "Qué Monitorea"]
+        filas:
+          - ["Logs", "Elasticsearch", "Errores y eventos"]
+          - ["Performance", "New Relic", "Tiempo de respuesta"]
+          - ["Uptime", "Pingdom", "¿Está funcionando?"]
+          - ["Errores", "Sentry", "Crashes y excepciones"]
+      - tipo: "nota"
+        texto: "Si el ERP cae, necesitas saberlo INMEDIATAMENTE 🚨"
+
+  # === EJERCICIO INTEGRACIÓN ===
+  - titulo: "¡Tu Turno de Practicar! 💪"
+    contenido:
+      - tipo: "problema"
+        texto: "Diseñar una API REST para un sistema de biblioteca"
+      - "Endpoints necesarios:"
+      - "  • GET /api/libros → Listar todos los libros"
+      - "  • GET /api/libros/:id → Obtener un libro específico"
+      - "  • POST /api/libros → Agregar nuevo libro"
+      - "  • PUT /api/libros/:id → Actualizar libro"
+      - "  • DELETE /api/libros/:id → Eliminar libro"
+      - tipo: "nota"
+        texto: "Define qué datos envía y recibe cada endpoint en formato JSON"
+
+  # === RESUMEN ===
+  - titulo: "¡Resumen de lo Aprendido! 🎓"
+    contenido:
+      - "✅ APIs permiten que sistemas se comuniquen"
+      - "✅ REST usa verbos HTTP: GET, POST, PUT, DELETE"
+      - "✅ Autenticación con tokens (JWT) protege recursos"
+      - "✅ Consumir APIs externas integra servicios (bancos, impuestos)"
+      - "✅ Git guarda historial de cambios del código"
+      - "✅ Testing asegura que el código funcione correctamente"
+      - "✅ Despliegue pone la aplicación en internet"
+      - "✅ CI/CD automatiza el proceso de prueba y despliegue"
+      - tipo: "nota"
+        texto: "¡Ahora puedes crear, integrar y desplegar sistemas reales! 🚀"
+
+  # === CIERRE ===
+  - titulo: "El Camino del Programador"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Has completado el viaje desde cero hasta sistemas profesionales! 🎉"
+      - "🔹 Nivel 1: Entendiste cómo funcionan las computadoras"
+      - "🔹 Nivel 2: Aprendiste los fundamentos (variables, if, loops)"
+      - "🔹 Nivel 3: Organizaste datos y creaste funciones"
+      - "🔹 Nivel 4: Diseñaste arquitecturas escalables"
+      - "🔹 Nivel 5: Conectaste con el mundo real"
+      - tipo: "ejemplo"
+        texto: "Ahora puedes crear un ERP completo desde cero 💼"
+      - tipo: "nota"
+        texto: "¡La programación es una aventura sin fin! Sigue aprendiendo y construyendo 🌟"

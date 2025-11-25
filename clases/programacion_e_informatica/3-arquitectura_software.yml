@@ -1,0 +1,332 @@
+tema: "Arquitectura de Software y Diseño"
+subtitulo: "Construyendo sistemas escalables y organizados 🏗️"
+
+diapositivas:
+  # === INTRODUCCIÓN ===
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Hoy pensamos como arquitectos de software! 🏛️"
+      - "Objetivo 1: Entender la Programación Orientada a Objetos (POO)"
+      - "Objetivo 2: Conocer arquitecturas Cliente-Servidor"
+      - "Objetivo 3: Aprender el patrón MVC"
+      - "Objetivo 4: Introducción a Bases de Datos"
+      - tipo: "ejemplo"
+        texto: "Como diseñar un edificio: necesitamos planos, estructura y cimientos sólidos"
+
+  # === POO INTRODUCCIÓN ===
+  - titulo: "Programación Orientada a Objetos (POO)"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Modelar el mundo real en código! 🌍"
+      - "POO organiza el código en 'objetos' que representan cosas reales"
+      - tipo: "ejemplo"
+        texto: "En un ERP necesitamos representar:"
+      - "  • Usuarios (con nombre, email, contraseña)"
+      - "  • Billeteras (con saldo, transacciones)"
+      - "  • Facturas (con número, cliente, items, total)"
+      - "Cada uno es un 'objeto' con sus propios datos y comportamientos"
+
+  # === CLASES Y OBJETOS ===
+  - titulo: "Clases y Objetos"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Concepto", "Descripción", "Analogía"]
+        filas:
+          - ["Clase", "El molde o plantilla", "Plano de una casa"]
+          - ["Objeto", "Una instancia de la clase", "Casa construida"]
+          - ["Atributos", "Datos del objeto", "Color, tamaño, habitaciones"]
+          - ["Métodos", "Acciones del objeto", "Abrir puerta, encender luz"]
+      - tipo: "ejemplo"
+        texto: "Clase Usuario es el molde. usuario1 y usuario2 son objetos creados con ese molde"
+
+  # === EJEMPLO CLASE USUARIO ===
+  - titulo: "Ejemplo: Clase Usuario"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear una clase para representar usuarios del sistema"
+      - tipo: "ejemplo"
+        texto: |
+          class Usuario:
+              def __init__(self, nombre, email):
+                  self.nombre = nombre
+                  self.email = email
+                  self.activo = True
+              
+              def desactivar(self):
+                  self.activo = False
+              
+              def mostrar_info(self):
+                  return f"{self.nombre} - {self.email}"
+          
+          # Crear objetos
+          usuario1 = Usuario("Ana", "ana@email.com")
+          usuario2 = Usuario("Juan", "juan@email.com")
+
+  # === EJEMPLO CLASE BILLETERA ===
+  - titulo: "Ejemplo: Clase Billetera"
+    contenido:
+      - tipo: "problema"
+        texto: "Modelar una billetera digital con operaciones"
+      - tipo: "ejemplo"
+        texto: |
+          class Billetera:
+              def __init__(self, propietario):
+                  self.propietario = propietario
+                  self.saldo = 0
+                  self.transacciones = []
+              
+              def depositar(self, monto):
+                  self.saldo += monto
+                  self.transacciones.append(f"+{monto}")
+              
+              def retirar(self, monto):
+                  if self.saldo >= monto:
+                      self.saldo -= monto
+                      self.transacciones.append(f"-{monto}")
+                      return True
+                  return False
+
+  # === ENCAPSULAMIENTO ===
+  - titulo: "Encapsulamiento: Proteger los Datos"
+    contenido:
+      - tipo: "nota"
+        texto: "¡No permitir modificaciones no autorizadas! 🔒"
+      - "El saldo de una billetera no debe modificarse directamente"
+      - tipo: "ejemplo"
+        texto: "Forma incorrecta:"
+      - tipo: "calculo"
+        texto: "billetera.saldo = 1000000  # ❌ Modificación directa"
+      - tipo: "ejemplo"
+        texto: "Forma correcta:"
+      - tipo: "calculo"
+        texto: "billetera.depositar(1000000)  # ✅ A través de método"
+      - "El método valida y registra la operación"
+
+  # === CLASE FACTURA ===
+  - titulo: "Ejemplo Completo: Clase Factura"
+    contenido:
+      - tipo: "ejemplo"
+        texto: |
+          class Factura:
+              def __init__(self, numero, cliente):
+                  self.numero = numero
+                  self.cliente = cliente
+                  self.items = []
+                  self.total = 0
+              
+              def agregar_item(self, producto, precio):
+                  self.items.append({
+                      "producto": producto,
+                      "precio": precio
+                  })
+                  self.total += precio
+              
+              def aplicar_iva(self):
+                  self.total = self.total * 1.19
+              
+              def generar_pdf(self):
+                  # Lógica para crear PDF
+                  pass
+
+  # === ARQUITECTURA CLIENTE-SERVIDOR ===
+  - titulo: "Arquitectura Cliente-Servidor"
+    contenido:
+      - tipo: "nota"
+        texto: "¿Quién pide datos y quién los entrega? 🖥️↔️💾"
+      - tipo: "tabla"
+        encabezados: ["Cliente", "Servidor"]
+        filas:
+          - ["Solicita datos", "Entrega datos"]
+          - ["Interfaz de usuario", "Lógica de negocio"]
+          - ["Frontend/App", "Backend"]
+          - ["HTML, CSS, JS", "Python, Java, Node.js"]
+      - tipo: "ejemplo"
+        texto: "WhatsApp Web (cliente) pide mensajes al servidor de WhatsApp"
+
+  # === FLUJO CLIENTE-SERVIDOR ===
+  - titulo: "Flujo de una Petición"
+    contenido:
+      - tipo: "nota"
+        texto: "El ciclo de vida de una consulta 🔄"
+      - "1️⃣ Cliente: Usuario hace clic en 'Ver saldo'"
+      - "2️⃣ Cliente: Envía petición HTTP al servidor"
+      - "3️⃣ Servidor: Recibe petición, consulta base de datos"
+      - "4️⃣ Servidor: Obtiene saldo de la cuenta"
+      - "5️⃣ Servidor: Envía respuesta al cliente"
+      - "6️⃣ Cliente: Muestra el saldo en pantalla"
+      - tipo: "ejemplo"
+        texto: "Todo esto pasa en milisegundos ⚡"
+
+  # === MONOLITO VS MICROSERVICIOS ===
+  - titulo: "Monolito vs. Microservicios"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Monolito 🏢", "Microservicios 🏘️"]
+        filas:
+          - ["Todo en un solo bloque", "Servicios separados"]
+          - ["Más simple al inicio", "Más flexible"]
+          - ["Difícil escalar partes", "Escala por componente"]
+          - ["Un error tumba todo", "Fallas aisladas"]
+          - ["Despliegue completo", "Despliegue independiente"]
+      - tipo: "ejemplo"
+        texto: "ERP Monolito: Todo junto. Microservicios: Facturación, Inventario, RRHH separados"
+
+  # === EJEMPLO MICROSERVICIOS ===
+  - titulo: "Ejemplo: ERP con Microservicios"
+    contenido:
+      - tipo: "nota"
+        texto: "Cada servicio tiene una responsabilidad específica 🎯"
+      - tipo: "ejemplo"
+        texto: "Arquitectura de un ERP escalable:"
+      - "🔹 Servicio de Autenticación (Login/Logout)"
+      - "🔹 Servicio de Facturación (Crear/Consultar facturas)"
+      - "🔹 Servicio de Inventario (Stock de productos)"
+      - "🔹 Servicio de RRHH (Empleados y nómina)"
+      - "🔹 Servicio de Reportes (Análisis y estadísticas)"
+      - "Todos se comunican mediante APIs"
+
+  # === MVC ===
+  - titulo: "Patrón MVC: Modelo-Vista-Controlador"
+    contenido:
+      - tipo: "nota"
+        texto: "Separar responsabilidades para código más limpio 🧹"
+      - tipo: "tabla"
+        encabezados: ["Capa", "Responsabilidad", "Ejemplo"]
+        filas:
+          - ["Modelo", "Datos y lógica de negocio", "Clase Usuario, Factura"]
+          - ["Vista", "Interfaz visual", "HTML, CSS, pantallas"]
+          - ["Controlador", "Conecta Modelo y Vista", "Recibe clicks, actualiza datos"]
+      - tipo: "ejemplo"
+        texto: "Usuario hace clic → Controlador → Modelo consulta DB → Vista muestra resultado"
+
+  # === EJEMPLO MVC ===
+  - titulo: "Ejemplo MVC: Login de Usuario"
+    contenido:
+      - tipo: "problema"
+        texto: "Sistema de login usando patrón MVC"
+      - tipo: "ejemplo"
+        texto: |
+          # MODELO (datos)
+          class UsuarioModelo:
+              def verificar_credenciales(usuario, password):
+                  # Consulta base de datos
+                  return usuario_valido
+          
+          # VISTA (interfaz)
+          def mostrar_formulario_login():
+              # Muestra campos de usuario y contraseña
+              pass
+          
+          # CONTROLADOR (lógica)
+          def procesar_login(usuario, password):
+              if UsuarioModelo.verificar_credenciales(usuario, password):
+                  mostrar_pantalla_principal()
+              else:
+                  mostrar_error("Credenciales inválidas")
+
+  # === BASES DE DATOS INTRO ===
+  - titulo: "Bases de Datos: Persistencia de Datos"
+    contenido:
+      - tipo: "nota"
+        texto: "¿Por qué necesitamos guardar la información? 💾"
+      - "Las variables en memoria se borran al cerrar el programa"
+      - "Necesitamos almacenamiento permanente"
+      - tipo: "ejemplo"
+        texto: "Si apagas WhatsApp y lo vuelves a abrir, tus mensajes siguen ahí"
+      - "Esos mensajes están en una base de datos"
+      - tipo: "calculo"
+        texto: "Memoria RAM (temporal) → Base de Datos (permanente)"
+
+  # === SQL VS NOSQL ===
+  - titulo: "SQL vs. NoSQL"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["SQL (Relacional) 📊", "NoSQL (No Relacional) 📦"]
+        filas:
+          - ["Tablas con filas y columnas", "Documentos, clave-valor"]
+          - ["Relaciones entre tablas", "Datos anidados"]
+          - ["Estructura rígida", "Estructura flexible"]
+          - ["MySQL, PostgreSQL", "MongoDB, Redis"]
+      - tipo: "ejemplo"
+        texto: "SQL: Excel con tablas relacionadas. NoSQL: Colección de documentos JSON"
+
+  # === MODELO RELACIONAL ===
+  - titulo: "Modelar Relaciones: Clientes y Compras"
+    contenido:
+      - tipo: "problema"
+        texto: "Relacionar clientes con sus compras en SQL"
+      - tipo: "tabla"
+        encabezados: ["Tabla Clientes", "", ""]
+        filas:
+          - ["id", "nombre", "email"]
+          - ["1", "Ana López", "ana@mail.com"]
+          - ["2", "Juan Pérez", "juan@mail.com"]
+      - tipo: "tabla"
+        encabezados: ["Tabla Compras", "", ""]
+        filas:
+          - ["id", "cliente_id", "monto"]
+          - ["101", "1", "50000"]
+          - ["102", "1", "30000"]
+          - ["103", "2", "75000"]
+      - "cliente_id conecta las tablas (clave foránea)"
+
+  # === ACID ===
+  - titulo: "Propiedades ACID"
+    contenido:
+      - tipo: "nota"
+        texto: "Garantías de integridad en transacciones 🛡️"
+      - "🅰️ Atomicidad: Todo o nada (transferencia completa o se revierte)"
+      - "🅲 Consistencia: Datos siempre válidos (no saldos negativos)"
+      - "🅸 Aislamiento: Transacciones no interfieren entre sí"
+      - "🅳 Durabilidad: Datos guardados no se pierden"
+      - tipo: "ejemplo"
+        texto: "Transferencia bancaria: Si falla a la mitad, se revierte todo (Atomicidad)"
+
+  # === EJEMPLO ACID ===
+  - titulo: "Ejemplo ACID: Transferencia Bancaria"
+    contenido:
+      - tipo: "problema"
+        texto: "Transferir $50.000 de cuenta A a cuenta B"
+      - tipo: "calculo"
+        texto: |
+          INICIO TRANSACCIÓN
+            1. Verificar saldo cuenta A >= 50000
+            2. Restar 50000 de cuenta A
+            3. Sumar 50000 a cuenta B
+            4. Registrar movimiento
+          
+          SI todo OK → COMMIT (confirmar)
+          SI algo falla → ROLLBACK (revertir todo)
+          FIN TRANSACCIÓN
+      - tipo: "nota"
+        texto: "¡El dinero nunca se pierde a la mitad! 💰"
+
+  # === EJERCICIO ===
+  - titulo: "¡Tu Turno de Practicar! 💪"
+    contenido:
+      - tipo: "problema"
+        texto: "Diseñar clases POO para un sistema de biblioteca"
+      - "Clases necesarias:"
+      - "  • Libro (título, autor, ISBN, disponible)"
+      - "  • Usuario (nombre, email, libros_prestados)"
+      - "  • Biblioteca (inventario, usuarios)"
+      - "Métodos sugeridos:"
+      - "  • prestar_libro(usuario, libro)"
+      - "  • devolver_libro(usuario, libro)"
+      - tipo: "nota"
+        texto: "Piensa en encapsulamiento: ¿qué atributos deben ser privados?"
+
+  # === RESUMEN ===
+  - titulo: "¡Resumen de lo Aprendido! 🎓"
+    contenido:
+      - "✅ POO modela el mundo real con clases y objetos"
+      - "✅ Encapsulamiento protege datos sensibles"
+      - "✅ Cliente-Servidor separa interfaz de lógica de negocio"
+      - "✅ Microservicios permiten escalar por componentes"
+      - "✅ MVC separa responsabilidades (Modelo-Vista-Controlador)"
+      - "✅ Bases de datos persisten información permanentemente"
+      - "✅ SQL es relacional, NoSQL es flexible"
+      - "✅ ACID garantiza transacciones seguras"
+      - tipo: "nota"
+        texto: "¡Ya puedes diseñar arquitecturas de software profesionales! 🚀"

@@ -1,0 +1,188 @@
+tema: "Introducción a la Programación e Informática"
+subtitulo: "Del pensamiento humano a las máquinas 🤖"
+
+diapositivas:
+  # === INTRODUCCIÓN ===
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "¡Bienvenidos al mundo de la programación! 🚀"
+      - "Objetivo 1: Entender cómo funciona una computadora"
+      - "Objetivo 2: Conocer la historia de la computación"
+      - "Objetivo 3: Aprender a pensar como un programador"
+      - tipo: "ejemplo"
+        texto: "Como cuando sigues una receta de cocina paso a paso, programar es dar instrucciones precisas a la computadora"
+
+  # === HISTORIA ===
+  - titulo: "De la Máquina de Turing al Cloud Computing"
+    contenido:
+      - "📜 1936: Alan Turing propone la primera computadora teórica"
+      - "💻 1940s: Primeras computadoras electrónicas (ENIAC)"
+      - "🖥️ 1980s: Computadoras personales en los hogares"
+      - "🌐 1990s: Internet y la World Wide Web"
+      - "☁️ 2010s: Cloud Computing y Apps móviles"
+      - tipo: "nota"
+        texto: "En menos de 100 años pasamos de máquinas del tamaño de habitaciones a tener supercomputadoras en nuestros bolsillos 📱"
+
+  # === HARDWARE VS SOFTWARE ===
+  - titulo: "Hardware vs. Software"
+    contenido:
+      - tipo: "nota"
+        texto: "¿Dónde vive y cómo se ejecuta el código?"
+      - tipo: "tabla"
+        encabezados: ["Hardware 🔧", "Software 💾"]
+        filas:
+          - ["Físico y tangible", "Digital e intangible"]
+          - ["CPU, RAM, disco", "Programas y aplicaciones"]
+          - ["Se puede tocar", "Solo se puede ejecutar"]
+          - ["Ej: Teclado, mouse", "Ej: Windows, Chrome"]
+      - tipo: "ejemplo"
+        texto: "El hardware es como el cuerpo humano, el software es como el cerebro y los pensamientos"
+
+  # === SISTEMA BINARIO ===
+  - titulo: "El Sistema Binario: El Lenguaje de las Máquinas"
+    contenido:
+      - "Las computadoras solo entienden dos estados: 0 y 1"
+      - "🔌 0 = Sin electricidad (apagado)"
+      - "💡 1 = Con electricidad (encendido)"
+      - tipo: "ejemplo"
+        texto: "El número 5 en decimal se representa como 101 en binario"
+      - tipo: "calculo"
+        texto: "101 = 1×4 + 0×2 + 1×1 = 4 + 0 + 1 = 5"
+      - tipo: "nota"
+        texto: "¡Todo lo que ves en la pantalla son combinaciones de 0s y 1s! 🎯"
+
+  # === REPRESENTACIÓN DE DATOS ===
+  - titulo: "Representación de Datos en Bits"
+    contenido:
+      - "📊 Bit: La unidad más pequeña (0 o 1)"
+      - "📦 Byte: 8 bits juntos"
+      - tipo: "tabla"
+        encabezados: ["Unidad", "Equivalencia"]
+        filas:
+          - ["1 Byte", "8 bits"]
+          - ["1 Kilobyte (KB)", "1,024 Bytes"]
+          - ["1 Megabyte (MB)", "1,024 KB"]
+          - ["1 Gigabyte (GB)", "1,024 MB"]
+      - tipo: "ejemplo"
+        texto: "Una letra 'A' ocupa 1 byte, una foto puede ocupar 2 MB"
+
+  # === LENGUAJES DE PROGRAMACIÓN ===
+  - titulo: "¿Qué es un Lenguaje de Programación?"
+    contenido:
+      - "Es una forma de comunicarnos con la computadora"
+      - "Los humanos escriben código, la máquina lo ejecuta"
+      - tipo: "nota"
+        texto: "Hay cientos de lenguajes: Python 🐍, JavaScript 📜, Java ☕, C++ ⚡"
+      - tipo: "ejemplo"
+        texto: "print('Hola Mundo') → Le dice a la computadora que muestre un mensaje"
+
+  # === COMPILADOS VS INTERPRETADOS ===
+  - titulo: "Lenguajes Compilados vs. Interpretados"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Compilados", "Interpretados"]
+        filas:
+          - ["Se traducen antes ⏭️", "Se traducen al momento ▶️"]
+          - ["Más rápidos 🚀", "Más flexibles 🔄"]
+          - ["C, C++, Java", "Python, JavaScript"]
+          - ["Ej: .exe en Windows", "Ej: Scripts web"]
+      - tipo: "ejemplo"
+        texto: "Compilado es como traducir un libro completo antes de leerlo. Interpretado es como tener un traductor en tiempo real"
+
+  # === PENSAMIENTO ALGORÍTMICO ===
+  - titulo: "Pensamiento Algorítmico"
+    contenido:
+      - tipo: "nota"
+        texto: "¡El superpoder de todo programador! 🧠"
+      - "Algoritmo = Secuencia de pasos para resolver un problema"
+      - tipo: "ejemplo"
+        texto: "Algoritmo para hacer café: 1) Calentar agua, 2) Agregar café, 3) Servir en taza"
+      - "Los programadores planifican antes de escribir código"
+
+  # === DIAGRAMAS DE FLUJO ===
+  - titulo: "Diagramas de Flujo"
+    contenido:
+      - "Son representaciones visuales de algoritmos 📊"
+      - "🔵 Óvalos: Inicio/Fin"
+      - "🔷 Rombos: Decisiones (Sí/No)"
+      - "📦 Rectángulos: Procesos"
+      - "➡️ Flechas: Flujo del programa"
+      - tipo: "ejemplo"
+        texto: "Diagrama para validar login: ¿Usuario existe? → Sí: Permitir acceso / No: Mostrar error"
+
+  # === PSEUDOCÓDIGO ===
+  - titulo: "Pseudocódigo: Planificando la Lógica"
+    contenido:
+      - "Es escribir la lógica en lenguaje humano estructurado"
+      - tipo: "problema"
+        texto: "Registro de un nuevo usuario en un sistema"
+      - tipo: "ejemplo"
+        texto: |
+          INICIO
+            Leer nombre_usuario
+            Leer contraseña
+            SI contraseña tiene menos de 8 caracteres ENTONCES
+              Mostrar "Contraseña muy corta"
+            SINO
+              Guardar usuario en base de datos
+              Mostrar "Usuario registrado exitosamente"
+            FIN SI
+          FIN
+
+  # === EJEMPLO PRÁCTICO ===
+  - titulo: "Ejemplo Práctico: Validación de Edad"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear un algoritmo que valide si una persona puede votar (18+ años)"
+      - tipo: "ejemplo"
+        texto: |
+          INICIO
+            Leer edad
+            SI edad >= 18 ENTONCES
+              Mostrar "Puede votar ✅"
+            SINO
+              Mostrar "No puede votar ❌"
+            FIN SI
+          FIN
+      - tipo: "nota"
+        texto: "Este mismo algoritmo se puede escribir en cualquier lenguaje de programación"
+
+  # === APLICACIÓN AL ERP ===
+  - titulo: "Aplicación: Sistema de Registro de Usuarios"
+    contenido:
+      - "En un ERP, necesitamos registrar empresas y empleados"
+      - tipo: "ejemplo"
+        texto: "Pseudocódigo para validar RUT chileno:"
+      - tipo: "calculo"
+        texto: |
+          1. Leer RUT ingresado
+          2. Verificar formato (XX.XXX.XXX-X)
+          3. Calcular dígito verificador
+          4. Comparar con el dígito ingresado
+          5. Si coincide → RUT válido ✅
+          6. Si no coincide → RUT inválido ❌
+
+  # === EJERCICIO ===
+  - titulo: "¡Tu Turno de Practicar! 💪"
+    contenido:
+      - tipo: "problema"
+        texto: "Crea un algoritmo para aprobar o rechazar una transacción bancaria"
+      - "Paso 1: Leer el saldo actual de la cuenta"
+      - "Paso 2: Leer el monto de la transacción"
+      - "Paso 3: Comparar si el saldo es mayor o igual al monto"
+      - "Paso 4: Decidir aprobar o rechazar"
+      - tipo: "nota"
+        texto: "Piensa en la lógica antes de escribir código. ¡Ese es el pensamiento algorítmico!"
+
+  # === RESUMEN ===
+  - titulo: "¡Resumen de lo Aprendido! 🎓"
+    contenido:
+      - "✅ La historia de la computación nos muestra cómo llegamos hasta aquí"
+      - "✅ Hardware es físico, Software es lógico"
+      - "✅ Las máquinas hablan en binario (0 y 1)"
+      - "✅ Los lenguajes de programación traducen nuestras ideas a código"
+      - "✅ Los algoritmos son planes paso a paso para resolver problemas"
+      - "✅ Diagramas de flujo y pseudocódigo nos ayudan a planificar"
+      - tipo: "nota"
+        texto: "¡Ya tienes las bases para empezar a programar! 🚀"

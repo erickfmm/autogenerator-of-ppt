@@ -1,0 +1,60 @@
+PROGRAMACIÓN_E_INFORMÁTICA_DESDE_CERO:
+  Nivel_1_Introducción_y_Contexto:
+    Historia_y_Conceptos_Basicos:
+      - De la máquina de Turing al Cloud Computing: Breve historia de la computación.
+      - Hardware vs. Software: Dónde vive y cómo se ejecuta el código.
+      - El sistema binario y la representación de datos (cómo un número se convierte en bits).
+      - ¿Qué es un Lenguaje de Programación?: Compilados vs. Interpretados.
+      - Pensamiento Algorítmico: Diagramas de flujo y pseudocódigo (Planificando la lógica de un registro de usuarios).
+
+  Nivel_2_Fundamentos_de_Programación_Moderna:
+    Variables_y_Tipos_de_Datos:
+      - Concepto de 'Caja' y asignación de memoria.
+      - Tipos primitivos: Enteros (IDs), Flotantes (Dinero/Precios), Textos (Nombres), Booleanos (Estados).
+      - Operadores aritméticos y lógicos: Sumar saldos, comparar fechas.
+    Expresiones_y_Sentencias:
+      - Diferencia entre expresión (algo que tiene valor) y sentencia (una orden).
+      - Evaluación de expresiones matemáticas complejas para cálculos de impuestos.
+    Control_de_Flujo_Condicionales:
+      - La sentencia IF/ELSE: "Si el saldo es mayor al costo, aprobar transacción; si no, rechazar"
+      - Operadores lógicos (AND, OR, NOT) en validaciones de seguridad.
+      - Estructuras SWITCH/MATCH para menús de opciones en el ERP.
+    Control_de_Flujo_Ciclos_y_Bucles:
+      - Ciclo WHILE: "Intentar conexión mientras no haya respuesta"
+      - Ciclo FOR: Recorrer una lista de empleados para pagar nómina.
+      - Concepto de iteración y prevención de bucles infinitos.
+
+  Nivel_3_Estructuras_de_Datos_y_Modularidad:
+    Colecciones_de_Datos:
+      - Listas y Arrays: Almacenar múltiples transacciones en una variable.
+      - Diccionarios y Objetos (Mapas): Representar una 'Empresa' con sus atributos (Nombre, RUT, Saldo).
+      - JSON: El formato estándar para intercambiar datos de facturación.
+    Funciones_y_Procedimientos:
+      - El principio DRY (Don't Repeat Yourself).
+      - Creación de funciones: Input (Parámetros) -> Proceso -> Output (Retorno).
+      - Ejemplo práctico: Función `calcular_iva(monto)` o `validar_rut(rut)`.
+      - Alcance de variables (Scope): Variables locales vs. globales.
+
+  Nivel_4_Arquitectura_de_Software_y_Diseño:
+    Paradigmas_de_Programación:
+      - Introducción a Programación Orientada a Objetos (POO): Clases 'Usuario', 'Billetera', 'Factura'.
+      - Encapsulamiento: Proteger el saldo de modificaciones externas no autorizadas.
+    Arquitectura_Basica:
+      - Cliente-Servidor: Quién pide datos (Frontend/App) y quién responde (Backend).
+      - Monolito vs. Microservicios: Estructura para un ERP escalable.
+      - MVC (Modelo-Vista-Controlador): Separar la lógica de negocio de la interfaz visual.
+    Bases_de_Datos_Introducción:
+      - Persistencia de datos: Por qué necesitamos guardar la información.
+      - SQL (Relacional) vs. NoSQL: Modelar relaciones entre 'Clientes' y 'Compras'.
+      - Concepto ACID: Garantizar que una transferencia bancaria no se pierda a la mitad.
+
+  Nivel_5_Integración_y_Mundo_Real:
+    APIs_y_Conectividad:
+      - Qué es una API (Application Programming Interface) y REST.
+      - Verbos HTTP: GET (Consultar saldo), POST (Crear empresa), PUT (Actualizar datos), DELETE (Borrar).
+      - Autenticación y Seguridad: Tokens, JWT y cómo proteger la billetera digital.
+      - Consumo de APIs externas: Integración con servicios de impuestos o bancos reales.
+    Ciclo_de_Vida_del_Software:
+      - Control de versiones (Git): Guardar el historial de cambios del código.
+      - Testing básico: Pruebas unitarias para asegurar que los cálculos financieros sean exactos.
+      - Despliegue: Conceptos básicos de cómo poner el ERP en internet.
