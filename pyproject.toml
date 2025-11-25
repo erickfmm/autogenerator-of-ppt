@@ -10,6 +10,7 @@ requires-python = ">=3.9"
 dependencies = [
     "pyyaml>=6.0.1",
     "jinja2>=3.1.2",
+    "python-pptx>=0.6.21",
 ]
 
 [project.optional-dependencies]
@@ -21,6 +22,7 @@ dev = [
 
 [project.scripts]
 generate-slides = "generate_slides:main"
+generate-pptx = "generate_pptx:main"
 
 [build-system]
 requires = ["hatchling"]
