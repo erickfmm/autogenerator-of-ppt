@@ -45,8 +45,6 @@ autogenerator-of-ppt/
 ├── generate_pptx.py                     # Generador PowerPoint
 ├── template.tex                         # Template LaTeX Beamer
 ├── generar_todo.bat                     # Script para generar todo
-├── run.bat                              # Script para LaTeX/PDF
-├── run_pptx.bat                         # Script para PowerPoint
 └── pyproject.toml                       # Configuración del proyecto
 ```
 
@@ -92,12 +90,6 @@ python generate_pptx.py       # Genera PowerPoint
 
 ### Solo PowerPoint
 
-**Windows:**
-```cmd
-run_pptx.bat
-```
-
-**Manual:**
 ```bash
 # Generar todas las presentaciones
 python generate_pptx.py
@@ -114,12 +106,7 @@ python generate_pptx.py -o mi_carpeta "clases/*.yml"
 
 ### Solo LaTeX/PDF
 
-**Windows:**
-```cmd
-run.bat
-```
-
-**Manual:**
+```bash
 ```bash
 # Generar todas las presentaciones
 python generate_slides.py
@@ -197,9 +184,7 @@ diapositivas:
 
 ## 📊 Gráficos
 
-Para información detallada sobre cómo crear gráficos, consulta:
-- **[GUIA_GRAFICOS.md](GUIA_GRAFICOS.md)** - Guía completa de gráficos
-- **[GUIA_RAPIDA_PPTX.md](GUIA_RAPIDA_PPTX.md)** - Guía rápida de PowerPoint
+El sistema soporta múltiples tipos de gráficos incluyendo gráficos de barras, líneas, circulares y de dispersión. Consulta la documentación en `.github/instructions/` para más detalles.
 
 ## 🎨 Personalización
 
@@ -254,7 +239,6 @@ ruff check generate_slides.py generate_pptx.py
 ## 📖 Documentación Adicional
 
 - **[crear_clases_desde_temario.instructions.md](.github/instructions/crear_clases_desde_temario.instructions.md)** - Guía completa del esquema YAML
-- **[README_PPTX.md](README_PPTX.md)** - Documentación específica de PowerPoint
 
 ## 🤝 Contribuir
 
@@ -267,7 +251,7 @@ Para agregar nuevas materias o clases:
 
 ## 📄 Licencia
 
-Proyecto educativo con licencia MIT, abierto para todo uso.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
