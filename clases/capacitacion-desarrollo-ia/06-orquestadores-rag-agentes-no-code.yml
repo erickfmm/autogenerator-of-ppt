@@ -1,0 +1,77 @@
+tema: "Orquestadores de RAG, Agentes y Plataformas No-Code / Low-Code"
+subtitulo: "Construyendo aplicaciones de IA estables e integradas 🔌"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "De la recuperación de datos a la orquestación agéntica cíclica."
+      - "LangChain, LlamaIndex, Haystack y LangGraph"
+      - "Frameworks de autonomía: AutoAgent y ADK"
+      - "Plataformas no-code: Flowise y Dify"
+
+  - titulo: "Orquestación de Datos vs. Orquestación Agéntica"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Tipo", "Herramientas", "Característica"]
+        filas:
+          - ["Datos", "LangChain, LlamaIndex", "Recuperación y estructuración"]
+          - ["Agéntica", "Haystack, LangGraph", "Ciclos de decisión y ejecución"]
+      - tipo: "nota"
+        texto: "La orquestación agéntica admite reintentos y validación autónoma."
+
+  - titulo: "LangGraph y Arquitecturas Cíclicas"
+    contenido:
+      - "Modelado de flujos de IA con grafos de estado cíclicos."
+      - "Un agente puede reintentar operaciones fallidas o validar su código antes de responder."
+      - tipo: "formula"
+        texto: "Estado(n) → Acción → Estado(n+1) → ... (ciclos controlados)"
+      - tipo: "nota"
+        texto: "La persistencia de estado de LangGraph supera a los flujos secuenciales de LangChain clásico."
+
+  - titulo: "Frameworks de Autonomía Agéntica"
+    contenido:
+      - "AutoAgent y ADK (Agent Development Kit)."
+      - "Interacción colaborativa entre múltiples agentes autónomos."
+      - "Organización jerárquica de tareas y delegación."
+      - tipo: "ejemplo"
+        texto: "Un agente coordinador delega subtareas a agentes especialistas."
+
+  - titulo: "Plataformas No-Code: Flowise y Dify"
+    contenido:
+      - "Desarrollo ágil mediante interfaces visuales."
+      - "Configuración centralizada: conectores, variables, herramientas y modelos."
+      - tipo: "nota"
+        texto: "Permiten prototipar sin escribir código de orquestación intermedio."
+
+  - titulo: "Comparativa No-Code vs. Código"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Enfoque", "Ventaja", "Reto"]
+        filas:
+          - ["No-Code (Dify)", "Prototipado ágil visual", "Control de versiones y CI/CD"]
+          - ["Código (LangGraph)", "Control total y despliegue", "Curva de aprendizaje"]
+      - tipo: "nota"
+        texto: "Equilibrar agilidad de prototipado con gobierno de despliegue continuo."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Construir visualmente en Dify o Flowise un flujo de análisis técnico."
+      - "Vectorizar logs de errores de servidores."
+      - "Consultar la base de conocimiento y devolver un informe con el parche sugerido."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué ventajas operativas tiene la persistencia de estado de LangGraph frente a LangChain clásico?"
+      - tipo: "problema"
+        texto: "¿Cómo equilibrar el prototipado visual en Dify con el control de versiones y CI/CD?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🔀 LangGraph modela flujos cíclicos con estado persistente."
+      - "🤖 ADK y AutoAgent organizan agentes jerárquicamente."
+      - "🎨 Dify y Flowise democratizan el prototipado visual."
+      - tipo: "nota"
+        texto: "La elección depende del balance entre agilidad y gobierno técnico."

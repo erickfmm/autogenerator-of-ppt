@@ -1,0 +1,72 @@
+tema: "Arquitectura Domain-Driven Design (DDD) y Contratos de APIs"
+subtitulo: "Escudos arquitectónicos para la generación de código modular 🏗️"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "DDD estructura las dependencias de negocio y facilita la generación modular."
+      - "DDD como escudo frente a la IA"
+      - "Capas de arquitectura limpia"
+      - "APIs Contract-First y JSON-First"
+
+  - titulo: "DDD como Escudo frente a la IA"
+    contenido:
+      - "La definición estricta de contextos delimitados (Bounded Contexts) evita mezclas."
+      - "Impide que los modelos mezclen reglas de negocio con implementaciones de infraestructura."
+      - tipo: "nota"
+        texto: "Sin DDD, los agentes generan código con acoplamiento rígido."
+
+  - titulo: "Capas de Arquitectura Limpia en DDD"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Capa", "Responsabilidad"]
+        filas:
+          - ["Dominio", "Entidades y agregados puros"]
+          - ["Aplicación", "Casos de uso"]
+          - ["Infraestructura", "Bases de datos y controladores HTTP"]
+      - tipo: "formula"
+        texto: "Dominio ← Aplicación ← Infraestructura (dependencia hacia adentro)"
+
+  - titulo: "APIs Contract-First"
+    contenido:
+      - "El contrato de la interfaz se diseña formalmente antes de escribir código."
+      - "Sirve como mapa inmutable de interconexión del sistema."
+      - tipo: "ejemplo"
+        texto: "Definir OpenAPI antes de implementar el servidor garantiza coherencia entre equipos."
+
+  - titulo: "Patrón JSON-First"
+    contenido:
+      - "Herramientas CLI ágiles para sincronizar, estructurar y versionar esquemas."
+      - "Contratos legibles para humanos y agentes autónomos."
+      - tipo: "nota"
+        texto: "La inyección de interfaces estrictas limita la generación de código incoherente."
+
+  - titulo: "Flujo Contract-First con IA"
+    contenido:
+      - tipo: "formula"
+        texto: "OpenAPI (YAML/JSON) → Validación → Andamiaje DDD → Implementación"
+      - tipo: "ejemplo"
+        texto: "Un prompt GOLD instruye a la IA a redactar el contrato OpenAPI de un microservicio."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Usar un prompt estructurado (GOLD o STAR) para redactar el contrato OpenAPI de un microservicio financiero."
+      - "Validar el contrato generado."
+      - "Guiar al agente para compilar el andamiaje en capas limpias DDD (Go o TypeScript)."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo limita la inyección de contratos estrictos la generación de código incoherente?"
+      - tipo: "problema"
+        texto: "¿Cuáles son las implicaciones de migrar un monolito a microservicios DDD con JSON-First?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🛡️ DDD protege la lógica de negocio con Bounded Contexts."
+      - "📐 Las capas limpias desacoplan dominio de infraestructura."
+      - "📄 Contract-First y JSON-First aseguran coherencia."
+      - tipo: "nota"
+        texto: "DDD + Contratos = andamiaje predecible para la IA."

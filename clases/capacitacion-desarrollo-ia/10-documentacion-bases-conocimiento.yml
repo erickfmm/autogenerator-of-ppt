@@ -1,0 +1,79 @@
+tema: "Documentación Técnica de Alta Calidad y Bases de Conocimiento Corporativas"
+subtitulo: "Markdown como interfaz bidireccional humano-IA 📖"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La documentación estructurada es un mapa contextual para los agentes de IA."
+      - "Documentación bidireccional humano-IA"
+      - "Niveles de especificación en SDD"
+      - "Bases de conocimiento: Obsidian, Notion y Tolaria"
+
+  - titulo: "Documentación Bidireccional Humano-IA"
+    contenido:
+      - "La documentación corporativa debe usar sintaxis Markdown con YAML frontmatter limpio."
+      - "Sirve como manual para el equipo y mapa contextual para los agentes."
+      - tipo: "formula"
+        texto: "Markdown + YAML frontmatter → legible por humanos y máquinas"
+      - tipo: "nota"
+        texto: "Los metadatos tipados guían a la IA sin forzar validaciones inflexibles."
+
+  - titulo: "Niveles de Especificación en SDD"
+    contenido:
+      - "Jerarquía documental desde objetivos macro del negocio."
+      - "Hasta especificaciones detalladas a nivel de funciones."
+      - tipo: "tabla"
+        encabezados: ["Nivel", "Alcance"]
+        filas:
+          - ["Macro", "Objetivos de negocio"]
+          - ["Medio", "Arquitectura y módulos"]
+          - ["Detalle", "Funciones y contratos"]
+
+  - titulo: "Bases de Conocimiento: Obsidian, Notion y Tolaria"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Herramienta", "Enfoque", "Impacto en agentes"]
+        filas:
+          - ["Obsidian", "Local Markdown", "Alto (lectura directa)"]
+          - ["Notion", "Nube cerrada", "Bajo (API limitada)"]
+          - ["Tolaria", "Local-first + Git", "Óptimo (offline-first)"]
+      - tipo: "nota"
+        texto: "La estructura documental impacta directamente la agilidad de los agentes."
+
+  - titulo: "Tolaria: Arquitectura Documental Descentralizada"
+    contenido:
+      - "Primacía del sistema de archivos local e integración nativa con Git."
+      - "Diseño offline-first."
+      - "Uso de archivos AGENTS y relations.md para guiar el análisis contextual."
+      - tipo: "nota"
+        texto: "Tolaria ofrece ventajas de privacidad e independencia frente a la nube cerrada."
+
+  - titulo: "Lentes Conceptuales en Tolaria"
+    contenido:
+      - "Metadatos tipados actúan como 'lentes conceptuales' para la IA."
+      - "Guían el análisis sin restringir validaciones rígidas."
+      - tipo: "ejemplo"
+        texto: "Una nota con lente 'arquitectura' prioriza dependencias e interfaces."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Crear un repositorio documental en Tolaria u Obsidian con YAML frontmatter estructurado."
+      - "Ejecutar pruebas de lectura mediante agentes CLI autónomos."
+      - "Verificar cómo la IA sintetiza dependencias lógicas complejas declaradas."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué ventajas de privacidad ofrece Tolaria local-first y git-first frente a Notion corporativo?"
+      - tipo: "problema"
+        texto: "¿Cómo pueden los metadatos tipados guiar a la IA sin forzar validaciones inflexibles?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "📝 Markdown + YAML frontmatter es la interfaz humano-IA óptima."
+      - "🏗️ SDD estructura la documentación por niveles jerárquicos."
+      - "🗂️ Tolaria lidera en privacidad e integración con Git."
+      - tipo: "nota"
+        texto: "La documentación es infraestructura crítica para sistemas agénticos."

@@ -16,3 +16,8 @@ __pycache__/
 *.fls
 
 slides/
+pptx/
+pdfs/
+
+*.pptx
+*.pdf

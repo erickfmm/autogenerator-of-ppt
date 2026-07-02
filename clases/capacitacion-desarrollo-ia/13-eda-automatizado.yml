@@ -1,0 +1,72 @@
+tema: "Análisis Exploratorio de Datos (EDA) Automatizado"
+subtitulo: "Evaluación inicial de calidad y distribución en minutos 📊"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "El EDA automatizado reduce drásticamente los tiempos de evaluación inicial."
+      - "Rol de la analítica descriptiva en TI"
+      - "Concepto del EDA sistemático"
+      - "Sweetviz y YData-Profiler"
+
+  - titulo: "El Rol de la Analítica Descriptiva en TI"
+    contenido:
+      - "Etapas del flujo: ingesta cruda → valor descriptivo, diagnóstico y predictivo."
+      - tipo: "formula"
+        texto: "Ingesta → Descriptivo → Diagnóstico → Predictivo"
+      - tipo: "nota"
+        texto: "El EDA es el primer acercamiento analítico sistemático a los datos."
+
+  - titulo: "El Concepto del EDA"
+    contenido:
+      - "Toma de muestras estadísticas y validación de calidad."
+      - "Identificación de registros duplicados, nulos y valores atípicos."
+      - tipo: "problema"
+        texto: "¿Qué tan confiable es un modelo entrenado con datos con nulos y duplicados?"
+
+  - titulo: "Sweetviz: Visualizaciones Comparativas"
+    contenido:
+      - "Biblioteca para compilar informes visuales interactivos enriquecidos."
+      - "Ideal para evaluar comparativamente la consistencia entre dos conjuntos de datos."
+      - tipo: "ejemplo"
+        texto: "Comparar la distribución de un dataset de entrenamiento frente a uno de test."
+
+  - titulo: "YData-Profiler: Diagnósticos Exhaustivos"
+    contenido:
+      - "Perfiles de datos completos con matrices de correlación multidimensionales."
+      - "Detección de alertas de multicolinealidad y reportes de redundancia sintáctica."
+      - tipo: "nota"
+        texto: "Listo para producción: identifica problemas antes de entrenar modelos."
+
+  - titulo: "Comparativa de Herramientas de EDA"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Herramienta", "Fortaleza", "Salida"]
+        filas:
+          - ["Sweetviz", "Comparación de datasets", "HTML interactivo"]
+          - ["YData-Profiler", "Diagnóstico de calidad", "Reporte completo"]
+      - tipo: "nota"
+        texto: "Considerar RAM y cómputo al ejecutar EDA sobre volúmenes masivos."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Cargar un archivo masivo de logs o base tabular corporativa en Python."
+      - "Generar informes HTML con Sweetviz y YData-Profiler en local."
+      - "Identificar variables redundantes, nulos y sesgos en menos de cinco minutos."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué consideraciones de escalamiento y RAM aplicar al ejecutar EDA sobre volúmenes masivos?"
+      - tipo: "problema"
+        texto: "¿Cómo resolver el cumplimiento normativo y privacidad frente a herramientas en la nube?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🔍 El EDA es el primer paso sistemático de calidad de datos."
+      - "📊 Sweetviz destaca en comparación de datasets."
+      - "🩺 YData-Profiler ofrece diagnósticos exhaustivos listos para producción."
+      - tipo: "nota"
+        texto: "Automatizar el EDA libera tiempo para el análisis de valor."

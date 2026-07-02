@@ -1,0 +1,79 @@
+tema: "Metodología Spec-Driven Development (SDD) Avanzado con la Suite de Gentleman-AI"
+subtitulo: "Erradicando el caos del código generado aleatoriamente 🎯"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "SDD introduce procesos rigurosos guiados por especificaciones previas."
+      - "El caos del desarrollo desordenado con agentes"
+      - "Conceptos fundamentales de SDD"
+      - "El ecosistema Gentleman Dev y las fases SDD"
+
+  - titulo: "El Caos del Desarrollo Desordenado con Agentes"
+    contenido:
+      - "Degeneración lógica y arquitectónica de repositorios."
+      - "Agentes que omiten planificación e inician refactorizaciones masivas sin control."
+      - tipo: "problema"
+        texto: "¿Qué sucede cuando un agente refactoriza sin especificación previa?"
+      - tipo: "nota"
+        texto: "El resultado: código incoherente, acoplamiento y deuda técnica acelerada."
+
+  - titulo: "Conceptos Fundamentales del SDD"
+    contenido:
+      - "Ciclo virtuoso: definición de no-goals y requisitos funcionales antes de generar código."
+      - "Aseguramiento de consistencia mediante validaciones rigurosas."
+      - tipo: "formula"
+        texto: "Especificación → Validación → Generación → Verificación"
+      - tipo: "nota"
+        texto: "Una especificación Markdown validada supera a la depuración interactiva de código."
+
+  - titulo: "El Ecosistema de Gentleman Dev"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Componente", "Función"]
+        filas:
+          - ["Gentle-AI", "Harness principal de agentes"]
+          - ["gentle-pi", "Harness de ejecución made-to-measure"]
+          - ["Engram", "Sistema de memoria integrada"]
+      - tipo: "nota"
+        texto: "Las heurísticas de delegación obligatoria protegen contra mezclas accidentales de código."
+
+  - titulo: "Operación de las Fases SDD"
+    contenido:
+      - "Comandos nativos de la metodología."
+      - tipo: "formula"
+        texto: "/sdd-init → sdd-explore → sdd-propose → sdd-spec → sdd-design → sdd-tasks → sdd-apply → sdd-verify → sdd-archive"
+      - tipo: "nota"
+        texto: "Cada fase produce artefactos verificables antes de avanzar."
+
+  - titulo: "Flujo de una Fase SDD"
+    contenido:
+      - "sdd-init: inicializa la estructura del repositorio SDD."
+      - "sdd-spec: la IA genera la especificación detallada."
+      - "sdd-apply: aplica el cambio tras validar aserciones."
+      - "sdd-verify: verifica el comportamiento frente a la especificación."
+      - tipo: "ejemplo"
+        texto: "La IA genera el spec de un microservicio y valida aserciones antes de escribir lógica."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Inicializar el flujo SDD en un repositorio Node.js o Python con /sdd-init."
+      - "Analizar la estructura resultante (openspec/config.yaml, .atl/skill-registry.md)."
+      - "Ejecutar un ciclo simulado: la IA genera el spec y valida aserciones antes del código."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué validar una especificación Markdown es más efectivo que depurar código interactivo?"
+      - tipo: "problema"
+        texto: "¿De qué manera las heurísticas de delegación obligatoria de Gentle-AI protegen el repositorio?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🌪️ Sin especificación, los agentes generan caos arquitectónico."
+      - "📐 SDD impone un ciclo virtuoso: spec → validar → generar → verificar."
+      - "🧰 Gentle-AI, gentle-pi y Engram componen la suite."
+      - tipo: "nota"
+        texto: "SDD convierte la IA en un colaborador disciplinado y predecible."

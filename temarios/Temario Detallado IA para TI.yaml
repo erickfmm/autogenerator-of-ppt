@@ -1,0 +1,665 @@
+titulo: "Programa de Capacitación Avanzada de 18 Horas para Equipos de TI"
+subtitulo: "Ingeniería de Software, Análisis de Datos, Automatización y Gestión de Proyectos con Inteligencia Artificial"
+duracion_total_horas: 18
+modulos: 6
+lineamientos_facilitador:
+  enfoque_aprendizaje: "Aprendizaje práctico continuo con laboratorios guiados; sin exposiciones teóricas superiores a 45 minutos por sesión."
+  voz_redaccion: "Uso exclusivo de la tercera persona (voz pasiva impersonal del español) en todo el material visual PPT."
+  gobierno_tecnico: "Uso pedagógico de los errores de la IA (rate limits, código erróneo) para aplicar SDD, lectura de logs y aplicación de parches autónomos."
+modulos_detalle:
+
+  # ============================================================
+  # MÓDULO I
+  # ============================================================
+  - id: I
+    titulo: "Fundamentos de Inteligencia Artificial y Procesamiento del Lenguaje Natural Moderno"
+    horas: "1-3"
+    herramientas: ["Visualizadores de mapas de atención", "Tokenización lineal"]
+    clases:
+
+      # ---------- HORA 1 ----------
+      - hora: 1
+        titulo: "Teoría de Sistemas, Álgebra y Aproximación Universal"
+        objetivo: "Definir la IA como un sistema de aproximación de funciones y comprender la base matemática del Deep Learning."
+        diapositivas:
+          - numero: 1
+            titulo: "Portada de la Sesión"
+            contenido:
+              - "Título que enuncia las nociones del aprendizaje de máquinas y la abstracción sistémica del software."
+              - "Esquema gráfico minimalista: un fenómeno del mundo real transformándose en un diagrama de contexto estructurado."
+          - numero: 2
+            titulo: "Clasificación de Sistemas de Información"
+            contenido:
+              - "Sistemas lineales de pocas variables calculables mediante álgebra elemental."
+              - "Sistemas de variables masivas tratables estadísticamente."
+              - "Sistemas complejos altamente no lineales y diferenciables que justifican la optimización basada en gradientes."
+          - numero: 3
+            titulo: "Redes Neuronales como Funciones Plantilla"
+            contenido:
+              - "Red neuronal como función plantilla parametrizable."
+              - "Ajuste de coeficientes libres mediante optimización probabilística y cálculo de derivadas."
+          - numero: 4
+            titulo: "El Teorema de Aproximación Universal"
+            contenido:
+              - "Demostración formal de que una red neuronal densa con capas ocultas y funciones de activación no lineales modela cualquier función continua sobre espacios compactos."
+              - "Bases formales del Deep Learning."
+        laboratorio:
+          - "Inicializar en Python una red neuronal básica de clasificación con funciones de activación no lineales."
+          - "Mediante un prompt estructurado, solicitar al LLM un script que optimice visualmente el descenso de gradiente sobre una función de costo no lineal."
+          - "Observar en tiempo real el ajuste iterativo de pesos y sesgos."
+        preguntas_debate:
+          - "¿Cómo limita la naturaleza no diferenciable de ciertos algoritmos clásicos de TI su resolución mediante descenso de gradiente directo?"
+          - "¿Qué implicaciones de infraestructura surgen al pasar de cálculo analítico cerrado a simulaciones computacionales intensivas?"
+
+      # ---------- HORA 2 ----------
+      - hora: 2
+        titulo: "Grandes Modelos de Lenguaje (LLMs) y Procesamiento del Lenguaje Natural Moderno"
+        objetivo: "Comprender los mecanismos algorítmicos que estructuran el lenguaje natural: tokenización, embeddings y modelos autoregresivos."
+        diapositivas:
+          - numero: 1
+            titulo: "El Desafío Algorítmico de la Tokenización"
+            contenido:
+              - "Limitaciones de la segmentación por espacios simples."
+              - "Tokenizadores modernos basados en expresiones regulares y diccionarios entrenados."
+              - "Resolución de caracteres especiales, signos de puntuación y morfemas complejos."
+          - numero: 2
+            titulo: "Stemming, Lemmatization y Representación de Significado"
+            contenido:
+              - "Comparación gráfica entre reducción heurística a la raíz (Stemming) y transformación morfológica precisa basada en IA (Lemmatization)."
+          - numero: 3
+            titulo: "Embeddings Vectoriales"
+            contenido:
+              - "Visualización de un espacio n-dimensional donde las palabras se proyectan en vectores semánticos continuos."
+              - "Aritmética vectorial semántica (e.g., rey − hombre + mujer ≈ reina)."
+          - numero: 4
+            titulo: "Modelos Autoregresivos y Causales"
+            contenido:
+              - "Diagrama de modelos generativos decodificadores que predicen secuencialmente el siguiente token."
+              - "Dependencia exclusiva de la ventana de contexto izquierda."
+        laboratorio:
+          - "Uso de un visualizador de tokenización en línea para analizar la fragmentación de código TypeScript o Go (LLaMA, GPT-4)."
+          - "Conversión de términos del dominio de TI a embeddings vectoriales mediante un modelo local."
+          - "Cálculo de distancia de coseno para identificar términos de infraestructura con mayor similitud semántica."
+        preguntas_debate:
+          - "¿Por qué la tokenización de código fuente consume más ventana de contexto en promedio que el lenguaje natural estructurado?"
+          - "¿Cuáles son las implicaciones operativas en la latencia debido a la naturaleza estrictamente secuencial y causal de los modelos autoregresivos?"
+
+      # ---------- HORA 3 ----------
+      - hora: 3
+        titulo: "La Arquitectura del Transformer, Modelos Sequence-to-Sequence y Técnicas de Escalamiento"
+        objetivo: "Analizar el mecanismo de autoatención y los esquemas de optimización y escalamiento de parámetros."
+        tabla_comparativa:
+          - arquitectura: "Modelos Decodificadores Causales"
+            enfoque: "Generación de texto unidireccional paso a paso."
+            contexto: "Alta (4k a más de 128k tokens)."
+            ventaja: "Óptimo para generación de código y razonamiento agéntico."
+            limitacion: "Elevado costo computacional en inferencia secuencial."
+          - arquitectura: "Modelos Bidireccionales (BERT)"
+            enfoque: "Análisis de contexto izquierdo y derecho simultáneo."
+            contexto: "Corta (típicamente 512 tokens)."
+            ventaja: "Máxima precisión en clasificación, etiquetado POS y extracción."
+            limitacion: "Incapacidad estructural para tareas de generación fluida."
+          - arquitectura: "Mezcla de Expertos (MoE)"
+            enfoque: "Activación dinámica de subredes especializadas por token."
+            contexto: "Alta y optimizada dinámicamente."
+            ventaja: "Inferencia de alto rendimiento reduciendo parámetros activos en GPU."
+            limitacion: "Elevados requerimientos de VRAM para cargar todos los expertos."
+        diapositivas:
+          - numero: 1
+            titulo: "El Mecanismo de Autoatención (Self-Attention)"
+            contenido:
+              - "Avance introducido por Google en 2017."
+              - "Matriz de atención bidimensional que evalúa el peso relativo de cada término respecto a la secuencia completa."
+          - numero: 2
+            titulo: "El Modelo BERT y los Modelos Sequence-to-Sequence (SLM)"
+            contenido:
+              - "BERT como modelo representacional bidireccional de bajo cómputo (típicamente 300 MB)."
+              - "Modelos secuencia a secuencia como mT5 diseñados para traducción y síntesis directa."
+          - numero: 3
+            titulo: "Arquitecturas de Mezcla de Expertos (MoE)"
+            contenido:
+              - "Esquema arquitectónico de modelos como Mixtral."
+              - "Red de enrutamiento que distribuye tokens hacia expertos especializados bajo un mapa de atención común."
+          - numero: 4
+            titulo: "Fine-Tuning Eficiente con LoRA y Escalamiento de Contexto con RoPE"
+            contenido:
+              - "Análisis matemático de Low-Rank Adaptation (LoRA) para entrenamiento con bajo cómputo GPU."
+              - "Escalamiento de ventanas de contexto mediante Rotary Position Embedding (RoPE)."
+        laboratorio:
+          - "Carga local de SLMs (TinyLlama, Phi-2)."
+          - "Ejecución de scripts para cuantificar el impacto de adaptadores LoRA en la especialización de términos de APIs corporativas."
+          - "Medición de tiempos de inferencia y consumo de VRAM."
+        preguntas_debate:
+          - "¿Cómo puede la arquitectura MoE optimizar costos de cómputo en servidores locales frente a modelos monolíticos gigantes?"
+          - "¿Qué riesgos de pérdida de consistencia surgen al escalar artificialmente la ventana de contexto con RoPE Scaling sin reentrenamiento masivo?"
+
+  # ============================================================
+  # MÓDULO II
+  # ============================================================
+  - id: II
+    titulo: "Ingeniería de Prompts Avanzada, Gestión de Contexto y Arquitecturas de Recuperación (RAG)"
+    horas: "4-6"
+    herramientas: ["Dify", "Flowise", "Bases vectoriales locales"]
+    clases:
+
+      # ---------- HORA 4 ----------
+      - hora: 4
+        titulo: "Estructuración Metódica de Prompts y Marcos de Trabajo Corporativos"
+        objetivo: "Estudiar la ingeniería de prompts como paradigma de programación declarativa con instrucciones rigurosas."
+        diapositivas:
+          - numero: 1
+            titulo: "La Ingeniería de Prompts como Disciplina"
+            contenido:
+              - "Precisión del software depende de la limitación semántica del prompt."
+              - "Inyección de restricciones y control de la aleatoriedad (temperatura y top-p)."
+          - numero: 2
+            titulo: "Técnicas Fundamentales: STAR y RTF"
+            contenido:
+              - "STAR (Situation, Task, Appearance, Refine) para generación de scripts de infraestructura."
+              - "RTF (Role, Task, Format) como marco ágil para comandos rápidos en consola."
+          - numero: 3
+            titulo: "Marcos Avanzados: RACE, CLEAR, RISEN y GOLD"
+            contenido:
+              - "Comparación de metodologías estructuradas para análisis de código."
+              - "Marco GOLD (Goal, Obstacles, Logic, Data) para resolución de algoritmos y diagnóstico de fallas."
+          - numero: 4
+            titulo: "Razonamiento Secuencial: Chain-of-Thought (CoT) y Tree-of-Thought (ToT)"
+            contenido:
+              - "Instrucción explícita de desglose secuencial del pensamiento ('pensemos paso a paso')."
+              - "Elevación de la precisión lógica en dominios complejos de programación."
+        laboratorio:
+          - "Reconstrucción de un prompt vago de generación de código heredado usando los marcos STAR y GOLD."
+          - "Evaluación comparativa de resultados cuantificando reducción de código redundante y mejora de prácticas de seguridad."
+        preguntas_debate:
+          - "¿Por qué los LLMs omiten restricciones complejas cuando se acumulan instrucciones contradictorias en un único prompt monolítico?"
+          - "¿En qué escenarios es preferible Few-Shot Prompting frente a extender el prompt del sistema mediante Zero-Shot?"
+
+      # ---------- HORA 5 ----------
+      - hora: 5
+        titulo: "Gestión de Contexto, Embeddings Vectoriales y Arquitecturas RAG"
+        objetivo: "Capacitar al equipo en el patrón Retrieval-Augmented Generation (RAG) para acceso a bases de conocimiento corporativas cerradas."
+        diapositivas:
+          - numero: 1
+            titulo: "Fundamentos de RAG"
+            contenido:
+              - "Flujo de datos: ingesta documental, fragmentación en bloques, generación de embeddings, almacenamiento vectorial."
+              - "Inyección dinámica del contexto recuperado durante la inferencia."
+          - numero: 2
+            titulo: "Limitaciones de RAG Clásico sobre Repositorios de Código"
+            contenido:
+              - "La fragmentación secuencial estándar destruye la jerarquía sintáctica y semántica del código fuente."
+              - "Alucinaciones al consultar dependencias lógicas complejas."
+          - numero: 3
+            titulo: "Introducción a GraphRAG"
+            contenido:
+              - "Modelado de conocimiento mediante grafos semánticos que conectan entidades y relaciones."
+              - "Búsquedas contextuales de mayor nivel jerárquico."
+          - numero: 4
+            titulo: "Grafos de Dependencia de Código con Tree-Sitter"
+            contenido:
+              - "Compilación del código fuente en árboles sintácticos abstractos (AST)."
+              - "Almacenamiento en bases de datos SQLite locales expuestas vía Model Context Protocol (MCP)."
+        laboratorio:
+          - "Inicialización local de una base vectorial liviana (ChromaDB)."
+          - "Generación de embeddings de archivos Markdown corporativos."
+          - "Simulación de búsqueda semántica comparando relevancia contra búsqueda por palabras clave."
+        preguntas_debate:
+          - "¿Cómo afectan el chunking y el solapamiento de caracteres a la calidad de la respuesta final de un sistema RAG?"
+          - "¿Cuáles son las diferencias críticas de almacenamiento y cómputo en inferencia entre un buscador vectorial y GraphRAG?"
+
+      # ---------- HORA 6 ----------
+      - hora: 6
+        titulo: "Orquestadores de RAG, Agentes y Plataformas No-Code / Low-Code"
+        objetivo: "Construir aplicaciones de IA estables e integradas con el ecosistema corporativo, desde frameworks de código hasta plataformas visuales."
+        diapositivas:
+          - numero: 1
+            titulo: "Orquestación de Datos frente a Orquestación Agéntica"
+            contenido:
+              - "LangChain y LlamaIndex como capas de abstracción para recuperación y estructuración de información."
+              - "Frameworks agénticos con ciclos complejos de decisión: Haystack y LangGraph."
+          - numero: 2
+            titulo: "LangGraph y Arquitecturas Agénticas Cíclicas"
+            contenido:
+              - "Modelado de flujos de trabajo de IA con grafos de estado cíclicos."
+              - "Reintentos ante fallas y validación autónoma del código generado."
+          - numero: 3
+            titulo: "Frameworks de Autonomía Agéntica"
+            contenido:
+              - "Análisis de AutoAgent y ADK (Agent Development Kit)."
+              - "Interacción colaborativa entre múltiples agentes autónomos organizados jerárquicamente."
+          - numero: 4
+            titulo: "Plataformas No-Code: Flowise y Dify"
+            contenido:
+              - "Desarrollo ágil mediante interfaces visuales."
+              - "Configuración centralizada de conectores de datos, variables de sistema, herramientas y modelos de lenguaje."
+        laboratorio:
+          - "Construcción visual en Dify o Flowise de un flujo de análisis técnico."
+          - "Vectorización semántica de logs de errores de servidores."
+          - "Consulta a la base de conocimiento local para identificar la solución histórica y devolver un informe estructurado con el parche sugerido."
+        preguntas_debate:
+          - "¿Qué ventajas operativas presenta la persistencia de estado de LangGraph frente a flujos secuenciales de LangChain clásico?"
+          - "¿Cómo equilibrar la agilidad del prototipado visual en Dify con el control de versiones y despliegue continuo (CI/CD)?"
+
+  # ============================================================
+  # MÓDULO III
+  # ============================================================
+  - id: III
+    titulo: "Entornos de Desarrollo Agéntico (ADE) y Spec-Driven Development (SDD)"
+    horas: "7-9"
+    herramientas: ["Claude Code", "OpenCode", "Codex", "Gentle-AI"]
+    clases:
+
+      # ---------- HORA 7 ----------
+      - hora: 7
+        titulo: "Anatomía de un Agente Inteligente y el Protocolo Model Context Protocol (MCP)"
+        objetivo: "Detallar la interacción de los agentes con el entorno de ejecución y la estandarización MCP."
+        diapositivas:
+          - numero: 1
+            titulo: "Arquitectura de un Agente de IA Moderno"
+            contenido:
+              - "Integración del Orquestador lógico (LLM), las Herramientas (Tools), las Habilidades empaquetadas (Skills) y la Memoria persistente."
+          - numero: 2
+            titulo: "El Protocolo Model Context Protocol (MCP)"
+            contenido:
+              - "Estándar impulsado por Anthropic para acceso seguro a herramientas y datos locales."
+              - "Comunicación estandarizada mediante sockets stdio o HTTP."
+          - numero: 3
+            titulo: "Orquestación Multitarea y Dinámica Subagente"
+            contenido:
+              - "Patrón de división de tareas: un agente padre delega a subagentes específicos."
+              - "Subagentes de contexto delgado enfocados en investigación e implementación."
+          - numero: 4
+            titulo: "Modificaciones Seguras del Sistema"
+            contenido:
+              - "Consumo y aplicación de parches lógicos de diferencias (diff)."
+              - "Interacción con control de versiones Git sin sobreescribir directorios completos de forma ciega."
+        laboratorio:
+          - "Levantamiento local de un servidor MCP de demostración."
+          - "Exposición de utilidades de terminal al cliente de IA local."
+          - "Verificación por logs de cómo el modelo selecciona autónomamente la herramienta adecuada y recibe la respuesta en JSON."
+        preguntas_debate:
+          - "¿De qué manera MCP resuelve los desafíos de seguridad y gobierno de TI frente a la ejecución libre mediante funciones exec clásicas?"
+          - "¿Qué impacto tiene el diseño basado en subagentes independientes en la reducción del costo de la ventana de contexto?"
+
+      # ---------- HORA 8 ----------
+      - hora: 8
+        titulo: "Entornos de Desarrollo de Agentes (ADE) Híbridos y CLI"
+        objetivo: "Evaluar el ecosistema de herramientas de desarrollo agéntico comparando entornos gráficos frente a asistentes CLI autónomos."
+        diapositivas:
+          - numero: 1
+            titulo: "Evolución del Software de Desarrollo con IA"
+            contenido:
+              - "De los asistentes de autocompletado en la sombra a los entornos agénticos de control bidireccional de código."
+          - numero: 2
+            titulo: "IDEs Híbridos Gráficos"
+            contenido:
+              - "Análisis profundo de Cursor, Windsurf y VS Code Copilot."
+              - "Edición en paralelo sobre múltiples archivos y predicción de líneas de código en tiempo real."
+          - numero: 3
+            titulo: "Clientes CLI Autónomos: Claude Code y OpenCode"
+            contenido:
+              - "Acción directa sobre la terminal del desarrollador."
+              - "Administración de exploración de dependencias, compilaciones rotas y refactorizaciones sin interfaz visual."
+          - numero: 4
+            titulo: "Alternativas Especializadas: Codex, Gemini CLI y Hermes"
+            contenido:
+              - "Capacidades, ventajas operativas y deficiencias críticas de cada herramienta."
+              - "Manejo de contextos masivos y soporte multilenguaje."
+        laboratorio:
+          - "Instalación y configuración local de Claude Code u OpenCode."
+          - "Auditoría automática de un proyecto heredado identificando vulnerabilidades lógicas."
+          - "Generación autónoma de archivos de parche (diff format)."
+        preguntas_debate:
+          - "¿Cuáles son las ventajas e ineficiencias críticas de los entornos CLI frente al panel Composer de un IDE gráfico como Cursor?"
+          - "¿Cómo gestionar las claves de API locales y el presupuesto de tokens ante la ejecución descontrolada de llamadas automáticas?"
+
+      # ---------- HORA 9 ----------
+      - hora: 9
+        titulo: "Metodología Spec-Driven Development (SDD) Avanzado con la Suite de Gentleman-AI"
+        objetivo: "Presentar la metodología SDD para erradicar el caos del código generado aleatoriamente por la IA."
+        diapositivas:
+          - numero: 1
+            titulo: "El Caos del Desarrollo Desordenado con Agentes"
+            contenido:
+              - "Degeneración lógica y arquitectónica de repositorios cuando los agentes omiten la planificación."
+              - "Refactorizaciones masivas sin control."
+          - numero: 2
+            titulo: "Conceptos Fundamentales del Spec-Driven Development (SDD)"
+            contenido:
+              - "Ciclo virtuoso de SDD: definición de no-goals y requisitos funcionales antes de generar código."
+              - "Aseguramiento de la consistencia mediante validaciones rigurosas."
+          - numero: 3
+            titulo: "El Ecosistema de Gentleman Dev"
+            contenido:
+              - "Suite de código abierto: Gentle-AI, harness de ejecución gentle-pi, sistemas de memoria integrada Engram."
+          - numero: 4
+            titulo: "Operación de las Fases SDD"
+            contenido:
+              - "Diagrama de flujo de los comandos nativos: /sdd-init, sdd-explore, sdd-propose, sdd-spec, sdd-design, sdd-tasks, sdd-apply, sdd-verify, sdd-archive."
+        laboratorio:
+          - "Inicialización guiada del flujo SDD en un repositorio Node.js o Python (/sdd-init)."
+          - "Análisis de la estructura resultante (openspec/config.yaml, .atl/skill-registry.md)."
+          - "Ciclo simulado: la IA genera la especificación detallada de un microservicio y valida aserciones antes de escribir la lógica de negocio."
+        preguntas_debate:
+          - "¿Por qué la validación estricta de una especificación Markdown es más efectiva que la depuración interactiva de código?"
+          - "¿De qué manera las heurísticas de delegación obligatoria de Gentle-AI protegen contra mezclas accidentales de código?"
+
+  # ============================================================
+  # MÓDULO IV
+  # ============================================================
+  - id: IV
+    titulo: "Documentación Técnica Avanzada, Sistemas de Memoria y Arquitectura Domain-Driven Design (DDD)"
+    horas: "10-12"
+    herramientas: ["Tolaria Desktop", "Engram TUI", "Generadores de contratos de APIs"]
+    clases:
+
+      # ---------- HORA 10 ----------
+      - hora: 10
+        titulo: "Documentación Técnica de Alta Calidad y Bases de Conocimiento Corporativas"
+        objetivo: "Explorar la documentación Markdown como interfaz representacional bidireccional humano-IA."
+        diapositivas:
+          - numero: 1
+            titulo: "Documentación Bidireccional Humano-IA"
+            contenido:
+              - "Sintaxis Markdown con metadatos limpios en formato YAML frontmatter."
+              - "Documentación comprensible para el equipo y navegable por agentes."
+          - numero: 2
+            titulo: "Niveles de Especificación en SDD"
+            contenido:
+              - "Jerarquía documental: desde los objetivos macro del negocio hasta las especificaciones detalladas a nivel de funciones."
+          - numero: 3
+            titulo: "Bases de Conocimiento: Obsidian, Notion y Tolaria"
+            contenido:
+              - "Comparación de herramientas corporativas."
+              - "Impacto de su estructura en la agilidad de los agentes lectores."
+          - numero: 4
+            titulo: "Tolaria: Arquitectura Documental Descentralizada"
+            contenido:
+              - "Principios de primacía del sistema de archivos local e integración nativa con Git."
+              - "Diseño offline-first y uso de archivos AGENTS y relations.md para guiar el análisis contextual de la IA."
+        laboratorio:
+          - "Creación de un repositorio documental en Tolaria u Obsidian con YAML frontmatter estructurado."
+          - "Pruebas de lectura mediante agentes CLI autónomos verificando la síntesis de dependencias lógicas complejas."
+        preguntas_debate:
+          - "¿Qué ventajas competitivas de privacidad e independencia ofrece el enfoque local-first y git-first de Tolaria frente a Notion corporativo?"
+          - "¿Cómo pueden los metadatos tipados como 'lentes conceptuales' guiar a la IA sin forzar validaciones inflexibles?"
+
+      # ---------- HORA 11 ----------
+      - hora: 11
+        titulo: "Sistemas de Memoria Persistente para Modelos de Lenguaje en MCP"
+        objetivo: "Abordar las limitaciones de las ventanas de contexto e introducir arquitecturas de memoria persistente."
+        diapositivas:
+          - numero: 1
+            titulo: "El Desafío de la Pérdida de Contexto en Sesiones Prolongadas"
+            contenido:
+              - "Latencia, costo por llamadas a la API y olvido de detalles críticos en sesiones de chat largas no estructuradas."
+          - numero: 2
+            titulo: "Engram: Arquitectura de Persistencia Local"
+            contenido:
+              - "Binario en Go que almacena decisiones de diseño y correcciones de fallas de forma agnóstica."
+              - "Motor relacional SQLite con búsqueda de texto completo FTS5."
+          - numero: 3
+            titulo: "Codebase-Memory-MCP: Grafos de Conocimiento Indexados"
+            contenido:
+              - "Análisis estáticos de código en tiempo real."
+              - "Almacenamiento local de firmas jerárquicas de dependencias complejas."
+          - numero: 4
+            titulo: "Integración del Almacén en el Sistema Operativo Local"
+            contenido:
+              - "Herramientas como Glia e interfaces TUI de Engram para auditar, depurar y compartir el historial de memoria cognitiva."
+        laboratorio:
+          - "Instalación local del binario en Go de Engram y configuración de su servidor MCP en Claude Code o Cursor."
+          - "Lanzamiento de engram serve en puerto local."
+          - "Ejecución de engram tui para visualizar cómo el agente guarda y recupera decisiones lógicas automáticas."
+        preguntas_debate:
+          - "¿De qué manera Codebase-Memory-MCP reduce el consumo de tokens hasta en 120 veces frente a la exploración por grepping secuencial?"
+          - "¿Cuáles son las implicaciones de implementar una memoria cognitiva agnóstica como Engram para compartir patrones de diseño exitosos entre ingenieros?"
+
+      # ---------- HORA 12 ----------
+      - hora: 12
+        titulo: "Arquitectura Domain-Driven Design (DDD) y Contratos de APIs"
+        objetivo: "Estructurar dependencias de negocio para que la IA autogenere implementaciones modulares y desacopladas."
+        diapositivas:
+          - numero: 1
+            titulo: "Domain-Driven Design (DDD) como Escudo frente a la IA"
+            contenido:
+              - "Definición estricta de contextos delimitados (Bounded Contexts)."
+              - "Evita que los modelos mezclen reglas de negocio con implementaciones de infraestructura."
+          - numero: 2
+            titulo: "Capas de Arquitectura Limpia en DDD"
+            contenido:
+              - "Capa de Dominio pura (entidades y agregados)."
+              - "Capa de Aplicación (casos de uso)."
+              - "Capa de Infraestructura técnica (bases de datos, controladores HTTP)."
+          - numero: 3
+            titulo: "APIs Contract-First"
+            contenido:
+              - "El contrato de la interfaz se diseña formalmente antes de escribir código."
+              - "Mapa inmutable de interconexión del sistema."
+          - numero: 4
+            titulo: "Patrón JSON-First y Herramientas de Colaboración de Contratos"
+            contenido:
+              - "Herramientas de línea de comandos ágiles para sincronizar, estructurar y versionar esquemas y contratos."
+              - "Legibilidad para humanos y agentes autónomos."
+        laboratorio:
+          - "Uso de un prompt estructurado (GOLD o STAR) para redactar el contrato OpenAPI (YAML/JSON) de un microservicio financiero ficticio."
+          - "Una vez validado el contrato, guía del agente para compilar el andamiaje del servidor en capas limpias DDD (Go o TypeScript)."
+        preguntas_debate:
+          - "¿Cómo limita la inyección de interfaces de contrato estrictas la generación de código incoherente en la capa de transporte?"
+          - "¿Cuáles son las implicaciones de mantenimiento al migrar un monolito a microservicios estructurados en DDD con contratos JSON-First?"
+
+  # ============================================================
+  # MÓDULO V
+  # ============================================================
+  - id: V
+    titulo: "Análisis de Datos (EDA) y Automatización de Procesos con n8n"
+    horas: "13-15"
+    herramientas: ["Sweetviz", "YData-Profiler", "Data Formulator", "n8n"]
+    clases:
+
+      # ---------- HORA 13 ----------
+      - hora: 13
+        titulo: "Análisis Exploratorio de Datos (EDA) Automatizado"
+        objetivo: "Optimizar los flujos analíticos descriptivos reduciendo los tiempos de evaluación inicial de calidad y distribución de datos."
+        diapositivas:
+          - numero: 1
+            titulo: "El Rol de la Analítica Descriptiva en TI"
+            contenido:
+              - "Etapas del flujo general: ingesta cruda hasta la generación de valor descriptivo, diagnóstico y predictivo."
+          - numero: 2
+            titulo: "El Concepto del Análisis Exploratorio de Datos (EDA)"
+            contenido:
+              - "Toma de muestras estadísticas, validación de calidad."
+              - "Identificación de registros duplicados, nulos y valores atípicos."
+          - numero: 3
+            titulo: "Sweetviz: Visualizaciones Comparativas Rápidas"
+            contenido:
+              - "Biblioteca para compilar informes visuales interactivos enriquecidos."
+              - "Ideal para evaluar comparativamente la consistencia entre dos conjuntos de datos."
+          - numero: 4
+            titulo: "YData-Profiler: Diagnósticos de Calidad Exhaustivos"
+            contenido:
+              - "Perfiles de datos completos con matrices de correlación multidimensionales."
+              - "Detección de alertas de multicolinealidad y reportes de redundancia sintáctica listos para producción."
+        laboratorio:
+          - "Carga de un archivo masivo de logs o base tabular corporativa en Python."
+          - "Generación automática de informes HTML con Sweetviz y YData-Profiler."
+          - "Identificación visual de variables redundantes, nulos y sesgos en menos de cinco minutos."
+        preguntas_debate:
+          - "¿Qué consideraciones de escalamiento de cómputo y consumo de RAM se deben tener al ejecutar EDA sobre volúmenes masivos frente a muestras representativas?"
+          - "¿Cómo resolver los desafíos normativos y de privacidad al usar estas bibliotecas frente a herramientas en la nube de terceros?"
+
+      # ---------- HORA 14 ----------
+      - hora: 14
+        titulo: "Data Formulator de Microsoft Research"
+        objetivo: "Analizar la herramienta de visualización exploratoria guiada por IA interactiva de Microsoft Research."
+        diapositivas:
+          - numero: 1
+            titulo: "Introducción a Data Formulator"
+            contenido:
+              - "Arquitectura del entorno visual e interactivo de código abierto."
+              - "Transformación de datos complejos en conocimiento analítico claro."
+          - numero: 2
+            titulo: "Ingesta Multimodal de Datos No Estructurados"
+            contenido:
+              - "Extracción de información desde imágenes, capturas de pantalla, archivos estructurados o conexiones web simultáneamente."
+          - numero: 3
+            titulo: "Hilos de Exploración y Sandbox Aislado (Data Threads)"
+            contenido:
+              - "Agente autónomo que ejecuta código de transformación y generación gráfica en entorno seguro aislado (sandbox)."
+              - "Historial contextual ramificado (Branching) para evitar retrocesos costosos."
+          - numero: 4
+            titulo: "Conectores y Estilización Inteligente"
+            contenido:
+              - "Versión 0.7 con conectores nativos: PostgreSQL, BigQuery, MySQL, Cosmos, S3."
+              - "Agente especialista de estilo gráfico (Style-Refinement Agent) para tipografías y paletas mediante lenguaje natural."
+        laboratorio:
+          - "Levantamiento local con el gestor uv: `uvx data_formulator`."
+          - "Carga de un archivo de logs técnicos."
+          - "Interacciones conversacionales para generar visualizaciones analíticas complejas de rendimiento de red."
+          - "Refinamiento estético mediante comandos en lenguaje natural."
+        preguntas_debate:
+          - "¿Cómo favorece la persistencia estructurada del hilo (Data Threads) frente a las sesiones lineales tradicionales de ChatGPT?"
+          - "¿Qué valor técnico aporta el aislamiento en sandbox sobre la seguridad integral de la infraestructura del analista en local?"
+
+      # ---------- HORA 15 ----------
+      - hora: 15
+        titulo: "Automatización de Flujos de Trabajo con n8n"
+        objetivo: "Capacitar en la orquestación de flujos de automatización reactivos a eventos sin código repetitivo de integración."
+        diapositivas:
+          - numero: 1
+            titulo: "El Paradigma de n8n como Orquestador Técnico"
+            contenido:
+              - "Diferencias operativas frente a herramientas rígidas cerradas."
+              - "Enfoque autohospedado para preservar la privacidad de los datos empresariales."
+          - numero: 2
+            titulo: "Anatomía de un Workflow en n8n"
+            contenido:
+              - "Disparadores basados en eventos (Webhooks, eventos cron)."
+              - "Nodos de procesamiento condicional, transformadores JSON y conectores de salida."
+          - numero: 3
+            titulo: "Conexión Nativa con Inteligencia Artificial"
+            contenido:
+              - "Nodos avanzados para inserción directa de agentes."
+              - "Memorias persistentes locales, recuperadores vectoriales e interacciones secuenciales con LLMs."
+          - numero: 4
+            titulo: "Automatización de Tareas de TI"
+            contenido:
+              - "Ejemplo práctico: captura de alertas de caída de base de datos de producción."
+              - "Análisis agéntico de los últimos logs y generación automática de un ticket de corrección detallado."
+        laboratorio:
+          - "Inicialización de un servidor local liviano de n8n."
+          - "Diseño de un flujo que capture notificaciones vía webhook de prueba."
+          - "Procesamiento local de la carga JSON y categorización mediante un modelo de lenguaje integrado."
+        preguntas_debate:
+          - "¿Por qué n8n es más adecuado para la integración segura de APIs corporativas frente al desarrollo manual de scripts monolíticos?"
+          - "¿Cómo estructurar el manejo de errores en n8n para que las fallas de red de los modelos no rompan los flujos críticos?"
+
+  # ============================================================
+  # MÓDULO VI
+  # ============================================================
+  - id: VI
+    titulo: "Pruebas de Software Agénticas, Gestión de Proyectos con IA y Generación de Frontend"
+    horas: "16-18"
+    herramientas: ["Playwright Codegen", "OpenPencil con servidor MCP"]
+    clases:
+
+      # ---------- HORA 16 ----------
+      - hora: 16
+        titulo: "Aseguramiento de Calidad, Pirámide de Pruebas e IA"
+        objetivo: "Abordar el aseguramiento de la calidad moderna combinando BDD con automatización robusta de pruebas E2E."
+        diapositivas:
+          - numero: 1
+            titulo: "La IA en el Aseguramiento de la Calidad (QA)"
+            contenido:
+              - "Reducción del tiempo de cobertura de código y elevación de la confiabilidad de las aserciones funcionales."
+          - numero: 2
+            titulo: "TDD y BDD con Gherkin en Flujos de Desarrollo Agéntico (SDD)"
+            contenido:
+              - "Integración metodológica donde la especificación lógica del negocio en Gherkin guía la autogeneración del andamiaje de pruebas."
+              - "Ejemplo: Feature de Autenticación de API JSON-First con escenarios Given/When/Then."
+          - numero: 3
+            titulo: "Pruebas E2E: Selenium frente a Playwright"
+            contenido:
+              - "Tabla comparativa: arquitectura, velocidad, confiabilidad de esperas asíncronas."
+              - "Adecuación para inyecciones automatizadas de código de aserción guiado por agentes de IA."
+          - numero: 4
+            titulo: "Pruebas de Regresión y Generación Autónoma de Casos"
+            contenido:
+              - "Ejecución de /sdd-init para activar el modo estricto de pruebas unitarias."
+              - "Bloqueo del avance a producción sin la validación matemática de los casos de frontera."
+        laboratorio:
+          - "Implementación estricta de un ciclo TDD en un repositorio experimental usando la suite agéntica local."
+          - "Uso del generador Playwright Codegen para registrar un flujo interactivo."
+          - "Solicitud a la IA de depuración y estabilización del script con aserciones dinámicas en escenarios límite asíncronos."
+        preguntas_debate:
+          - "¿De qué manera las esperas asíncronas nativas del protocolo WebSocket de Playwright reducen el 'flakiness' frente a Selenium WebDriver?"
+          - "¿Qué riesgos se asumen al delegar exclusivamente la cobertura lógica a generadores autónomos sin revisión de casos de frontera?"
+
+      # ---------- HORA 17 ----------
+      - hora: 17
+        titulo: "Gestión de Proyectos de TI Asistida por IA"
+        objetivo: "Optimizar tareas de gestión estratégica de TI automatizando labores administrativas y asegurando el cumplimiento normativo."
+        diapositivas:
+          - numero: 1
+            titulo: "Automatización de la Gestión de Adquisiciones de TI"
+            contenido:
+              - "Agentes autónomos para consultar bases de conocimiento complejas."
+              - "Agilización de fases de diseño de bases de licitación técnica (RFP, RFQ) y solicitudes de cotización de infraestructura."
+          - numero: 2
+            titulo: "Evaluación Semántica Automática Parcial"
+            contenido:
+              - "Análisis de ofertas técnicas de múltiples proveedores en segundos."
+              - "Evaluación de precios, plazos de entrega y análisis de concordancia respecto a los pliegos originales."
+          - numero: 3
+            titulo: "Marco de Cumplimiento Legal y Privacidad"
+            contenido:
+              - "Guía de la AEPD para el despliegue ético de IA generativa en la contratación de servicios públicos."
+              - "Prohibición estricta de delegar decisiones vinculantes a 'cajas negras' autónomas."
+              - "Obligación del registro detallado de interacciones."
+          - numero: 4
+            titulo: "Síntesis de Colaboración Ejecutiva"
+            contenido:
+              - "Integración de ReadAI y herramientas nativas de Microsoft Teams."
+              - "Transcripción de reuniones, planes de acción concretos, responsables, plazos y resúmenes temáticos."
+        laboratorio:
+          - "Simulación de un flujo de evaluación técnica corporativa rápida."
+          - "Carga en el agente local de dos ofertas técnicas competidoras en una licitación simulada."
+          - "Uso de un prompt estructurado GOLD para evaluación técnica parcial y generación de la matriz de puntuación final."
+        preguntas_debate:
+          - "¿Cómo se asegura el cumplimiento de la LCSP al implementar un copiloto de recomendación asistida por IA sin delegar la firma administrativa final?"
+          - "¿Qué medidas de seguridad y privacidad se deben configurar al habilitar transcripciones y análisis de ReadAI en sesiones ejecutivas confidenciales?"
+
+      # ---------- HORA 18 ----------
+      - hora: 18
+        titulo: "Generación de Interfaces Frontend y Canales de Comunicación Multimodal"
+        objetivo: "Acelerar el desarrollo del lado del cliente con editores de diseño modernos de código abierto conectados vía MCP."
+        diapositivas:
+          - numero: 1
+            titulo: "El Canal de Diseño a Código de Interfaces"
+            contenido:
+              - "De las limitaciones cerradas de Figma y sus restricciones pagadas."
+              - "Hacia la apertura de entornos de código libre y local-first de desarrollo."
+          - numero: 2
+            titulo: "OpenPencil: El Editor Vectorial Libre"
+            contenido:
+              - "Alternativa abierta con importación/exportación de archivos nativos Figma (.fig)."
+              - "Codificador binario estructurado en Kiwi y copiado bidireccional coherente."
+          - numero: 3
+            titulo: "Conexión MCP con Agentes de Programación de Consola"
+            contenido:
+              - "CLI como Claude Code se conectan al servidor @open-pencil/mcp."
+              - "Lectura, modificación y exportación del lienzo visual en local con más de 100 herramientas agénticas tipadas."
+          - numero: 4
+            titulo: "Más Allá de los Modelos de Lenguaje: Visualización Técnica Eficiente"
+            contenido:
+              - "Uso coordinado de generadores de imágenes vectoriales e infografías estructuradas."
+              - "Documentación de arquitecturas de sistemas complejos."
+        laboratorio:
+          - "Inicio de la aplicación de escritorio local de OpenPencil."
+          - "Configuración de la conexión del editor con un agente de consola local."
+          - "Diseño interactivo de un dashboard corporativo mediante comandos en lenguaje natural."
+          - "Conversión del diseño visual a componentes TypeScript con clases Tailwind CSS vía @open-pencil/cli."
+        preguntas_debate:
+          - "¿Cómo cambia la colaboración entre diseñadores UX/UI e ingenieros frontend al usar una única fuente de verdad abierta como OpenPencil con MCP en local?"
+          - "¿De qué manera la validación visual y el renderizado con IA reducen la brecha entre las maquetas de diseño y la implementación final en producción?"

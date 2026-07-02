@@ -1,0 +1,74 @@
+tema: "Data Formulator de Microsoft Research"
+subtitulo: "Visualización exploratoria guiada por IA interactiva 🎨"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "Data Formulator combina interfaces drag-and-drop con flujos conversacionales basados en agentes."
+      - "Arquitectura del entorno visual interactivo"
+      - "Ingesta multimodal de datos no estructurados"
+      - "Hilos de exploración (Data Threads) y conectores corporativos"
+
+  - titulo: "Introducción a Data Formulator"
+    contenido:
+      - "Entorno visual e interactivo de código abierto."
+      - "Transforma datos complejos en conocimiento analítico claro."
+      - tipo: "nota"
+        texto: "Desarrollado por Microsoft Research; ejecutable en local con uv."
+
+  - titulo: "Ingesta Multimodal de Datos No Estructurados"
+    contenido:
+      - "Extracción de información desde imágenes y capturas de pantalla."
+      - "Archivos estructurados o conexiones web simultáneamente."
+      - tipo: "ejemplo"
+        texto: "Cargar una captura de un dashboard y analizar sus métricas automáticamente."
+
+  - titulo: "Hilos de Exploración y Sandbox Aislado"
+    contenido:
+      - "Un agente autónomo ejecuta código de transformación en entorno seguro (sandbox)."
+      - "Historial contextual ramificado (Branching) para evitar retrocesos costosos."
+      - tipo: "nota"
+        texto: "El aislamiento en sandbox protege la infraestructura del analista."
+
+  - titulo: "Conectores y Estilización Inteligente"
+    contenido:
+      - "Versión 0.7 con conectores nativos: PostgreSQL, BigQuery, MySQL, Cosmos, S3."
+      - "Agente especialista de estilo (Style-Refinement Agent)."
+      - "Adapta tipografías y paletas mediante lenguaje natural."
+      - tipo: "tabla"
+        encabezados: ["Conector", "Tipo"]
+        filas:
+          - ["PostgreSQL", "Relacional"]
+          - ["BigQuery", "Analítico"]
+          - ["Cosmos", "Documental"]
+          - ["S3", "Objetos"]
+
+  - titulo: "Puesta en Marcha Local"
+    contenido:
+      - tipo: "calculo"
+        texto: "uvx data_formulator"
+      - tipo: "nota"
+        texto: "El gestor uv permite levantar la instancia sin instalación permanente."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Levantar localmente Data Formulator con uv."
+      - "Cargar un archivo de logs técnicos."
+      - "Generar visualizaciones de rendimiento de red refinando la estética en lenguaje natural."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo favorecen los Data Threads frente a sesiones lineales tradicionales de ChatGPT?"
+      - tipo: "problema"
+        texto: "¿Qué valor técnico aporta el sandbox aislado sobre la seguridad del analista en local?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🤖 Data Formulator combina drag-and-drop con agentes conversacionales."
+      - "🧵 Los Data Threads ramifican el historial sin retrocesos costosos."
+      - "🔌 Conectores corporativos robustos en la versión 0.7."
+      - tipo: "nota"
+        texto: "El sandbox aislado es clave para la seguridad del analista."

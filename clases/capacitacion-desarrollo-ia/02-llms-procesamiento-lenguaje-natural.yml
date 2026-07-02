@@ -1,0 +1,75 @@
+tema: "Grandes Modelos de Lenguaje (LLMs) y Procesamiento del Lenguaje Natural Moderno"
+subtitulo: "Del texto plano a vectores semánticos 🔤"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - "Mecanismos algorítmicos que estructuran el lenguaje natural."
+      - "Tokenización y vectorización semántica."
+      - "Modelos autoregresivos y causales."
+      - tipo: "nota"
+        texto: "Comprender cómo un LLM convierte texto en matemáticas procesables."
+
+  - titulo: "El Flujo de Procesamiento del Lenguaje"
+    contenido:
+      - tipo: "formula"
+        texto: "Texto Plano → Tokenizador → Tokens → Embeddings → Vector N-Dimensional"
+      - tipo: "ejemplo"
+        texto: "\"Desarrollo agéntico\" → [0.12, -0.45, ..., 0.89] en un espacio semántico."
+
+  - titulo: "El Desafío Algorítmico de la Tokenización"
+    contenido:
+      - "La segmentación por espacios simples es insuficiente."
+      - "Los tokenizadores modernos usan expresiones regulares y diccionarios entrenados."
+      - "Resuelven caracteres especiales, signos de puntuación y morfemas complejos."
+      - tipo: "nota"
+        texto: "El mismo texto produce distinto número de tokens según el tokenizador (LLaMA vs GPT-4)."
+
+  - titulo: "Stemming vs Lemmatization"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Técnica", "Enfoque", "Precisión"]
+        filas:
+          - ["Stemming", "Reducción heurística a la raíz", "Baja"]
+          - ["Lemmatization", "Transformación morfológica basada en IA", "Alta"]
+      - tipo: "ejemplo"
+        texto: "Stemming: 'corriendo' → 'corr' | Lemmatization: 'corriendo' → 'correr'"
+
+  - titulo: "Embeddings Vectoriales"
+    contenido:
+      - "Las palabras se proyectan en vectores semánticos continuos obtenidos durante el entrenamiento."
+      - tipo: "formula"
+        texto: "Distancia de Coseno = (A·B) / (‖A‖·‖B‖)"
+      - tipo: "ejemplo"
+        texto: "Aritmética vectorial: rey − hombre + mujer ≈ reina"
+
+  - titulo: "Modelos Autoregresivos y Causales"
+    contenido:
+      - "Modelos generativos decodificadores que predicen secuencialmente el siguiente token."
+      - "Dependen exclusivamente de la ventana de contexto izquierda."
+      - tipo: "formula"
+        texto: "P(yₜ | y₁, y₂, ..., yₜ₋₁)"
+      - tipo: "nota"
+        texto: "La naturaleza secuencial y causal tiene implicaciones directas en la latencia."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Analizar la fragmentación de código TypeScript o Go por diferentes tokenizadores."
+      - "Convertir términos del dominio de TI a embeddings con un modelo local."
+      - "Calcular distancia de coseno para identificar términos de infraestructura similares."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué la tokenización de código fuente consume más ventana de contexto que el lenguaje natural estructurado?"
+      - tipo: "problema"
+        texto: "¿Cuáles son las implicaciones operativas en la latencia debido a la naturaleza autoregresiva?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🔤 La tokenización transforma texto en unidades matemáticas procesables."
+      - "🧭 Los embeddings proyectan palabras en espacios semánticos continuos."
+      - "➡️ Los modelos autoregresivos predicen el siguiente token secuencialmente."
+      - tipo: "nota"
+        texto: "Estos mecanismos son la base sobre la que operan los Transformers."

@@ -1,0 +1,76 @@
+tema: "Aseguramiento de Calidad, Pirámide de Pruebas e IA"
+subtitulo: "QA moderno combinando BDD con automatización E2E 🧪"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La IA reduce el tiempo de cobertura de código y eleva la confiabilidad de las aserciones."
+      - "IA en el aseguramiento de la calidad (QA)"
+      - "TDD y BDD con Gherkin en SDD"
+      - "Selenium vs. Playwright y generación autónoma de casos"
+
+  - titulo: "La IA en el Aseguramiento de la Calidad (QA)"
+    contenido:
+      - "Los LLMs reducen el tiempo de cobertura de código."
+      - "Elevan la confiabilidad de las aserciones funcionales."
+      - tipo: "nota"
+        texto: "La IA puede generar casos de frontera que los ingenieros pasan por alto."
+
+  - titulo: "TDD y BDD con Gherkin en SDD"
+    contenido:
+      - "La especificación lógica del negocio en Gherkin guía la autogeneración del andamiaje de pruebas."
+      - tipo: "ejemplo"
+        texto: "Feature: Autenticación de API JSON-First | Scenario: Solicitud con contrato válido"
+      - tipo: "formula"
+        texto: "Given [contexto] When [acción] Then [resultado esperado]"
+
+  - titulo: "Pruebas E2E: Selenium vs. Playwright"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "Selenium WebDriver", "Playwright"]
+        filas:
+          - ["Arquitectura", "Driver externo", "Protocolo WebSocket nativo"]
+          - ["Esperas", "Explícitas manuales", "Asíncronas automáticas"]
+          - ["Flakiness", "Alto", "Bajo"]
+      - tipo: "nota"
+        texto: "Las esperas asíncronas de Playwright reducen el 'flakiness' frente a Selenium."
+
+  - titulo: "Pruebas de Regresión y Generación Autónoma"
+    contenido:
+      - "Los entornos ADE ejecutan /sdd-init para activar el modo estricto de pruebas unitarias."
+      - "Bloqueo del avance a producción sin validación de casos de frontera."
+      - tipo: "nota"
+        texto: "Delegar exclusivamente a generadores autónomos sin revisión senior es riesgoso."
+
+  - titulo: "Pirámide de Pruebas con IA"
+    contenido:
+      - tipo: "grafico_barras"
+        categorias: ["Unitarias", "Integración", "E2E"]
+        valores: [70, 20, 10]
+        etiqueta_y: "Porcentaje"
+        titulo_serie: "Distribución"
+      - tipo: "nota"
+        texto: "La IA ayuda especialmente a expandir la base de pruebas unitarias."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Implementar un ciclo TDD estricto en un repositorio experimental con la suite agéntica."
+      - "Usar Playwright Codegen para registrar un flujo interactivo."
+      - "Solicitar a la IA depurar y estabilizar el script con aserciones dinámicas asíncronas."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿De qué manera las esperas asíncronas de Playwright reducen el 'flakiness' frente a Selenium?"
+      - tipo: "problema"
+        texto: "¿Qué riesgos surgen al delegar exclusivamente la cobertura lógica a generadores autónomos?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🤖 La IA acelera la cobertura y la confiabilidad de pruebas."
+      - "🥒 Gherkin + SDD guían la autogeneración del andamiaje."
+      - "⚡ Playwright supera a Selenium en estabilidad E2E."
+      - tipo: "nota"
+        texto: "Combinar autonomía de IA con revisión senior de casos de frontera."

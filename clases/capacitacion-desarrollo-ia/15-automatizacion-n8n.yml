@@ -1,0 +1,79 @@
+tema: "Automatización de Flujos de Trabajo con n8n"
+subtitulo: "Orquestación reactiva a eventos sin código repetitivo de integración 🔁"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "n8n permite orquestar flujos reactivos a eventos sin escribir integraciones repetitivas."
+      - "El paradigma de n8n como orquestador técnico"
+      - "Anatomía de un workflow"
+      - "Conexión nativa con IA y automatización de tareas de TI"
+
+  - titulo: "El Paradigma de n8n como Orquestador Técnico"
+    contenido:
+      - "Diferencias operativas frente a herramientas rígidas cerradas."
+      - "Enfoque autohospedado para preservar la privacidad de los datos empresariales."
+      - tipo: "nota"
+        texto: "n8n es preferible a scripts monolíticos propietarios para integrar APIs corporativas."
+
+  - titulo: "Anatomía de un Workflow en n8n"
+    contenido:
+      - "Disparadores basados en eventos (Webhooks, eventos cron)."
+      - "Nodos de procesamiento condicional."
+      - "Transformadores de datos estructurados JSON."
+      - "Conectores de salida."
+      - tipo: "formula"
+        texto: "Disparador → Procesamiento → Transformación → Salida"
+
+  - titulo: "Conexión Nativa con Inteligencia Artificial"
+    contenido:
+      - "Nodos avanzados para inserción directa de agentes."
+      - "Memorias persistentes locales y recuperadores vectoriales."
+      - "Interacciones secuenciales con modelos de lenguaje."
+      - tipo: "nota"
+        texto: "n8n integra IA como un nodo más del flujo, no como un componente externo."
+
+  - titulo: "Automatización de Tareas de TI (Ejemplo)"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Captura de alertas de caída de base de datos de producción."
+      - tipo: "ejemplo"
+        texto: "Análisis agéntico de los últimos logs."
+      - tipo: "ejemplo"
+        texto: "Generación automática de un ticket de corrección detallado."
+      - tipo: "nota"
+        texto: "El flujo debe manejar errores robustamente para no romperse ante fallos de red."
+
+  - titulo: "Manejo de Errores en n8n"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Estrategia", "Uso"]
+        filas:
+          - ["Reintentos", "Fallos transitorios de red"]
+          - ["Fallback", "Ruta alternativa controlada"]
+          - ["Dead-letter", "Aislamiento de eventos problemáticos"]
+      - tipo: "nota"
+        texto: "Las fallas de los modelos de IA no deben romper los flujos críticos."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Inicializar un servidor local liviano de n8n."
+      - "Diseñar un flujo que capture notificaciones vía webhook de prueba."
+      - "Procesar la carga JSON y categorizarla con un modelo de lenguaje integrado."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué n8n es más adecuado que scripts monolíticos para integrar APIs corporativas?"
+      - tipo: "problema"
+        texto: "¿Cómo estructurar el manejo de errores para que las fallas de IA no rompan flujos críticos?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🔄 n8n orquesta flujos reactivos autohospedados."
+      - "🧩 Disparadores, nodos condicionales y conectores componen el workflow."
+      - "🤖 La IA se integra como un nodo nativo del flujo."
+      - tipo: "nota"
+        texto: "El manejo robusto de errores es esencial en producción."

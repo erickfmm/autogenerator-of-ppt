@@ -1,0 +1,79 @@
+tema: "Anatomía de un Agente Inteligente y el Protocolo Model Context Protocol (MCP)"
+subtitulo: "Cómo los agentes interactúan con el entorno de ejecución 🛠️"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "Un agente integra LLM, herramientas, habilidades y memoria persistente."
+      - "Arquitectura interna de un agente moderno"
+      - "El protocolo MCP de Anthropic"
+      - "Dinámica de subagentes y modificaciones seguras"
+
+  - titulo: "Arquitectura de un Agente de IA Moderno"
+    contenido:
+      - "Orquestador lógico (LLM) que toma decisiones."
+      - "Herramientas (Tools) ejecutables en el entorno."
+      - "Habilidades empaquetadas (Skills) reutilizables."
+      - "Sistemas de memoria persistente."
+      - tipo: "formula"
+        texto: "Agente = LLM + Tools + Skills + Memoria"
+
+  - titulo: "El Protocolo Model Context Protocol (MCP)"
+    contenido:
+      - "Estándar impulsado por Anthropic."
+      - "Habilita acceso seguro y estandarizado a herramientas y datos locales."
+      - "Comunicación mediante sockets stdio o HTTP."
+      - tipo: "nota"
+        texto: "MCP resuelve el problema de seguridad frente a la ejecución libre con exec clásico."
+
+  - titulo: "Orquestación Multitarea y Subagentes"
+    contenido:
+      - "Patrón de división: un agente padre delega a subagentes especializados."
+      - "Subagentes de contexto delgado enfocados en tareas concretas."
+      - tipo: "ejemplo"
+        texto: "Un agente padre delega investigación e implementación a subagentes separados."
+      - tipo: "nota"
+        texto: "Reduce el costo computacional de la ventana de contexto del agente principal."
+
+  - titulo: "Modificaciones Seguras del Sistema"
+    contenido:
+      - "Los agentes aplican parches lógicos de diferencias (archivos diff)."
+      - "Interactúan con Git sin sobreescribir directorios completos de forma ciega."
+      - tipo: "formula"
+        texto: "Cambio = diff(patch) → revisión → aplicación controlada"
+      - tipo: "nota"
+        texto: "El formato diff permite auditoría y reversión segura."
+
+  - titulo: "MCP vs. Ejecución Libre"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "exec clásico", "MCP"]
+        filas:
+          - ["Seguridad", "Baja", "Alta (estandarizada)"]
+          - ["Gobierno TI", "Difícil", "Centralizado"]
+          - ["Auditoría", "Limitada", "Trazable"]
+      - tipo: "nota"
+        texto: "MCP ofrece un contrato tipado entre el modelo y el entorno."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Levantar localmente un servidor MCP de demostración."
+      - "Exponer utilidades de terminal al cliente de IA local."
+      - "Verificar por logs cómo el modelo selecciona autónomamente la herramienta adecuada y recibe JSON."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿De qué manera MCP resuelve los desafíos de seguridad y gobierno de TI frente a exec clásico?"
+      - tipo: "problema"
+        texto: "¿Qué impacto tiene el diseño con subagentes en la reducción del costo de contexto?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🧩 Un agente integra LLM, tools, skills y memoria."
+      - "🔌 MCP estandariza el acceso seguro al entorno."
+      - "👥 Los subagentes reducen el costo de contexto."
+      - tipo: "nota"
+        texto: "La seguridad y la trazabilidad son first-class citizens en MCP."

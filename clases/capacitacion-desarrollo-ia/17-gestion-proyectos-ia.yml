@@ -1,0 +1,75 @@
+tema: "Gestión de Proyectos de TI Asistida por IA"
+subtitulo: "Automatizando labores administrativas y asegurando cumplimiento normativo 📋"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La IA optimiza la gestión estratégica de TI automatizando labores de alta carga cognitiva."
+      - "Automatización de adquisiciones de TI"
+      - "Evaluación semántica automática parcial"
+      - "Cumplimiento legal (AEPD/LCSP) y síntesis ejecutiva"
+
+  - titulo: "Automatización de la Gestión de Adquisiciones de TI"
+    contenido:
+      - "Agentes autónomos para consultar bases de conocimiento complejas."
+      - "Agilización de fases de diseño de bases de licitación (RFP, RFQ)."
+      - "Solicitudes de cotizaciones de infraestructura."
+      - tipo: "nota"
+        texto: "La IA acelera la redacción de pliegos manteniendo trazabilidad."
+
+  - titulo: "Evaluación Semántica Automática Parcial"
+    contenido:
+      - "Análisis de ofertas técnicas de múltiples proveedores en segundos."
+      - "Evaluación de precios, plazos de entrega y concordancia con los pliegos."
+      - tipo: "nota"
+        texto: "Es una evaluación parcial: la decisión final siempre es humana."
+
+  - titulo: "Marco de Cumplimiento Legal y Privacidad"
+    contenido:
+      - "Guía de la AEPD para el despliegue ético de IA generativa en contratación pública."
+      - "Prohibición estricta de delegar decisiones vinculantes a 'cajas negras' autónomas."
+      - "Obligación del registro detallado de interacciones."
+      - tipo: "nota"
+        texto: "La LCSP exige transparencia y no permite delegar la firma administrativa final."
+
+  - titulo: "Decisión Humana vs. Recomendación de IA"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Fase", "Responsable", "Rol IA"]
+        filas:
+          - ["Redacción del pliego", "Humano + IA", "Asistente"]
+          - ["Evaluación de ofertas", "Humano", "Recomendador parcial"]
+          - ["Firma administrativa", "Humano", "Excluida"]
+      - tipo: "nota"
+        texto: "El copiloto recomienda; el humano decide y firma."
+
+  - titulo: "Síntesis de Colaboración Ejecutiva"
+    contenido:
+      - "Integración de ReadAI y herramientas nativas de Microsoft Teams."
+      - "Transcripción de reuniones y extracción de planes de acción concretos."
+      - "Responsables, plazos y resúmenes temáticos."
+      - tipo: "nota"
+        texto: "Configurar medidas de privacidad obligatorias en sesiones confidenciales."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Simular un flujo de evaluación técnica corporativa rápida."
+      - "Cargar dos ofertas técnicas competidoras en el agente local."
+      - "Usar un prompt GOLD para evaluación parcial y generar la matriz de puntuación final."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo asegurar el cumplimiento de la LCSP al usar un copiloto de IA sin delegar la firma final?"
+      - tipo: "problema"
+        texto: "¿Qué medidas de seguridad y privacidad se deben configurar al habilitar ReadAI en sesiones confidenciales?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "📑 La IA agiliza adquisiciones y redacción de pliegos."
+      - "⚖️ El cumplimiento AEPD/LCSP exige decisión humana final."
+      - "🎙️ ReadAI y Teams sintetizan colaboración ejecutiva."
+      - tipo: "nota"
+        texto: "La IA recomienda; el humano gobierna y firma."

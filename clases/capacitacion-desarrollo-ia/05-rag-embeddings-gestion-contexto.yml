@@ -1,0 +1,74 @@
+tema: "Gestión de Contexto, Embeddings Vectoriales y Arquitecturas RAG"
+subtitulo: "Acceso en tiempo real a bases de conocimiento corporativas 📚"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "RAG permite que los LLMs accedan a conocimiento corporativo sin reentrenamiento."
+      - "Fundamentos del patrón Retrieval-Augmented Generation"
+      - "Limitaciones sobre repositorios de código"
+      - "GraphRAG y Tree-Sitter"
+
+  - titulo: "Fundamentos de RAG"
+    contenido:
+      - "Ingesta de documentos no estructurados y fragmentación en bloques."
+      - "Generación de embeddings y almacenamiento vectorial."
+      - "Inyección dinámica del contexto recuperado durante la inferencia."
+      - tipo: "formula"
+        texto: "Documento → Chunks → Embeddings → Base Vectorial → Contexto Inyectado"
+
+  - titulo: "Limitaciones de RAG Clásico sobre Código"
+    contenido:
+      - "La fragmentación secuencial destruye la jerarquía sintáctica y semántica del código."
+      - "Alucinaciones al consultar dependencias lógicas complejas."
+      - tipo: "nota"
+        texto: "El chunking de texto plano no respeta la estructura del código fuente."
+
+  - titulo: "Introducción a GraphRAG"
+    contenido:
+      - "Modelado de conocimiento mediante grafos semánticos estructurados."
+      - "Conexión explícita de entidades y relaciones."
+      - "Permite búsquedas contextuales de mayor nivel jerárquico."
+      - tipo: "ejemplo"
+        texto: "GraphRAG responde preguntas globales ('¿qué módulos dependen de X?') que RAG clásico no aborda bien."
+
+  - titulo: "Grafos de Dependencia con Tree-Sitter"
+    contenido:
+      - "Compilación del código fuente en árboles sintácticos abstractos (AST)."
+      - "Almacenamiento en bases SQLite locales expuestas vía MCP."
+      - tipo: "formula"
+        texto: "Código → Tree-Sitter → AST → Grafo de Dependencias (SQLite/MCP)"
+
+  - titulo: "Estrategia de Fragmentación (Chunking)"
+    contenido:
+      - "El tamaño del chunk y el solapamiento afectan la calidad de la respuesta."
+      - tipo: "tabla"
+        encabezados: ["Estrategia", "Ventaja", "Riesgo"]
+        filas:
+          - ["Chunks pequeños", "Precisión local", "Pérdida de contexto global"]
+          - ["Chunks grandes", "Contexto global", "Mayor consumo de tokens"]
+      - tipo: "nota"
+        texto: "En código, la fragmentación debe respetar la estructura sintáctica."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Inicializar localmente una base vectorial liviana (ChromaDB)."
+      - "Generar embeddings de archivos Markdown corporativos."
+      - "Simular búsqueda semántica comparando relevancia contra búsqueda por palabras clave."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo afectan el chunking y el solapamiento a la calidad de la respuesta de un RAG?"
+      - tipo: "problema"
+        texto: "¿Cuáles son las diferencias de almacenamiento y cómputo entre vectorial y GraphRAG?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🗄️ RAG integra conocimiento externo sin reentrenamiento."
+      - "⚠️ La fragmentación naive falla sobre código fuente."
+      - "🕸️ GraphRAG y Tree-Sitter aprovechan la estructura semántica."
+      - tipo: "nota"
+        texto: "La elección de estrategia de indexación define la calidad del sistema."

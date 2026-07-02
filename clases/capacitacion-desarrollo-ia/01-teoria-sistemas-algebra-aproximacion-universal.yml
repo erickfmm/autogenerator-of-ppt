@@ -1,0 +1,66 @@
+tema: "Teoría de Sistemas, Álgebra y Aproximación Universal"
+subtitulo: "Fundamentos matemáticos de la IA moderna 🧠"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La IA se define como un sistema de aproximación de funciones, no como una entidad pensante."
+      - "Definir la IA desde la teoría de sistemas"
+      - "Comprender la base matemática del Deep Learning"
+      - "Analizar el Teorema de Aproximación Universal"
+
+  - titulo: "Clasificación de Sistemas de Información"
+    contenido:
+      - "Sistemas lineales de pocas variables: álgebra elemental."
+      - "Sistemas de variables masivas: tratamiento estadístico."
+      - "Sistemas complejos no lineales y diferenciables: optimización basada en gradientes."
+      - tipo: "nota"
+        texto: "Sólo los sistemas diferenciables pueden optimizarse mediante descenso de gradiente."
+
+  - titulo: "Redes Neuronales como Funciones Plantilla"
+    contenido:
+      - "Una red neuronal representa una función plantilla parametrizable."
+      - "Sus coeficientes libres (pesos y sesgos) se ajustan mediante optimización probabilística."
+      - tipo: "formula"
+        texto: "y = f(W·x + b)"
+      - tipo: "ejemplo"
+        texto: "El entrenamiento consiste en ajustar W y b para minimizar una función de costo."
+
+  - titulo: "El Teorema de Aproximación Universal"
+    contenido:
+      - "Una red neuronal densa con capas ocultas y activaciones no lineales puede modelar cualquier función continua sobre espacios compactos."
+      - tipo: "formula"
+        texto: "f(x) = Σᵢ αᵢ · σ(wᵢ·x + bᵢ)"
+      - tipo: "nota"
+        texto: "Este teorema sienta las bases formales del Deep Learning."
+
+  - titulo: "Formalización de un Sistema"
+    contenido:
+      - "Se abstrae un fenómeno natural y se convierte en un sistema matemático gobernable."
+      - tipo: "formula"
+        texto: "Sistema: Entradas → Proceso → Salidas"
+      - tipo: "ejemplo"
+        texto: "Clasificar correos como spam a partir de su contenido textual."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Inicializar en Python una red neuronal básica de clasificación con activaciones no lineales."
+      - "Solicitar al LLM un script que optimice el descenso de gradiente sobre una función de costo no lineal."
+      - "Observar el ajuste iterativo de pesos y sesgos en tiempo real."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo limita la naturaleza no diferenciable de ciertos algoritmos clásicos su resolución mediante descenso de gradiente directo?"
+      - tipo: "problema"
+        texto: "¿Qué implicaciones de infraestructura surgen al pasar de cálculo analítico cerrado a simulaciones computacionales intensivas?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🎯 La IA es un sistema de aproximación de funciones."
+      - "📐 Las redes neuronales son funciones plantilla parametrizables."
+      - "🧩 El Teorema de Aproximación Universal fundamenta el Deep Learning."
+      - tipo: "nota"
+        texto: "Bases matemáticas sólidas para entender los LLMs modernos."

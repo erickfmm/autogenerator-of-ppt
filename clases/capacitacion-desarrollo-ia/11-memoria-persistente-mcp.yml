@@ -1,0 +1,74 @@
+tema: "Sistemas de Memoria Persistente para Modelos de Lenguaje en MCP"
+subtitulo: "Superando la pérdida de contexto en sesiones prolongadas 🧠"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La memoria persistente resuelve el olvido en sesiones de chat prolongadas."
+      - "El desafío de la pérdida de contexto"
+      - "Engram: persistencia local con SQLite + FTS5"
+      - "Codebase-Memory-MCP y la integración local"
+
+  - titulo: "El Desafío de la Pérdida de Contexto"
+    contenido:
+      - "La latencia y el costo por llamadas a la API se disparan con chat no estructurado."
+      - "Detalles críticos se olvidan al compactarse el historial."
+      - tipo: "problema"
+        texto: "¿Qué sucede con una decisión de diseño tomada hace 50 turnos?"
+      - tipo: "nota"
+        texto: "Sin memoria persistente, el conocimiento se pierde al cerrar la sesión."
+
+  - titulo: "Engram: Arquitectura de Persistencia Local"
+    contenido:
+      - "Binario en Go que almacena decisiones de diseño y correcciones de fallas."
+      - "Agnóstico al agente: funciona con cualquier cliente."
+      - "Motor relacional SQLite con búsqueda de texto completo FTS5."
+      - tipo: "formula"
+        texto: "Decisión → SQLite (FTS5) → Recuperación contextual posterior"
+
+  - titulo: "Codebase-Memory-MCP: Grafos Indexados"
+    contenido:
+      - "Análisis estáticos de código en tiempo real."
+      - "Almacenamiento de firmas jerárquicas de dependencias complejas."
+      - tipo: "nota"
+        texto: "Reduce el consumo de tokens hasta 120 veces frente al grepping secuencial."
+
+  - titulo: "Comparativa: Grepping vs. Grafo Indexado"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Método", "Tokens consumidos (relativo)", "Precisión"]
+        filas:
+          - ["Grepping secuencial", "120x", "Baja"]
+          - ["Codebase-Memory-MCP", "1x", "Alta"]
+      - tipo: "nota"
+        texto: "La indexación estructural transforma la exploración de código."
+
+  - titulo: "Integración en el Sistema Operativo Local"
+    contenido:
+      - "Herramientas como Glia y la interfaz TUI de Engram."
+      - "Permiten auditar, depurar y compartir el historial de memoria cognitiva."
+      - tipo: "ejemplo"
+        texto: "engram tui permite visualizar en consola las decisiones guardadas y recuperadas."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Instalar localmente el binario en Go de Engram y configurar su servidor MCP."
+      - "Lanzar engram serve en puerto local."
+      - "Ejecutar engram tui para visualizar cómo el agente guarda y recupera decisiones."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿De qué manera Codebase-Memory-MCP reduce el consumo de tokens hasta 120 veces?"
+      - tipo: "problema"
+        texto: "¿Cuáles son las implicaciones de compartir memoria cognitiva agnóstica entre ingenieros?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "⏳ La memoria persistente evita el olvido en sesiones largas."
+      - "🗄️ Engram ofrece persistencia local agnóstica con SQLite + FTS5."
+      - "🕸️ Codebase-Memory-MCP indexa el código en grafos eficientes."
+      - tipo: "nota"
+        texto: "La memoria es la base de la colaboración agéntica sostenible."

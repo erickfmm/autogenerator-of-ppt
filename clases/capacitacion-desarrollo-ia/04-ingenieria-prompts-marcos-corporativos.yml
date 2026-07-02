@@ -1,0 +1,77 @@
+tema: "Estructuración Metódica de Prompts y Marcos de Trabajo Corporativos"
+subtitulo: "La ingeniería de prompts como programación declarativa 📝"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "La precisión del software depende de la limitación semántica del prompt."
+      - "Ingeniería de prompts como paradigma declarativo"
+      - "Marcos STAR, RTF, RACE, CLEAR, RISEN y GOLD"
+      - "Razonamiento secuencial: CoT y ToT"
+
+  - titulo: "La Ingeniería de Prompts como Disciplina"
+    contenido:
+      - "Control de la aleatoriedad del modelo: temperatura y top-p."
+      - "Inyección de restricciones operativas."
+      - tipo: "formula"
+        texto: "Temperatura baja → determinismo | Temperatura alta → creatividad"
+      - tipo: "nota"
+        texto: "Las instrucciones contradictorias en un único prompt monolítico generan omisiones."
+
+  - titulo: "Técnicas Fundamentales: STAR y RTF"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Marco", "Significado", "Uso"]
+        filas:
+          - ["STAR", "Situation, Task, Appearance, Refine", "Scripts de infraestructura"]
+          - ["RTF", "Role, Task, Format", "Comandos rápidos en consola"]
+      - tipo: "ejemplo"
+        texto: "STAR delimita contexto, tarea, formato de salida y refinamientos técnicos."
+
+  - titulo: "Marcos Avanzados: RACE, CLEAR, RISEN y GOLD"
+    contenido:
+      - "RACE, CLEAR y RISEN: metodologías estructuradas para análisis de código."
+      - "GOLD (Goal, Obstacles, Logic, Data): resolución de algoritmos y diagnóstico de fallas."
+      - tipo: "nota"
+        texto: "GOLD es ideal para diagnosticar fallas complejas de sistemas."
+
+  - titulo: "Ejemplo de Prompt Estructurado (STAR)"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "S: Situación corporativa e infraestructura de TI."
+      - tipo: "ejemplo"
+        texto: "T: Tarea u Objetivo de código/especificación."
+      - tipo: "ejemplo"
+        texto: "A: Apariencia del formato de salida (e.g., JSON estructurado)."
+      - tipo: "ejemplo"
+        texto: "R: Refinamientos, límites sintácticos y exclusiones técnicas."
+
+  - titulo: "Razonamiento Secuencial: CoT y ToT"
+    contenido:
+      - "Chain-of-Thought (CoT): instrucción explícita de desglose ('pensemos paso a paso')."
+      - "Tree-of-Thought (ToT): exploración ramificada de múltiples caminos de razonamiento."
+      - tipo: "nota"
+        texto: "Elevan la precisión lógica en dominios complejos de programación."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Tomar un prompt vago de generación de código heredado y reconstruirlo con STAR y GOLD."
+      - "Evaluar comparativamente los resultados de un modelo avanzado."
+      - "Cuantificar reducción de código redundante y mejora de prácticas de seguridad."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué los LLMs omiten restricciones complejas ante instrucciones contradictorias?"
+      - tipo: "problema"
+        texto: "¿En qué escenarios es preferible Few-Shot Prompting frente a Zero-Shot?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "🎯 La ingeniería de prompts controla la aleatoriedad del modelo."
+      - "📐 STAR, RTF y GOLD cubren distintos niveles de complejidad."
+      - "🧠 CoT y ToT elevan la precisión lógica del razonamiento."
+      - tipo: "nota"
+        texto: "Un buen prompt es la primera línea de defensa contra las alucinaciones."

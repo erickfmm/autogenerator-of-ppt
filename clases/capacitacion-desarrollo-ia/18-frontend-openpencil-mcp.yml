@@ -1,0 +1,72 @@
+tema: "Generación de Interfaces Frontend y Canales de Comunicación Multimodal"
+subtitulo: "Editores de diseño modernos conectados vía MCP 🎨"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "El curso culmina con la aceleración del desarrollo frontend usando editores MCP."
+      - "El canal de diseño a código de interfaces"
+      - "OpenPencil: el editor vectorial libre"
+      - "Conexión MCP y visualización técnica eficiente"
+
+  - titulo: "El Canal de Diseño a Código de Interfaces"
+    contenido:
+      - "De las limitaciones cerradas de Figma y sus restricciones pagadas."
+      - "Hacia entornos de código libre y local-first de desarrollo."
+      - tipo: "nota"
+        texto: "La apertura y la ejecución local son la nueva frontera del diseño a código."
+
+  - titulo: "OpenPencil: El Editor Vectorial Libre"
+    contenido:
+      - "Alternativa abierta que soporta importación/exportación de archivos nativos Figma (.fig)."
+      - "Codificador binario estructurado en Kiwi."
+      - "Copiado bidireccional coherente de elementos."
+      - tipo: "nota"
+        texto: "OpenPencil elimina la dependencia de herramientas cerradas pagadas."
+
+  - titulo: "Conexión MCP con Agentes de Consola"
+    contenido:
+      - "CLIs como Claude Code se conectan al servidor @open-pencil/mcp."
+      - "Lectura, modificación y exportación del lienzo en local."
+      - "Más de 100 herramientas agénticas tipadas."
+      - tipo: "formula"
+        texto: "CLI (lenguaje natural) → MCP → OpenPencil → Código"
+
+  - titulo: "Flujo de Diseño a Producción"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Diseño interactivo de un dashboard corporativo mediante comandos en lenguaje natural."
+      - tipo: "ejemplo"
+        texto: "Conversión visual a componentes TypeScript con clases Tailwind CSS."
+      - tipo: "nota"
+        texto: "Una única fuente de verdad abierta reduce la brecha diseño-implementación."
+
+  - titulo: "Más Allá de los LLMs: Visualización Técnica"
+    contenido:
+      - "Generadores automáticos de imágenes vectoriales e infografías estructuradas."
+      - "Documentación de arquitecturas de sistemas complejos."
+      - tipo: "nota"
+        texto: "La validación visual con IA reduce la brecha entre maquetas y producción."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Iniciar OpenPencil y conectar el editor con un agente de consola local."
+      - "Diseñar interactivamente un dashboard corporativo en lenguaje natural."
+      - "Convertir el diseño a componentes TypeScript con Tailwind CSS vía @open-pencil/cli."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo cambia la colaboración UX/UI-frontend al usar OpenPencil con MCP en local?"
+      - tipo: "problema"
+        texto: "¿De qué manera la validación visual con IA reduce la brecha entre maqueta y producción?"
+
+  - titulo: "Resumen y Cierre del Programa"
+    contenido:
+      - "🎯 OpenPencil ofrece una alternativa abierta, local-first y compatible con Figma."
+      - "🔌 MCP conecta agentes CLI con el lienzo de diseño."
+      - "🚀 De lenguaje natural a componentes production-ready."
+      - tipo: "nota"
+        texto: "¡El equipo de TI está listo para liderar la transformación con IA!"

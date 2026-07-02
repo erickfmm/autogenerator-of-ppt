@@ -1,0 +1,77 @@
+tema: "Entornos de Desarrollo de Agentes (ADE) Híbridos y CLI"
+subtitulo: "Del autocompletado a los entornos agénticos de control bidireccional 💻"
+
+diapositivas:
+  - titulo: "¿Qué vamos a aprender?"
+    contenido:
+      - tipo: "nota"
+        texto: "Los ADE modernos permiten control bidireccional del código."
+      - "Evolución de los asistentes de desarrollo con IA"
+      - "IDEs híbridos gráficos"
+      - "Clientes CLI autónomos y alternativas especializadas"
+
+  - titulo: "Evolución del Software de Desarrollo con IA"
+    contenido:
+      - "De los asistentes de autocompletado en la sombra."
+      - "A los entornos agénticos de control bidireccional de código."
+      - tipo: "nota"
+        texto: "El salto clave: de predecir líneas a ejecutar tareas completas."
+
+  - titulo: "Taxonomía de ADEs"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Categoría", "Ejemplos", "Enfoque"]
+        filas:
+          - ["IDEs Gráficos Híbridos", "Cursor, Windsurf, VS Code Copilot", "Interactivo visual"]
+          - ["CLI Autónomos", "Claude Code, OpenCode", "Autonomía completa en consola"]
+      - tipo: "nota"
+        texto: "Los IDEs aprueban línea por línea; los CLI actúan con autonomía."
+
+  - titulo: "IDEs Híbridos Gráficos"
+    contenido:
+      - "Cursor, Windsurf y VS Code Copilot."
+      - "Edición en paralelo sobre múltiples archivos."
+      - "Predicción de líneas de código en tiempo real."
+      - tipo: "ejemplo"
+        texto: "El panel Composer de Cursor coordina ediciones multi-archivo guiadas."
+
+  - titulo: "Clientes CLI Autónomos: Claude Code y OpenCode"
+    contenido:
+      - "Actúan directamente sobre la terminal del desarrollador."
+      - "Administran exploración de dependencias, compilaciones rotas y refactorizaciones."
+      - "Integración directa con bash y git, sin interfaz visual."
+      - tipo: "nota"
+        texto: "Los CLI requieren gestión cuidadosa de claves de API y presupuesto de tokens."
+
+  - titulo: "Alternativas Especializadas: Codex, Gemini CLI y Hermes"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Herramienta", "Fortaleza", "Débil"]
+        filas:
+          - ["Codex", "Contextos masivos", "Soporte multilenguaje variable"]
+          - ["Gemini CLI", "Integración Google", "Ecosistema cerrado"]
+          - ["Hermes", "Especialización", "Adopción limitada"]
+      - tipo: "nota"
+        texto: "La elección depende del contexto masivo y soporte multilenguaje requerido."
+
+  - titulo: "Laboratorio Práctico"
+    contenido:
+      - tipo: "problema"
+        texto: "Instalar y configurar localmente Claude Code u OpenCode."
+      - "Ejecutar auditoría automática sobre un proyecto heredado."
+      - "Identificar vulnerabilidades lógicas y generar archivos de parche (diff) autónomamente."
+
+  - titulo: "Preguntas Clave y Debate"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cuáles son las ventajas e ineficiencias críticas de los CLI frente al panel Composer de Cursor?"
+      - tipo: "problema"
+        texto: "¿Cómo gestionar claves de API locales y presupuesto de tokens ante llamadas automáticas?"
+
+  - titulo: "Resumen"
+    contenido:
+      - "📈 Los ADE evolucionaron del autocompletado a la agencia bidireccional."
+      - "🖼️ IDEs híbridos: control visual e interactivo."
+      - "⌨️ CLIs: autonomía total con bash y git."
+      - tipo: "nota"
+        texto: "El gobierno de tokens y claves es crítico en flujos agénticos."
