@@ -1,72 +1,149 @@
 tema: "Generación de Interfaces Frontend y Canales de Comunicación Multimodal"
-subtitulo: "Editores de diseño modernos conectados vía MCP 🎨"
+subtitulo: "De un dibujo a código production-ready, conversando con la IA 🎨"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "El curso culmina con la aceleración del desarrollo frontend usando editores MCP."
-      - "El canal de diseño a código de interfaces"
-      - "OpenPencil: el editor vectorial libre"
-      - "Conexión MCP y visualización técnica eficiente"
+        texto: "Hoy cerramos el curso creando interfaces visuales con ayuda de la IA."
+      - "Cómo pasar de un diseño a código automáticamente."
+      - "OpenPencil: la alternativa libre a Figma."
+      - "Cómo conectar el diseño con agentes de IA vía MCP."
+      - tipo: "ejemplo"
+        texto: "Imagina decirle a la IA 'dibuja un dashboard de ventas' y obtener el código listo."
 
-  - titulo: "El Canal de Diseño a Código de Interfaces"
+  - titulo: "El problema: del diseño al código hay un abismo"
     contenido:
-      - "De las limitaciones cerradas de Figma y sus restricciones pagadas."
-      - "Hacia entornos de código libre y local-first de desarrollo."
+      - tipo: "problema"
+        texto: "¿Qué pasa normalmente entre el diseño y el código?"
+      - "El diseñador hace un mockup hermoso en Figma."
+      - "El programador tiene que traducirlo a código a mano."
+      - "Siempre hay desajustes: 'no se ve igual que en el diseño'."
       - tipo: "nota"
-        texto: "La apertura y la ejecución local son la nueva frontera del diseño a código."
+        texto: "Este proceso manual es lento, propenso a errores y genera fricción entre equipos."
 
-  - titulo: "OpenPencil: El Editor Vectorial Libre"
+  - titulo: "Figma: excelente, pero cerrado y caro"
     contenido:
-      - "Alternativa abierta que soporta importación/exportación de archivos nativos Figma (.fig)."
-      - "Codificador binario estructurado en Kiwi."
-      - "Copiado bidireccional coherente de elementos."
+      - tipo: "problema"
+        texto: "¿Cuál es el problema con Figma?"
+      - "Es la herramienta líder, pero es cerrada (proprietaria)."
+      - "Las funciones de generación de código son pagadas."
+      - "Tus diseños viven en su nube, no en tu máquina."
       - tipo: "nota"
-        texto: "OpenPencil elimina la dependencia de herramientas cerradas pagadas."
+        texto: "Para empresas que valoran apertura y privacidad, se busca una alternativa."
 
-  - titulo: "Conexión MCP con Agentes de Consola"
+  - titulo: "OpenPencil: el editor vectorial libre"
     contenido:
-      - "CLIs como Claude Code se conectan al servidor @open-pencil/mcp."
-      - "Lectura, modificación y exportación del lienzo en local."
-      - "Más de 100 herramientas agénticas tipadas."
+      - tipo: "problema"
+        texto: "¿Existe una alternativa abierta a Figma?"
+      - "OpenPencil es un editor vectorial de código abierto."
+      - "Soporta importar y exportar archivos nativos de Figma (.fig)."
+      - tipo: "ejemplo"
+        texto: "Puedes traer tus diseños de Figma a OpenPencil sin perder nada."
+      - tipo: "nota"
+        texto: "Usa un codificador binario llamado Kiwi para mantener compatibilidad total."
+
+  - titulo: "OpenPencil vs Figma: comparativa"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "Figma", "OpenPencil"]
+        filas:
+          - ["Código", "Cerrado", "Abierto"]
+          - ["Datos", "En nube de Figma", "Local-first"]
+          - ["Generación código", "Pago", "Conectable a IA gratis"]
+          - ["Compatibilidad .fig", "Nativo", "Importa/exporta"]
+      - tipo: "nota"
+        texto: "OpenPencil no compite en funciones, sino en apertura y control."
+
+  - titulo: "La magia: conectar OpenPencil con un agente de IA"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hago para que la IA lea y modifique mi diseño?"
+      - "OpenPencil tiene un servidor MCP: @open-pencil/mcp."
+      - "Un agente CLI (como Claude Code) se conecta a ese servidor."
+      - "Así el agente puede leer, modificar y exportar el diseño."
       - tipo: "formula"
-        texto: "CLI (lenguaje natural) → MCP → OpenPencil → Código"
-
-  - titulo: "Flujo de Diseño a Producción"
-    contenido:
-      - tipo: "ejemplo"
-        texto: "Diseño interactivo de un dashboard corporativo mediante comandos en lenguaje natural."
-      - tipo: "ejemplo"
-        texto: "Conversión visual a componentes TypeScript con clases Tailwind CSS."
+        texto: "CLI (lenguaje natural) → MCP → OpenPencil → Código production-ready"
       - tipo: "nota"
-        texto: "Una única fuente de verdad abierta reduce la brecha diseño-implementación."
+        texto: "Más de 100 herramientas tipadas permiten al agente manipular el lienzo."
 
-  - titulo: "Más Allá de los LLMs: Visualización Técnica"
+  - titulo: "El flujo completo: de la idea al código (paso a paso)"
     contenido:
-      - "Generadores automáticos de imágenes vectoriales e infografías estructuradas."
-      - "Documentación de arquitecturas de sistemas complejos."
+      - "Paso 1: Abres OpenPencil en tu máquina."
+      - "Paso 2: Conectas el agente de consola (Claude Code) vía MCP."
+      - "Paso 3: Le pides en lenguaje natural: 'diseña un dashboard de ventas'."
+      - "Paso 4: El agente dibuja el diseño en el lienzo de OpenPencil."
+      - "Paso 5: El agente convierte ese diseño en componentes TypeScript con Tailwind."
       - tipo: "nota"
-        texto: "La validación visual con IA reduce la brecha entre maquetas y producción."
+        texto: "Todo esto conversando, sin programar manualmente cada detalle."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Una sola fuente de verdad"
     contenido:
       - tipo: "problema"
-        texto: "Iniciar OpenPencil y conectar el editor con un agente de consola local."
-      - "Diseñar interactivamente un dashboard corporativo en lenguaje natural."
-      - "Convertir el diseño a componentes TypeScript con Tailwind CSS vía @open-pencil/cli."
+        texto: "¿Por qué esto cambia la colaboración entre diseño y desarrollo?"
+      - "Antes había dos fuentes: el diseño (Figma) y el código."
+      - "Con OpenPencil + MCP, hay una sola fuente de verdad compartida."
+      - tipo: "ejemplo"
+        texto: "Diseñadores y programadores miran el mismo lienzo conectado."
+      - tipo: "nota"
+        texto: "Esto reduce la brecha entre el mockup y la implementación final."
 
-  - titulo: "Preguntas Clave y Debate"
+  - titulo: "@open-pencil/cli: el comando que convierte en código"
+    contenido:
+      - "Además del servidor MCP, OpenPencil tiene una CLI: @open-pencil/cli."
+      - tipo: "ejemplo"
+        texto: "Esta CLI toma el diseño visual y genera componentes production-ready."
+      - "Por ejemplo, código TypeScript con clases de Tailwind CSS."
+      - tipo: "nota"
+        texto: "El resultado: listo para production, no código sucio de prototipo."
+
+  - titulo: "Más allá del texto: visualización técnica eficiente"
     contenido:
       - tipo: "problema"
-        texto: "¿Cómo cambia la colaboración UX/UI-frontend al usar OpenPencil con MCP en local?"
-      - tipo: "problema"
-        texto: "¿De qué manera la validación visual con IA reduce la brecha entre maqueta y producción?"
+        texto: "¿La IA solo sirve para escribir código?"
+      - "No. También ayuda con imágenes vectoriales, infografías e ilustraciones."
+      - tipo: "ejemplo"
+        texto: "Puedes pedirle a la IA que genere diagramas de arquitectura claros."
+      - "Esto ayuda a documentar sistemas complejos de forma visual."
+      - tipo: "nota"
+        texto: "La comunicación multimodal (texto + imagen) es el futuro cercano."
 
-  - titulo: "Resumen y Cierre del Programa"
+  - titulo: "Beneficios de este enfoque"
     contenido:
-      - "🎯 OpenPencil ofrece una alternativa abierta, local-first y compatible con Figma."
+      - tipo: "tabla"
+        encabezados: ["Beneficio", "Cómo"]
+        filas:
+          - ["Velocidad", "Diseño y código en minutos"]
+          - ["Consistencia", "Una sola fuente de verdad"]
+          - ["Apertura", "Herramientas libres y locales"]
+          - ["Colaboración", "Diseñadores y devs alineados"]
+      - tipo: "nota"
+        texto: "La validación visual con IA reduce la brecha entre maqueta y producción."
+
+  - titulo: "Laboratorio: Diseñando un dashboard con IA"
+    contenido:
+      - tipo: "problema"
+        texto: "Iniciaremos OpenPencil y lo conectaremos con un agente de consola."
+      - "Le pediremos en lenguaje natural diseñar un dashboard corporativo."
+      - "El agente dibujará interactivamente en el lienzo."
+      - "Finalmente, convertiremos el diseño a componentes TypeScript con Tailwind."
+      - tipo: "nota"
+        texto: "Verás cómo una idea se convierte en código production-ready en minutos."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo cambia la colaboración UX/UI-frontend con una sola fuente de verdad abierta?"
+      - tipo: "problema"
+        texto: "¿De qué manera la validación visual con IA reduce la brecha con producción?"
+      - tipo: "nota"
+        texto: "Piensa en el último proyecto donde el diseño y el código no coincidieron."
+
+  - titulo: "Resumen y cierre del programa"
+    contenido:
+      - "🎯 OpenPencil es la alternativa libre, local-first y compatible con Figma."
       - "🔌 MCP conecta agentes CLI con el lienzo de diseño."
       - "🚀 De lenguaje natural a componentes production-ready."
+      - "🤝 Una sola fuente de verdad alinea diseño y desarrollo."
       - tipo: "nota"
-        texto: "¡El equipo de TI está listo para liderar la transformación con IA!"
+        texto: "¡El equipo de TI está listo para liderar la transformación con IA! 🎉"

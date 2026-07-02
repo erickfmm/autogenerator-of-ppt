@@ -1,77 +1,177 @@
 tema: "Estructuración Metódica de Prompts y Marcos de Trabajo Corporativos"
-subtitulo: "La ingeniería de prompts como programación declarativa 📝"
+subtitulo: "El arte de hablarle a la IA para obtener exactamente lo que quieres 📝"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La precisión del software depende de la limitación semántica del prompt."
-      - "Ingeniería de prompts como paradigma declarativo"
-      - "Marcos STAR, RTF, RACE, CLEAR, RISEN y GOLD"
-      - "Razonamiento secuencial: CoT y ToT"
+        texto: "Aprender a pedirle cosas a la IA es una habilidad. Se llama 'ingeniería de prompts'."
+      - "Por qué un buen prompt cambia completamente el resultado."
+      - "Los marcos más usados: STAR, RTF, RACE, CLEAR, RISEN y GOLD."
+      - "Cómo hacer que la IA razone paso a paso (CoT y ToT)."
+      - tipo: "ejemplo"
+        texto: "¿Alguna vez la IA te dio una respuesta mediocre? Probablemente el prompt era vago."
 
-  - titulo: "La Ingeniería de Prompts como Disciplina"
+  - titulo: "El problema: pedimos mal y nos quejamos del resultado"
     contenido:
-      - "Control de la aleatoriedad del modelo: temperatura y top-p."
-      - "Inyección de restricciones operativas."
+      - tipo: "problema"
+        texto: "¿Por qué a veces la IA responde mal?"
+      - "Solemos escribir prompts vagos como: 'hazme un programa'."
+      - "La IA no lee mentes. Si la instrucción es confusa, el resultado es confuso."
+      - tipo: "ejemplo"
+        texto: "Pedir 'un script para backups' da mil respuestas posibles. Todas distintas."
+      - tipo: "nota"
+        texto: "La buena noticia: escribir prompts es una habilidad que se puede aprender."
+
+  - titulo: "¿Qué es un prompt estructurado?"
+    contenido:
+      - "Un prompt estructurado es como una receta clara: dice qué, cómo y en qué formato."
+      - "Define el rol, la tarea, el contexto y las restricciones."
       - tipo: "formula"
-        texto: "Temperatura baja → determinismo | Temperatura alta → creatividad"
+        texto: "Prompt bueno = Contexto + Tarea + Formato + Restricciones"
       - tipo: "nota"
-        texto: "Las instrucciones contradictorias en un único prompt monolítico generan omisiones."
+        texto: "Cuanto más preciso seas, más predecible será la respuesta."
 
-  - titulo: "Técnicas Fundamentales: STAR y RTF"
+  - titulo: "Marco STAR: el más usado en empresas"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo armo un prompt con STAR?"
+      - "S (Situation): describe la situación o el contexto."
+      - "T (Task): indica claramente la tarea a realizar."
+      - "A (Appearance): especifica el formato de salida (JSON, tabla, código)."
+      - "R (Refine): añade límites y exclusiones técnicas."
+      - tipo: "nota"
+        texto: "STAR funciona muy bien para generar scripts de infraestructura."
+
+  - titulo: "Ejemplo de STAR paso a paso"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "S: Tengo un servidor Linux en producción con PostgreSQL."
+      - tipo: "ejemplo"
+        texto: "T: Crea un script de backup automático que corra a las 3 AM."
+      - tipo: "ejemplo"
+        texto: "A: Devuélvelo como un script bash con comentarios en español."
+      - tipo: "ejemplo"
+        texto: "R: No uses herramientas de terceros; solo comandos nativos de Linux."
+      - tipo: "nota"
+        texto: "Compara este prompt con 'hazme un backup'. ¡La diferencia es enorme!"
+
+  - titulo: "Marco RTF: simple y rápido para el día a día"
+    contenido:
+      - "R (Role): qué rol debe asumir la IA."
+      - "T (Task): qué debe hacer."
+      - "F (Format): en qué formato responder."
+      - tipo: "ejemplo"
+        texto: "Actúa como experto en ciberseguridad. Revisa este código. Responde en una lista."
+      - tipo: "nota"
+        texto: "RTF es ideal para comandos rápidos cuando no necesitas tanto detalle."
+
+  - titulo: "Marcos avanzados: RACE, CLEAR, RISEN y GOLD"
+    contenido:
+      - "Existen otros marcos para situaciones más complejas."
+      - tipo: "tabla"
+        encabezados: ["Marco", "Significado", "Ideal para"]
+        filas:
+          - ["RACE", "Role, Action, Context, Expectation", "Tareas con expectativas claras"]
+          - ["CLEAR", "Context, Length, Examples, Audience, Role", "Definir audiencia"]
+          - ["RISEN", "Role, Instruction, Steps, End goal, Narrowing", "Procesos paso a paso"]
+          - ["GOLD", "Goal, Obstacles, Logic, Data", "Diagnosticar fallas"]
+      - tipo: "nota"
+        texto: "No tienes que aprenderlos todos. Elige el que se ajuste a tu problema."
+
+  - titulo: "GOLD: el detective de problemas complejos"
+    contenido:
+      - "G (Goal): ¿qué quieres lograr?"
+      - "O (Obstacles): ¿qué se te dificulta?"
+      - "L (Logic): ¿qué lógica debe seguir la IA?"
+      - "D (Data): ¿qué datos tiene disponibles?"
+      - tipo: "ejemplo"
+        texto: "Útil para diagnosticar por qué un servidor cae sin motivo aparente."
+      - tipo: "nota"
+        texto: "GOLD ayuda cuando el problema es complejo y necesita razonamiento profundo."
+
+  - titulo: "Controlando la creatividad: temperatura y top-p"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué la IA a veces responde distinto a la misma pregunta?"
+      - "Porque tiene un parámetro llamado temperatura que controla la aleatoriedad."
+      - tipo: "tabla"
+        encabezados: ["Temperatura", "Comportamiento", "Cuándo usarla"]
+        filas:
+          - ["Baja (0.0–0.3)", "Determinista, predecible", "Código, análisis técnico"]
+          - ["Media (0.4–0.7)", "Equilibrada", "Documentación, correos"]
+          - ["Alta (0.8–1.0)", "Creativa, variable", "Ideas, brainstorming"]
+      - tipo: "nota"
+        texto: "Para código: usa temperatura baja. Para ideas: temperatura alta."
+
+  - titulo: "Chain-of-Thought (CoT): piensa paso a paso"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hacer que la IA resuelva problemas complejos sin equivocarse?"
+      - "El truco es pedirle que razone paso a paso."
+      - tipo: "formula"
+        texto: "Agrega la frase: 'pensemos paso a paso' al final de tu prompt."
+      - tipo: "ejemplo"
+        texto: "Sin CoT: '¿Cuál es el resultado?' → respuesta directa, a veces errada."
+      - tipo: "ejemplo"
+        texto: "Con CoT: 'Resuelve esto, pensando paso a paso' → muestra su razonamiento."
+      - tipo: "nota"
+        texto: "CoT eleva la precisión enormemente en problemas lógicos."
+
+  - titulo: "Tree-of-Thought (ToT): explora varios caminos"
+    contenido:
+      - "CoT sigue un solo camino de razonamiento."
+      - "ToT explora varios caminos y elige el mejor."
+      - tipo: "ejemplo"
+        texto: "Como un ajedrecista que imagina varias jugadas antes de mover."
+      - tipo: "nota"
+        texto: "ToT es ideal para problemas donde hay varias estrategias posibles."
+
+  - titulo: "Zero-Shot vs Few-Shot: ¿dar ejemplos o no?"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Marco", "Significado", "Uso"]
+        encabezados: ["Técnica", "Qué hace", "Cuándo usarla"]
         filas:
-          - ["STAR", "Situation, Task, Appearance, Refine", "Scripts de infraestructura"]
-          - ["RTF", "Role, Task, Format", "Comandos rápidos en consola"]
+          - ["Zero-Shot", "Pedir sin dar ejemplos", "Tareas simples y comunes"]
+          - ["Few-Shot", "Dar 2–3 ejemplos antes", "Tareas con formato específico"]
       - tipo: "ejemplo"
-        texto: "STAR delimita contexto, tarea, formato de salida y refinamientos técnicos."
-
-  - titulo: "Marcos Avanzados: RACE, CLEAR, RISEN y GOLD"
-    contenido:
-      - "RACE, CLEAR y RISEN: metodologías estructuradas para análisis de código."
-      - "GOLD (Goal, Obstacles, Logic, Data): resolución de algoritmos y diagnóstico de fallas."
+        texto: "Si quieres que clasifique correos, darle 3 ejemplos mejora mucho el resultado."
       - tipo: "nota"
-        texto: "GOLD es ideal para diagnosticar fallas complejas de sistemas."
+        texto: "Few-Shot es más poderoso cuando el formato de salida es crítico."
 
-  - titulo: "Ejemplo de Prompt Estructurado (STAR)"
+  - titulo: "El peligro de los prompts monolíticos"
     contenido:
-      - tipo: "ejemplo"
-        texto: "S: Situación corporativa e infraestructura de TI."
-      - tipo: "ejemplo"
-        texto: "T: Tarea u Objetivo de código/especificación."
-      - tipo: "ejemplo"
-        texto: "A: Apariencia del formato de salida (e.g., JSON estructurado)."
-      - tipo: "ejemplo"
-        texto: "R: Refinamientos, límites sintácticos y exclusiones técnicas."
-
-  - titulo: "Razonamiento Secuencial: CoT y ToT"
-    contenido:
-      - "Chain-of-Thought (CoT): instrucción explícita de desglose ('pensemos paso a paso')."
-      - "Tree-of-Thought (ToT): exploración ramificada de múltiples caminos de razonamiento."
+      - tipo: "problema"
+        texto: "¿Qué pasa si meto 20 instrucciones en un solo prompt enorme?"
+      - "La IA empieza a omitir algunas, especialmente las que están al final."
+      - "Las instrucciones contradictorias confunden al modelo."
       - tipo: "nota"
-        texto: "Elevan la precisión lógica en dominios complejos de programación."
+        texto: "Mejor divide tareas complejas en varios prompts más pequeños y secuenciales."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Laboratorio: Mejorando un prompt vago"
     contenido:
       - tipo: "problema"
-        texto: "Tomar un prompt vago de generación de código heredado y reconstruirlo con STAR y GOLD."
-      - "Evaluar comparativamente los resultados de un modelo avanzado."
-      - "Cuantificar reducción de código redundante y mejora de prácticas de seguridad."
+        texto: "Tomaremos un prompt vago y lo reconstruiremos con STAR y GOLD."
+      - "Ejemplo vago: 'Hazme un login seguro.'"
+      - "Ejemplo STAR: situación, tarea, formato y restricciones claras."
+      - "Compararemos los resultados para ver la diferencia en calidad y seguridad."
+      - tipo: "nota"
+        texto: "Verás cómo la calidad del código mejora con un buen prompt."
 
-  - titulo: "Preguntas Clave y Debate"
+  - titulo: "Preguntas para reflexionar"
     contenido:
       - tipo: "problema"
-        texto: "¿Por qué los LLMs omiten restricciones complejas ante instrucciones contradictorias?"
+        texto: "¿Por qué la IA omite restricciones cuando el prompt es muy largo?"
       - tipo: "problema"
-        texto: "¿En qué escenarios es preferible Few-Shot Prompting frente a Zero-Shot?"
+        texto: "¿Cuándo prefieres Few-Shot en vez de extender el prompt del sistema?"
+      - tipo: "nota"
+        texto: "Recuerda: el prompt es programación declarativa. No es un chat casual."
 
-  - titulo: "Resumen"
+  - titulo: "Resumen: Lo que hoy aprendimos"
     contenido:
-      - "🎯 La ingeniería de prompts controla la aleatoriedad del modelo."
+      - "🎯 Un buen prompt es claro, específico y estructurado."
       - "📐 STAR, RTF y GOLD cubren distintos niveles de complejidad."
-      - "🧠 CoT y ToT elevan la precisión lógica del razonamiento."
+      - "🌡️ La temperatura controla la creatividad de la respuesta."
+      - "🧠 CoT y ToT elevan el razonamiento lógico paso a paso."
       - tipo: "nota"
-        texto: "Un buen prompt es la primera línea de defensa contra las alucinaciones."
+        texto: "El prompt es la herramienta más poderosa (y barata) para controlar la IA. 🎉"

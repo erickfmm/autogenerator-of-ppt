@@ -1,74 +1,138 @@
 tema: "La Arquitectura del Transformer, Modelos Sequence-to-Sequence y Técnicas de Escalamiento"
-subtitulo: "Los hitos arquitectónicos de la IA generativa ⚡"
+subtitulo: "El invento de 2017 que cambió la IA para siempre ⚡"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La arquitectura Transformer (2017) es el hito que posibilitó la revolución actual."
-      - "Mecanismo de autoatención"
-      - "Modelos BERT y MoE"
-      - "Técnicas de escalamiento: LoRA y RoPE"
+        texto: "Hoy entenderemos el invento más importante de la IA moderna: el Transformer."
+      - "Qué es la autoatención y por qué revolucionó la IA."
+      - "Las diferencias entre BERT, los modelos generativos y la Mezcla de Expertos."
+      - "Cómo LoRA y RoPE permiten usar modelos grandes con pocos recursos."
+      - tipo: "ejemplo"
+        texto: "Piensa en cómo tú, al leer, prestas atención a distintas palabras según el contexto."
 
-  - titulo: "Comparativa de Arquitecturas"
+  - titulo: "El problema de antes: las redes leían palabra por palabra"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo leía el texto la IA antes de 2017?"
+      - "Antes se usaban redes recurrentes (RNN): leían una palabra, luego otra, y así."
+      - "El problema: al llegar al final, ya se habían olvidado del principio."
+      - tipo: "ejemplo"
+        texto: "Es como leer un libro y olvidar el capítulo 1 cuando llegas al capítulo 10."
+      - tipo: "nota"
+        texto: "Las frases largas se volvían inmanejables. Hacía falta algo mejor."
+
+  - titulo: "El invento de Google en 2017: ¡Atención!"
+    contenido:
+      - "En 2017, un equipo de Google publicó un artículo titulado 'Attention is All You Need'."
+      - "La idea brillante: en vez de leer en orden, el modelo mira TODAS las palabras a la vez."
+      - "Y decide cuáles están relacionadas, sin importar la distancia entre ellas."
+      - tipo: "nota"
+        texto: "Ese invento se llamó Transformer, y es el corazón de ChatGPT, Gemini, Claude, etc."
+
+  - titulo: "¿Qué es la Autoatención? (explicado fácil)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo sabe el modelo qué palabras están conectadas?"
+      - "Imagina la frase: 'El perro cruzó el río porque estaba cansado'."
+      - "¿Quién estaba cansado: el perro o el río? Tú lo sabes por el contexto."
+      - "La autoatención permite al modelo conectar 'cansado' con 'perro'."
+      - tipo: "nota"
+        texto: "Para cada palabra, el modelo calcula un 'peso de atención' sobre todas las demás."
+
+  - titulo: "La fórmula detrás de la magia"
+    contenido:
+      - "La autoatención usa tres elementos: Queries (Q), Keys (K) y Values (V)."
+      - tipo: "ejemplo"
+        texto: "Es como buscar en Google: tú escribes una pregunta (Query), cada página tiene etiquetas (Keys), y te muestra el contenido (Values)."
+      - tipo: "formula"
+        texto: "Atención(Q,K,V) = softmax(Q·Kᵀ / √dₖ) · V"
+      - tipo: "nota"
+        texto: "El resultado: el modelo entiende el contexto completo de una sola mirada."
+
+  - titulo: "Tipos de modelos: comparémoslos"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Arquitectura", "Contexto", "Ventaja", "Limitación"]
+        encabezados: ["Tipo", "Contexto", "Para qué es bueno", "Limitación"]
         filas:
-          - ["Decodificadores Causales", "4k–128k+", "Generación de código", "Costo inferencia secuencial"]
-          - ["Bidireccionales (BERT)", "~512 tokens", "Clasificación precisa", "No genera texto fluido"]
-          - ["Mezcla de Expertos (MoE)", "Alta dinámica", "Alto rendimiento GPU", "Alta demanda VRAM"]
-
-  - titulo: "El Mecanismo de Autoatención (Self-Attention)"
-    contenido:
-      - "Avance introducido por Google en 2017."
-      - "Matriz de atención bidimensional que evalúa el peso relativo de cada término respecto a la secuencia completa."
-      - tipo: "formula"
-        texto: "Attention(Q, K, V) = softmax(Q·Kᵀ / √dₖ) · V"
+          - ["Generativos (GPT)", "4k hasta +128k", "Escribir código y razonar", "Tarda por ser secuencial"]
+          - ["BERT (bidireccional)", "~512 tokens", "Clasificar y entender texto", "No puede escribir bien"]
+          - ["Mezcla de Expertos (MoE)", "Alto y dinámico", "Rápido y potente en GPU", "Requiere mucha VRAM"]
       - tipo: "nota"
-        texto: "Permite modelar dependencias a larga distancia sin recurrencia."
+        texto: "Cada arquitectura sirve para cosas distintas. No hay una 'mejor' universal."
 
-  - titulo: "El Modelo BERT y los Sequence-to-Sequence"
+  - titulo: "BERT: el lector atento que mira en dos direcciones"
     contenido:
-      - "BERT: modelo representacional bidireccional de bajo cómputo (≈300 MB)."
-      - "Modelos secuencia a secuencia como mT5: diseñados para traducción y síntesis directa."
+      - "BERT lee el texto mirando simultáneamente hacia atrás y hacia adelante."
+      - "Por eso es excelente para entender el significado completo de una frase."
       - tipo: "ejemplo"
-        texto: "BERT es ideal para clasificación, etiquetado POS y extracción de entidades."
-
-  - titulo: "Arquitecturas de Mezcla de Expertos (MoE)"
-    contenido:
-      - "Modelos como Mixtral distribuyen tokens hacia expertos especializados."
-      - "Una red de enrutamiento selecciona dinámicamente los expertos bajo un mapa de atención común."
+        texto: "Perfecto para clasificar correos como spam o extraer nombres de un texto."
       - tipo: "nota"
-        texto: "MoE reduce los parámetros activos en GPU, optimizando la inferencia."
+        texto: "Pero NO sirve para generar texto creativo. Para eso se usan los modelos generativos."
 
-  - titulo: "Fine-Tuning Eficiente con LoRA y RoPE"
+  - titulo: "Sequence-to-Sequence: de entrada a salida"
     contenido:
-      - "LoRA (Low-Rank Adaptation): entrenamiento de parámetros con bajo cómputo GPU."
-      - "RoPE (Rotary Position Embedding): escalamiento de ventanas de contexto."
+      - "Otros modelos, como mT5, transforman una secuencia en otra distinta."
+      - tipo: "ejemplo"
+        texto: "Traducir 'Hola' → 'Hello', o resumir un párrafo largo en uno corto."
+      - "El modelo lee una secuencia completa y genera otra como respuesta."
+      - tipo: "nota"
+        texto: "Son muy útiles para traducción y resumen automático."
+
+  - titulo: "Mezcla de Expertos (MoE): divide y vencerás"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hacer un modelo gigante sin que sea lento?"
+      - "La idea de MoE: tener varios 'expertos' (subredes) y activar solo los necesarios."
+      - "Como un hospital: no todos los médicos atienden a cada paciente, solo el especialista adecuado."
+      - tipo: "ejemplo"
+        texto: "Mixtral tiene 8 expertos, pero para cada token solo activa 2. ¡Ahorra recursos!"
+      - tipo: "nota"
+        texto: "MoE permite modelos grandes y rápidos a la vez, aunque exige mucha memoria VRAM."
+
+  - titulo: "LoRA: entrenar modelos gigantes con recursos pequeños"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si quieres adaptar un modelo grande pero no tienes GPUs potentes?"
+      - "LoRA (Low-Rank Adaptation) es la solución."
+      - "En vez de reentrenar todo el modelo, solo entrena unas matrices pequeñas (de rango bajo)."
       - tipo: "formula"
-        texto: "W = W₀ + α · B·A   (LoRA: matrices rango bajo A, B)"
+        texto: "W = W₀ + α · (B · A)  → solo se entrenan A y B (pequeñas)"
       - tipo: "nota"
-        texto: "RoPE Scaling sin reentrenamiento masivo puede generar pérdida de consistencia."
+        texto: "Es como ponerle un 'adaptador' al modelo. Barato, rápido y casi igual de preciso."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "RoPE: estirar la memoria sin reentrenar"
     contenido:
       - tipo: "problema"
-        texto: "Cargar localmente SLMs como TinyLlama o Phi-2."
-      - "Ejecutar scripts con adaptadores LoRA ligeros especializados en APIs corporativas."
-      - "Medir tiempos de inferencia y consumo de VRAM."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Cómo puede MoE optimizar costos de cómputo en servidores locales frente a modelos monolíticos?"
-      - tipo: "problema"
-        texto: "¿Qué riesgos de pérdida de consistencia surgen al escalar contexto con RoPE sin reentrenamiento?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🔁 La autoatención permite modelar dependencias sin recurrencia."
-      - "🎯 BERT destaca en clasificación; los MoE en rendimiento."
-      - "🚀 LoRA y RoPE son claves para el escalamiento eficiente."
+        texto: "¿Y si queremos que el modelo recuerde textos mucho más largos?"
+      - "RoPE (Rotary Position Embedding) ayuda a estirar la ventana de contexto."
+      - "Como cuando le pones una memoria extra al celular."
       - tipo: "nota"
-        texto: "Estas técnicas habilitan el despliegue local de modelos especializados."
+        texto: "Ojo: estirar demasiado sin reentrenar puede causar pérdida de consistencia."
+
+  - titulo: "Laboratorio: Cargando modelos pequeños en local"
+    contenido:
+      - tipo: "problema"
+        texto: "Vamos a cargar modelos como TinyLlama o Phi-2 en nuestra propia máquina."
+      - "Les pondremos adaptadores LoRA para especializarlos en términos de TI."
+      - "Mediremos cuánto tardan y cuánta memoria usan."
+      - tipo: "nota"
+        texto: "Comprobarás que puedes correr IA potente sin internet ni servidores caros."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo puede MoE ahorrar costos en servidores locales frente a modelos monolíticos?"
+      - tipo: "problema"
+        texto: "¿Qué riesgos hay al estirar la ventana de contexto con RoPE sin reentrenar?"
+      - tipo: "nota"
+        texto: "Piensa en el equilibrio entre velocidad, memoria y precisión."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "👁️ La autoatención permite al modelo ver todo el contexto a la vez."
+      - "📚 BERT entiende; los modelos generativos escriben; MoE divide el trabajo."
+      - "💡 LoRA entrena barato; RoPE estira la memoria."
+      - tipo: "nota"
+        texto: "El Transformer de 2017 es la base de toda la IA generativa actual. 🎉"

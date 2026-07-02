@@ -1,74 +1,141 @@
 tema: "Gestión de Contexto, Embeddings Vectoriales y Arquitecturas RAG"
-subtitulo: "Acceso en tiempo real a bases de conocimiento corporativas 📚"
+subtitulo: "Cómo darle a la IA memoria de tus documentos corporativos 📚"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "RAG permite que los LLMs accedan a conocimiento corporativo sin reentrenamiento."
-      - "Fundamentos del patrón Retrieval-Augmented Generation"
-      - "Limitaciones sobre repositorios de código"
-      - "GraphRAG y Tree-Sitter"
-
-  - titulo: "Fundamentos de RAG"
-    contenido:
-      - "Ingesta de documentos no estructurados y fragmentación en bloques."
-      - "Generación de embeddings y almacenamiento vectorial."
-      - "Inyección dinámica del contexto recuperado durante la inferencia."
-      - tipo: "formula"
-        texto: "Documento → Chunks → Embeddings → Base Vectorial → Contexto Inyectado"
-
-  - titulo: "Limitaciones de RAG Clásico sobre Código"
-    contenido:
-      - "La fragmentación secuencial destruye la jerarquía sintáctica y semántica del código."
-      - "Alucinaciones al consultar dependencias lógicas complejas."
-      - tipo: "nota"
-        texto: "El chunking de texto plano no respeta la estructura del código fuente."
-
-  - titulo: "Introducción a GraphRAG"
-    contenido:
-      - "Modelado de conocimiento mediante grafos semánticos estructurados."
-      - "Conexión explícita de entidades y relaciones."
-      - "Permite búsquedas contextuales de mayor nivel jerárquico."
+        texto: "Imagina que la IA pudiera leer todos los documentos de tu empresa antes de responder."
+      - "Qué es RAG y por qué revoluciona el uso de IA en empresas."
+      - "Por qué RAG clásico falla con código fuente."
+      - "Qué es GraphRAG y por qué es más inteligente."
       - tipo: "ejemplo"
-        texto: "GraphRAG responde preguntas globales ('¿qué módulos dependen de X?') que RAG clásico no aborda bien."
+        texto: "¿Te gustaría preguntar '¿qué dice el manual sobre vacaciones?' y que la IA lo sepa?"
 
-  - titulo: "Grafos de Dependencia con Tree-Sitter"
+  - titulo: "El problema: la IA no conoce tu empresa"
     contenido:
-      - "Compilación del código fuente en árboles sintácticos abstractos (AST)."
-      - "Almacenamiento en bases SQLite locales expuestas vía MCP."
+      - tipo: "problema"
+        texto: "ChatGPT no conoce tus políticas internas ni tu código. ¿Cómo lo solucionamos?"
+      - "Opción 1: Reentrenar el modelo → carísimo, lento y difícil."
+      - "Opción 2: RAG → darle documentos en el momento de la pregunta."
+      - tipo: "nota"
+        texto: "RAG es la solución práctica: combina el modelo con tu conocimiento sin reentrenar."
+
+  - titulo: "¿Qué significa RAG?"
+    contenido:
+      - "RAG = Retrieval-Augmented Generation (Generación Aumentada por Recuperación)."
       - tipo: "formula"
-        texto: "Código → Tree-Sitter → AST → Grafo de Dependencias (SQLite/MCP)"
+        texto: "RAG = Recuperar documentos relevantes + Aumentar el prompt + Generar respuesta"
+      - tipo: "ejemplo"
+        texto: "Es como un examen a libro abierto: la IA busca la información antes de responder."
+      - tipo: "nota"
+        texto: "RAG es el estándar de facto para chatbots corporativos."
 
-  - titulo: "Estrategia de Fragmentación (Chunking)"
+  - titulo: "Paso a paso: cómo funciona RAG"
     contenido:
-      - "El tamaño del chunk y el solapamiento afectan la calidad de la respuesta."
+      - "Paso 1: Tomas todos los documentos de la empresa."
+      - "Paso 2: Los cortas en pedacitos (chunks)."
+      - "Paso 3: Conviertes cada pedazo en un vector (embedding)."
+      - "Paso 4: Guardas esos vectores en una base de datos vectorial."
+      - "Paso 5: Cuando alguien pregunta, buscas los pedazos más parecidos."
+      - "Paso 6: Se los pasas al modelo junto con la pregunta."
+      - tipo: "nota"
+        texto: "El modelo responde usando TU conocimiento, no solo lo que aprendió en entrenamiento."
+
+  - titulo: "¿Cómo busca RAG los documentos correctos?"
+    contenido:
+      - tipo: "problema"
+        texto: "Si tienes 10,000 documentos, ¿cómo encuentra los correctos en milisegundos?"
+      - "No busca por palabras clave exactas. Busca por significado."
+      - tipo: "ejemplo"
+        texto: "Si preguntas '¿cómo reinicio el servidor?', encuentra 'reiniciar nodo de producción'."
+      - tipo: "nota"
+        texto: "Eso es búsqueda semántica: encuentra documentos que significan lo mismo, no que suenan igual."
+
+  - titulo: "El problema del Chunking (cortar en pedazos)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿En qué tamaño corto los documentos?"
+      - "Si los pedazos son muy chicos: pierden contexto."
+      - "Si son muy grandes: gastan muchos tokens y se diluye la relevancia."
       - tipo: "tabla"
         encabezados: ["Estrategia", "Ventaja", "Riesgo"]
         filas:
-          - ["Chunks pequeños", "Precisión local", "Pérdida de contexto global"]
-          - ["Chunks grandes", "Contexto global", "Mayor consumo de tokens"]
+          - ["Pedazos pequeños", "Precisión local", "Se pierde contexto global"]
+          - ["Pedazos grandes", "Contexto global", "Mayor gasto de tokens"]
+          - ["Con solapamiento", "Continuidad entre pedazos", "Más almacenamiento"]
       - tipo: "nota"
-        texto: "En código, la fragmentación debe respetar la estructura sintáctica."
+        texto: "El solapamiento (overlap) ayuda a que los pedazos compartan contexto en los bordes."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Por qué RAG clásico FALLA con código fuente"
     contenido:
       - tipo: "problema"
-        texto: "Inicializar localmente una base vectorial liviana (ChromaDB)."
-      - "Generar embeddings de archivos Markdown corporativos."
-      - "Simular búsqueda semántica comparando relevancia contra búsqueda por palabras clave."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Cómo afectan el chunking y el solapamiento a la calidad de la respuesta de un RAG?"
-      - tipo: "problema"
-        texto: "¿Cuáles son las diferencias de almacenamiento y cómputo entre vectorial y GraphRAG?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🗄️ RAG integra conocimiento externo sin reentrenamiento."
-      - "⚠️ La fragmentación naive falla sobre código fuente."
-      - "🕸️ GraphRAG y Tree-Sitter aprovechan la estructura semántica."
+        texto: "¿Qué pasa si le paso mi repositorio de código a un RAG normal?"
+      - "El RAG corta el código como si fuera texto plano: línea por línea."
+      - "Pero el código NO es texto plano: tiene estructura, funciones, dependencias."
+      - tipo: "ejemplo"
+        texto: "Si corta a la mitad de una función, pierde el contexto de qué hace esa función."
       - tipo: "nota"
-        texto: "La elección de estrategia de indexación define la calidad del sistema."
+        texto: "Resultado: el modelo alucina dependencias que no existen. Peligroso."
+
+  - titulo: "GraphRAG: la evolución inteligente"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hacemos que RAG entienda las relaciones entre los documentos?"
+      - "GraphRAG construye un grafo (red) de conocimiento: conecta entidades y relaciones."
+      - tipo: "ejemplo"
+        texto: "Conecta 'Función A' → 'llama a' → 'Función B' → 'usa' → 'Base de datos'."
+      - "Permite responder preguntas globales como '¿qué módulos dependen del login?'"
+      - tipo: "nota"
+        texto: "GraphRAG entiende la estructura, no solo el texto. Mucho más preciso."
+
+  - titulo: "Tree-Sitter: entendiendo el código como un árbol"
+    contenido:
+      - "Tree-Sitter es una herramienta que analiza código y lo convierte en un árbol."
+      - tipo: "ejemplo"
+        texto: "Convierte `function suma(a,b){return a+b}` en una estructura jerárquica."
+      - "Ese árbol (AST) respeta funciones, bloques y dependencias."
+      - tipo: "formula"
+        texto: "Código → Tree-Sitter → Árbol sintáctico (AST) → Base de datos local"
+      - tipo: "nota"
+        texto: "Así la IA puede explorar el código sin perder la estructura. Cero alucinaciones."
+
+  - titulo: "Comparativa: RAG clásico vs GraphRAG"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "RAG clásico", "GraphRAG"]
+        filas:
+          - ["Búsqueda", "Por similitud de texto", "Por relaciones semánticas"]
+          - ["Código fuente", "Falla (rompe estructura)", "Funciona (respeta AST)"]
+          - ["Preguntas globales", "Difíciles", "Naturales"]
+          - ["Costo de indexar", "Bajo", "Más alto (construye grafo)"]
+      - tipo: "nota"
+        texto: "Para conocimiento estructurado (como código), GraphRAG es muy superior."
+
+  - titulo: "Laboratorio: Creando una base vectorial local"
+    contenido:
+      - tipo: "problema"
+        texto: "Vamos a inicializar ChromaDB (una base vectorial local y liviana)."
+      - "Cargaremos archivos Markdown de la empresa y generaremos sus embeddings."
+      - "Haremos una búsqueda semántica: '¿dónde se define la política de backups?'"
+      - "Compararemos con una búsqueda por palabras clave para ver la diferencia."
+      - tipo: "nota"
+        texto: "Verás cómo la búsqueda semántica encuentra respuestas que la clave no puede."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo afecta el tamaño del chunk a la calidad de las respuestas?"
+      - tipo: "problema"
+        texto: "¿Cuándo vale la pena GraphRAG frente a un RAG clásico?"
+      - tipo: "nota"
+        texto: "Piensa en qué documentos de TU empresa podrían beneficiarse de RAG."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🗄️ RAG permite que la IA use tus documentos sin reentrenar."
+      - "🔍 La búsqueda semántica encuentra por significado, no por palabra."
+      - "⚠️ El RAG clásico falla con código: usa Tree-Sitter/GraphRAG."
+      - "🕸️ GraphRAG conecta entidades para respuestas más inteligentes."
+      - tipo: "nota"
+        texto: "RAG es el puente entre el conocimiento de tu empresa y la IA. 🎉"

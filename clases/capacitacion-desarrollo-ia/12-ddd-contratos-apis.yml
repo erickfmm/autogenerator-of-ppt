@@ -1,72 +1,161 @@
 tema: "Arquitectura Domain-Driven Design (DDD) y Contratos de APIs"
-subtitulo: "Escudos arquitectónicos para la generación de código modular 🏗️"
+subtitulo: "Cómo estructurar tu código para que la IA no lo rompa 🏗️"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "DDD estructura las dependencias de negocio y facilita la generación modular."
-      - "DDD como escudo frente a la IA"
-      - "Capas de arquitectura limpia"
-      - "APIs Contract-First y JSON-First"
+        texto: "Hoy veremos cómo organizar el código para que la IA lo entienda y no lo rompa."
+      - "Qué es Domain-Driven Design (DDD) en palabras simples."
+      - "Cómo separar capas evita el desastre."
+      - "Por qué diseñar primero el contrato de la API cambia todo."
+      - tipo: "ejemplo"
+        texto: "¿Te ha pasado que la IA mezcla la lógica de negocio con la base de datos? Eso duele."
 
-  - titulo: "DDD como Escudo frente a la IA"
+  - titulo: "El problema: la IA mezcla todo"
     contenido:
-      - "La definición estricta de contextos delimitados (Bounded Contexts) evita mezclas."
-      - "Impide que los modelos mezclen reglas de negocio con implementaciones de infraestructura."
+      - tipo: "problema"
+        texto: "¿Qué pasa cuando la IA genera código sin estructura clara?"
+      - "Mezcla reglas de negocio con conexiones a base de datos."
+      - "Pone lógica de UI dentro de funciones que deberían ser puras."
+      - tipo: "ejemplo"
+        texto: "Una función que valida un pago también envía emails y consulta la base de datos. ¡Caos!"
       - tipo: "nota"
-        texto: "Sin DDD, los agentes generan código con acoplamiento rígido."
+        texto: "Sin una arquitectura clara, la IA genera espagueti inmanejable."
 
-  - titulo: "Capas de Arquitectura Limpia en DDD"
+  - titulo: "La solución: DDD (Domain-Driven Design)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo evitamos que la IA mezcle cosas?"
+      - "DDD propone dividir el sistema en 'contextos delimitados' (Bounded Contexts)."
+      - "Cada contexto tiene su responsabilidad clara y separada."
+      - tipo: "ejemplo"
+        texto: "El contexto 'Facturación' no se mete con el contexto 'Usuarios'."
+      - tipo: "nota"
+        texto: "DDD actúa como un escudo: impide que la IA mezcle lo que no debe."
+
+  - titulo: "Las 3 capas de la arquitectura limpia"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Capa", "Responsabilidad"]
+        encabezados: ["Capa", "Responsabilidad", "Ejemplo"]
         filas:
-          - ["Dominio", "Entidades y agregados puros"]
-          - ["Aplicación", "Casos de uso"]
-          - ["Infraestructura", "Bases de datos y controladores HTTP"]
+          - ["Dominio", "Reglas puras del negocio", "Cálculo de impuestos"]
+          - ["Aplicación", "Casos de uso, orquesta", "Procesar una orden"]
+          - ["Infraestructura", "BD, HTTP, external", "Guardar en PostgreSQL"]
       - tipo: "formula"
-        texto: "Dominio ← Aplicación ← Infraestructura (dependencia hacia adentro)"
-
-  - titulo: "APIs Contract-First"
-    contenido:
-      - "El contrato de la interfaz se diseña formalmente antes de escribir código."
-      - "Sirve como mapa inmutable de interconexión del sistema."
-      - tipo: "ejemplo"
-        texto: "Definir OpenAPI antes de implementar el servidor garantiza coherencia entre equipos."
-
-  - titulo: "Patrón JSON-First"
-    contenido:
-      - "Herramientas CLI ágiles para sincronizar, estructurar y versionar esquemas."
-      - "Contratos legibles para humanos y agentes autónomos."
+        texto: "Dominio ← Aplicación ← Infraestructura (las dependencias apuntan hacia adentro)"
       - tipo: "nota"
-        texto: "La inyección de interfaces estrictas limita la generación de código incoherente."
+        texto: "La regla de oro: la capa de Dominio NO conoce nada de bases de datos ni HTTP."
 
-  - titulo: "Flujo Contract-First con IA"
+  - titulo: "Analogía: el restaurante"
     contenido:
-      - tipo: "formula"
-        texto: "OpenAPI (YAML/JSON) → Validación → Andamiaje DDD → Implementación"
       - tipo: "ejemplo"
-        texto: "Un prompt GOLD instruye a la IA a redactar el contrato OpenAPI de un microservicio."
+        texto: "Dominio: las recetas y reglas de la cocina (pura lógica)."
+      - tipo: "ejemplo"
+        texto: "Aplicación: el mesero que coordina: toma el pedido y avisa a la cocina."
+      - tipo: "ejemplo"
+        texto: "Infraestructura: los proveedores de ingredientes y el sistema de pagos."
+      - tipo: "nota"
+        texto: "Las recetas no dependen del proveedor. El proveedor sí se adapta a las recetas."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Por qué esto ayuda a la IA"
     contenido:
       - tipo: "problema"
-        texto: "Usar un prompt estructurado (GOLD o STAR) para redactar el contrato OpenAPI de un microservicio financiero."
-      - "Validar el contrato generado."
-      - "Guiar al agente para compilar el andamiaje en capas limpias DDD (Go o TypeScript)."
+        texto: "¿Cómo le beneficia a la IA tener estas capas separadas?"
+      - "La IA puede trabajar en una capa sin tocar las demás."
+      - tipo: "ejemplo"
+        texto: "Si le pides 'cambiar el cálculo de impuestos', la IA solo toca el Dominio."
+      - "No se arriesga a romper la base de datos ni la UI."
+      - tipo: "nota"
+        texto: "Las capas son como compartimentos estancos: un error no se propaga."
 
-  - titulo: "Preguntas Clave y Debate"
+  - titulo: "Contract-First: el contrato antes que el código"
     contenido:
       - tipo: "problema"
-        texto: "¿Cómo limita la inyección de contratos estrictos la generación de código incoherente?"
-      - tipo: "problema"
-        texto: "¿Cuáles son las implicaciones de migrar un monolito a microservicios DDD con JSON-First?"
+        texto: "¿Por dónde empezar a programar una API?"
+      - "La metodología Contract-First dice: PRIMERO diseña el contrato de la API."
+      - "El contrato describe qué datos entran y salen, antes de escribir implementación."
+      - tipo: "ejemplo"
+        texto: "Como construir una casa: primero los planos, luego los cimientos."
+      - tipo: "nota"
+        texto: "El contrato es un mapa inmutable: todos los equipos se guían por él."
 
-  - titulo: "Resumen"
+  - titulo: "¿Qué es un contrato de API?"
     contenido:
-      - "🛡️ DDD protege la lógica de negocio con Bounded Contexts."
+      - "Un contrato describe exactamente cómo se comunican los sistemas."
+      - "Qué datos entran, qué datos salen, qué errores pueden ocurrir."
+      - tipo: "formula"
+        texto: "Contrato = Endpoints + Tipos de datos + Códigos de error"
+      - tipo: "nota"
+        texto: "El formato más común es OpenAPI (YAML/JSON), antes llamado Swagger."
+
+  - titulo: "JSON-First: el lenguaje común"
+    contenido:
+      - tipo: "problema"
+        texto: "¿En qué formato describimos el contrato?"
+      - "JSON es el estándar universal: legible para humanos y máquinas."
+      - tipo: "ejemplo"
+        texto: "Un esquema JSON define que 'email' es un string con formato de email."
+      - "Existen herramientas CLI para sincronizar y versionar estos esquemas."
+      - tipo: "nota"
+        texto: "JSON-First garantiza que humanos y agentes de IA lean el mismo contrato."
+
+  - titulo: "El flujo Contract-First con IA (paso a paso)"
+    contenido:
+      - "Paso 1: Escribes un prompt estructurado (STAR o GOLD)."
+      - "Paso 2: La IA redacta el contrato OpenAPI (YAML/JSON) del microservicio."
+      - "Paso 3: Revisas y validas el contrato."
+      - "Paso 4: La IA genera el andamiaje del servidor en capas limpias DDD."
+      - "Paso 5: Se implementan los casos de uso respetando el contrato."
+      - tipo: "nota"
+        texto: "El contrato actúa como un mapa inmutable: la IA no se desvía."
+
+  - titulo: "Ejemplo: microservicio financiero"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Le pedimos a la IA: 'diseña el contrato de un microservicio de transferencias'."
+      - tipo: "ejemplo"
+        texto: "La IA devuelve un OpenAPI con endpoints como POST /transferencias."
+      - tipo: "ejemplo"
+        texto: "Validamos el contrato: ¿está completo? ¿Tiene bien los tipos?"
+      - tipo: "ejemplo"
+        texto: "Luego la IA genera el andamiaje DDD en Go o TypeScript, respetando el contrato."
+      - tipo: "nota"
+        texto: "Todo el equipo trabaja desde el mismo contrato: cero ambigüedad."
+
+  - titulo: "Por qué esto limita las alucinaciones de la IA"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo reduce un contrato estricto las alucinaciones?"
+      - "La IA no puede inventar endpoints ni tipos: el contrato la ata."
+      - "Si intenta generar algo fuera del contrato, falla la validación."
+      - tipo: "nota"
+        texto: "El contrato es como los rieles de un tren: mantiene a la IA en camino."
+
+  - titulo: "Laboratorio: Diseñando una API con DDD"
+    contenido:
+      - tipo: "problema"
+        texto: "Usaremos un prompt GOLD para diseñar el contrato OpenAPI de un microservicio."
+      - "Validaremos el contrato generado."
+      - "Guiaremos a la IA para compilar el andamiaje en capas DDD."
+      - "Usaremos Go o TypeScript según la preferencia."
+      - tipo: "nota"
+        texto: "Verás cómo DDD + contratos generan código modular y predecible."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo limita un contrato estricto la generación de código incoherente?"
+      - tipo: "problema"
+        texto: "¿Qué implicaciones tiene migrar un monolito a microservicios DDD con JSON-First?"
+      - tipo: "nota"
+        texto: "Piensa en un proyecto desordenado tuyo: ¿lo ayudaría DDD?"
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🛡️ DDD separa responsabilidades con Bounded Contexts."
       - "📐 Las capas limpias desacoplan dominio de infraestructura."
-      - "📄 Contract-First y JSON-First aseguran coherencia."
+      - "📄 Contract-First diseña el contrato antes que el código."
+      - "🤝 DDD + Contratos = código modular y fácil para la IA."
       - tipo: "nota"
-        texto: "DDD + Contratos = andamiaje predecible para la IA."
+        texto: "La arquitectura clara es el mejor amigo de la IA generativa. 🎉"

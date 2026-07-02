@@ -1,72 +1,149 @@
 tema: "Análisis Exploratorio de Datos (EDA) Automatizado"
-subtitulo: "Evaluación inicial de calidad y distribución en minutos 📊"
+subtitulo: "Entender tus datos en minutos, no en horas 📊"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "El EDA automatizado reduce drásticamente los tiempos de evaluación inicial."
-      - "Rol de la analítica descriptiva en TI"
-      - "Concepto del EDA sistemático"
-      - "Sweetviz y YData-Profiler"
+        texto: "Hoy veremos cómo analizar grandes volúmenes de datos automáticamente, sin sufrir."
+      - "Qué es el Análisis Exploratorio de Datos (EDA) y por qué importa."
+      - "Cómo automatizarlo para ahorrar horas de trabajo."
+      - "Herramientas: Sweetviz y YData-Profiler."
+      - tipo: "ejemplo"
+        texto: "¿Te han entregado un archivo con millones de filas y no sabías por dónde empezar?"
 
-  - titulo: "El Rol de la Analítica Descriptiva en TI"
+  - titulo: "El problema: demasiados datos, poco tiempo"
     contenido:
-      - "Etapas del flujo: ingesta cruda → valor descriptivo, diagnóstico y predictivo."
+      - tipo: "problema"
+        texto: "¿Qué haces cuando recibes un dataset enorme?"
+      - "Antes, abrías Excel, mirabas las primeras filas y rezabas."
+      - "Buscabas nulos a mano, contabas duplicados, calculabas promedios..."
+      - tipo: "ejemplo"
+        texto: "Un archivo de logs de 500,000 filas: imposible revisarlo a ojo."
+      - tipo: "nota"
+        texto: "El EDA automatizado cambia esto: te da el panorama completo en minutos."
+
+  - titulo: "¿Qué es el EDA (Análisis Exploratorio)?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué significa 'explorar' los datos?"
+      - "Es el primer acercamiento sistemático: conocer antes de usar."
+      - "Responde preguntas básicas: ¿hay nulos? ¿hay duplicados? ¿hay valores raros?"
+      - tipo: "ejemplo"
+        texto: "Antes de cocinar, revisas los ingredientes: ¿están frescos? ¿hay suficiente?"
+      - tipo: "nota"
+        texto: "No puedes confiar en un análisis si no conoces primero la calidad de los datos."
+
+  - titulo: "Las preguntas clave del EDA"
+    contenido:
+      - "¿Cuántos registros tenemos? ¿Cuántas columnas?"
+      - "¿Qué tipo de dato es cada columna? (texto, número, fecha)"
+      - "¿Hay valores nulos o vacíos? ¿En qué columnas?"
+      - "¿Hay duplicados?"
+      - "¿Hay valores atípicos (outliers) raros?"
+      - "¿Cuál es la distribución de cada variable?"
+      - tipo: "nota"
+        texto: "Responder estas preguntas a mano toma horas. Automatizadas, minutos."
+
+  - titulo: "Las etapas del análisis de datos"
+    contenido:
       - tipo: "formula"
         texto: "Ingesta → Descriptivo → Diagnóstico → Predictivo"
+      - tipo: "tabla"
+        encabezados: ["Etapa", "Pregunta que responde"]
+        filas:
+          - ["Descriptivo", "¿Qué pasó?"]
+          - ["Diagnóstico", "¿Por qué pasó?"]
+          - ["Predictivo", "¿Qué pasará?"]
       - tipo: "nota"
-        texto: "El EDA es el primer acercamiento analítico sistemático a los datos."
+        texto: "El EDA está en la fase descriptiva: es la base de todo lo demás."
 
-  - titulo: "El Concepto del EDA"
+  - titulo: "Sweetviz: comparaciones visuales rápidas"
     contenido:
-      - "Toma de muestras estadísticas y validación de calidad."
-      - "Identificación de registros duplicados, nulos y valores atípicos."
       - tipo: "problema"
-        texto: "¿Qué tan confiable es un modelo entrenado con datos con nulos y duplicados?"
-
-  - titulo: "Sweetviz: Visualizaciones Comparativas"
-    contenido:
-      - "Biblioteca para compilar informes visuales interactivos enriquecidos."
-      - "Ideal para evaluar comparativamente la consistencia entre dos conjuntos de datos."
+        texto: "¿Cómo veo rápidamente cómo son mis datos?"
+      - "Sweetviz genera un informe HTML interactivo con un par de líneas de código."
+      - "Muestra histogramas, estadísticas y tipos de cada columna."
       - tipo: "ejemplo"
-        texto: "Comparar la distribución de un dataset de entrenamiento frente a uno de test."
+        texto: "Ideal para comparar dos datasets: entrenamiento vs test, ¿son parecidos?"
+      - tipo: "nota"
+        texto: "Su fortaleza es la comparación visual lado a lado."
 
-  - titulo: "YData-Profiler: Diagnósticos Exhaustivos"
+  - titulo: "YData-Profiler: diagnóstico profundo"
     contenido:
-      - "Perfiles de datos completos con matrices de correlación multidimensionales."
-      - "Detección de alertas de multicolinealidad y reportes de redundancia sintáctica."
+      - tipo: "problema"
+        texto: "¿Y si necesito algo más exhaustivo?"
+      - "YData-Profiler hace un análisis completo de calidad."
+      - "Detecta correlaciones entre variables, multicolinealidad y redundancias."
+      - tipo: "ejemplo"
+        texto: "Avisa: 'estas dos columnas son casi idénticas, podrías eliminar una'."
       - tipo: "nota"
         texto: "Listo para producción: identifica problemas antes de entrenar modelos."
 
-  - titulo: "Comparativa de Herramientas de EDA"
+  - titulo: "Comparativa: Sweetviz vs YData-Profiler"
     contenido:
       - tipo: "tabla"
         encabezados: ["Herramienta", "Fortaleza", "Salida"]
         filas:
-          - ["Sweetviz", "Comparación de datasets", "HTML interactivo"]
-          - ["YData-Profiler", "Diagnóstico de calidad", "Reporte completo"]
+          - ["Sweetviz", "Comparar dos datasets", "HTML interactivo bonito"]
+          - ["YData-Profiler", "Diagnóstico profundo de calidad", "Reporte detallado completo"]
       - tipo: "nota"
-        texto: "Considerar RAM y cómputo al ejecutar EDA sobre volúmenes masivos."
+        texto: "No son excluyentes: úsalas juntas para tener visión completa."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "El flujo de trabajo (paso a paso)"
     contenido:
-      - tipo: "problema"
-        texto: "Cargar un archivo masivo de logs o base tabular corporativa en Python."
-      - "Generar informes HTML con Sweetviz y YData-Profiler en local."
-      - "Identificar variables redundantes, nulos y sesgos en menos de cinco minutos."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Qué consideraciones de escalamiento y RAM aplicar al ejecutar EDA sobre volúmenes masivos?"
-      - tipo: "problema"
-        texto: "¿Cómo resolver el cumplimiento normativo y privacidad frente a herramientas en la nube?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🔍 El EDA es el primer paso sistemático de calidad de datos."
-      - "📊 Sweetviz destaca en comparación de datasets."
-      - "🩺 YData-Profiler ofrece diagnósticos exhaustivos listos para producción."
+      - "Paso 1: Cargas el archivo (CSV, Excel, base de datos) en Python."
+      - "Paso 2: Ejecutas Sweetviz para una vista rápida visual."
+      - "Paso 3: Ejecutas YData-Profiler para el diagnóstico profundo."
+      - "Paso 4: Revisas las alertas (nulos, outliers, duplicados)."
+      - "Paso 5: Decides qué limpiar antes de seguir."
       - tipo: "nota"
-        texto: "Automatizar el EDA libera tiempo para el análisis de valor."
+        texto: "Todo esto, en menos de cinco minutos incluso con cientos de miles de filas."
+
+  - titulo: "El cuidado con datos enormes: RAM y cómputo"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si mi archivo tiene millones de filas?"
+      - "Estas herramientas cargan todo en memoria (RAM)."
+      - "Si el archivo es muy grande, tu computadora puede colapsar."
+      - tipo: "ejemplo"
+        texto: "Un dataset de 5GB puede llenar la RAM de un laptop normal."
+      - tipo: "nota"
+        texto: "Solución: trabajar con una muestra representativa en vez del dataset completo."
+
+  - titulo: "Privacidad y cumplimiento normativo"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Puedo subir mis datos corporativos a la nube para analizarlos?"
+      - "¡Ojo con la privacidad! Datos sensibles no deben salir de la empresa."
+      - "Sweetviz y YData-Profiler corren en LOCAL: los datos no salen de tu máquina."
+      - tipo: "nota"
+        texto: "Esto es clave para cumplir normativas de protección de datos (GDPR, etc.)."
+
+  - titulo: "Laboratorio: Analizando logs en Python"
+    contenido:
+      - tipo: "problema"
+        texto: "Cargaremos un archivo masivo de logs o una base tabular en Python."
+      - "Generaremos informes HTML con Sweetviz y YData-Profiler en local."
+      - "Identificaremos variables redundantes, nulos y sesgos."
+      - "Todo en menos de cinco minutos."
+      - tipo: "nota"
+        texto: "Verás qué rápido puedes entender un dataset que parecía intimidante."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué consideraciones de RAM aplicar al analizar volúmenes masivos?"
+      - tipo: "problema"
+        texto: "¿Cómo garantizas la privacidad de datos sensibles al usar estas herramientas?"
+      - tipo: "nota"
+        texto: "Piensa en un dataset de tu empresa que podrías analizar mañana mismo."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🔍 El EDA es el primer paso sistemático para conocer tus datos."
+      - "📊 Sweetviz destaca en comparaciones visuales rápidas."
+      - "🩺 YData-Profiler ofrece diagnósticos exhaustivos de calidad."
+      - "🔒 Ejecutar en local garantiza privacidad y cumplimiento."
+      - tipo: "nota"
+        texto: "Automatizar el EDA te ahorra horas y evita sorpresas después. 🎉"

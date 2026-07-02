@@ -1,77 +1,129 @@
 tema: "Orquestadores de RAG, Agentes y Plataformas No-Code / Low-Code"
-subtitulo: "Construyendo aplicaciones de IA estables e integradas 🔌"
+subtitulo: "Construyendo aplicaciones de IA sin volverte loco programando 🔌"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "De la recuperación de datos a la orquestación agéntica cíclica."
-      - "LangChain, LlamaIndex, Haystack y LangGraph"
-      - "Frameworks de autonomía: AutoAgent y ADK"
-      - "Plataformas no-code: Flowise y Dify"
+        texto: "Hoy veremos cómo unir todas las piezas (RAG, agentes, IA) en una sola aplicación."
+      - "Diferencia entre orquestar datos y orquestar agentes."
+      - "LangChain, LlamaIndex, Haystack y LangGraph: para qué sirve cada uno."
+      - "Plataformas visuales: Dify y Flowise (¡sin escribir código!)."
+      - tipo: "ejemplo"
+        texto: "Imagina armar un chatbot corporativo arrastrando bloques, como en un Lego."
 
-  - titulo: "Orquestación de Datos vs. Orquestación Agéntica"
+  - titulo: "¿Qué es 'orquestar' en IA?"
+    contenido:
+      - tipo: "problema"
+        texto: "Si ya tengo un modelo y una base de datos, ¿qué me falta?"
+      - - "Falta el 'pegamento': conectar todo para que funcione junto."
+      - "Ese pegamento se llama orquestador."
+      - tipo: "ejemplo"
+        texto: "Un orquestador recibe la pregunta, busca en RAG, llama al modelo y devuelve la respuesta."
+      - tipo: "nota"
+        texto: "El orquestador es como el director de una orquesta: coordina a todos los músicos."
+
+  - titulo: "Dos tipos de orquestación: Datos vs Agentes"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Tipo", "Herramientas", "Característica"]
+        encabezados: ["Tipo", "Qué hace", "Ejemplos"]
         filas:
-          - ["Datos", "LangChain, LlamaIndex", "Recuperación y estructuración"]
-          - ["Agéntica", "Haystack, LangGraph", "Ciclos de decisión y ejecución"]
+          - ["Orquestación de datos", "Recuperar y estructurar información", "LangChain, LlamaIndex"]
+          - ["Orquestación agéntica", "Decisiones, ciclos y ejecución autónoma", "Haystack, LangGraph"]
       - tipo: "nota"
-        texto: "La orquestación agéntica admite reintentos y validación autónoma."
+        texto: "La orquestación de datos es lineal. La agéntica permite ciclos y decisiones."
 
-  - titulo: "LangGraph y Arquitecturas Cíclicas"
+  - titulo: "LangChain: el popular, pero con limitaciones"
     contenido:
-      - "Modelado de flujos de IA con grafos de estado cíclicos."
-      - "Un agente puede reintentar operaciones fallidas o validar su código antes de responder."
-      - tipo: "formula"
-        texto: "Estado(n) → Acción → Estado(n+1) → ... (ciclos controlados)"
-      - tipo: "nota"
-        texto: "La persistencia de estado de LangGraph supera a los flujos secuenciales de LangChain clásico."
-
-  - titulo: "Frameworks de Autonomía Agéntica"
-    contenido:
-      - "AutoAgent y ADK (Agent Development Kit)."
-      - "Interacción colaborativa entre múltiples agentes autónomos."
-      - "Organización jerárquica de tareas y delegación."
+      - "LangChain fue de los primeros en popularizar la orquestación de IA."
+      - "Encadena pasos: carga documento → corta → embeddea → busca → responde."
       - tipo: "ejemplo"
-        texto: "Un agente coordinador delega subtareas a agentes especialistas."
-
-  - titulo: "Plataformas No-Code: Flowise y Dify"
-    contenido:
-      - "Desarrollo ágil mediante interfaces visuales."
-      - "Configuración centralizada: conectores, variables, herramientas y modelos."
+        texto: "Es como una receta: paso 1, paso 2, paso 3, en orden."
       - tipo: "nota"
-        texto: "Permiten prototipar sin escribir código de orquestación intermedio."
+        texto: "Pero su flujo es secuencial. Si algo falla, no puede 'retroceder' y reintentar."
 
-  - titulo: "Comparativa No-Code vs. Código"
+  - titulo: "LangGraph: orquestación con ciclos inteligentes"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Y si queremos que el agente pueda reintentar si algo sale mal?"
+      - "LangGraph modela el flujo como un grafo con estado."
+      - "Permite ciclos: el agente puede validar su respuesta y volver a intentarlo."
+      - tipo: "ejemplo"
+        texto: "Agente genera código → lo prueba → si falla → lo corrige → reintenta."
+      - tipo: "nota"
+        texto: "LangGraph mantiene un estado entre pasos, algo que LangChain clásico no hace bien."
+
+  - titulo: "Frameworks de autonomía: muchos agentes trabajando juntos"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si la tarea es tan grande que un solo agente no basta?"
+      - "AutoAgent y ADK (Agent Development Kit) permiten coordinar varios agentes."
+      - "Cada agente tiene una especialidad y se comunican entre sí."
+      - tipo: "ejemplo"
+        texto: "Un agente investiga, otro escribe código, otro revisa, otro hace pruebas."
+      - tipo: "nota"
+        texto: "Es como un equipo de trabajo: cada quien su rol, coordinados por un jefe."
+
+  - titulo: "Plataformas No-Code: IA para todos"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Y si no sé programar pero quiero armar una solución con IA?"
+      - "Dify y Flowise son plataformas visuales: construyes arrastrando bloques."
+      - "Configuras el modelo, los documentos y las herramientas sin escribir código."
+      - tipo: "nota"
+        texto: "Son ideales para prototipar rápido y validar ideas."
+
+  - titulo: "Dify: el laboratorio visual de IA"
+    contenido:
+      - "Dify te permite armar chatbots, RAGs y agentes visualmente."
+      - tipo: "ejemplo"
+        texto: "Arrastras un bloque de 'carga de documento', lo conectas a uno de 'modelo', y listo."
+      - "Configuras variables, herramientas y bases de conocimiento en una interfaz web."
+      - tipo: "nota"
+        texto: "Perfecto para que equipos no técnicos exploren soluciones de IA."
+
+  - titulo: "Flowise: alternativa similar, también visual"
+    contenido:
+      - "Flowise es otra opción visual, basada en nodos conectables."
+      - "Más orientada a quienes ya conocen LangChain (usa su lógica por debajo)."
+      - tipo: "nota"
+        texto: "Dify y Flowise compiten en el mismo espacio: probar ambas ayuda a elegir."
+
+  - titulo: "Comparativa: Código vs No-Code"
     contenido:
       - tipo: "tabla"
         encabezados: ["Enfoque", "Ventaja", "Reto"]
         filas:
-          - ["No-Code (Dify)", "Prototipado ágil visual", "Control de versiones y CI/CD"]
-          - ["Código (LangGraph)", "Control total y despliegue", "Curva de aprendizaje"]
+          - ["No-Code (Dify)", "Prototipado ultrarrápido", "Control de versiones difícil"]
+          - ["Código (LangGraph)", "Control total y CI/CD", "Requiere saber programar"]
       - tipo: "nota"
-        texto: "Equilibrar agilidad de prototipado con gobierno de despliegue continuo."
+        texto: "Buena práctica: prototipar en Dify y pasar a código cuando se necesita controlar."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Laboratorio: Armando un flujo visual"
     contenido:
       - tipo: "problema"
-        texto: "Construir visualmente en Dify o Flowise un flujo de análisis técnico."
-      - "Vectorizar logs de errores de servidores."
-      - "Consultar la base de conocimiento y devolver un informe con el parche sugerido."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Qué ventajas operativas tiene la persistencia de estado de LangGraph frente a LangChain clásico?"
-      - tipo: "problema"
-        texto: "¿Cómo equilibrar el prototipado visual en Dify con el control de versiones y CI/CD?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🔀 LangGraph modela flujos cíclicos con estado persistente."
-      - "🤖 ADK y AutoAgent organizan agentes jerárquicamente."
-      - "🎨 Dify y Flowise democratizan el prototipado visual."
+        texto: "Vamos a construir un flujo en Dify o Flowise."
+      - "El flujo recibe logs de errores de servidores."
+      - "Los vectoriza semánticamente."
+      - "Consulta la base de conocimiento para hallar la solución histórica."
+      - "Devuelve un informe estructurado con el parche sugerido."
       - tipo: "nota"
-        texto: "La elección depende del balance entre agilidad y gobierno técnico."
+        texto: "En menos de 30 minutos tendrás una aplicación de IA funcional."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué LangGraph es mejor que LangChain para flujos con reintentos?"
+      - tipo: "problema"
+        texto: "¿Cómo equilibras la rapidez del prototipado visual con el control de versiones?"
+      - tipo: "nota"
+        texto: "No siempre 'más código' es mejor. A veces prototipar visualmente ahorra semanas."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🔀 Orquestar es conectar las piezas de IA para que trabajen juntas."
+      - "📈 LangGraph permite ciclos y reintentos; LangChain clásico es lineal."
+      - "🤖 ADK y AutoAgent coordinan múltiples agentes especializados."
+      - "🎨 Dify y Flowise permiten construir IA visualmente, sin código."
+      - tipo: "nota"
+        texto: "La orquestación convierte la IA en una solución real para tu empresa. 🎉"

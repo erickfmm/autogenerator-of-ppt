@@ -1,74 +1,152 @@
 tema: "Sistemas de Memoria Persistente para Modelos de Lenguaje en MCP"
-subtitulo: "Superando la pérdida de contexto en sesiones prolongadas 🧠"
+subtitulo: "Cómo darle memoria duradera a la IA para que no olvide 🧠"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La memoria persistente resuelve el olvido en sesiones de chat prolongadas."
-      - "El desafío de la pérdida de contexto"
-      - "Engram: persistencia local con SQLite + FTS5"
-      - "Codebase-Memory-MCP y la integración local"
-
-  - titulo: "El Desafío de la Pérdida de Contexto"
-    contenido:
-      - "La latencia y el costo por llamadas a la API se disparan con chat no estructurado."
-      - "Detalles críticos se olvidan al compactarse el historial."
-      - tipo: "problema"
-        texto: "¿Qué sucede con una decisión de diseño tomada hace 50 turnos?"
-      - tipo: "nota"
-        texto: "Sin memoria persistente, el conocimiento se pierde al cerrar la sesión."
-
-  - titulo: "Engram: Arquitectura de Persistencia Local"
-    contenido:
-      - "Binario en Go que almacena decisiones de diseño y correcciones de fallas."
-      - "Agnóstico al agente: funciona con cualquier cliente."
-      - "Motor relacional SQLite con búsqueda de texto completo FTS5."
-      - tipo: "formula"
-        texto: "Decisión → SQLite (FTS5) → Recuperación contextual posterior"
-
-  - titulo: "Codebase-Memory-MCP: Grafos Indexados"
-    contenido:
-      - "Análisis estáticos de código en tiempo real."
-      - "Almacenamiento de firmas jerárquicas de dependencias complejas."
-      - tipo: "nota"
-        texto: "Reduce el consumo de tokens hasta 120 veces frente al grepping secuencial."
-
-  - titulo: "Comparativa: Grepping vs. Grafo Indexado"
-    contenido:
-      - tipo: "tabla"
-        encabezados: ["Método", "Tokens consumidos (relativo)", "Precisión"]
-        filas:
-          - ["Grepping secuencial", "120x", "Baja"]
-          - ["Codebase-Memory-MCP", "1x", "Alta"]
-      - tipo: "nota"
-        texto: "La indexación estructural transforma la exploración de código."
-
-  - titulo: "Integración en el Sistema Operativo Local"
-    contenido:
-      - "Herramientas como Glia y la interfaz TUI de Engram."
-      - "Permiten auditar, depurar y compartir el historial de memoria cognitiva."
+        texto: "Hoy veremos cómo resolver el problema más frustrante de la IA: que olvida."
+      - "Por qué la IA olvida decisiones importantes."
+      - "Qué es la memoria persistente y por qué importa."
+      - "Herramientas: Engram y Codebase-Memory-MCP."
       - tipo: "ejemplo"
-        texto: "engram tui permite visualizar en consola las decisiones guardadas y recuperadas."
+        texto: "¿Te ha pasado que la IA toma una decisión y, 10 mensajes después, ya no la recuerda?"
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "El problema: la IA sufre de amnesia"
     contenido:
       - tipo: "problema"
-        texto: "Instalar localmente el binario en Go de Engram y configurar su servidor MCP."
-      - "Lanzar engram serve en puerto local."
-      - "Ejecutar engram tui para visualizar cómo el agente guarda y recupera decisiones."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿De qué manera Codebase-Memory-MCP reduce el consumo de tokens hasta 120 veces?"
-      - tipo: "problema"
-        texto: "¿Cuáles son las implicaciones de compartir memoria cognitiva agnóstica entre ingenieros?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "⏳ La memoria persistente evita el olvido en sesiones largas."
-      - "🗄️ Engram ofrece persistencia local agnóstica con SQLite + FTS5."
-      - "🕸️ Codebase-Memory-MCP indexa el código en grafos eficientes."
+        texto: "¿Por qué la IA olvida lo que decidimos hace un rato?"
+      - "La IA tiene una memoria limitada llamada ventana de contexto."
+      - "Cuando la conversación se alarga, lo viejo se compacta o se pierde."
+      - tipo: "ejemplo"
+        texto: "Decides usar PostgreSQL a las 10:00. A las 11:00 la IA sugiere MySQL. ¡Olvidó!"
       - tipo: "nota"
-        texto: "La memoria es la base de la colaboración agéntica sostenible."
+        texto: "Esto genera frustración, retrabajo y decisiones contradictorias."
+
+  - titulo: "Los costos del olvido"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué consecuencias tiene esta amnesia?"
+      - "Latencia: la IA tiene que releer todo el historial cada vez."
+      - "Costo: cada token de más se cobra."
+      - "Inconsistencia: decisiones que se contradicen entre sí."
+      - tipo: "tabla"
+        encabezados: ["Problema", "Impacto"]
+        filas:
+          - ["Olvido de decisiones", "Trabajo redundante"]
+          - ["Contexto enorme", "Mayor costo y lentitud"]
+          - ["Compactación agresiva", "Pérdida de detalles críticos"]
+      - tipo: "nota"
+        texto: "Sin memoria persistente, los proyectos con IA se vuelven caóticos."
+
+  - titulo: "La solución: memoria persistente externa"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hacemos que la IA recuerde cosas importantes para siempre?"
+      - "En vez de depender de la ventana de contexto, guardamos las decisiones en una base."
+      - "Como tu cuaderno de notas: la IA lo consulta cuando lo necesita."
+      - tipo: "formula"
+        texto: "Decisión importante → Guardar en memoria → Consultar cuando haga falta"
+      - tipo: "nota"
+        texto: "Así la IA no depende de recordar el chat: la memoria es externa y duradera."
+
+  - titulo: "Engram: la memoria local para agentes"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo implementamos esa memoria en la práctica?"
+      - "Engram es un programa (binario en Go) que almacena decisiones y correcciones."
+      - "Funciona con cualquier agente: es agnóstico."
+      - "Usa SQLite, una base de datos local muy ligera, con búsqueda full-text (FTS5)."
+      - tipo: "nota"
+        texto: "Es como un diario inteligente: la IA guarda lo importante y lo busca cuando lo necesita."
+
+  - titulo: "¿Cómo funciona Engram? (paso a paso)"
+    contenido:
+      - "Paso 1: El agente toma una decisión importante."
+      - "Paso 2: Engram la guarda en su base SQLite."
+      - "Paso 3: Más tarde, cuando el agente necesita ese conocimiento, consulta a Engram."
+      - "Paso 4: Engram devuelve las decisiones relevantes en milisegundos."
+      - tipo: "nota"
+        texto: "Todo local, sin internet, sin nube. Tu conocimiento se queda en tu máquina."
+
+  - titulo: "Codebase-Memory-MCP: el mapa de tu código"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Y cómo recuerda la IA la estructura de un código enorme?"
+      - "Codebase-Memory-MCP analiza el código y construye un grafo de conocimiento."
+      - "Guarda las firmas de funciones, clases y dependencias."
+      - tipo: "ejemplo"
+        texto: "La IA puede preguntar '¿quién llama a la función login()?' y obtener la respuesta al instante."
+      - tipo: "nota"
+        texto: "Es como tener un mapa completo del código, siempre actualizado."
+
+  - titulo: "El ahorro dramático: 120x menos tokens"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cuánto se ahorra con memoria estructural vs explorar a mano?"
+      - "Sin memoria: la IA abre archivos uno por uno (grepping secuencial)."
+      - "Con memoria: la IA consulta el grafo directamente."
+      - tipo: "tabla"
+        encabezados: ["Método", "Tokens consumidos (relativo)"]
+        filas:
+          - ["Grepping secuencial (a mano)", "120x (¡muchísimo!)"]
+          - ["Codebase-Memory-MCP (grafo)", "1x (mínimo)"]
+      - tipo: "nota"
+        texto: "Indexar el código reduce el costo hasta 120 veces. No es un detalle: es enorme."
+
+  - titulo: "Grepping vs indexación: una analogía"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Grepping es como buscar una palabra en un libro leyéndolo página por página."
+      - tipo: "ejemplo"
+        texto: "Indexar es como usar el índice al final del libro: vas directo a la página correcta."
+      - tipo: "nota"
+        texto: "La indexación cuesta trabajo al inicio, pero ahorra muchísimo después."
+
+  - titulo: "Integración local: Glia y Engram TUI"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo reviso y depuro lo que la IA está recordando?"
+      - "Glia y la interfaz TUI (terminal) de Engram te permiten ver la memoria."
+      - "Puedes auditar, corregir y compartir el historial cognitivo."
+      - tipo: "ejemplo"
+        texto: "Con 'engram tui' ves en consola todas las decisiones guardadas y recuperadas."
+      - tipo: "nota"
+        texto: "La memoria no es una caja negra: tú tienes control total sobre ella."
+
+  - titulo: "Compartir memoria entre ingenieros"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si un colega se une al proyecto?"
+      - "Con Engram, los patrones de diseño exitosos se pueden compartir."
+      - "La memoria agnóstica es un activo del equipo, no de una sola persona."
+      - tipo: "nota"
+        texto: "Imagina: cada lección aprendida queda registrada para todo el equipo."
+
+  - titulo: "Laboratorio: Instalando Engram en local"
+    contenido:
+      - tipo: "problema"
+        texto: "Instalaremos el binario en Go de Engram en tu máquina."
+      - "Configuraremos su servidor MCP en Claude Code o Cursor."
+      - "Lanzaremos 'engram serve' en un puerto local."
+      - "Ejecutaremos 'engram tui' para ver cómo la IA guarda y recupera decisiones."
+      - tipo: "nota"
+        texto: "Verás con tus propios ojos cómo la IA recuerda decisiones del pasado."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo reduce Codebase-Memory-MCP el consumo de tokens en 120x?"
+      - tipo: "problema"
+        texto: "¿Qué ventajas trae compartir memoria cognitiva entre ingenieros?"
+      - tipo: "nota"
+        texto: "Piensa en una decisión de diseño que te gustaría que la IA recordara siempre."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🧠 La IA sufre de amnesia por la limitación de su ventana de contexto."
+      - "🗄️ Engram ofrece memoria local agnóstica con SQLite + FTS5."
+      - "🕸️ Codebase-Memory-MCP indexa el código en un grafo eficiente."
+      - "💸 Indexar reduce el consumo de tokens hasta 120 veces."
+      - tipo: "nota"
+        texto: "La memoria persistente es la base de la colaboración IA sostenida. 🎉"

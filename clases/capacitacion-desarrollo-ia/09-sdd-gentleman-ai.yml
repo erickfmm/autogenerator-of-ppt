@@ -1,79 +1,147 @@
 tema: "Metodología Spec-Driven Development (SDD) Avanzado con la Suite de Gentleman-AI"
-subtitulo: "Erradicando el caos del código generado aleatoriamente 🎯"
+subtitulo: "Cómo evitar que la IA transforme tu código en un caos 🎯"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "SDD introduce procesos rigurosos guiados por especificaciones previas."
-      - "El caos del desarrollo desordenado con agentes"
-      - "Conceptos fundamentales de SDD"
-      - "El ecosistema Gentleman Dev y las fases SDD"
+        texto: "Hoy veremos cómo usar IA de forma disciplinada para que no destruya tu proyecto."
+      - "Por qué el desarrollo con IA puede volverse caótico."
+      - "Qué es SDD (Spec-Driven Development) y cómo lo soluciona."
+      - "La suite de herramientas Gentleman-AI."
+      - tipo: "ejemplo"
+        texto: "Imagina que le pides a la IA 'mejora este código' y termina rompiendo todo el proyecto."
 
-  - titulo: "El Caos del Desarrollo Desordenado con Agentes"
+  - titulo: "El problema: la IA sin control hace desastres"
     contenido:
-      - "Degeneración lógica y arquitectónica de repositorios."
-      - "Agentes que omiten planificación e inician refactorizaciones masivas sin control."
       - tipo: "problema"
-        texto: "¿Qué sucede cuando un agente refactoriza sin especificación previa?"
+        texto: "¿Qué pasa si dejas a un agente trabajar sin reglas?"
+      - "Empieza a 'mejorar' cosas que no pediste."
+      - "Mezcla conceptos que no iban juntos."
+      - "Refactoriza a lo loco y rompe dependencias."
+      - tipo: "ejemplo"
+        texto: "Pides arreglar un botón y acaba reescribiendo todo el sistema de autenticación."
       - tipo: "nota"
-        texto: "El resultado: código incoherente, acoplamiento y deuda técnica acelerada."
+        texto: "Sin disciplina, la IA genera caos arquitectónico. Hay que ponerle límites."
 
-  - titulo: "Conceptos Fundamentales del SDD"
+  - titulo: "¿Qué es Spec-Driven Development (SDD)?"
     contenido:
-      - "Ciclo virtuoso: definición de no-goals y requisitos funcionales antes de generar código."
-      - "Aseguramiento de consistencia mediante validaciones rigurosas."
+      - tipo: "problema"
+        texto: "¿Cómo ponemos límites a la IA sin volvernos locos?"
+      - "SDD propone: PRIMERO escribe la especificación, DESPUÉS genera el código."
+      - "La especificación es como un contrato: dice qué se debe hacer y qué NO."
       - tipo: "formula"
-        texto: "Especificación → Validación → Generación → Verificación"
+        texto: "Especificación clara → Validación → Generación de código → Verificación"
       - tipo: "nota"
-        texto: "Una especificación Markdown validada supera a la depuración interactiva de código."
+        texto: "Es como construir una casa: primero los planos, luego los ladrillos."
 
-  - titulo: "El Ecosistema de Gentleman Dev"
+  - titulo: "El ciclo virtuoso de SDD (paso a paso)"
+    contenido:
+      - "Paso 1: Defines QUÉ quieres lograr (objetivo)."
+      - "Paso 2: Defines qué NO quieres (no-goals)."
+      - "Paso 3: Escribes los requisitos funcionales detallados."
+      - "Paso 4: La IA genera la especificación en Markdown."
+      - "Paso 5: Se valida que la especificación sea correcta."
+      - "Paso 6: Recién ahora la IA genera el código."
+      - "Paso 7: Se verifica que el código cumpla la especificación."
+      - tipo: "nota"
+        texto: "Nunca se genera código sin antes tener una especificación validada."
+
+  - titulo: "¿Por qué funciona tan bien?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué es mejor validar Markdown que depurar código?"
+      - "Una especificación en Markdown es más fácil de leer y corregir."
+      - "Los errores se detectan antes de escribir una sola línea de código."
+      - tipo: "ejemplo"
+        texto: "Es más fácil corregir 'olvidé decir que debe validar email' que depurar 500 líneas."
+      - tipo: "nota"
+        texto: "Corregir un plano cuesta minutos. Corregir un edificio construido cuesta millones."
+
+  - titulo: "La suite Gentleman-AI"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Componente", "Función"]
+        encabezados: ["Herramienta", "Para qué sirve"]
         filas:
-          - ["Gentle-AI", "Harness principal de agentes"]
-          - ["gentle-pi", "Harness de ejecución made-to-measure"]
-          - ["Engram", "Sistema de memoria integrada"]
+          - ["Gentle-AI", "El cerebro orquestador de los agentes"]
+          - ["gentle-pi", "El motor de ejecución hecho a medida"]
+          - ["Engram", "La memoria persistente del agente"]
       - tipo: "nota"
-        texto: "Las heurísticas de delegación obligatoria protegen contra mezclas accidentales de código."
+        texto: "Las tres herramientas trabajan juntas para implementar SDD de forma práctica."
 
-  - titulo: "Operación de las Fases SDD"
+  - titulo: "Las fases de SDD con comandos"
     contenido:
-      - "Comandos nativos de la metodología."
+      - "SDD tiene comandos para cada fase del ciclo."
       - tipo: "formula"
         texto: "/sdd-init → sdd-explore → sdd-propose → sdd-spec → sdd-design → sdd-tasks → sdd-apply → sdd-verify → sdd-archive"
+      - "Cada comando produce un artefacto verificable."
       - tipo: "nota"
-        texto: "Cada fase produce artefactos verificables antes de avanzar."
+        texto: "No se puede saltar fases. Cada una es la puerta de la siguiente."
 
-  - titulo: "Flujo de una Fase SDD"
+  - titulo: "Qué hace cada fase (explicado fácil)"
     contenido:
-      - "sdd-init: inicializa la estructura del repositorio SDD."
-      - "sdd-spec: la IA genera la especificación detallada."
-      - "sdd-apply: aplica el cambio tras validar aserciones."
-      - "sdd-verify: verifica el comportamiento frente a la especificación."
+      - "/sdd-init: prepara el proyecto con la estructura SDD."
+      - "sdd-explore: explora el código existente para entender el contexto."
+      - "sdd-propose: propone qué cambio se va a hacer."
+      - "sdd-spec: genera la especificación detallada del cambio."
+      - "sdd-design: diseña la solución técnica."
+      - "sdd-tasks: divide el trabajo en tareas concretas."
+      - "sdd-apply: aplica los cambios al código."
+      - "sdd-verify: verifica que todo funciona según el spec."
+      - "sdd-archive: archiva el cambio completado."
+      - tipo: "nota"
+        texto: "Es un flujo: no se puede codificar sin pasar antes por spec y design."
+
+  - titulo: "Las heurísticas de delegación obligatoria"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo evita Gentle-AI que el agente mezcle cosas?"
+      - "Tiene reglas (heurísticas) que FUERZAN al agente a delegar correctamente."
+      - "El agente no puede, por ejemplo, tocar la base de datos si la tarea es de UI."
       - tipo: "ejemplo"
-        texto: "La IA genera el spec de un microservicio y valida aserciones antes de escribir lógica."
-
-  - titulo: "Laboratorio Práctico"
-    contenido:
-      - tipo: "problema"
-        texto: "Inicializar el flujo SDD en un repositorio Node.js o Python con /sdd-init."
-      - "Analizar la estructura resultante (openspec/config.yaml, .atl/skill-registry.md)."
-      - "Ejecutar un ciclo simulado: la IA genera el spec y valida aserciones antes del código."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Por qué validar una especificación Markdown es más efectivo que depurar código interactivo?"
-      - tipo: "problema"
-        texto: "¿De qué manera las heurísticas de delegación obligatoria de Gentle-AI protegen el repositorio?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🌪️ Sin especificación, los agentes generan caos arquitectónico."
-      - "📐 SDD impone un ciclo virtuoso: spec → validar → generar → verificar."
-      - "🧰 Gentle-AI, gentle-pi y Engram componen la suite."
+        texto: "Si pides un cambio en el login, el agente no puede meterse en el módulo de reportes."
       - tipo: "nota"
-        texto: "SDD convierte la IA en un colaborador disciplinado y predecible."
+        texto: "Estas reglas protegen los repositorios de mezclas accidentales de código."
+
+  - titulo: "Ejemplo práctico: creando un microservicio con SDD"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "1. Ejecutas /sdd-init en tu proyecto Node.js o Python."
+      - tipo: "ejemplo"
+        texto: "2. Le pides: 'crear microservicio de notificaciones por email'."
+      - tipo: "ejemplo"
+        texto: "3. La IA genera primero el spec: qué hace, qué no hace, requisitos."
+      - tipo: "ejemplo"
+        texto: "4. Tú revisas y validas el spec."
+      - tipo: "ejemplo"
+        texto: "5. Recién entonces, la IA escribe el código, validando cada aserción."
+      - tipo: "nota"
+        texto: "El resultado: código limpio, predecible y alineado a lo que querías."
+
+  - titulo: "Laboratorio: Inicializando SDD en un proyecto"
+    contenido:
+      - tipo: "problema"
+        texto: "Vamos a inicializar SDD en un repositorio local."
+      - "Ejecutaremos /sdd-init y veremos la estructura creada."
+      - "Analizaremos archivos como openspec/config.yaml y .atl/skill-registry.md."
+      - "Haremos un ciclo simulado: spec → validación → código."
+      - tipo: "nota"
+        texto: "Verás cómo SDD impone orden sin quitarte productividad."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué validar una especificación Markdown es mejor que depurar código?"
+      - tipo: "problema"
+        texto: "¿Cómo protegen las heurísticas de Gentle-AI contra errores de mezcla?"
+      - tipo: "nota"
+        texto: "Piensa en un proyecto tuyo donde SDD habría evitado un desastre."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🌪️ La IA sin reglas genera caos arquitectónico."
+      - "📐 SDD pone la especificación ANTES que el código."
+      - "🧰 Gentle-AI, gentle-pi y Engram implementan SDD en la práctica."
+      - "🛡️ Las heurísticas de delegación evitan mezclas peligrosas."
+      - tipo: "nota"
+        texto: "SDD convierte a la IA en un colaborador disciplinado y confiable. 🎉"

@@ -1,75 +1,154 @@
 tema: "Grandes Modelos de Lenguaje (LLMs) y Procesamiento del Lenguaje Natural Moderno"
-subtitulo: "Del texto plano a vectores semánticos 🔤"
+subtitulo: "Cómo las computadoras aprendieron a entender nuestras palabras 🔤"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
-      - "Mecanismos algorítmicos que estructuran el lenguaje natural."
-      - "Tokenización y vectorización semántica."
-      - "Modelos autoregresivos y causales."
       - tipo: "nota"
-        texto: "Comprender cómo un LLM convierte texto en matemáticas procesables."
-
-  - titulo: "El Flujo de Procesamiento del Lenguaje"
-    contenido:
-      - tipo: "formula"
-        texto: "Texto Plano → Tokenizador → Tokens → Embeddings → Vector N-Dimensional"
+        texto: "Vamos a entender, con ejemplos sencillos, cómo una máquina lee el lenguaje humano."
+      - "Cómo las computadoras convierten palabras en números."
+      - "Qué son los tokens y por qué importan."
+      - "Qué hace un modelo autoregresivo (como ChatGPT)."
       - tipo: "ejemplo"
-        texto: "\"Desarrollo agéntico\" → [0.12, -0.45, ..., 0.89] en un espacio semántico."
+        texto: "¿Alguna vez te preguntaste cómo ChatGPT sabe qué palabra sigue después de 'buenos'?"
 
-  - titulo: "El Desafío Algorítmico de la Tokenización"
+  - titulo: "El gran reto: las máquinas solo entienden números"
     contenido:
-      - "La segmentación por espacios simples es insuficiente."
-      - "Los tokenizadores modernos usan expresiones regulares y diccionarios entrenados."
-      - "Resuelven caracteres especiales, signos de puntuación y morfemas complejos."
+      - tipo: "problema"
+        texto: "Si una computadora solo entiende ceros y unos, ¿cómo lee una palabra?"
+      - "Nosotros vemos letras y sentimos significados."
+      - "Pero la máquina necesita convertir cada palabra en una lista de números."
+      - "El reto es que la conversión conserve el significado."
       - tipo: "nota"
-        texto: "El mismo texto produce distinto número de tokens según el tokenizador (LLaMA vs GPT-4)."
+        texto: "Toda la magia del procesamiento del lenguaje empieza aquí: convertir letras en números."
 
-  - titulo: "Stemming vs Lemmatization"
+  - titulo: "Paso 1: La Tokenización (cortar el texto en piezas)"
     contenido:
+      - "El primer paso es cortar el texto en pequeñas piezas llamadas tokens."
+      - tipo: "formula"
+        texto: "Texto completo → cortar → Tokens (piezas)"
+      - tipo: "ejemplo"
+        texto: "'Desarrollo agéntico' se puede cortar en ['Desarrollo', 'agén', 'tico']."
+      - tipo: "ejemplo"
+        texto: "No siempre cada token es una palabra completa: a veces son fragmentos."
+      - tipo: "nota"
+        texto: "El mismo texto puede cortarse distinto según el modelo (GPT-4, LLaMA, etc.)."
+
+  - titulo: "¿Por qué no cortar simplemente por espacios?"
+    contenido:
+      - tipo: "problema"
+        texto: "Si cortáramos por espacios, '¡Hola!' y 'Hola' serían tokens distintos."
+      - "Los signos de puntuación y los acentos crearían palabras repetidas."
+      - "En otros idiomas, las palabras se unen de formas raras."
+      - "Por eso los tokenizadores modernos usan diccionarios y expresiones regulares."
+      - tipo: "nota"
+        texto: "Un buen tokenizador agrupa lo parecido y separa lo distinto."
+
+  - titulo: "Stemming vs Lemmatization (dos formas de reducir palabras)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿'corriendo', 'corre' y 'corrió' son la misma idea?"
+      - "Stemming: corta la palabra por lo sano, de forma bruta."
+      - "Lemmatization: usa inteligencia para encontrar la forma correcta (el lema)."
       - tipo: "tabla"
-        encabezados: ["Técnica", "Enfoque", "Precisión"]
+        encabezados: ["Palabra original", "Stemming (bruto)", "Lemmatization (inteligente)"]
         filas:
-          - ["Stemming", "Reducción heurística a la raíz", "Baja"]
-          - ["Lemmatization", "Transformación morfológica basada en IA", "Alta"]
-      - tipo: "ejemplo"
-        texto: "Stemming: 'corriendo' → 'corr' | Lemmatization: 'corriendo' → 'correr'"
-
-  - titulo: "Embeddings Vectoriales"
-    contenido:
-      - "Las palabras se proyectan en vectores semánticos continuos obtenidos durante el entrenamiento."
-      - tipo: "formula"
-        texto: "Distancia de Coseno = (A·B) / (‖A‖·‖B‖)"
-      - tipo: "ejemplo"
-        texto: "Aritmética vectorial: rey − hombre + mujer ≈ reina"
-
-  - titulo: "Modelos Autoregresivos y Causales"
-    contenido:
-      - "Modelos generativos decodificadores que predicen secuencialmente el siguiente token."
-      - "Dependen exclusivamente de la ventana de contexto izquierda."
-      - tipo: "formula"
-        texto: "P(yₜ | y₁, y₂, ..., yₜ₋₁)"
+          - ["corriendo", "corr", "correr"]
+          - ["mejores", "mej", "bueno"]
+          - ["estábamos", "estáb", "estar"]
       - tipo: "nota"
-        texto: "La naturaleza secuencial y causal tiene implicaciones directas en la latencia."
+        texto: "Lemmatization entiende el idioma; Stemming solo recorta."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Paso 2: Embeddings (convertir tokens en vectores)"
     contenido:
-      - tipo: "problema"
-        texto: "Analizar la fragmentación de código TypeScript o Go por diferentes tokenizadores."
-      - "Convertir términos del dominio de TI a embeddings con un modelo local."
-      - "Calcular distancia de coseno para identificar términos de infraestructura similares."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Por qué la tokenización de código fuente consume más ventana de contexto que el lenguaje natural estructurado?"
-      - tipo: "problema"
-        texto: "¿Cuáles son las implicaciones operativas en la latencia debido a la naturaleza autoregresiva?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🔤 La tokenización transforma texto en unidades matemáticas procesables."
-      - "🧭 Los embeddings proyectan palabras en espacios semánticos continuos."
-      - "➡️ Los modelos autoregresivos predicen el siguiente token secuencialmente."
+      - "Una vez cortado el texto, cada token se convierte en una lista larga de números."
+      - "Esa lista de números se llama vector o embedding."
+      - tipo: "formula"
+        texto: "Token → [0.12, -0.45, 0.89, ..., 0.03] (vector de cientos de números)"
+      - tipo: "ejemplo"
+        texto: "Imagina que cada palabra tiene unas 'coordenadas' en un mapa de significado."
       - tipo: "nota"
-        texto: "Estos mecanismos son la base sobre la que operan los Transformers."
+        texto: "Lo mágico: palabras con significado parecido terminan cerca en ese mapa."
+
+  - titulo: "El Mapa del Significado"
+    contenido:
+      - "Los embeddings colocan cada palabra en un espacio de cientos de dimensiones."
+      - tipo: "ejemplo"
+        texto: "En ese mapa invisible, 'perro' está más cerca de 'gato' que de 'automóvil'."
+      - "Y lo más sorprendente: ¡se pueden hacer cuentas con palabras!"
+      - tipo: "formula"
+        texto: "rey − hombre + mujer ≈ reina"
+      - tipo: "nota"
+        texto: "Restar 'hombre' y sumar 'mujer' transforma rey en reina. La IA encuentra patrones."
+
+  - titulo: "Distancia de Coseno: ¿qué tan parecidas son dos palabras?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo sabemos si dos vectores significan cosas parecidas?"
+      - "Usamos una medida llamada distancia de coseno."
+      - "Compara la dirección de dos vectores."
+      - tipo: "formula"
+        texto: "Similitud = (A·B) / (‖A‖ · ‖B‖)"
+      - tipo: "ejemplo"
+        texto: "Si 'servidor' y 'hosting' tienen alta similitud, es porque significan cosas parecidas."
+      - tipo: "nota"
+        texto: "Esta idea es la base de los buscadores semánticos modernos."
+
+  - titulo: "Paso 3: Modelos Autoregresivos (predecir la siguiente palabra)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo hace ChatGPT para escribir un texto coherente?"
+      - "El secreto: predice una palabra a la vez, mirando lo que ya se escribió."
+      - "Como cuando tú completas la frase: 'El cielo es... azul'."
+      - tipo: "formula"
+        texto: "P(siguiente | palabras anteriores)"
+      - tipo: "nota"
+        texto: "Es causal: solo mira hacia atrás, nunca hacia adelante. Por eso es secuencial."
+
+  - titulo: "El precio de la secuencialidad: la latencia"
+    contenido:
+      - "Como predice una palabra a la vez, no puede paralelizar todo el trabajo."
+      - "Por eso, al generar textos largos, tarda un poquito más."
+      - tipo: "ejemplo"
+        texto: "Es como dictar: no puedes decir todas las palabras al mismo tiempo, una sigue a la otra."
+      - tipo: "nota"
+        texto: "Esta naturaleza causal implica que generar 1000 palabras toma su tiempo."
+
+  - titulo: "El código fuente consume más tokens que el texto normal"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué el código gasta más ventana de contexto que el español?"
+      - "El código tiene símbolos raros: { } ( ) ; = ->"
+      - "Cada símbolo puede convertirse en un token separado."
+      - tipo: "ejemplo"
+        texto: "Una línea simple como `const x = () => {}` puede ser 8 tokens o más."
+      - tipo: "nota"
+        texto: "Por esto, al meter código en un LLM hay que cuidar la ventana de contexto."
+
+  - titulo: "Laboratorio: Jugando con tokens y embeddings"
+    contenido:
+      - tipo: "problema"
+        texto: "Vamos a usar un visualizador de tokenización online."
+      - "Pondremos código TypeScript o Go y veremos cómo se corta en tokens."
+      - "Luego convertiremos términos de TI en embeddings con un modelo local."
+      - "Calcularemos distancia de coseno para ver qué términos se parecen más."
+      - tipo: "nota"
+        texto: "Verás con tus propios ojos cómo la máquina 'entiende' el significado."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué el código consume más tokens que un texto normal?"
+      - tipo: "problema"
+        texto: "¿Qué impacto tiene la naturaleza secuencial de los modelos en la latencia?"
+      - tipo: "nota"
+        texto: "Piensa en una analogía cotidiana que explique la predicción palabra a palabra."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "✂️ La tokenización corta el texto en piezas manejables."
+      - "🧭 Los embeddings convierten palabras en vectores con significado."
+      - "📏 La distancia de coseno mide la similitud semántica."
+      - "➡️ Los modelos autoregresivos predicen la siguiente palabra, una a una."
+      - tipo: "nota"
+        texto: "¡Ya entiendes cómo las máquinas leen nuestro lenguaje! 🎉"

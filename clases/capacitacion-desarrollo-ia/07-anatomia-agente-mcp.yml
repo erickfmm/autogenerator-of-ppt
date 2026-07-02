@@ -1,79 +1,143 @@
 tema: "Anatomía de un Agente Inteligente y el Protocolo Model Context Protocol (MCP)"
-subtitulo: "Cómo los agentes interactúan con el entorno de ejecución 🛠️"
+subtitulo: "Cómo los agentes de IA interactúan con tu computadora de forma segura 🛠️"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "Un agente integra LLM, herramientas, habilidades y memoria persistente."
-      - "Arquitectura interna de un agente moderno"
-      - "El protocolo MCP de Anthropic"
-      - "Dinámica de subagentes y modificaciones seguras"
-
-  - titulo: "Arquitectura de un Agente de IA Moderno"
-    contenido:
-      - "Orquestador lógico (LLM) que toma decisiones."
-      - "Herramientas (Tools) ejecutables en el entorno."
-      - "Habilidades empaquetadas (Skills) reutilizables."
-      - "Sistemas de memoria persistente."
-      - tipo: "formula"
-        texto: "Agente = LLM + Tools + Skills + Memoria"
-
-  - titulo: "El Protocolo Model Context Protocol (MCP)"
-    contenido:
-      - "Estándar impulsado por Anthropic."
-      - "Habilita acceso seguro y estandarizado a herramientas y datos locales."
-      - "Comunicación mediante sockets stdio o HTTP."
-      - tipo: "nota"
-        texto: "MCP resuelve el problema de seguridad frente a la ejecución libre con exec clásico."
-
-  - titulo: "Orquestación Multitarea y Subagentes"
-    contenido:
-      - "Patrón de división: un agente padre delega a subagentes especializados."
-      - "Subagentes de contexto delgado enfocados en tareas concretas."
+        texto: "Hoy entenderemos qué hay dentro de un agente de IA y cómo se conecta con tu sistema."
+      - "Las 4 partes que componen un agente."
+      - "Qué es MCP y por qué cambia todo."
+      - "Cómo los agentes se dividen el trabajo (subagentes)."
       - tipo: "ejemplo"
-        texto: "Un agente padre delega investigación e implementación a subagentes separados."
-      - tipo: "nota"
-        texto: "Reduce el costo computacional de la ventana de contexto del agente principal."
+        texto: "Imagina que la IA no solo responde, sino que puede leer archivos y ejecutar comandos."
 
-  - titulo: "Modificaciones Seguras del Sistema"
+  - titulo: "¿Qué es un agente de IA? (no es solo un chatbot)"
     contenido:
-      - "Los agentes aplican parches lógicos de diferencias (archivos diff)."
-      - "Interactúan con Git sin sobreescribir directorios completos de forma ciega."
-      - tipo: "formula"
-        texto: "Cambio = diff(patch) → revisión → aplicación controlada"
+      - tipo: "problema"
+        texto: "¿Qué diferencia hay entre ChatGPT y un 'agente'?"
+      - "Un chatbot solo responde texto. No puede hacer nada más."
+      - "Un agente puede ACTUAR: leer archivos, ejecutar código, buscar información."
+      - tipo: "ejemplo"
+        texto: "Un agente puede leer tus logs, encontrar el error y crear un ticket automáticamente."
       - tipo: "nota"
-        texto: "El formato diff permite auditoría y reversión segura."
+        texto: "La clave del agente es que PUEDE HACER cosas, no solo decirlas."
 
-  - titulo: "MCP vs. Ejecución Libre"
+  - titulo: "Las 4 partes de un agente"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Aspecto", "exec clásico", "MCP"]
+        encabezados: ["Parte", "Qué hace", "Analogía"]
         filas:
-          - ["Seguridad", "Baja", "Alta (estandarizada)"]
-          - ["Gobierno TI", "Difícil", "Centralizado"]
-          - ["Auditoría", "Limitada", "Trazable"]
+          - ["Cerebro (LLM)", "Piensa y decide", "Tu mente"]
+          - ["Herramientas", "Ejecutan acciones", "Tus manos"]
+          - ["Habilidades", "Saberes empaquetados", "Tu experiencia"]
+          - ["Memoria", "Recuerda decisiones", "Tu cuaderno"]
+      - tipo: "formula"
+        texto: "Agente = LLM + Herramientas + Habilidades + Memoria"
       - tipo: "nota"
-        texto: "MCP ofrece un contrato tipado entre el modelo y el entorno."
+        texto: "Sin herramientas, el agente solo puede hablar. Con herramientas, puede actuar."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "El problema: ¿cómo conectamos al agente con la computadora?"
     contenido:
       - tipo: "problema"
-        texto: "Levantar localmente un servidor MCP de demostración."
-      - "Exponer utilidades de terminal al cliente de IA local."
-      - "Verificar por logs cómo el modelo selecciona autónomamente la herramienta adecuada y recibe JSON."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿De qué manera MCP resuelve los desafíos de seguridad y gobierno de TI frente a exec clásico?"
-      - tipo: "problema"
-        texto: "¿Qué impacto tiene el diseño con subagentes en la reducción del costo de contexto?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🧩 Un agente integra LLM, tools, skills y memoria."
-      - "🔌 MCP estandariza el acceso seguro al entorno."
-      - "👥 Los subagentes reducen el costo de contexto."
+        texto: "Si el agente puede ejecutar comandos, ¿no es peligroso?"
+      - "Antes, cada herramienta conectaba a su manera: caos e inseguridad."
+      - "Darle acceso libre a la consola es como darle las llaves de la casa a un extraño."
+      - tipo: "ejemplo"
+        texto: "Un agente podría, por error, ejecutar 'rm -rf' y borrar todo."
       - tipo: "nota"
-        texto: "La seguridad y la trazabilidad son first-class citizens en MCP."
+        texto: "Hacía falta un estándar: una forma segura y controlada de conectar herramientas."
+
+  - titulo: "MCP: el enchufe universal para la IA"
+    contenido:
+      - "MCP (Model Context Protocol) es un estándar creado por Anthropic."
+      - "Define CÓMO el agente se comunica con herramientas y datos, de forma segura."
+      - tipo: "ejemplo"
+        texto: "Es como el USB: antes cada dispositivo tenía su conector. Ahora todos usan el mismo."
+      - tipo: "nota"
+        texto: "MCP estandariza el acceso a archivos, bases de datos y APIs con un contrato tipado."
+
+  - titulo: "¿Cómo funciona MCP? (paso a paso)"
+    contenido:
+      - "Paso 1: Levantas un servidor MCP que expone tus herramientas."
+      - "Paso 2: El agente se conecta a ese servidor por stdio o HTTP."
+      - "Paso 3: El agente ve qué herramientas hay disponibles."
+      - "Paso 4: El agente decide cuál usar y la invoca."
+      - "Paso 5: El servidor ejecuta y devuelve el resultado en JSON."
+      - tipo: "nota"
+        texto: "Todo está tipado y documentado: el agente sabe exactamente qué hace cada herramienta."
+
+  - titulo: "MCP vs ejecución libre: seguridad comparada"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "exec libre", "MCP"]
+        filas:
+          - ["Seguridad", "Baja, sin control", "Alta, estandarizada"]
+          - ["Auditoría", "Difícil de rastrear", "Trazable por diseño"]
+          - ["Gobierno TI", "Caótico", "Centralizado"]
+          - ["Contrato", "No existe", "Tipado y versionado"]
+      - tipo: "nota"
+        texto: "MCP convierte el acceso al sistema en algo seguro, auditable y gobernabilizable."
+
+  - titulo: "Subagentes: dividir el trabajo para ser eficientes"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si una tarea es demasiado compleja para un solo agente?"
+      - "Un agente padre puede delegar partes del trabajo a subagentes."
+      - tipo: "ejemplo"
+        texto: "El agente padre coordina. Un subagente investiga. Otro implementa. Otro prueba."
+      - "Cada subagente tiene su propio contexto enfocado y delgado."
+      - tipo: "nota"
+        texto: "Esto reduce el costo: los subagentes usan poca memoria de contexto."
+
+  - titulo: "Modificaciones seguras: parches, no sobrescrituras"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo edita archivos un agente sin romper todo?"
+      - "Los agentes no sobrescriben archivos completos a lo ciego."
+      - "Aplican parches de diferencias (diff): solo cambian las líneas necesarias."
+      - tipo: "ejemplo"
+        texto: "Como cuando Git muestra solo las líneas cambiadas en verde y rojo."
+      - tipo: "nota"
+        texto: "Esto permite auditar, revisar y revertir cambios fácilmente."
+
+  - titulo: "Un día en la vida de un agente con MCP"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "1. Le pides: 'revisa los logs de producción'."
+      - tipo: "ejemplo"
+        texto: "2. El agente usa la herramienta MCP 'leer_archivo' para abrir los logs."
+      - tipo: "ejemplo"
+        texto: "3. Detecta un patrón de error recurrente."
+      - tipo: "ejemplo"
+        texto: "4. Usa la herramienta 'crear_ticket' para reportarlo."
+      - tipo: "nota"
+        texto: "Todo esto, de forma autónoma, segura y trazable."
+
+  - titulo: "Laboratorio: Levantando un servidor MCP"
+    contenido:
+      - tipo: "problema"
+        texto: "Vamos a levantar un servidor MCP de demostración en local."
+      - "Expondremos utilidades de terminal al cliente de IA."
+      - "Observaremos en los logs cómo el modelo selecciona la herramienta correcta."
+      - "Veremos la respuesta formateada en JSON."
+      - tipo: "nota"
+        texto: "Comprobarás que el agente elige solito la herramienta adecuada para cada tarea."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué MCP es más seguro que dejar al agente ejecutar comandos libremente?"
+      - tipo: "problema"
+        texto: "¿Qué ventajas tiene dividir una tarea entre varios subagentes?"
+      - tipo: "nota"
+        texto: "Piensa en qué herramientas de tu día a día podrían conectarse vía MCP."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🤖 Un agente = cerebro + herramientas + habilidades + memoria."
+      - "🔌 MCP es el estándar seguro para conectar agentes con tu sistema."
+      - "👥 Los subagentes dividen el trabajo y reducen costos."
+      - "🩹 Los agentes editan con parches (diff), no sobrescriben a lo ciego."
+      - tipo: "nota"
+        texto: "MCP convierte a los agentes en colaboradores seguros y confiables. 🎉"

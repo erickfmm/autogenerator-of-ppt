@@ -1,79 +1,153 @@
 tema: "Documentación Técnica de Alta Calidad y Bases de Conocimiento Corporativas"
-subtitulo: "Markdown como interfaz bidireccional humano-IA 📖"
+subtitulo: "La documentación: el puente entre humanos y agentes de IA 📖"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La documentación estructurada es un mapa contextual para los agentes de IA."
-      - "Documentación bidireccional humano-IA"
-      - "Niveles de especificación en SDD"
-      - "Bases de conocimiento: Obsidian, Notion y Tolaria"
-
-  - titulo: "Documentación Bidireccional Humano-IA"
-    contenido:
-      - "La documentación corporativa debe usar sintaxis Markdown con YAML frontmatter limpio."
-      - "Sirve como manual para el equipo y mapa contextual para los agentes."
-      - tipo: "formula"
-        texto: "Markdown + YAML frontmatter → legible por humanos y máquinas"
-      - tipo: "nota"
-        texto: "Los metadatos tipados guían a la IA sin forzar validaciones inflexibles."
-
-  - titulo: "Niveles de Especificación en SDD"
-    contenido:
-      - "Jerarquía documental desde objetivos macro del negocio."
-      - "Hasta especificaciones detalladas a nivel de funciones."
-      - tipo: "tabla"
-        encabezados: ["Nivel", "Alcance"]
-        filas:
-          - ["Macro", "Objetivos de negocio"]
-          - ["Medio", "Arquitectura y módulos"]
-          - ["Detalle", "Funciones y contratos"]
-
-  - titulo: "Bases de Conocimiento: Obsidian, Notion y Tolaria"
-    contenido:
-      - tipo: "tabla"
-        encabezados: ["Herramienta", "Enfoque", "Impacto en agentes"]
-        filas:
-          - ["Obsidian", "Local Markdown", "Alto (lectura directa)"]
-          - ["Notion", "Nube cerrada", "Bajo (API limitada)"]
-          - ["Tolaria", "Local-first + Git", "Óptimo (offline-first)"]
-      - tipo: "nota"
-        texto: "La estructura documental impacta directamente la agilidad de los agentes."
-
-  - titulo: "Tolaria: Arquitectura Documental Descentralizada"
-    contenido:
-      - "Primacía del sistema de archivos local e integración nativa con Git."
-      - "Diseño offline-first."
-      - "Uso de archivos AGENTS y relations.md para guiar el análisis contextual."
-      - tipo: "nota"
-        texto: "Tolaria ofrece ventajas de privacidad e independencia frente a la nube cerrada."
-
-  - titulo: "Lentes Conceptuales en Tolaria"
-    contenido:
-      - "Metadatos tipados actúan como 'lentes conceptuales' para la IA."
-      - "Guían el análisis sin restringir validaciones rígidas."
+        texto: "Hoy descubriremos por qué la documentación es clave para que la IA funcione bien."
+      - "Cómo escribir documentación que lean humanos y máquinas."
+      - "Los niveles de especificación en SDD."
+      - "Herramientas: Obsidian, Notion y Tolaria."
       - tipo: "ejemplo"
-        texto: "Una nota con lente 'arquitectura' prioriza dependencias e interfaces."
+        texto: "¿Sabías que una buena documentación hace que la IA responda mucho mejor?"
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "El problema: la documentación que nadie lee"
     contenido:
       - tipo: "problema"
-        texto: "Crear un repositorio documental en Tolaria u Obsidian con YAML frontmatter estructurado."
-      - "Ejecutar pruebas de lectura mediante agentes CLI autónomos."
-      - "Verificar cómo la IA sintetiza dependencias lógicas complejas declaradas."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Qué ventajas de privacidad ofrece Tolaria local-first y git-first frente a Notion corporativo?"
-      - tipo: "problema"
-        texto: "¿Cómo pueden los metadatos tipados guiar a la IA sin forzar validaciones inflexibles?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "📝 Markdown + YAML frontmatter es la interfaz humano-IA óptima."
-      - "🏗️ SDD estructura la documentación por niveles jerárquicos."
-      - "🗂️ Tolaria lidera en privacidad e integración con Git."
+        texto: "¿Por qué la documentación suele estar desactualizada o ser ignorada?"
+      - "Porque está pensada solo para humanos, y además los humanos somos vagos para escribirla."
+      - "Los documentos se dispersan entre Word, emails, wikis y PDFs."
       - tipo: "nota"
-        texto: "La documentación es infraestructura crítica para sistemas agénticos."
+        texto: "Si la documentación es caótica para humanos, imagina para una IA."
+
+  - titulo: "La solución: documentación bidireccional humano-IA"
+    contenido:
+      - "La documentación moderna debe servir para DOS lectores:"
+      - "1. Los humanos del equipo."
+      - "2. Los agentes de IA que la consultan."
+      - tipo: "formula"
+        texto: "Documento moderno = legible para humanos + navegable para IA"
+      - tipo: "nota"
+        texto: "Si la IA puede leer tu documentación, se vuelve un colaborador útil."
+
+  - titulo: "Markdown + YAML frontmatter: el lenguaje común"
+    contenido:
+      - "El formato ideal es Markdown (texto plano) con metadatos YAML al inicio."
+      - tipo: "ejemplo"
+        texto: "Un archivo .md con metadatos tipo 'autor', 'fecha', 'módulo' al principio."
+      - tipo: "formula"
+        texto: "YAML frontmatter (metadatos) + Markdown (contenido) = documento inteligente"
+      - tipo: "nota"
+        texto: "Markdown es universal, simple y la IA lo entiende perfectamente."
+
+  - titulo: "¿Qué es el YAML frontmatter?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo agrego metadatos a un documento Markdown?"
+      - "Con YAML frontmatter: un bloque al inicio del archivo entre tres guiones."
+      - tipo: "ejemplo"
+        texto: "---\nautor: Ana\nmodulo: billing\nfecha: 2024-01-15\n---\n# Mi documento..."
+      - tipo: "nota"
+        texto: "Esos metadatos permiten a la IA clasificar y encontrar documentos rápidamente."
+
+  - titulo: "Los niveles de especificación en SDD"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo se organiza la documentación en un proyecto con SDD?"
+      - "No todo tiene el mismo nivel de detalle."
+      - tipo: "tabla"
+        encabezados: ["Nivel", "Qué describe", "Para quién"]
+        filas:
+          - ["Macro", "Objetivos de negocio", "Stakeholders"]
+          - ["Medio", "Arquitectura y módulos", "Arquitectos"]
+          - ["Detalle", "Funciones y contratos", "Desarrolladores e IA"]
+      - tipo: "nota"
+        texto: "La IA necesita todos los niveles, pero especialmente el detalle."
+
+  - titulo: "Herramientas para gestionar conocimiento"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Herramienta", "Enfoque", "Ideal para IA"]
+        filas:
+          - ["Obsidian", "Archivos Markdown locales", "Alto: lee directo"]
+          - ["Notion", "Base en la nube cerrada", "Bajo: API limitada"]
+          - ["Tolaria", "Local-first + Git + IA", "Óptimo: diseñada para IA"]
+      - tipo: "nota"
+        texto: "La estructura de la herramienta impacta en cuánto ayuda a la IA."
+
+  - titulo: "Obsidian: el favorito de quienes aman Markdown"
+    contenido:
+      - "Obsidian es un editor de archivos Markdown locales."
+      - "Todo se guarda como .md en tu computadora: tú eres el dueño."
+      - tipo: "ejemplo"
+        texto: "Como un bloc de notas poderoso que conecta ideas entre sí."
+      - tipo: "nota"
+        texto: "La IA puede leer directamente tus archivos Markdown de Obsidian."
+
+  - titulo: "Notion: cómodo pero cerrado"
+    contenido:
+      - "Notion es muy popular y bonito, pero guarda todo en su nube."
+      - tipo: "problema"
+        texto: "¿Cuál es el problema con Notion para IA?"
+      - "Tus datos están encerrados en su base de datos, no en tus archivos."
+      - "Para que la IA los lea, hay que usar APIs limitadas de Notion."
+      - tipo: "nota"
+        texto: "Es cómodo para humanos, pero no es el mejor amigo de los agentes de IA."
+
+  - titulo: "Tolaria: documentación descentralizada local-first"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Existe una herramienta diseñada desde el inicio para trabajar con IA?"
+      - "Tolaria es local-first: tus archivos en tu máquina, con integración Git."
+      - "Usa archivos especiales como AGENTS.md y relations.md."
+      - "Estos archivos le dicen a la IA cómo está organizado el conocimiento."
+      - tipo: "nota"
+        texto: "Tolaria ofrece privacidad (no mandas datos a la nube) e independencia."
+
+  - titulo: "Los archivos mágicos: AGENTS.md y relations.md"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "AGENTS.md: describe qué agentes hay y qué hacen."
+      - tipo: "ejemplo"
+        texto: "relations.md: describe cómo se relacionan los documentos entre sí."
+      - "Estos archivos guían a la IA para que entienda el contexto automáticamente."
+      - tipo: "nota"
+        texto: "Es como dejarle un mapa a la IA: sabe dónde está cada cosa y por qué."
+
+  - titulo: "Las 'lentes conceptuales' en Tolaria"
+    contenido:
+      - "Los metadatos pueden actuar como 'lentes' que enfocan a la IA."
+      - tipo: "ejemplo"
+        texto: "Una nota con lente 'arquitectura' hace que la IA priorice dependencias e interfaces."
+      - "No fuerzan validaciones rígidas: solo guían el análisis."
+      - tipo: "nota"
+        texto: "Es sutil: la lente orienta sin amarrar. Flexible pero útil."
+
+  - titulo: "Laboratorio: Creando una base documental"
+    contenido:
+      - tipo: "problema"
+        texto: "Crearemos un repositorio documental en Tolaria u Obsidian."
+      - "Configuraremos notas con YAML frontmatter estructurado."
+      - "Usaremos agentes CLI para leer la documentación."
+      - "Verificaremos cómo la IA sintetiza dependencias lógicas complejas."
+      - tipo: "nota"
+        texto: "Te sorprenderá ver cuánto entiende la IA con una documentación bien hecha."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué ventajas de privacidad ofrece Tolaria local-first frente a Notion?"
+      - tipo: "problema"
+        texto: "¿Cómo usar metadatos para guiar a la IA sin volverse rígido?"
+      - tipo: "nota"
+        texto: "Piensa en la documentación de tu proyecto: ¿la leería bien una IA?"
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "📝 La documentación debe servir a humanos y a IA."
+      - "📄 Markdown + YAML frontmatter es el formato universal."
+      - "🗂️ Obsidian, Notion y Tolaria tienen distintos enfoques."
+      - "🔌 Tolaria es local-first y está diseñada para agentes de IA."
+      - tipo: "nota"
+        texto: "Buena documentación = IA útil. Documentación caótica = IA inútil. 🎉"

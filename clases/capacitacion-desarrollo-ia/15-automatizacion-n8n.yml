@@ -1,79 +1,161 @@
 tema: "Automatización de Flujos de Trabajo con n8n"
-subtitulo: "Orquestación reactiva a eventos sin código repetitivo de integración 🔁"
+subtitulo: "Conecta tus herramientas y deja que trabajen solas 🔁"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "n8n permite orquestar flujos reactivos a eventos sin escribir integraciones repetitivas."
-      - "El paradigma de n8n como orquestador técnico"
-      - "Anatomía de un workflow"
-      - "Conexión nativa con IA y automatización de tareas de TI"
-
-  - titulo: "El Paradigma de n8n como Orquestador Técnico"
-    contenido:
-      - "Diferencias operativas frente a herramientas rígidas cerradas."
-      - "Enfoque autohospedado para preservar la privacidad de los datos empresariales."
-      - tipo: "nota"
-        texto: "n8n es preferible a scripts monolíticos propietarios para integrar APIs corporativas."
-
-  - titulo: "Anatomía de un Workflow en n8n"
-    contenido:
-      - "Disparadores basados en eventos (Webhooks, eventos cron)."
-      - "Nodos de procesamiento condicional."
-      - "Transformadores de datos estructurados JSON."
-      - "Conectores de salida."
-      - tipo: "formula"
-        texto: "Disparador → Procesamiento → Transformación → Salida"
-
-  - titulo: "Conexión Nativa con Inteligencia Artificial"
-    contenido:
-      - "Nodos avanzados para inserción directa de agentes."
-      - "Memorias persistentes locales y recuperadores vectoriales."
-      - "Interacciones secuenciales con modelos de lenguaje."
-      - tipo: "nota"
-        texto: "n8n integra IA como un nodo más del flujo, no como un componente externo."
-
-  - titulo: "Automatización de Tareas de TI (Ejemplo)"
-    contenido:
+        texto: "Hoy veremos cómo automatizar tareas aburridas y repetitivas, sin programar mucho."
+      - "Qué es n8n y por qué es diferente a otras herramientas."
+      - "Cómo funciona un workflow de automatización."
+      - "Cómo integrar la IA como parte de tus flujos."
       - tipo: "ejemplo"
-        texto: "Captura de alertas de caída de base de datos de producción."
-      - tipo: "ejemplo"
-        texto: "Análisis agéntico de los últimos logs."
-      - tipo: "ejemplo"
-        texto: "Generación automática de un ticket de corrección detallado."
-      - tipo: "nota"
-        texto: "El flujo debe manejar errores robustamente para no romperse ante fallos de red."
+        texto: "Imagina que cuando llega un email, se clasifica solo, se analiza y se crea un ticket."
 
-  - titulo: "Manejo de Errores en n8n"
+  - titulo: "El problema: tareas repetitivas que comen tiempo"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cuántas horas pierdes en tareas repetitivas?"
+      - "Copiar datos de un sistema a otro."
+      - "Enviar notificaciones manuales."
+      - "Clasificar correos o tickets uno por uno."
+      - tipo: "ejemplo"
+        texto: "Cada vez que cae un servidor: abrir el log, buscar el error, crear el ticket. ¡A mano!"
+      - tipo: "nota"
+        texto: "n8n automatiza todo esto, dejándote tiempo para lo que importa."
+
+  - titulo: "¿Qué es n8n?"
+    contenido:
+      - "n8n es una herramienta de automatización de flujos de trabajo."
+      - "Es autohospedable: la instalas en tu propio servidor."
+      - tipo: "ejemplo"
+        texto: "Es como Zapier o IFTTT, pero abierto y con control total."
+      - tipo: "nota"
+        texto: "Al ser autohospedado, tus datos nunca salen de tu infraestructura. Privacidad total."
+
+  - titulo: "n8n vs otras herramientas cerradas"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Estrategia", "Uso"]
+        encabezados: ["Aspecto", "Zapier (cerrado)", "n8n (autohospedado)"]
         filas:
-          - ["Reintentos", "Fallos transitorios de red"]
-          - ["Fallback", "Ruta alternativa controlada"]
-          - ["Dead-letter", "Aislamiento de eventos problemáticos"]
+          - ["Código", "Propietario", "Abierto"]
+          - ["Datos", "En nube de terceros", "En tu servidor"]
+          - ["Costo", "Caro a escala", "Gratis (self-hosted)"]
+          - ["Flexibilidad", "Limitada", "Total"]
       - tipo: "nota"
-        texto: "Las fallas de los modelos de IA no deben romper los flujos críticos."
+        texto: "Para empresas con datos sensibles, n8n es la opción clara."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "¿Qué es un workflow? (con analogía)"
     contenido:
       - tipo: "problema"
-        texto: "Inicializar un servidor local liviano de n8n."
-      - "Diseñar un flujo que capture notificaciones vía webhook de prueba."
-      - "Procesar la carga JSON y categorizarla con un modelo de lenguaje integrado."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Por qué n8n es más adecuado que scripts monolíticos para integrar APIs corporativas?"
-      - tipo: "problema"
-        texto: "¿Cómo estructurar el manejo de errores para que las fallas de IA no rompan flujos críticos?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🔄 n8n orquesta flujos reactivos autohospedados."
-      - "🧩 Disparadores, nodos condicionales y conectores componen el workflow."
-      - "🤖 La IA se integra como un nodo nativo del flujo."
+        texto: "¿Cómo se ve una automatización en n8n?"
+      - "Un workflow es una secuencia de pasos conectados, como un diagrama de flujo."
+      - tipo: "ejemplo"
+        texto: "Es como una línea de ensamblaje: cada estación hace algo y pasa al siguiente."
+      - tipo: "formula"
+        texto: "Disparador → Procesamiento → Transformación → Salida"
       - tipo: "nota"
-        texto: "El manejo robusto de errores es esencial en producción."
+        texto: "Cada paso se llama 'nodo'. Los conectas con líneas en una interfaz visual."
+
+  - titulo: "Las 4 partes de un workflow"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Parte", "Función", "Ejemplo"]
+        filas:
+          - ["Disparador", "Inicia el flujo", "Llega un webhook, un cron"]
+          - ["Procesamiento", "Toma decisiones", "Si X entonces Y"]
+          - ["Transformación", "Modifica datos", "Convertir a JSON"]
+          - ["Salida", "Entrega resultado", "Crear ticket, enviar email"]
+      - tipo: "nota"
+        texto: "El disparador es el botón de inicio; el resto es la cadena de acciones."
+
+  - titulo: "Disparadores: ¿qué inicia el flujo?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo arranca una automatización?"
+      - "Con un disparador (trigger). Los más comunes:"
+      - "Webhook: algo externo llama a una URL."
+      - tipo: "ejemplo"
+        texto: "GitHub envía un webhook cuando hay un commit nuevo."
+      - "Cron: en un horario fijo."
+      - tipo: "ejemplo"
+        texto: "Cada día a las 3 AM, ejecuta el backup."
+      - tipo: "nota"
+        texto: "El disparador decide CUÁNDO arranca todo el flujo."
+
+  - titulo: "Nodos de procesamiento: el cerebro del flujo"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo tomo decisiones dentro del workflow?"
+      - "Con nodos condicionales (IF)."
+      - tipo: "ejemplo"
+        texto: "Si el email contiene 'urgente', mándalo a Slack; si no, archívalo."
+      - "Puedes transformar datos: extraer campos, calcular, filtrar."
+      - tipo: "nota"
+        texto: "Aquí es donde el flujo se vuelve inteligente, no solo lineal."
+
+  - titulo: "Integrando IA en n8n"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Puedo meter inteligencia artificial en mis flujos?"
+      - "¡Sí! n8n tiene nodos avanzados para IA."
+      - "Puedes insertar agentes, memoria persistente y búsqueda vectorial."
+      - tipo: "ejemplo"
+        texto: "El flujo recibe un email → la IA lo clasifica → crea el ticket con la prioridad correcta."
+      - tipo: "nota"
+        texto: "La IA se vuelve un nodo más del flujo: no es algo externo."
+
+  - titulo: "Ejemplo real: alerta de base de datos caída"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "1. Disparador: alerta de caída de base de datos de producción."
+      - tipo: "ejemplo"
+        texto: "2. La IA analiza automáticamente los últimos logs."
+      - tipo: "ejemplo"
+        texto: "3. La IA identifica la causa probable del fallo."
+      - tipo: "ejemplo"
+        texto: "4. Se crea un ticket con todos los detalles y la solución sugerida."
+      - tipo: "nota"
+        texto: "Todo esto, automáticamente, en segundos. Sin intervención humana."
+
+  - titulo: "Manejo de errores: lo que no se debe olvidar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si la IA falla o se cae la red?"
+      - "Sin manejo de errores, el flujo se rompe y se pierden eventos."
+      - tipo: "tabla"
+        encabezados: ["Estrategia", "Para qué sirve"]
+        filas:
+          - ["Reintentos", "Recuperar de fallos transitorios"]
+          - ["Fallback", "Ruta alternativa si falla lo principal"]
+          - ["Dead-letter", "Aislar eventos problemáticos"]
+      - tipo: "nota"
+        texto: "Los flujos críticos DEBEN tener manejo de errores robusto."
+
+  - titulo: "Laboratorio: Tu primer workflow en n8n"
+    contenido:
+      - tipo: "problema"
+        texto: "Inicializaremos un servidor local liviano de n8n."
+      - "Diseñaremos un flujo que capture notificaciones vía webhook."
+      - "Procesaremos la carga JSON del evento."
+      - "Usaremos un modelo de lenguaje integrado para categorizar la información."
+      - tipo: "nota"
+        texto: "En menos de 30 minutos tendrás tu primera automatización funcional."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué n8n es mejor que scripts monolíticos para integrar APIs?"
+      - tipo: "problema"
+        texto: "¿Cómo estructurarías el manejo de errores para que las fallas no rompan el flujo?"
+      - tipo: "nota"
+        texto: "Piensa en una tarea repetitiva tuya: ¿cómo la automatizarías con n8n?"
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🔄 n8n orquesta flujos de trabajo reactivos a eventos."
+      - "🏠 Es autohospedado: privacidad total para tu empresa."
+      - "🧩 Disparadores, nodos condicionales y conectores forman el workflow."
+      - "🤖 La IA se integra como un nodo más del flujo."
+      - tipo: "nota"
+        texto: "Automatizar te devuelve tiempo para pensar, no para copiar y pegar. 🎉"

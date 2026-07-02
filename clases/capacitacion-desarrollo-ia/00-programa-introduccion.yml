@@ -1,0 +1,179 @@
+tema: "Capacitación Avanzada en Desarrollo con IA para Equipos de TI"
+subtitulo: "18 horas · 6 módulos · De los fundamentos a la producción 🚀"
+
+diapositivas:
+  - titulo: "¡Bienvenidos al programa! 👋"
+    contenido:
+      - tipo: "nota"
+        texto: "Este programa está diseñado para equipos de TI que quieren dominar la IA aplicada al desarrollo."
+      - "18 horas de formación teórica y práctica."
+      - "6 módulos progresivos, desde fundamentos hasta producción."
+      - "Cada clase combina teoría + laboratorio + debate."
+      - tipo: "ejemplo"
+        texto: "El objetivo: que al final puedas liderar la transformación con IA en tu equipo."
+
+  - titulo: "¿A quién está dirigido?"
+    contenido:
+      - "Ingenieros de TI y desarrolladores de software."
+      - "Analistas de datos y arquitectos de sistemas."
+      - "Líderes técnicos y gestores de proyectos."
+      - tipo: "nota"
+        texto: "No necesitas ser experto en IA: empezamos desde cero y subimos el nivel gradualmente."
+
+  - titulo: "Metodología del curso"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Componente", "Qué incluye"]
+        filas:
+          - ["Clase teórica", "Conceptos explicados con ejemplos sencillos"]
+          - ["Laboratorio práctico", "Ejercicios guiados con IA en local"]
+          - ["Preguntas de debate", "Reflexión y discusión en grupo"]
+      - tipo: "nota"
+        texto: "No más de 45 minutos de teoría seguida: la práctica es el corazón del curso."
+
+  - titulo: "Visión general: los 6 módulos"
+    contenido:
+      - tipo: "nota"
+        texto: "El programa está organizado en 6 bloques temáticos que cubren todo el ciclo de desarrollo con IA."
+      - "I. Fundamentos de IA y NLP Moderno (horas 1-3)"
+      - "II. Prompting Avanzado y Arquitecturas RAG (horas 4-6)"
+      - "III. Agentes Inteligentes y Entornos ADE (horas 7-9)"
+      - "IV. Documentación, Memoria y DDD (horas 10-12)"
+      - "V. Análisis de Datos y Automatización con n8n (horas 13-15)"
+      - "VI. Pruebas, Gestión y Frontend (horas 16-18)"
+
+  - titulo: "Módulo I: Fundamentos de IA y NLP Moderno"
+    contenido:
+      - "⏱️ Horas 1 a 3"
+      - "Qué es realmente la IA (sin mitos)."
+      - "Cómo las máquinas entienden el lenguaje: tokens y embeddings."
+      - "El invento del Transformer (2017) y técnicas de escalamiento."
+      - tipo: "ejemplo"
+        texto: "Herramientas: visualizadores de mapas de atención y tokenización."
+
+  - titulo: "Módulo II: Prompting Avanzado y Arquitecturas RAG"
+    contenido:
+      - "⏱️ Horas 4 a 6"
+      - "Ingeniería de prompts estructurada (STAR, RTF, GOLD)."
+      - "Cómo darle a la IA memoria de tus documentos corporativos (RAG)."
+      - "Orquestadores visuales: Dify y Flowise."
+      - tipo: "nota"
+        texto: "Aprenderás a hablarle a la IA para obtener exactamente lo que necesitas."
+
+  - titulo: "Módulo III: Agentes Inteligentes y Entornos ADE"
+    contenido:
+      - "⏱️ Horas 7 a 9"
+      - "El protocolo MCP: cómo los agentes se conectan a tu sistema."
+      - "Entornos de desarrollo agénticos: Cursor vs Claude Code."
+      - "Spec-Driven Development (SDD) con la suite Gentleman-AI."
+      - tipo: "ejemplo"
+        texto: "Herramientas: Claude Code, OpenCode, Codex y Gentle-AI."
+
+  - titulo: "Módulo IV: Documentación, Memoria y DDD"
+    contenido:
+      - "⏱️ Horas 10 a 12"
+      - "Documentación Markdown como puente humano-IA."
+      - "Memoria persistente: Engram y Codebase-Memory-MCP."
+      - "Arquitectura Domain-Driven Design y contratos de APIs."
+      - tipo: "nota"
+        texto: "La documentación y la memoria son la base de la colaboración IA sostenida."
+
+  - titulo: "Módulo V: Análisis de Datos y Automatización con n8n"
+    contenido:
+      - "⏱️ Horas 13 a 15"
+      - "Análisis exploratorio (EDA) automatizado con Sweetviz y YData-Profiler."
+      - "Data Formulator de Microsoft Research: visualización con IA."
+      - "Automatización de flujos de trabajo reactivos con n8n."
+      - tipo: "ejemplo"
+        texto: "Herramientas: Sweetviz, YData-Profiler, Data Formulator y n8n."
+
+  - titulo: "Módulo VI: Pruebas, Gestión y Frontend"
+    contenido:
+      - "⏱️ Horas 16 a 18"
+      - "Aseguramiento de calidad: TDD/BDD, Selenium vs Playwright."
+      - "Gestión de proyectos con IA y cumplimiento legal (AEPD/LCSP)."
+      - "Generación de frontend con OpenPencil conectado vía MCP."
+      - tipo: "nota"
+        texto: "Cerramos el curso llevando la IA al ciclo completo de desarrollo."
+
+  - titulo: "Mapa de ruta del programa"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Módulo", "Horas", "Enfoque principal"]
+        filas:
+          - ["I. Fundamentos", "1-3", "Entender la IA por dentro"]
+          - ["II. Prompts y RAG", "4-6", "Comunicarse con la IA"]
+          - ["III. Agentes y SDD", "7-9", "IA que actúa y ejecuta"]
+          - ["IV. Doc, Memoria y DDD", "10-12", "Estructurar conocimiento"]
+          - ["V. Datos y Automatización", "13-15", "Analizar y automatizar"]
+          - ["VI. QA, Gestión y Frontend", "16-18", "Calidad y entrega final"]
+      - tipo: "nota"
+        texto: "Cada módulo construye sobre el anterior: el aprendizaje es acumulativo."
+
+  - titulo: "Herramientas que dominarás"
+    contenido:
+      - "🤖 Modelos: GPT, LLaMA, BERT, TinyLlama, Phi-2."
+      - "🛠️ Agentes: Claude Code, OpenCode, Gentle-AI, Engram."
+      - "🔌 Protocolos: MCP (Model Context Protocol)."
+      - "📊 Datos: Sweetviz, YData-Profiler, Data Formulator."
+      - "🔁 Automatización: n8n, LangGraph, Dify, Flowise."
+      - "🎨 Frontend: OpenPencil con MCP."
+      - tipo: "nota"
+        texto: "Todas las herramientas son de código abierto o tienen versión gratuita local."
+
+  - titulo: "Lineamientos del facilitador"
+    contenido:
+      - tipo: "nota"
+        texto: "El éxito del curso depende de tres principios pedagógicos clave."
+      - "1️⃣ Aprendizaje práctico continuo: laboratorios en cada clase."
+      - "2️⃣ Material en tercera persona (voz pasiva impersonal)."
+      - "3️⃣ Uso pedagógico de los errores de la IA (rate limits, código erróneo)."
+      - tipo: "ejemplo"
+        texto: "Las fallas de la IA se aprovechan para enseñar SDD y depuración."
+
+  - titulo: "¿Qué lograrás al final?"
+    contenido:
+      - "Comprender los fundamentos matemáticos y técnicos de la IA moderna."
+      - "Comunicarte con la IA mediante prompts estructurados y precisos."
+      - "Implementar arquitecturas RAG y sistemas de memoria persistente."
+      - "Usar agentes autónomos en entornos de desarrollo reales."
+      - "Automatizar análisis de datos y flujos de trabajo."
+      - "Asegurar la calidad del código generado por IA."
+      - tipo: "nota"
+        texto: "Saldrás con habilidades aplicables desde el lunes en tu trabajo."
+
+  - titulo: "Reglas del juego para el curso"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué necesitamos para aprovechar al máximo estas 18 horas?"
+      - "Participa en los laboratorios: la práctica es lo más importante."
+      - "Pregunta siempre: no hay preguntas tontas."
+      - "Trae problemas reales de tu trabajo para discutir."
+      - "Experimenta sin miedo a romper: para eso es el entorno local."
+      - tipo: "nota"
+        texto: "La IA es un colaborador, no un sustituto. Tú eres el director."
+
+  - titulo: "Cronograma resumido"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Bloque", "Módulo", "Duración"]
+        filas:
+          - ["Bloque 1", "Fundamentos de IA", "3 horas"]
+          - ["Bloque 2", "Prompts y RAG", "3 horas"]
+          - ["Bloque 3", "Agentes y SDD", "3 horas"]
+          - ["Bloque 4", "Documentación y DDD", "3 horas"]
+          - ["Bloque 5", "Datos y Automatización", "3 horas"]
+          - ["Bloque 6", "Pruebas y Frontend", "3 horas"]
+      - tipo: "nota"
+        texto: "Total: 18 horas distribuidas en 6 bloques temáticos equilibrados."
+
+  - titulo: "¡Comencemos! 🚀"
+    contenido:
+      - tipo: "nota"
+        texto: "Estás a punto de iniciar un viaje que transformará tu forma de desarrollar software."
+      - "Recuerda: empezamos desde cero y avanzamos paso a paso."
+      - "No te preocupes si algo parece difícil al principio: todo se aclarará con la práctica."
+      - tipo: "problema"
+        texto: "¿Estás listo para dominar el desarrollo con IA?"
+      - tipo: "nota"
+        texto: "¡Adelante, comenzamos con el Módulo I: Fundamentos de IA! 🎉"

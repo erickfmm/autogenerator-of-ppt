@@ -1,74 +1,151 @@
 tema: "Data Formulator de Microsoft Research"
-subtitulo: "Visualización exploratoria guiada por IA interactiva 🎨"
+subtitulo: "Convierte datos complejos en gráficos claros, conversando con la IA 🎨"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "Data Formulator combina interfaces drag-and-drop con flujos conversacionales basados en agentes."
-      - "Arquitectura del entorno visual interactivo"
-      - "Ingesta multimodal de datos no estructurados"
-      - "Hilos de exploración (Data Threads) y conectores corporativos"
-
-  - titulo: "Introducción a Data Formulator"
-    contenido:
-      - "Entorno visual e interactivo de código abierto."
-      - "Transforma datos complejos en conocimiento analítico claro."
-      - tipo: "nota"
-        texto: "Desarrollado por Microsoft Research; ejecutable en local con uv."
-
-  - titulo: "Ingesta Multimodal de Datos No Estructurados"
-    contenido:
-      - "Extracción de información desde imágenes y capturas de pantalla."
-      - "Archivos estructurados o conexiones web simultáneamente."
+        texto: "Hoy descubriremos una herramienta de Microsoft que pone la IA a analizar datos por ti."
+      - "Qué es Data Formulator y para qué sirve."
+      - "Cómo combinar interfaz visual con conversación."
+      - "Data Threads, conectores y el sandbox seguro."
       - tipo: "ejemplo"
-        texto: "Cargar una captura de un dashboard y analizar sus métricas automáticamente."
+        texto: "Imagina pedirle a la IA 'muéstrame las ventas por mes en un gráfico de barras' y verlo al instante."
 
-  - titulo: "Hilos de Exploración y Sandbox Aislado"
+  - titulo: "El problema: visualizar datos es tedioso"
     contenido:
-      - "Un agente autónomo ejecuta código de transformación en entorno seguro (sandbox)."
-      - "Historial contextual ramificado (Branching) para evitar retrocesos costosos."
+      - tipo: "problema"
+        texto: "¿Qué se necesita normalmente para crear un buen gráfico?"
+      - "Limpiar y transformar los datos."
+      - "Elegir el tipo de gráfico adecuado."
+      - "Programar o configurar a mano cada detalle."
+      - tipo: "ejemplo"
+        texto: "Crear un dashboard puede llevar horas entre Excel, Python y ajustes visuales."
       - tipo: "nota"
-        texto: "El aislamiento en sandbox protege la infraestructura del analista."
+        texto: "Data Formulator simplifica todo esto con IA conversacional."
 
-  - titulo: "Conectores y Estilización Inteligente"
+  - titulo: "¿Qué es Data Formulator?"
     contenido:
-      - "Versión 0.7 con conectores nativos: PostgreSQL, BigQuery, MySQL, Cosmos, S3."
-      - "Agente especialista de estilo (Style-Refinement Agent)."
-      - "Adapta tipografías y paletas mediante lenguaje natural."
+      - "Es una herramienta de código abierto creada por Microsoft Research."
+      - "Combina una interfaz visual (drag-and-drop) con agentes de IA."
+      - tipo: "ejemplo"
+        texto: "Como un Tableau inteligente: le hablas y él arma el gráfico."
+      - tipo: "nota"
+        texto: "Es de código abierto, así que puedes correrla gratis en tu propia máquina."
+
+  - titulo: "Dos formas de usarlo: arrastrar o conversar"
+    contenido:
       - tipo: "tabla"
-        encabezados: ["Conector", "Tipo"]
+        encabezados: ["Modo", "Cómo funciona", "Ideal para"]
+        filas:
+          - ["Arrastrar (drag-and-drop)", "Seleccionas columnas visualmente", "Tareas simples rápidas"]
+          - ["Conversar (IA)", "Le pides en lenguaje natural", "Transformaciones complejas"]
+      - tipo: "nota"
+        texto: "Lo mejor: puedes mezclar ambos en cualquier momento."
+
+  - titulo: "Ingesta multimodal: no solo archivos"
+    contenido:
+      - tipo: "problema"
+        texto: "¿De dónde puedo sacar los datos?"
+      - "Data Formulator acepta mucho más que CSVs."
+      - tipo: "ejemplo"
+        texto: "Puedes cargar imágenes, capturas de pantalla, archivos estructurados o URLs web."
+      - tipo: "ejemplo"
+        texto: "Subes la captura de un dashboard antiguo y la IA extrae sus métricas."
+      - tipo: "nota"
+        texto: "Esta flexibilidad es ideal para datos que viven en formatos heterogéneos."
+
+  - titulo: "Data Threads: hilos de exploración ramificados"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué pasa si quiero explorar varias ideas a la vez?"
+      - "En un chat normal, cada experimento sobrescribe el anterior."
+      - "Data Formulator usa 'hilos' ramificados (branching)."
+      - tipo: "ejemplo"
+        texto: "Como las ramas de un árbol: cada rama es una línea de exploración independiente."
+      - tipo: "nota"
+        texto: "Si una idea no funcionó, vuelves a una rama anterior sin perder el trabajo."
+
+  - titulo: "El sandbox: un entorno seguro para experimentar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Es peligroso dejar que la IA ejecute código sobre mis datos?"
+      - "Data Formulator ejecuta el código de transformación en un sandbox aislado."
+      - tipo: "ejemplo"
+        texto: "Es como una caja fuerte: la IA hace lo que quiera adentro sin tocar tu sistema."
+      - tipo: "nota"
+        texto: "Esto protege tu infraestructura: nada se ejecuta fuera del entorno controlado."
+
+  - titulo: "Conectores corporativos (versión 0.7)"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Puedo conectarme a mis bases de datos corporativas?"
+      - "La versión 0.7 incorpora conectores nativos robustos."
+      - tipo: "tabla"
+        encabezados: ["Conector", "Tipo de base"]
         filas:
           - ["PostgreSQL", "Relacional"]
-          - ["BigQuery", "Analítico"]
+          - ["BigQuery", "Analítica de Google"]
+          - ["MySQL", "Relacional"]
           - ["Cosmos", "Documental"]
-          - ["S3", "Objetos"]
+          - ["S3", "Almacenamiento de objetos"]
+      - tipo: "nota"
+        texto: "Conexión directa, sin exportar ni intermediarios."
 
-  - titulo: "Puesta en Marcha Local"
+  - titulo: "Estilización inteligente con lenguaje natural"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Y si quiero cambiar el aspecto del gráfico?"
+      - "Data Formulator trae un 'Style-Refinement Agent': un agente especialista en estilo."
+      - tipo: "ejemplo"
+        texto: "Le dices: 'usa tonos azules y una tipografía moderna'. Y lo aplica."
+      - tipo: "nota"
+        texto: "No más pelear con menús de formato: se lo pides en español."
+
+  - titulo: "Cómo levantarlo en local (uv)"
     contenido:
       - tipo: "calculo"
         texto: "uvx data_formulator"
       - tipo: "nota"
-        texto: "El gestor uv permite levantar la instancia sin instalación permanente."
+        texto: "Ese único comando descarga y ejecuta la herramienta, sin instalación permanente."
+      - tipo: "nota"
+        texto: "uv es un gestor de paquetes de Python rapidísimo que aísla el entorno."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Data Threads vs chat lineal: comparativa"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "Chat lineal (ChatGPT)", "Data Threads"]
+        filas:
+          - ["Historial", "Se sobrescribe", "Se ramifica"]
+          - ["Volver atrás", "Difícil o imposible", "Natural, como ramas"]
+          - ["Paralelismo", "Uno a la vez", "Varias ideas a la vez"]
+      - tipo: "nota"
+        texto: "Los Data Threads son superiores para exploración analítica seria."
+
+  - titulo: "Laboratorio: Visualizando logs con IA"
     contenido:
       - tipo: "problema"
-        texto: "Levantar localmente Data Formulator con uv."
-      - "Cargar un archivo de logs técnicos."
-      - "Generar visualizaciones de rendimiento de red refinando la estética en lenguaje natural."
+        texto: "Levantaremos Data Formulator con 'uvx data_formulator'."
+      - "Cargaremos un archivo de logs técnicos."
+      - "Le pediremos a la IA que genere visualizaciones de rendimiento de red."
+      - "Refinaremos la estética con comandos en lenguaje natural."
+      - tipo: "nota"
+        texto: "Te sorprenderá lo rápido que pasas de datos crudos a un dashboard claro."
 
-  - titulo: "Preguntas Clave y Debate"
+  - titulo: "Preguntas para reflexionar"
     contenido:
       - tipo: "problema"
-        texto: "¿Cómo favorecen los Data Threads frente a sesiones lineales tradicionales de ChatGPT?"
+        texto: "¿Por qué los Data Threads son mejores que un chat lineal para análisis?"
       - tipo: "problema"
-        texto: "¿Qué valor técnico aporta el sandbox aislado sobre la seguridad del analista en local?"
+        texto: "¿Qué seguridad aporta el sandbox aislado a tu infraestructura?"
+      - tipo: "nota"
+        texto: "Piensa en un reporte aburrido de tu trabajo: ¿lo harías con Data Formulator?"
 
-  - titulo: "Resumen"
+  - titulo: "Resumen: Lo que hoy aprendimos"
     contenido:
-      - "🤖 Data Formulator combina drag-and-drop con agentes conversacionales."
-      - "🧵 Los Data Threads ramifican el historial sin retrocesos costosos."
+      - "🤖 Data Formulator combina drag-and-drop con IA conversacional."
+      - "🧵 Los Data Threads ramifican la exploración sin perder trabajo."
+      - "🔒 El sandbox aislado protege tu sistema durante la ejecución."
       - "🔌 Conectores corporativos robustos en la versión 0.7."
       - tipo: "nota"
-        texto: "El sandbox aislado es clave para la seguridad del analista."
+        texto: "Visualizar datos complejos nunca fue tan fácil y conversacional. 🎉"

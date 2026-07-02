@@ -1,75 +1,146 @@
 tema: "Gestión de Proyectos de TI Asistida por IA"
-subtitulo: "Automatizando labores administrativas y asegurando cumplimiento normativo 📋"
+subtitulo: "Cómo la IA te ayuda a gestionar proyectos (sin que te despidan) 📋"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La IA optimiza la gestión estratégica de TI automatizando labores de alta carga cognitiva."
-      - "Automatización de adquisiciones de TI"
-      - "Evaluación semántica automática parcial"
-      - "Cumplimiento legal (AEPD/LCSP) y síntesis ejecutiva"
+        texto: "Hoy veremos cómo la IA puede ayudarte en tareas de gestión, no solo técnicas."
+      - "Cómo automatizar la gestión de adquisiciones."
+      - "Cómo evaluar ofertas automáticamente (sin decidir por ti)."
+      - "Cumplimiento legal (AEPD, LCSP) y colaboración ejecutiva."
+      - tipo: "ejemplo"
+        texto: "¿Te imaginas pedirle a la IA que compare 5 propuestas técnicas en segundos?"
 
-  - titulo: "Automatización de la Gestión de Adquisiciones de TI"
+  - titulo: "La gestión de TI tiene muchas tareas aburridas"
     contenido:
-      - "Agentes autónomos para consultar bases de conocimiento complejas."
-      - "Agilización de fases de diseño de bases de licitación (RFP, RFQ)."
-      - "Solicitudes de cotizaciones de infraestructura."
+      - tipo: "problema"
+        texto: "¿Qué tareas de gestión consumen tu tiempo?"
+      - "Redactar bases de licitación (RFP, RFQ)."
+      - "Evaluar decenas de propuestas técnicas."
+      - "Tomar notas en reuniones y sintetizar acuerdos."
+      - "Asegurar el cumplimiento de normativas."
       - tipo: "nota"
-        texto: "La IA acelera la redacción de pliegos manteniendo trazabilidad."
+        texto: "La IA puede ayudarte con todas estas tareas administrativas, sin reemplazarte."
 
-  - titulo: "Evaluación Semántica Automática Parcial"
+  - titulo: "Automatización de adquisiciones de TI"
     contenido:
-      - "Análisis de ofertas técnicas de múltiples proveedores en segundos."
-      - "Evaluación de precios, plazos de entrega y concordancia con los pliegos."
+      - tipo: "problema"
+        texto: "¿Cómo te ayuda la IA al comprar tecnología?"
+      - "Redactar bases de licitación técnica consultando bases de conocimiento."
+      - "Generar solicitudes de cotización (RFQ) estandarizadas."
+      - tipo: "ejemplo"
+        texto: "Le describes qué necesitas y la IA genera un RFP bien estructurado en minutos."
       - tipo: "nota"
-        texto: "Es una evaluación parcial: la decisión final siempre es humana."
+        texto: "La IA acelera la redacción, pero la decisión final siempre es tuya."
 
-  - titulo: "Marco de Cumplimiento Legal y Privacidad"
+  - titulo: "Evaluación semántica de ofertas (en segundos)"
     contenido:
-      - "Guía de la AEPD para el despliegue ético de IA generativa en contratación pública."
-      - "Prohibición estricta de delegar decisiones vinculantes a 'cajas negras' autónomas."
-      - "Obligación del registro detallado de interacciones."
+      - tipo: "problema"
+        texto: "¿Cómo comparas 10 propuestas técnicas manualmente?"
+      - "Leer cada una, comparar precios, plazos y cumplimiento con el pliego."
+      - "Horas de trabajo tedioso y propenso a errores."
+      - tipo: "ejemplo"
+        texto: "La IA analiza todas las propuestas en segundos y arma una matriz comparativa."
       - tipo: "nota"
-        texto: "La LCSP exige transparencia y no permite delegar la firma administrativa final."
+        texto: "¡Pero atención! Es una evaluación PARCIAL: tú decides y firmas."
 
-  - titulo: "Decisión Humana vs. Recomendación de IA"
+  - titulo: "Lo que la IA SÍ puede hacer en evaluación"
     contenido:
       - tipo: "tabla"
-        encabezados: ["Fase", "Responsable", "Rol IA"]
+        encabezados: ["Tarea", "¿La IA puede?"]
         filas:
-          - ["Redacción del pliego", "Humano + IA", "Asistente"]
+          - ["Comparar precios automáticamente", "Sí"]
+          - ["Detectar concordancia con el pliego", "Sí"]
+          - ["Generar matriz de puntuación", "Sí (como sugerencia)"]
+          - ["Firmar la decisión final", "¡NUNCA!"]
+      - tipo: "nota"
+        texto: "La IA es un copiloto: recomienda, pero el humano gobierna."
+
+  - titulo: "El marco legal: IA en la contratación pública"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Se puede usar IA para contratar servicios públicos?"
+      - "La AEPD (Agencia Española de Protección de Datos) publicó una guía."
+      - "Permite el uso de IA generativa, pero con reglas estrictas."
+      - tipo: "nota"
+        texto: "Regla de oro: NUNCA delegar decisiones vinculantes a una 'caja negra' autónoma."
+
+  - titulo: "Reglas clave de la AEPD"
+    contenido:
+      - "Prohibido: delegar la firma o decisión final a un sistema autónomo."
+      - "Obligatorio: registrar todas las interacciones con la IA."
+      - "Obligatorio: garantizar la transparencia del proceso."
+      - "Obligatorio: que un humano valide cada paso crítico."
+      - tipo: "nota"
+        texto: "La LCSP (Ley de Contratos del Sector Público) exige esta transparencia."
+
+  - titulo: "El flujo legal correcto"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Fase", "Responsable", "Rol de la IA"]
+        filas:
+          - ["Redacción del pliego", "Humano + IA", "Asistente de redacción"]
           - ["Evaluación de ofertas", "Humano", "Recomendador parcial"]
-          - ["Firma administrativa", "Humano", "Excluida"]
+          - ["Firma administrativa", "Humano", "EXCLUIDA totalmente"]
       - tipo: "nota"
-        texto: "El copiloto recomienda; el humano decide y firma."
+        texto: "El copiloto recomienda, el humano decide. La responsabilidad es siempre humana."
 
-  - titulo: "Síntesis de Colaboración Ejecutiva"
-    contenido:
-      - "Integración de ReadAI y herramientas nativas de Microsoft Teams."
-      - "Transcripción de reuniones y extracción de planes de acción concretos."
-      - "Responsables, plazos y resúmenes temáticos."
-      - tipo: "nota"
-        texto: "Configurar medidas de privacidad obligatorias en sesiones confidenciales."
-
-  - titulo: "Laboratorio Práctico"
+  - titulo: "Síntesis de reuniones ejecutivas con IA"
     contenido:
       - tipo: "problema"
-        texto: "Simular un flujo de evaluación técnica corporativa rápida."
-      - "Cargar dos ofertas técnicas competidoras en el agente local."
-      - "Usar un prompt GOLD para evaluación parcial y generar la matriz de puntuación final."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿Cómo asegurar el cumplimiento de la LCSP al usar un copiloto de IA sin delegar la firma final?"
-      - tipo: "problema"
-        texto: "¿Qué medidas de seguridad y privacidad se deben configurar al habilitar ReadAI en sesiones confidenciales?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "📑 La IA agiliza adquisiciones y redacción de pliegos."
-      - "⚖️ El cumplimiento AEPD/LCSP exige decisión humana final."
-      - "🎙️ ReadAI y Teams sintetizan colaboración ejecutiva."
+        texto: "¿Cómo capturo lo importante de una reunión sin perderme nada?"
+      - "Herramientas como ReadAI y Microsoft Teams transcriben reuniones."
+      - "La IA extrae planes de acción, responsables, plazos y temas clave."
+      - tipo: "ejemplo"
+        texto: "Termina la reunión y ya tienes: tareas asignadas, decisiones y un resumen ejecutivo."
       - tipo: "nota"
-        texto: "La IA recomienda; el humano gobierna y firma."
+        texto: "Pero cuidado: las transcripciones pueden contener datos confidenciales."
+
+  - titulo: "Privacidad en transcripciones ejecutivas"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué riesgos hay al transcribir reuniones estratégicas?"
+      - "Las transcripciones pueden contener secretos comerciales."
+      - "Si se suben a la nube de terceros, pueden filtrarse."
+      - tipo: "nota"
+        texto: "Medidas obligatorias: cifrado, control de acceso, retención limitada y consentimiento."
+
+  - titulo: "Beneficios reales de usar IA en gestión"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Tarea", "Sin IA", "Con IA"]
+        filas:
+          - ["Redactar RFP", "3 horas", "30 minutos"]
+          - ["Evaluar 10 ofertas", "2 días", "1 hora"]
+          - ["Resumir reunión", "1 hora", "Automático"]
+      - tipo: "nota"
+        texto: "El ahorro de tiempo es enorme. Pero la responsabilidad sigue siendo tuya."
+
+  - titulo: "Laboratorio: Evaluando ofertas con un prompt GOLD"
+    contenido:
+      - tipo: "problema"
+        texto: "Simularemos un flujo de evaluación técnica corporativa."
+      - "Cargaremos dos ofertas técnicas competidoras en el agente local."
+      - "Usaremos un prompt GOLD para la evaluación parcial."
+      - "La IA generará una matriz de puntuación para que el facilitador la valide."
+      - tipo: "nota"
+        texto: "Verás cómo la IA acelera la evaluación sin reemplazar tu criterio."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo se cumple la LCSP usando un copiloto de IA sin delegar la firma final?"
+      - tipo: "problema"
+        texto: "¿Qué medidas de seguridad aplicarías al transcribir reuniones confidenciales?"
+      - tipo: "nota"
+        texto: "Recuerda: la IA no firma, no decide, no reemplaza. Asiste."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "📑 La IA acelera redacción de pliegos y evaluación de ofertas."
+      - "⚖️ El marco AEPD/LCSP exige decisión humana final siempre."
+      - "🎙️ ReadAI y Teams sintetizan reuniones automáticamente."
+      - "🔒 La privacidad de datos confidenciales es innegociable."
+      - tipo: "nota"
+        texto: "La IA recomienda, el humano decide y firma. La responsabilidad es tuya. 🎉"

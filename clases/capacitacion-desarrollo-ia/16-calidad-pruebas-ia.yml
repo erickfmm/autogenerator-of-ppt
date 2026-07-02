@@ -1,76 +1,184 @@
 tema: "Aseguramiento de Calidad, Pirámide de Pruebas e IA"
-subtitulo: "QA moderno combinando BDD con automatización E2E 🧪"
+subtitulo: "Cómo la IA te ayuda a probar tu código sin volverte loco 🧪"
 
 diapositivas:
-  - titulo: "¿Qué vamos a aprender?"
+  - titulo: "¿Qué vamos a aprender hoy?"
     contenido:
       - tipo: "nota"
-        texto: "La IA reduce el tiempo de cobertura de código y eleva la confiabilidad de las aserciones."
-      - "IA en el aseguramiento de la calidad (QA)"
-      - "TDD y BDD con Gherkin en SDD"
-      - "Selenium vs. Playwright y generación autónoma de casos"
-
-  - titulo: "La IA en el Aseguramiento de la Calidad (QA)"
-    contenido:
-      - "Los LLMs reducen el tiempo de cobertura de código."
-      - "Elevan la confiabilidad de las aserciones funcionales."
-      - tipo: "nota"
-        texto: "La IA puede generar casos de frontera que los ingenieros pasan por alto."
-
-  - titulo: "TDD y BDD con Gherkin en SDD"
-    contenido:
-      - "La especificación lógica del negocio en Gherkin guía la autogeneración del andamiaje de pruebas."
+        texto: "Hoy veremos cómo la IA está revolucionando el mundo de las pruebas de software."
+      - "Qué es el aseguramiento de calidad y la pirámide de pruebas."
+      - "TDD y BDD con Gherkin: pruebas que cualquiera entiende."
+      - "Selenium vs Playwright: la nueva generación."
       - tipo: "ejemplo"
-        texto: "Feature: Autenticación de API JSON-First | Scenario: Solicitud con contrato válido"
-      - tipo: "formula"
-        texto: "Given [contexto] When [acción] Then [resultado esperado]"
+        texto: "¿Te ha pasado que un cambio 'pequeño' rompe algo que ni sabías que existía?"
 
-  - titulo: "Pruebas E2E: Selenium vs. Playwright"
+  - titulo: "El problema: el código sin pruebas es una bomba de tiempo"
     contenido:
-      - tipo: "tabla"
-        encabezados: ["Aspecto", "Selenium WebDriver", "Playwright"]
-        filas:
-          - ["Arquitectura", "Driver externo", "Protocolo WebSocket nativo"]
-          - ["Esperas", "Explícitas manuales", "Asíncronas automáticas"]
-          - ["Flakiness", "Alto", "Bajo"]
+      - tipo: "problema"
+        texto: "¿Qué pasa si no pruebas tu código?"
+      - "Funciona en tu máquina... pero explota en producción."
+      - "Un cambio pequeño rompe funcionalidad vieja sin que te des cuenta."
+      - tipo: "ejemplo"
+        texto: "Cambias un cálculo de impuestos y de repente falla el login. ¡Magia negra!"
       - tipo: "nota"
-        texto: "Las esperas asíncronas de Playwright reducen el 'flakiness' frente a Selenium."
+        texto: "Las pruebas son la red de seguridad que evita desastres en producción."
 
-  - titulo: "Pruebas de Regresión y Generación Autónoma"
-    contenido:
-      - "Los entornos ADE ejecutan /sdd-init para activar el modo estricto de pruebas unitarias."
-      - "Bloqueo del avance a producción sin validación de casos de frontera."
-      - tipo: "nota"
-        texto: "Delegar exclusivamente a generadores autónomos sin revisión senior es riesgoso."
-
-  - titulo: "Pirámide de Pruebas con IA"
+  - titulo: "La Pirámide de Pruebas (explicada fácil)"
     contenido:
       - tipo: "grafico_barras"
         categorias: ["Unitarias", "Integración", "E2E"]
         valores: [70, 20, 10]
-        etiqueta_y: "Porcentaje"
+        etiqueta_y: "Cantidad"
         titulo_serie: "Distribución"
+      - tipo: "tabla"
+        encabezados: ["Tipo", "Qué prueba", "Velocidad"]
+        filas:
+          - ["Unitarias (base)", "Una función aislada", "Muy rápida"]
+          - ["Integración (medio)", "Cómo se conectan los módulos", "Media"]
+          - ["E2E (cima)", "Flujos completos de usuario", "Lenta"]
       - tipo: "nota"
-        texto: "La IA ayuda especialmente a expandir la base de pruebas unitarias."
+        texto: "La regla: muchas pruebas unitarias, pocas E2E. Como una pirámide."
 
-  - titulo: "Laboratorio Práctico"
+  - titulo: "¿Por qué la pirámide es ancha abajo?"
     contenido:
       - tipo: "problema"
-        texto: "Implementar un ciclo TDD estricto en un repositorio experimental con la suite agéntica."
-      - "Usar Playwright Codegen para registrar un flujo interactivo."
-      - "Solicitar a la IA depurar y estabilizar el script con aserciones dinámicas asíncronas."
-
-  - titulo: "Preguntas Clave y Debate"
-    contenido:
-      - tipo: "problema"
-        texto: "¿De qué manera las esperas asíncronas de Playwright reducen el 'flakiness' frente a Selenium?"
-      - tipo: "problema"
-        texto: "¿Qué riesgos surgen al delegar exclusivamente la cobertura lógica a generadores autónomos?"
-
-  - titulo: "Resumen"
-    contenido:
-      - "🤖 La IA acelera la cobertura y la confiabilidad de pruebas."
-      - "🥒 Gherkin + SDD guían la autogeneración del andamiaje."
-      - "⚡ Playwright supera a Selenium en estabilidad E2E."
+        texto: "¿Por qué tantas pruebas unitarias y tan pocas E2E?"
+      - "Las pruebas unitarias son baratas y rapidísimas."
+      - "Las E2E son lentas, frágiles y caras."
+      - tipo: "ejemplo"
+        texto: "Una unitaria corre en milisegundos. Una E2E puede tardar minutos."
       - tipo: "nota"
-        texto: "Combinar autonomía de IA con revisión senior de casos de frontera."
+        texto: "Más unitarias = feedback rápido. Más E2E = dolor de cabeza."
+
+  - titulo: "La IA en el aseguramiento de calidad"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Cómo ayuda la IA en las pruebas?"
+      - "Genera casos de prueba automáticamente."
+      - "Encuentra casos límite que los humanos pasan por alto."
+      - "Hace que las aserciones sean más robustas."
+      - tipo: "ejemplo"
+        texto: "La IA puede pensar: '¿qué pasa si el usuario manda un email vacío? ¿Y con caracteres raros?'"
+      - tipo: "nota"
+        texto: "Pero ojo: delegar todo a la IA sin revisión humana es riesgoso."
+
+  - titulo: "TDD: Test-Driven Development"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué es TDD?"
+      - "TDD = escribes la prueba ANTES que el código."
+      - tipo: "formula"
+        texto: "Escribir prueba (falla) → Escribir código (pasa) → Refactorizar"
+      - tipo: "ejemplo"
+        texto: "Primero escribes 'suma(2,2) debe dar 4'. Falla. Luego programas la función suma."
+      - tipo: "nota"
+        texto: "Suena raro, pero ensures que tu código siempre tenga pruebas desde el inicio."
+
+  - titulo: "BDD: Behavior-Driven Development con Gherkin"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Y si quiero que las pruebas las entienda hasta el jefe?"
+      - "BDD usa un lenguaje llamado Gherkin: frases en español simple."
+      - tipo: "formula"
+        texto: "Dado [contexto] Cuando [acción] Entonces [resultado esperado]"
+      - tipo: "ejemplo"
+        texto: "Dado que el cliente envía un contrato válido, Cuando consume la API, Entonces responde HTTP 200."
+      - tipo: "nota"
+        texto: "Cualquier persona del negocio puede leer y validar estas pruebas. No solo programadores."
+
+  - titulo: "Ejemplo completo de Gherkin"
+    contenido:
+      - tipo: "ejemplo"
+        texto: "Feature: Autenticación de API JSON-First"
+      - tipo: "ejemplo"
+        texto: "Scenario: Solicitud con contrato válido"
+      - tipo: "ejemplo"
+        texto: "  Given que el cliente envía una trama válida"
+      - tipo: "ejemplo"
+        texto: "  When realiza el consumo de la interfaz"
+      - tipo: "ejemplo"
+        texto: "  Then el sistema responde con código HTTP 200"
+      - tipo: "nota"
+        texto: "Ese texto, legible por humanos, se convierte en pruebas automáticas."
+
+  - titulo: "Selenium vs Playwright: el duelo de herramientas"
+    contenido:
+      - tipo: "tabla"
+        encabezados: ["Aspecto", "Selenium (viejo)", "Playwright (nuevo)"]
+        filas:
+          - ["Arquitectura", "Driver externo", "WebSocket nativo"]
+          - ["Esperas", "Manuales, frágiles", "Automáticas, inteligentes"]
+          - ["Flakiness", "Alto", "Bajo"]
+          - ["Velocidad", "Lento", "Rápido"]
+      - tipo: "nota"
+        texto: "Playwright reduce el 'flakiness': esas pruebas que a veces pasan y a veces no."
+
+  - titulo: "¿Qué es el 'flakiness'?"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Qué es una prueba 'flaky' (inestable)?"
+      - "Es una prueba que a veces pasa y a veces falla sin que cambies nada."
+      - tipo: "ejemplo"
+        texto: "La prueba pasa en tu máquina pero falla en CI. ¡Frustrante!"
+      - "La causa más común: problemas de sincronización (timing)."
+      - tipo: "nota"
+        texto: "Playwright maneja las esperas automáticamente, reduciendo dramáticamente el flakiness."
+
+  - titulo: "Cómo las esperas automáticas de Playwright funcionan"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué Selenium es flaky y Playwright no?"
+      - "En Selenium tú debes decir: 'espera 5 segundos a que aparezca el botón'."
+      - "Si el botón tarda 6 segundos: la prueba falla."
+      - tipo: "ejemplo"
+        texto: "Playwright espera automáticamente hasta que el elemento está listo. Sin adivinar."
+      - tipo: "nota"
+        texto: "Esto elimina los 'sleeps' mágicos que rompían las pruebas."
+
+  - titulo: "Generación autónoma de pruebas con IA"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Puede la IA crear pruebas sola?"
+      - "Sí. Con SDD, ejecutar /sdd-init activa el modo estricto de pruebas."
+      - "El sistema bloquea el avance a producción sin validar casos de frontera."
+      - tipo: "nota"
+        texto: "Pero recuerda: la revisión humana de casos límite sigue siendo imprescindible."
+
+  - titulo: "Playwright Codegen: graba y se generan las pruebas"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Tengo que escribir las pruebas E2E a mano?"
+      - "¡No! Playwright Codegen graba tus acciones y genera el código."
+      - tipo: "ejemplo"
+        texto: "Haces clic en la web como usuario normal y Codegen escribe el script por ti."
+      - "Luego puedes pedirle a la IA que lo estabilice y agregue aserciones."
+      - tipo: "nota"
+        texto: "Es como grabar un macro: tú usas la app y la prueba se escribe sola."
+
+  - titulo: "Laboratorio: TDD + Playwright Codegen con IA"
+    contenido:
+      - tipo: "problema"
+        texto: "Implementaremos un ciclo TDD estricto en un proyecto de prueba."
+      - "Usaremos Playwright Codegen para grabar un flujo interactivo."
+      - "Le pediremos a la IA que depure y estabilice el script resultante."
+      - "Agregaremos aserciones dinámicas para validar escenarios límite asíncronos."
+      - tipo: "nota"
+        texto: "Verás cómo la IA acelera dramáticamente la creación de pruebas robustas."
+
+  - titulo: "Preguntas para reflexionar"
+    contenido:
+      - tipo: "problema"
+        texto: "¿Por qué las esperas de Playwright reducen el flakiness frente a Selenium?"
+      - tipo: "problema"
+        texto: "¿Qué riesgos hay al delegar exclusivamente la cobertura a generadores de IA?"
+      - tipo: "nota"
+        texto: "Recuerda: la IA sugiere, el humano valida los casos críticos."
+
+  - titulo: "Resumen: Lo que hoy aprendimos"
+    contenido:
+      - "🔺 La pirámide de pruebas: muchas unitarias, pocas E2E."
+      - "🥒 Gherkin permite que todos lean y validen las pruebas."
+      - "⚡ Playwright supera a Selenium en estabilidad y velocidad."
+      - "🤖 La IA genera casos de prueba, pero la revisión humana es clave."
+      - tipo: "nota"
+        texto: "Probar es aburrido, pero las pruebas automatizadas te salvan la vida. 🎉"
